@@ -1,6 +1,44 @@
 {   "members": {
 
+        "uid = Admin - defined in firebase db": {
+            "titel": "admin",
+            "name": "Svend",
+            "adress": "oldmanroad 12",
+            "email": "somethingold@gmailcom",
+            "phone": 23343454,
+            "gender": "male",
+            "birthdate": "23-06-1964",
+            "active": true,
+            "coach": false,
+            "comp": false
+        },
+        "uid = gitte - defined in firebase db": {
+            "titel": "cashier",
+            "name": "Svend",
+            "adress": "oldmanroad 12",
+            "email": "somethingold@gmailcom",
+            "phone": 23343454,
+            "gender": "male",
+            "birthdate": "23-06-1964",
+            "active": true,
+            "coach": false,
+            "comp": false
+        },
+        "uid = Sigurd - defined in firebase db": {
+            "titel": "coach",
+            "name": "Svend",
+            "adress": "oldmanroad 12",
+            "email": "somethingold@gmailcom",
+            "phone": 23343454,
+            "gender": "male",
+            "birthdate": "23-06-1964",
+            "active": true,
+            "coach": false,
+            "comp": false
+        },
+
         "uid = karla - defined in firebase db": {
+            "titel": "member",
             "name": "karla",
             "adress": "dembevej 34",
             "email": "karla@gmail.com",
@@ -8,7 +46,6 @@
             "gender": "female",
             "birthdate": "23-04-1990",
             "active": true,
-            "coach": true, 
             "comp": true,
             "disciplins": {
                 "crawl": true,
@@ -18,6 +55,7 @@
                 }
         },
         "uid = simone - defined in firebase db": {
+            "titel": "member",
             "name": "simone",
             "adress": "ostevej 12",
             "email": "simonsays@gmailcom",
@@ -25,7 +63,6 @@
             "gender": "female",
             "birthdate": "23-06-1994",
             "active": true,
-            "coach": false,
             "comp": true,
             "disciplins": {
                 "crawl": true,
@@ -35,6 +72,7 @@
                 }
         },
         "uid = Svend - defined in firebase db": {
+            "titel": "member",
             "name": "Svend",
             "adress": "oldmanroad 12",
             "email": "somethingold@gmailcom",
