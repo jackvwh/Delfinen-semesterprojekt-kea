@@ -88,40 +88,37 @@
     "practiceResults": {
 
         "practice UID - 1 - defined in firebase db": {
-            "member uid": "karla", 
+            "memberUid": "karla", 
             "disciplin": "crawl",
-            "time": 23,
+            "resultTime": 23,
             "date": "12-07-1990"
         },
 
         "practice UID - 2 - defined in firebase db":  {
-            "member uid": "simone", 
+            "memberUid": "simone", 
             "disciplin": "crawl",
-            "time": 23,
+            "resultTime": 23,
             "date": "12-07-1990"
         }
-
     },
     "compResults": {
 
         "comp UID - 1 - defined in firebase db": {
-            "member uid": "simone", 
+            "memberUid": "simone", 
             "competition": "stævne navn",
             "place": "somewhere",
             "date": "12-07-1990",
             "disciplin": "crawl",
-            "result time": 23
-            
+            "resultTime": 23  
         },
 
         "comp UID - 2 - defined in firebase db":  {
-            "member uid": "karla", 
+            "memberUid": "karla", 
             "competition": "stævne navn",
             "place": "somewhere else",
             "date": "12-07-1990",
             "disciplin": "crawl",
-            "result time": 23
-            
+            "resultTime": 23   
         }
     }
 }
