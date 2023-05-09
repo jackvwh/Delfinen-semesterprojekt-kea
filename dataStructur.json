@@ -1,0 +1,89 @@
+{   "members": {
+
+        "uid = karla - defined in firebase db": {
+            "name": "karla",
+            "adress": "dembevej 34",
+            "email": "karla@gmail.com",
+            "phone": 23343454,
+            "gender": "female",
+            "birthdate": "23-04-1990",
+            "active": true,
+            "coach": true, 
+            "comp": true,
+            "disciplins": {
+                "crawl": true,
+                "rygcrawl": true,
+                "butterfly": false,
+                "brystsvømning": false
+                }
+        },
+        "uid = simone - defined in firebase db": {
+            "name": "simone",
+            "adress": "ostevej 12",
+            "email": "simonsays@gmailcom",
+            "phone": 23343454,
+            "gender": "female",
+            "birthdate": "23-06-1994",
+            "active": true,
+            "coach": false,
+            "comp": true,
+            "disciplins": {
+                "crawl": true,
+                "rygcrawl": true,
+                "butterfly": false,
+                "brystsvømning": false
+                }
+        },
+        "uid = Svend - defined in firebase db": {
+            "name": "Svend",
+            "adress": "oldmanroad 12",
+            "email": "somethingold@gmailcom",
+            "phone": 23343454,
+            "gender": "male",
+            "birthdate": "23-06-1964",
+            "active": true,
+            "coach": false,
+            "comp": false
+        }
+           
+},
+    "practiceResults": {
+
+        "practice UID - 1 - defined in firebase db": {
+            "member uid": "karla", 
+            "disciplin": "crawl",
+            "time": 23,
+            "date": "12-07-1990"
+        },
+
+        "practice UID - 2 - defined in firebase db":  {
+            "member uid": "simone", 
+            "disciplin": "crawl",
+            "time": 23,
+            "date": "12-07-1990"
+        }
+
+    },
+    "compResults": {
+
+        "comp UID - 1 - defined in firebase db": {
+            "member uid": "simone", 
+            "competition": "stævne navn",
+            "place": "somewhere",
+            "date": "12-07-1990",
+            "disciplin": "crawl",
+            "result time": 23
+            
+        },
+
+        "comp UID - 2 - defined in firebase db":  {
+            "member uid": "karla", 
+            "competition": "stævne navn",
+            "place": "somewhere else",
+            "date": "12-07-1990",
+            "disciplin": "crawl",
+            "result time": 23
+            
+        }
+    }
+}
