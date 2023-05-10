@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="memberpage.css">
     <title>Delfinen svømmeklub</title>
 </head>
 <body>
@@ -60,7 +60,7 @@
         <br>
 
 
-        <section id="adminPage">
+        <section id="adminPage" class="hidden">
             <h1>admin</h1>
         </section>
 
@@ -68,40 +68,119 @@
             <h1>cashier</h1>
         </section>
 
-        <section id="compMemberPage" class="hidden active">
+        <section id="compMemberPage" class="active">
+            <h1>Welcome *insert name here*!</h1>
             <article id="comp-member-grid-container">
 
-                <article id="personal-info-container">
+                <article id="events-upcoming-container">
+                    <div id="events-upcoming-item">
+                        <h1>Upcoming Event</h1>
+                            <input type="text">
+                    </div>
+                </article>
 
-                    <div id="personal-info-item-name"> 
-                        <input type="text">
-                    </div>
-                    <div id="personal-info-item-adress">
-                        <input type="text">
-                    </div>
-                    <div id="personal-info-item-email">
-                        <input type="text">
+                <article id="comp-member-coach-container">
+                    <div id="comp-member-coach-item">
+                        <h1>Assigned Coach</h1>
+                            <input type="text">
                     </div>
                 </article>
                 
+                <article id="personal-info-container">
+                    <!-- <h3>title from JSON<h3> -->
+                    <div id="personal-info-name-item">
+                        <h5>Name:</h5> 
+                            <input type="text">
+                    </div>
+                    <div id="personal-info-age-item">
+                        <h5>Age:</h5>
+                            <input type="text">
+                    </div>
+                    <div id="personal-info-gender-item">
+                        <h5>Gender:</h5>
+                            <input type="text">
+                    </div>
+                    <div id="personal-info-address-item">
+                        <h5>Address:</h5>
+                            <input type="text">
+                    </div>
+                    <div id="personal-info-email-item">
+                        <h5>Email:</h5>
+                            <input type="text">
+                    </div>
+                        <button>Update personal information</button>
+                </article>
+                
                 <article id="disciplin-container">
+                <h1>Discipliner:</h1>
                     <div  id="disciplin-list">
-                        <li id="crawl"></li>
-                        <li id="rygcrawl"></li>
-                        <li id="butterfly"></li>
-                        <li id="brystsvømming"></li>
+                        <ol id="crawl">Crawl</ol> 
+                            <input type="text">
+                        <ol id="rygcrawl">Rygcrawl</ol>
+                            <input type="text"> 
+                        <ol id="butterfly">Butterfly</ol>
+                            <input type="text">
+                        <ol id="brystsvømming">Brystsvømming</ol>
+                            <input type="text">
+                    </div>
+                </article>
+
+                <article id="events-old-container">
+                    <div id="events-old-item">
+                        <h1>Past Events</h1>
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                    </div>
+                </article>
+
+                <article id="events-results-container">
+                    <div id="events-results-item">
+                        <h1>Past Results</h1>
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
                     </div>
                 </article>
 
             </article>
         </section>
 
-        <section id="regularMemberPage">
-
+        <section id="regularMemberPage" class="hidden">
             <h1>regular member</h1>
+            <article id="comp-member-grid-container">
+                
+                <article id="personal-info-container">
+                    <!-- <h3>title from JSON<h3> -->
+                    <div id="personal-info-name-item">
+                        <h5>Name:</h5> 
+                            <input type="text">
+                    </div>
+                    <div id="personal-info-age-item">
+                        <h5>Age:</h5>
+                            <input type="text">
+                    </div>
+                    <div id="personal-info-gender-item">
+                        <h5>Gender:</h5>
+                            <input type="text">
+                    </div>
+                    <div id="personal-info-address-item">
+                        <h5>Address:</h5>
+                            <input type="text">
+                    </div>
+                    <div id="personal-info-email-item">
+                        <h5>Email:</h5>
+                            <input type="text">
+                    </div>
+                        <button>Update</button>
+                </article>
         </section>
 
-        <section id="coachPage">
+        <section id="coachPage" class="hidden">
             <h1>coach </h1>
         </section>
 
