@@ -21,35 +21,67 @@
     <!-- Views -->
     <!-- All views (sections) must have an id -->
     <main>
-
-        <header>
-            <h1>DELFINEN</h1>
-        </header>
         <!-- Home View -->
         <!-- Route: #home -->
-        <section id="home" class="hidden">
-            <h2>Home</h2>
-            <p>Home is where the heart is 💛</p>
-            <p>Oh My, sounds like a bad movie!</p>
+        <section id="homePage" class="active">
+            <div id="front-page-picture-container">
+                <img src="https://freesvg.org/img/1502475717.png" alt="">
+            </div>
+            <header>
+                <h1>Velkommen til Svømmeklub Delfinen</h1>
+            </header>
+
+
+
+            <article id="front-page-news-grid-container">
+                <article class="front-page-news-grid-item">
+                    <div class="front-page-news-picture">
+                        <img src="" alt="">
+                    </div>
+                    <button class="button front-page-news-button">Læs mere...</button>
+                </article>
+
+                <article class="front-page-news-grid-item">
+                    <div class="front-page-news-picture">
+                        <img src="" alt="">
+                    </div>
+                    <button class="button front-page-news-button">Læs mere...</button>
+                </article>
+
+                <article class="front-page-news-grid-item">
+                    <div class="front-page-news-picture">
+                        <img src="" alt="">
+                    </div>
+                    <button class="button front-page-news-button">Læs mere...</button>
+                </article>
+
+                <article class="front-page-news-grid-item">
+                    <div class="front-page-news-picture">
+                        <img src="" alt="">
+                    </div>
+                    <button class="button front-page-news-button">Læs mere...</button>
+                </article>
+                
+            </article>
         </section>
 
         <!-- News View -->
         <!-- Route: #news -->
-        <section id="news" class="hidden">
+        <section id="newsPage" class="hidden">
             <h2>News</h2>
             <p>Some news this fine day 🎉</p>
         </section>
 
         <!-- About View -->
         <!-- Route: #about -->
-        <section id="about" class="hidden">
+        <section id="aboutPage" class="hidden">
             <h2>About</h2>
             <p>Who we are and what we do 🤷🏼‍♂️</p>
         </section>
 
         <!-- Contact View -->
         <!-- Route: #contact -->
-        <section id="contact" class="hidden">
+        <section id="contactPage" class="hidden">
             <h2>Contact</h2>
             <p>Get in touch, or swing by for a cup of coffee ☕️</p>
             <p>I'm just one arm away 🤷🏼‍♂️</p>
@@ -60,7 +92,7 @@
         <br>
 
 
-        <section id="adminPage">
+        <section id="adminPage" class="hidden">
             <h1>admin</h1>
         </section>
 
@@ -68,7 +100,7 @@
             <h1>cashier</h1>
         </section>
 
-        <section id="compMemberPage" class="hidden active">
+        <section id="compMemberPage" class="hidden">
             <article id="comp-member-grid-container">
 
                 <article id="personal-info-container">
@@ -96,12 +128,11 @@
             </article>
         </section>
 
-        <section id="regularMemberPage">
-
+        <section id="regularMemberPage" class="hidden">
             <h1>regular member</h1>
         </section>
 
-        <section id="coachPage">
+        <section id="coachPage" class="hidden">
             <h1>coach </h1>
         </section>
 
