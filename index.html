@@ -8,7 +8,107 @@
     <title>Delfinen svømmeklub</title>
 </head>
 <body>
-    <h1>DELFINEN</h1>
+    
+        <!-- Nav Bar with custom links -->
+    <!-- The href must match with an id of a view (section) -->
+    <nav>
+        <a href="#home" class="view-link">Home</a>
+        <a href="#news" class="view-link">News</a>
+        <a href="#about" class="view-link">About</a>
+        <a href="#contact" class="view-link">Contact</a>
+    </nav>
+
+    <!-- Views -->
+    <!-- All views (sections) must have an id -->
+    <main>
+
+        <header>
+            <h1>DELFINEN</h1>
+        </header>
+        <!-- Home View -->
+        <!-- Route: #home -->
+        <section id="home" class="hidden">
+            <h2>Home</h2>
+            <p>Home is where the heart is 💛</p>
+            <p>Oh My, sounds like a bad movie!</p>
+        </section>
+
+        <!-- News View -->
+        <!-- Route: #news -->
+        <section id="news" class="hidden">
+            <h2>News</h2>
+            <p>Some news this fine day 🎉</p>
+        </section>
+
+        <!-- About View -->
+        <!-- Route: #about -->
+        <section id="about" class="hidden">
+            <h2>About</h2>
+            <p>Who we are and what we do 🤷🏼‍♂️</p>
+        </section>
+
+        <!-- Contact View -->
+        <!-- Route: #contact -->
+        <section id="contact" class="hidden">
+            <h2>Contact</h2>
+            <p>Get in touch, or swing by for a cup of coffee ☕️</p>
+            <p>I'm just one arm away 🤷🏼‍♂️</p>
+        </section>
+
+        <br>
+        <br>
+        <br>
+
+
+        <section id="adminPage">
+            <h1>admin</h1>
+        </section>
+
+        <section id="cashierPage" class="hidden">
+            <h1>cashier</h1>
+        </section>
+
+        <section id="compMemberPage" class="hidden active">
+            <article id="comp-member-grid-container">
+
+                <article id="personal-info-container">
+
+                    <div id="personal-info-item-name"> 
+                        <input type="text">
+                    </div>
+                    <div id="personal-info-item-adress">
+                        <input type="text">
+                    </div>
+                    <div id="personal-info-item-email">
+                        <input type="text">
+                    </div>
+                </article>
+                
+                <article id="disciplin-container">
+                    <div  id="disciplin-list">
+                        <li id="crawl"></li>
+                        <li id="rygcrawl"></li>
+                        <li id="butterfly"></li>
+                        <li id="brystsvømming"></li>
+                    </div>
+                </article>
+
+            </article>
+        </section>
+
+        <section id="regularMemberPage">
+
+            <h1>regular member</h1>
+        </section>
+
+        <section id="coachPage">
+            <h1>coach </h1>
+        </section>
+
+
+
+
+    </main>    
 
 
     <script src="app.js"></script>
