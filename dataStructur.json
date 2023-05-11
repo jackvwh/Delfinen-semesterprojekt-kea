@@ -1,46 +1,43 @@
 {   "members": {
 
         "uid = Admin - defined in firebase db": {
-            "titel": "admin",
+            "title": "admin",
             "name": "Svend",
-            "adress": "oldmanroad 12",
+            "address": "oldmanroad 12",
             "email": "somethingold@gmail.com",
             "phone": 23343454,
             "gender": "male",
             "birthdate": "23-06-1964",
             "active": true,
-            "coach": false,
             "comp": false
         },
         "uid = gitte - defined in firebase db": {
-            "titel": "cashier",
+            "title": "cashier",
             "name": "Svend",
-            "adress": "oldmanroad 12",
+            "address": "oldmanroad 12",
             "email": "somethingold@gmailcom",
             "phone": 23343454,
             "gender": "male",
             "birthdate": "23-06-1964",
             "active": true,
-            "coach": false,
             "comp": false
         },
         "uid = Sigurd - defined in firebase db": {
-            "titel": "coach",
+            "title": "coach",
             "name": "Svend",
-            "adress": "oldmanroad 12",
+            "address": "oldmanroad 12",
             "email": "somethingold@gmailcom",
             "phone": 23343454,
             "gender": "male",
             "birthdate": "23-06-1964",
             "active": true,
-            "coach": false,
             "comp": false
         },
 
         "uid = karla - defined in firebase db": {
-            "titel": "member",
+            "title": "member",
             "name": "karla",
-            "adress": "dembevej 34",
+            "address": "dembevej 34",
             "email": "karla@gmail.com",
             "phone": 23343454,
             "gender": "female",
@@ -55,9 +52,9 @@
                 }
         },
         "uid = simone - defined in firebase db": {
-            "titel": "member",
+            "title": "member",
             "name": "simone",
-            "adress": "ostevej 12",
+            "address": "ostevej 12",
             "email": "simonsays@gmailcom",
             "phone": 23343454,
             "gender": "female",
@@ -72,15 +69,14 @@
                 }
         },
         "uid = Svend - defined in firebase db": {
-            "titel": "member",
+            "title": "member",
             "name": "Svend",
-            "adress": "oldmanroad 12",
+            "address": "oldmanroad 12",
             "email": "somethingold@gmailcom",
             "phone": 23343454,
             "gender": "male",
             "birthdate": "23-06-1964",
             "active": true,
-            "coach": false,
             "comp": false
         }
            

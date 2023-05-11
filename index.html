@@ -121,11 +121,93 @@
             <h1>admin</h1>
         </main>
 
-        <section id="cashierPage" class="hidden">
-            <h1>cashier</h1>
+        <main id="cashierPage" class="">
+
+            <section id="welcome-container">
+                <article id="velcome-user">
+                    <div id="user-welcome"> Welcome (user name) </div>
+                    <div id="user-status"> Status (user title) </div>
+                </article>
+                <article id="total-income">
+                    <p>Kontingent</p>
+                    <p>Forventet beløb ialt: ?????</p>
+                </article>
+            </section>
+
+            <div id="sort-container">
+                <select name="sort-payments" id="sort-payments">
+                    <option value="Paid">Paid</option>
+                    <option value="Unpaid">Unpaid</option>
+                </select>
+            </div>
+
+            <section id="member-table">
+                <table>
+                    <!-- table header -->
+                    <thead>
+                        <tr>
+                        <th>Member</th>
+                        <th>Date of birth</th>
+                        <th>Gender</th>
+                        <th>Mail</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Active member</th>
+                        <th>Member Payment</th>
+                        <th>Paid</th>
+                        </tr>
+                    </thead>
+
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>Beløb: 1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                </table>
+            </section>
+
         </section>
 
-        <section id="compMemberPage" class="hidden">
+        <main id="compMemberPage" class="hidden">
             <article id="comp-member-grid-container">
 
                 <article id="personal-info-container">
@@ -151,18 +233,16 @@
                 </article>
 
             </article>
-        </section>
+        </main>
 
-        <section id="regularMemberPage" class="hidden">
+        <main id="regularMemberPage" class="hidden">
+
             <h1>regular member</h1>
-        </section>
+        </main>
 
-        <section id="coachPage" class="hidden">
+        <main id="coachPage" class="hidden">
             <h1>coach </h1>
-        </section>
-
-
-
+        </main>
 
     </main>    
 
