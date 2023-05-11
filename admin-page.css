@@ -16,7 +16,7 @@
 }
 
 #admin-page-grid-item3 {
-    background-color: aqua;
+    background-color: #eeee;
     position: relative;
     align-items: center;
     justify-items: center;
@@ -42,8 +42,9 @@
 }
 
 .tableFixedHeader > tr, th {
-    background: #eee;
+    background-color: bisque;
     position: sticky;
     top: 0px;
+    padding-top: 10px;
     padding-bottom: 20px;
 }
