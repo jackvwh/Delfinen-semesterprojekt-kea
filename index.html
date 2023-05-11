@@ -6,63 +6,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="memberpage.css">
+    <link rel="stylesheet" href="front-page.css">
     <title>Delfinen svømmeklub</title>
 </head>
 <body>
     
-        <!-- Nav Bar with custom links -->
+    <!-- Nav Bar with custom links -->
     <!-- The href must match with an id of a view (section) -->
     <nav>
         <a href="#home" class="view-link">Home</a>
         <a href="#news" class="view-link">News</a>
         <a href="#about" class="view-link">About</a>
         <a href="#contact" class="view-link">Contact</a>
+        <a href="#contact" class="view-link">Log in</a>
     </nav>
 
     <!-- Views -->
     <!-- All views (sections) must have an id -->
     <main>
-
-        <header>
-            <h1>DELFINEN</h1>
-        </header>
         <!-- Home View -->
         <!-- Route: #home -->
-        <section id="home" class="hidden">
-            <h2>Home</h2>
-            <p>Home is where the heart is 💛</p>
-            <p>Oh My, sounds like a bad movie!</p>
-        </section>
+        <main id="homePage" class="active">
+            <div id="front-page-picture-container">
+                <img src="https://freesvg.org/img/1502475717.png" alt="">
+            </div>
+
+            <header>
+                <h1>Velkommen til Svømmeklub Delfinen</h1>
+            </header>
+                <h2 id="news-title">Nyheder</h2>
+            <section id="front-page-news-grid-container">
+                <article class="front-page-news-grid-item">
+                    <div class="front-page-news-picture">
+                        <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
+                    </div>
+                    <h3 class="front-page-news-title">News overskrift</h3>
+                    <button class="button front-page-news-button">Læs mere...</button>
+                </article>
+
+                <article class="front-page-news-grid-item">
+                    <div class="front-page-news-picture">
+                        <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
+                    </div>
+                    <h3 class="front-page-news-title">News overskrift</h3>
+                    <button class="button front-page-news-button">Læs mere...</button>
+                </article>
+
+                <article class="front-page-news-grid-item">
+                    <div class="front-page-news-picture">
+                        <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
+                    </div>
+                    <h3 class="front-page-news-title">News overskrift</h3>
+                    <button class="button front-page-news-button">Læs mere...</button>
+                </article>
+
+                <article class="front-page-news-grid-item">
+                    <div class="front-page-news-picture">
+                        <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
+                    </div>
+                    <h3 class="front-page-news-title">News overskrift</h3>
+                    <button class="button front-page-news-button">Læs mere...</button>
+                </article>
+            </section>
+            <footer>
+                <div id="footer-info-container">
+                    <div id="footer-info-item">
+                        <h2>Svømmeklub Delfinen</h2>
+                        <h3>Delfinvej 26</h3>
+                        <h3>København S, 2300</h3>
+                        <h3>Danmark</h3>
+                        <br>
+                        <br>
+                        <h3>CVR: 12345678</h3>
+                        <h3>Tel: 11 11 11 11</h3>
+                        <h3>E-mail: info@dsk.dk</h3>
+                    </div>
+                    <div id="footer-info-item">
+                        <p>
+                            Instagram
+                            Facebook
+                            Twiiter
+                            LinkedIn
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </main>
 
         <!-- News View -->
         <!-- Route: #news -->
-        <section id="news" class="hidden">
+        <main id="newsPage" class="hidden">
             <h2>News</h2>
             <p>Some news this fine day 🎉</p>
-        </section>
+        </main>
 
         <!-- About View -->
         <!-- Route: #about -->
-        <section id="about" class="hidden">
+        <main id="aboutPage" class="hidden">
             <h2>About</h2>
             <p>Who we are and what we do 🤷🏼‍♂️</p>
-        </section>
+        </main>
 
         <!-- Contact View -->
         <!-- Route: #contact -->
-        <section id="contact" class="hidden">
+        <main id="contactPage" class="hidden">
             <h2>Contact</h2>
             <p>Get in touch, or swing by for a cup of coffee ☕️</p>
             <p>I'm just one arm away 🤷🏼‍♂️</p>
-        </section>
+        </main>
 
         <br>
         <br>
         <br>
 
 
-        <section id="adminPage" class="hidden">
+        <main id="adminPage" class="hidden">
             <h1>admin</h1>
+        </main>
+
+        <main id="cashierPage" class="">
+
+            <section id="welcome-container">
+                <article id="velcome-user">
+                    <div id="user-welcome"> Welcome (user name) </div>
+                    <div id="user-status"> Status (user title) </div>
+                </article>
+                <article id="total-income">
+                    <p>Kontingent</p>
+                    <p>Forventet beløb ialt: ?????</p>
+                </article>
+            </section>
+
+            <div id="sort-container">
+                <select name="sort-payments" id="sort-payments">
+                    <option value="Paid">Paid</option>
+                    <option value="Unpaid">Unpaid</option>
+                </select>
+            </div>
+
+            <section id="member-table">
+                <table>
+                    <!-- table header -->
+                    <thead>
+                        <tr>
+                        <th>Member</th>
+                        <th>Date of birth</th>
+                        <th>Gender</th>
+                        <th>Mail</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Active member</th>
+                        <th>Member Payment</th>
+                        <th>Paid</th>
+                        </tr>
+                    </thead>
+
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>Beløb: 1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                </table>
+            </section>
+
         </section>
 
         <section id="cashierPage" class="hidden">
@@ -73,6 +218,7 @@
             <header>
                 <h1>Velkommen *insert name here*!</h1>
             </header>
+        <main id="compMemberPage" class="hidden">
             <article id="comp-member-grid-container">
 
                 <article id="events-upcoming-container">
@@ -183,10 +329,7 @@
 
         <section id="coachPage" class="hidden">
             <h1>coach </h1>
-        </section>
-
-
-
+        </main>
 
     </main>    
 
