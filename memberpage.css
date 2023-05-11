@@ -155,4 +155,5 @@ header h1 {
   font-weight: 300;
   color: var(--text-color-light);
   margin-top: 60px;
+  margin-left: 20px;
 }
