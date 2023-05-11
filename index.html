@@ -211,9 +211,6 @@
         </main>
 
         <main id="compMemberPage" class="active">
-            <header>
-                <h1 id="welcomeCompUser">Velkommen *insert name here*!</h1>
-            </header>
             <section id="comp-member-grid-container">
 
                 <article id="events-upcoming-container">
@@ -226,8 +223,8 @@
                                     <th>Dato</th>
                                     <th>Disciplin</th>
                                     <th>Træner</th>
-                                    <th>Tid</th>
-                                    <th>Resultat</th>
+                                    <th>Start</th>
+                                    <th>Position</th>
                                     </tr>
                                 </thead>
 
@@ -236,8 +233,8 @@
                                 <td>22-06-2023</td>
                                 <td>Butterfly</td>
                                 <td>John</td>
-                                <td>04:20</td>
-                                <td>1</td>
+                                <td>16:00</td>
+                                <td>2</td>
                                 </tr>
                         </table>
                     </div>
@@ -245,13 +242,15 @@
 
                 <article id="comp-member-coach-container">
                     <div id="comp-member-coach-item">
-                        <h1>Træner:</h1>
+                        <h1 id="compMemberCoachName">Træner:</h1>
                             <input type="text">
                     </div>
                 </article>
                 
                 <article id="personal-info-container">
-                    <!-- <h3>title from JSON<h3> -->
+                    <div id="welcomeCompUser">
+                    <h1>Velkommen *insert name here*!</h1>
+                    </div>                   
                     <div id="personal-info-name-item">
                         <h5>Navn:</h5> 
                             <input type="text">
@@ -329,19 +328,18 @@
         </main>
 
         <main id="regularMemberPage" class="hidden">
-            <header>
-                <h1 id="welcomeUser">Velkommen *insert name here*!</h1>
-            </header>
             <section id="regular-member-grid-container">
                 
                 <article id="personal-info-container">
-                    <!-- <h3>title from JSON<h3> -->
+                    <div id="welcomeCompUser">
+                    <h1>Velkommen *insert name here*!</h1>
+                    </div>                   
                     <div id="personal-info-name-item">
                         <h5>Navn:</h5> 
                             <input type="text">
                     </div>
                     <div id="personal-info-age-item">
-                        <h5>Aldre:</h5>
+                        <h5>Alder:</h5>
                             <input type="text">
                     </div>
                     <div id="personal-info-gender-item">
@@ -356,8 +354,13 @@
                         <h5>E-mail:</h5>
                             <input type="text">
                     </div>
-                        <button>Update</button>
+                        <button id="updatePersonal">Updater Personlig Information</button>
                 </article>
+
+                <article>
+                    
+                </article>
+
             </section>
         </main>
 

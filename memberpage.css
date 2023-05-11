@@ -88,8 +88,8 @@ nav a.active {
 #comp-member-grid-container {
   display: grid;
   grid-template-areas:
-    'main main main header coach coach'
-    'main main main right right right'
+    'main main main coach coach coach'
+    'main main main header header header'
     'menu menu menu right right right';
 }
 
@@ -125,17 +125,6 @@ tr:nth-child(even) {
     background-color: var(--text-color-light);
 }
 
-tr {
-    cursor: pointer;
-    transition: 0.5s;
-    animation: fadeIn 0.5s;
-}
-
-tr:hover {
-    background-color: var(--purple);
-    color: var(--text-color-light);
-}
-
 /* competitive member page styling */
 
 button#updatePersonal {
@@ -161,10 +150,14 @@ button#updatePersonal:active {
     transform: scale(1);
 }
 
-header h1 {
-  font-size: 36px;
-  font-weight: 300;
+#welcomeCompUser {
+  font-size: 16px;
+  text-align: center;
   color: var(--text-color-light);
-  margin-top: 60px;
+  margin-top: 40px;
   margin-left: 20px;
+}
+
+#compMemberCoachName {
+  margin-top: 40px;
 }
