@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="front-page.css">
+    <link rel="stylesheet" href="cashier.css">
     <title>Delfinen svømmeklub</title>
 </head>
 <body>
@@ -20,12 +21,24 @@
         <a href="#contact" class="view-link">Log in</a>
     </nav>
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
     <!-- Views -->
     <!-- All views (sections) must have an id -->
     <main>
         <!-- Home View -->
         <!-- Route: #home -->
-        <main id="homePage" class="active">
+        <main id="homePage" class="hidden">
             <div id="front-page-picture-container">
                 <img src="https://freesvg.org/img/1502475717.png" alt="">
             </div>
@@ -114,36 +127,29 @@
             <p>I'm just one arm away 🤷🏼‍♂️</p>
         </main>
 
-        <br>
-        <br>
-        <br>
-
-
         <main id="adminPage" class="hidden">
             <h1>admin</h1>
         </main>
 
         <main id="cashierPage" class="">
 
-            <section id="welcome-container">
-                <article id="velcome-user">
-                    <div id="user-welcome"> Welcome (user name) </div>
-                    <div id="user-status"> Status (user title) </div>
-                </article>
-                <article id="total-income">
-                    <p>Kontingent</p>
-                    <p>Forventet beløb ialt: ?????</p>
-                </article>
-            </section>
+            <article class="velcome-user-container">
+                <p id="user-welcome"> Welcome <span id="user-name">(user name)</span></p>
+                <p id="user-status"> Status: <span id="user-title">(user title)</span></p>
+            </article>
+            <article class="income-container">
+                <p>Kontingent</p>
+                <p id="income">Forventet beløb ialt: ?????</p>
+            </article>
 
-            <div id="sort-container">
+            <div class="sort-container">
                 <select name="sort-payments" id="sort-payments">
                     <option value="Paid">Paid</option>
                     <option value="Unpaid">Unpaid</option>
                 </select>
             </div>
 
-            <section id="member-table">
+            <section class="member-table">
                 <table>
                     <!-- table header -->
                     <thead>
@@ -179,7 +185,7 @@
                         <td>some address</td>
                         <td>28387465</td>
                         <td>true/false</td>
-                        <td>1600kr</td>
+                        <td>Beløb: 1600kr</td>
                         <td><input type="radio"></td>
                     </tr>
                     <tr>
@@ -190,28 +196,16 @@
                         <td>some address</td>
                         <td>28387465</td>
                         <td>true/false</td>
-                        <td>1600kr</td>
-                        <td><input type="radio"></td>
-                    </tr>
-                    <tr>
-                        <td> Simone </td>
-                        <td> 22-09-2001 </td>
-                        <td>Female</a></td>
-                        <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
-                        <td>true/false</td>
-                        <td>1600kr</td>
+                        <td>Beløb: 1600kr</td>
                         <td><input type="radio"></td>
                     </tr>
                 </table>
             </section>
-
-        </section>
+            <button class="payment-notification"> Send betalingspåmindelse </button>
+        </main>
 
         <main id="compMemberPage" class="hidden">
             <article id="comp-member-grid-container">
-
                 <article id="personal-info-container">
 
                     <div id="personal-info-item-name"> 
@@ -233,7 +227,6 @@
                         <li id="brystsvømming"></li>
                     </div>
                 </article>
-
             </article>
         </main>
 

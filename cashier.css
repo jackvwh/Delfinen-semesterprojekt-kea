@@ -79,7 +79,7 @@ nav a.active {
 
 
 
-/* cashier tables CSS */
+/* tables CSS */
 
 table {
     border-collapse: collapse;
@@ -115,4 +115,21 @@ tr {
 tr:hover {
     background-color: var(--purple);
     color: var(--text-color-light);
+}
+/* grid items declarations - cashier */
+
+.welcome-user-container{grid-area: welcome;}
+.income-container{grid-area: income;}
+.sort-container{ grid-area: sorting;}
+.member-table{grid-area: member-table;}
+.payment-notification{ grid-area: paymentbtn;}
+
+#cashierPage{
+    display: grid;
+    grid-template-areas: 
+    'welcome welcome income'
+    'welcome welcome income'
+    'welcome welcome sorting'
+    'member-table member-table member-table'
+    '. . paymentbtn';
 }
