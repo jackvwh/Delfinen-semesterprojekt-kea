@@ -77,44 +77,23 @@ nav a.active {
     display: block;
 }
 
+/*  */
+
+#events-upcoming-container { grid-area: header; }
+#comp-member-coach-container { grid-area: coach; }
+#personal-info-container { grid-area: main; }
+#disciplin-container { grid-area: menu; }
+#event-container { grid-area: right; }
+
 #comp-member-grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, auto);
-  grid-gap: 5px;
   grid-template-areas:
-    "events-upcoming-container events-old-container"
-    "comp-member-coach-container events-results-container"
-    "personal-info-container personal-info-container"
-    "disciplin-container disciplin-container";
+    'main main main header coach coach'
+    'main main main right right right'
+    'menu menu menu right right right';
 }
 
 #comp-member-grid-container > article {
   border: 1px solid red;
   padding: 20px;
 }
-
-#events-upcoming-container {
-  grid-area: events-upcoming-container;
-}
-
-#comp-member-coach-container {
-  grid-area: comp-member-coach-container;
-}
-
-#personal-info-container {
-  grid-area: personal-info-container;
-}
-
-#disciplin-container {
-  grid-area: disciplin-container;
-}
-
-#events-old-container {
-  grid-area: events-old-container;
-}
-
-#events-results-container {
-  grid-area: events-results-container;
-}
-
