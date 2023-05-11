@@ -149,3 +149,10 @@ tr:hover {
     font-size: 16px;
     margin-top: 16px;
 }
+
+header h1 {
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--text-color-light);
+  margin-top: 60px;
+}
