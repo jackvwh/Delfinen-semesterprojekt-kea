@@ -56,6 +56,12 @@
     padding-top: 25px;
 }
 
+#footer-info-container {
+  text-align: center;
+  display: grid;
+  grid-template-areas: "footer footer footer";
+}
+
 
 /*------------Button CSS------------*/
 /*---coulde be in main--------------*/
