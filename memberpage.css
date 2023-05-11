@@ -86,16 +86,16 @@ nav a.active {
 #event-container { grid-area: right; }
 
 #comp-member-grid-container {
-  display: grid;
-  grid-template-areas:
+    display: grid;
+    grid-template-areas:
     'main main main coach coach coach'
     'main main main header header header'
     'menu menu menu right right right';
 }
 
 #comp-member-grid-container > article {
-  border: 1px solid red;
-  padding: 20px;
+    border: 1px solid red;
+    padding: 20px;
 }
 
 /* competitive member pape tables */
@@ -127,7 +127,7 @@ tr:nth-child(even) {
 
 /* competitive member page styling */
 
-button#updatePersonal {
+button#greenButton {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -142,22 +142,36 @@ button#updatePersonal {
     transition: transform 0.2s;
 }
 
-button#updatePersonal:hover {
+button#greenButton:hover {
     transform: scale(1.05);
 }
 
-button#updatePersonal:active {
+button#greenButton:active {
     transform: scale(1);
 }
 
 #welcomeCompUser {
-  font-size: 16px;
-  text-align: center;
-  color: var(--text-color-light);
-  margin-top: 40px;
-  margin-left: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: var(--text-color-light);
+    margin-top: 40px;
+    margin-left: 20px;
 }
 
 #compMemberCoachName {
-  margin-top: 40px;
+    margin-top: 40px;
+}
+
+/* regular member page grid */
+
+#regular-member-grid-container {
+    display: grid;
+}
+
+/* regular member page styling */
+
+#welcomeRegularUser {
+    font-size: 16px;
+    color: var(--text-color-light);
+    margin-top: 60px;
 }

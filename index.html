@@ -210,7 +210,7 @@
 
         </main>
 
-        <main id="compMemberPage" class="active">
+        <main id="compMemberPage" class="hidden">
             <section id="comp-member-grid-container">
 
                 <article id="events-upcoming-container">
@@ -271,7 +271,7 @@
                         <h5>E-mail:</h5>
                             <input type="text">
                     </div>
-                        <button id="updatePersonal">Updater Personlig Information</button>
+                        <button id="greenButton">Updater Personlig Information</button>
                 </article>
                 
                 <article id="disciplin-container">
@@ -327,11 +327,11 @@
             </section>
         </main>
 
-        <main id="regularMemberPage" class="hidden">
+        <main id="regularMemberPage" class="active">
             <section id="regular-member-grid-container">
                 
                 <article id="personal-info-container">
-                    <div id="welcomeCompUser">
+                    <div id="welcomeRegularUser">
                     <h1>Velkommen *insert name here*!</h1>
                     </div>                   
                     <div id="personal-info-name-item">
@@ -354,11 +354,25 @@
                         <h5>E-mail:</h5>
                             <input type="text">
                     </div>
-                        <button id="updatePersonal">Updater Personlig Information</button>
-                </article>
-
-                <article>
-                    
+                        <button id="greenButton">Updater Personlig Information</button>
+                    <div>
+                        <h3>Næste kontigent betaling:</h3>
+                    </div>
+                    <div>
+                        <h5>Pris for kontigent:</h5>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <h5>Eventuel rabat:</h5>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <h5>Totalt til at betale:</h5>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <button id="greenButton">Gå til betaling</button>
+                    </div>
                 </article>
 
             </section>
