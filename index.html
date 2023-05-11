@@ -208,11 +208,7 @@
                 </table>
             </section>
 
-        </section>
-
-        <section id="cashierPage" class="hidden">
-            <h1>cashier</h1>
-        </section>
+        </main>
 
         <main id="compMemberPage" class="active">
             <header>
@@ -222,8 +218,28 @@
 
                 <article id="events-upcoming-container">
                     <div id="events-upcoming-item">
-                        <h1>Kommende stævner:</h1>
-                            <input type="text">
+                        <h1>Kommende Stævner:</h1>
+                        <table>
+                                <thead>
+                                    <tr>
+                                    <th>Stævne</th>
+                                    <th>Dato</th>
+                                    <th>Disciplin</th>
+                                    <th>Træner</th>
+                                    <th>Tid</th>
+                                    <th>Resultat</th>
+                                    </tr>
+                                </thead>
+
+                                <tr>
+                                <td>Amager</td>
+                                <td>22-06-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>04:20</td>
+                                <td>1</td>
+                                </tr>
+                        </table>
                     </div>
                 </article>
 
@@ -256,7 +272,7 @@
                         <h5>E-mail:</h5>
                             <input type="text">
                     </div>
-                        <button>Updater Personlig Information</button>
+                        <button id="updatePersonal">Updater Personlig Information</button>
                 </article>
                 
                 <article id="disciplin-container">
@@ -276,21 +292,38 @@
                 <article id="events-container">
                     <div id="events-old-item">
                         <h1>Tidligere stævner:</h1>
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
+                            <table>
+                                <thead>
+                                    <tr>
+                                    <th>Stævne</th>
+                                    <th>Dato</th>
+                                    <th>Disciplin</th>
+                                    <th>Træner</th>
+                                    <th>Tid</th>
+                                    <th>Resultat</th>
+                                    </tr>
+                                </thead>
+                                
+                                <tr>
+                                <td>Næstved</td>
+                                <td>22-04-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>04:20</td>
+                                <td>1</td>
+                                </tr>
+
+                                <tr>
+                                <td>Roskilde</td>
+                                <td>14-03-2023</td>
+                                <td>Crawl</td>
+                                <td>Lars</td>
+                                <td>05:20</td>
+                                <td>3</td>
+                                </tr>
+                            </table>
                     </div>
                     
-                    <div id="events-results-item">
-                        <h1>Resultater fra tidligere stævner:</h1>
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                    </div>
                 </article>
             </section>
         </main>

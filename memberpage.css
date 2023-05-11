@@ -77,7 +77,7 @@ nav a.active {
     display: block;
 }
 
-/*  */
+/* competitive member page grid */
 
 #events-upcoming-container { grid-area: header; }
 #comp-member-coach-container { grid-area: coach; }
@@ -96,4 +96,56 @@ nav a.active {
 #comp-member-grid-container > article {
   border: 1px solid red;
   padding: 20px;
+}
+
+/* competitive member pape tables */
+
+table {
+    border-collapse: collapse;
+    width: 75vw;
+    margin: auto;
+    background-color: var(--light-grey);
+    margin-top: 20px;
+}
+
+thead {
+    background-color: var(--green);
+    color: var(--text-color-light);
+    position: sticky;
+    top: 0;
+}
+
+td,
+th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--text-color-light);
+}
+
+tr {
+    cursor: pointer;
+    transition: 0.5s;
+    animation: fadeIn 0.5s;
+}
+
+tr:hover {
+    background-color: var(--purple);
+    color: var(--text-color-light);
+}
+
+/* competitive member page styling */
+
+#updatePersonal {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 16px;
 }
