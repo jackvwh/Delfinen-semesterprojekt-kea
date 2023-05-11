@@ -138,7 +138,7 @@ tr:hover {
 
 /* competitive member page styling */
 
-#updatePersonal {
+button#updatePersonal {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -147,7 +147,18 @@ tr:hover {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-top: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+button#updatePersonal:hover {
+    transform: scale(1.05);
+}
+
+button#updatePersonal:active {
+    transform: scale(1);
 }
 
 header h1 {
