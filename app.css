@@ -76,3 +76,42 @@ nav a.active {
 .view-content.active {
     display: block;
 }
+
+
+/* cashier tables CSS */
+
+table {
+    border-collapse: collapse;
+    width: 75vw;
+    margin: auto;
+    background-color: var(--light-grey);
+    margin-top: 140px;
+}
+
+thead {
+    background-color: var(--green);
+    color: var(--text-color-light);
+    position: sticky;
+    top: 0;
+}
+
+td,
+th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--text-color-light);
+}
+
+tr {
+    cursor: pointer;
+    transition: 0.5s;
+    animation: fadeIn 0.5s;
+}
+
+tr:hover {
+    background-color: var(--purple);
+    color: var(--text-color-light);
+}

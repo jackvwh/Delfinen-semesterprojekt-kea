@@ -27,48 +27,130 @@
         </header>
         <!-- Home View -->
         <!-- Route: #home -->
-        <section id="home" class="hidden">
+        <main id="home" class="hidden">
             <h2>Home</h2>
             <p>Home is where the heart is 💛</p>
             <p>Oh My, sounds like a bad movie!</p>
-        </section>
+        </main>
 
         <!-- News View -->
         <!-- Route: #news -->
-        <section id="news" class="hidden">
+        <main id="news" class="hidden">
             <h2>News</h2>
             <p>Some news this fine day 🎉</p>
-        </section>
+        </main>
 
         <!-- About View -->
         <!-- Route: #about -->
-        <section id="about" class="hidden">
+        <main id="about" class="hidden">
             <h2>About</h2>
             <p>Who we are and what we do 🤷🏼‍♂️</p>
-        </section>
+        </main>
 
         <!-- Contact View -->
         <!-- Route: #contact -->
-        <section id="contact" class="hidden">
+        <main id="contact" class="hidden">
             <h2>Contact</h2>
             <p>Get in touch, or swing by for a cup of coffee ☕️</p>
             <p>I'm just one arm away 🤷🏼‍♂️</p>
-        </section>
+        </main>
 
         <br>
         <br>
         <br>
 
 
-        <section id="adminPage">
+        <main id="adminPage" class="hidden">
             <h1>admin</h1>
+        </main>
+
+        <main id="cashierPage" class="">
+
+            <section id="welcome-container">
+                <article id="velcome-user">
+                    <div id="user-welcome"> Welcome (user name) </div>
+                    <div id="user-status"> Status (user title) </div>
+                </article>
+                <article id="total-income">
+                    <p>Kontingent</p>
+                    <p>Forventet beløb ialt: ?????</p>
+                </article>
+            </section>
+
+            <div id="sort-container">
+                <select name="sort-payments" id="sort-payments">
+                    <option value="Paid">Paid</option>
+                    <option value="Unpaid">Unpaid</option>
+                </select>
+            </div>
+
+            <section id="member-table">
+                <table>
+                    <!-- table header -->
+                    <thead>
+                        <tr>
+                        <th>Member</th>
+                        <th>Date of birth</th>
+                        <th>Gender</th>
+                        <th>Mail</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Active member</th>
+                        <th>Member Payment</th>
+                        <th>Paid</th>
+                        </tr>
+                    </thead>
+
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>Beløb: 1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td> Simone </td>
+                        <td> 22-09-2001 </td>
+                        <td>Female</a></td>
+                        <td>somemail@mail.com</td>
+                        <td>some address</td>
+                        <td>28387465</td>
+                        <td>true/false</td>
+                        <td>1600kr</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                </table>
+            </section>
+
         </section>
 
-        <section id="cashierPage" class="hidden">
-            <h1>cashier</h1>
-        </section>
-
-        <section id="compMemberPage" class="hidden active">
+        <main id="compMemberPage" class="hidden">
             <article id="comp-member-grid-container">
 
                 <article id="personal-info-container">
@@ -94,16 +176,16 @@
                 </article>
 
             </article>
-        </section>
+        </main>
 
-        <section id="regularMemberPage">
+        <main id="regularMemberPage" class="hidden">
 
             <h1>regular member</h1>
-        </section>
+        </main>
 
-        <section id="coachPage">
+        <main id="coachPage" class="hidden">
             <h1>coach </h1>
-        </section>
+        </main>
 
 
 
