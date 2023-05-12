@@ -1,6 +1,6 @@
-#admin-page-grid-item1 { grid-area: left; }
-#admin-page-grid-item2 { grid-area: right; }
-#admin-page-grid-item3 { grid-area: table; }
+.welcome-user-container { grid-area: left; }
+.income-container { grid-area: right; }
+.member-table-container { grid-area: table; }
 
 
 #admin-page-grid-container {
@@ -15,7 +15,7 @@
 
 }
 
-#admin-page-grid-item3 {
+.member-table-container {
     background-color: #eeee;
     position: relative;
     align-items: center;
@@ -25,11 +25,11 @@
     overflow: scroll;
 }
 
-#admin-table {
+.member-table {
     text-align: center;
 }
 
-#admin-table > tr, td {
+.member-table > tr, td {
     padding-top: 10px;
     padding-left: 50px;
     padding-right: 50px;
