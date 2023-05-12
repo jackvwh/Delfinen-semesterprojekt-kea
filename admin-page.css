@@ -2,27 +2,35 @@
 .income-container { grid-area: right; }
 .member-table-container { grid-area: table; }
 
-
 #admin-page-grid-container {
     display: grid;
     align-items: center;
     justify-items: center;
     grid-template-areas: 
-    "header header header"
     "left main right"
     "table table table"
     "footer footer footer";
-
+    margin: 0%;
+    padding: 0%;
 }
 
+/*-----------welcome user styling----------*/
+.welcome-user-container {
+    background-color:thistle;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+/*-----------Table Styling--------------*/
 .member-table-container {
     background-color: #eeee;
     position: relative;
     align-items: center;
     justify-items: center;
     margin-top: 50px;
-    max-height: 600px;
+    max-height: 700px;
     overflow: scroll;
+    border-radius: 15px;
 }
 
 .member-table {
@@ -47,4 +55,17 @@
     top: 0px;
     padding-top: 10px;
     padding-bottom: 20px;
+    z-index: 9999;
 }
+
+/*-----------Create button styling-----------*/
+.create-member-btn-container {
+    position: relative;
+    left: -50px;
+}
+
+
+.create-btn {
+    font-size: 2.5em;
+}
+
