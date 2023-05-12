@@ -242,11 +242,16 @@
 
                 <article id="comp-member-coach-container">
                     <div id="comp-member-coach-item">
+                        
                         <h1 id="compMemberCoachName">Træner:</h1>
                             <input type="text">
                     </div>
                 </article>
-                
+                <!-- 
+                1. many identical id´s in personal containers for comp and members. maybe       change syntax to: comp-member-info-container - med children: comp-member-name, comp-member-age etc, drop personal and item syntax. 
+                2. remove input fields. 
+                3. id´s on h1´s and h5´s for DOM manipulation with js
+                4. green button should be named update-btn for easier readability  -->
                 <article id="personal-info-container">
                     <div id="welcomeCompUser">
                     <h1>Velkommen *insert name here*!</h1>
@@ -271,6 +276,7 @@
                         <h5>E-mail:</h5>
                             <input type="text">
                     </div>
+                    <!-- change id to class and rename to: update-btn -->
                         <button id="greenButton">Updater Personlig Information</button>
                 </article>
                 
@@ -327,6 +333,11 @@
             </section>
         </main>
 
+         <!-- 
+                1. many identical id´s in personal containers for comp and members. maybe       change syntax to: regular-member-info-container - med children: regular-member-name, regular-member-age etc, drop personal and item syntax. 
+                2. remove input fields. 
+                3. id´s on h1´s and h5´s for DOM manipulation with js
+                4. green button should be named update-btn for easier readability  -->
         <main id="regularMemberPage" class="hidden">
             <section id="regular-member-grid-container">
                 
@@ -354,6 +365,7 @@
                         <h5>E-mail:</h5>
                             <input type="text">
                     </div>
+                    <!-- change id to class and rename greenButton to update-btn -->
                         <button id="greenButton">Updater Personlig Information</button>
                     <div>
                         <h3>Næste kontigent betaling:</h3>
@@ -371,6 +383,7 @@
                         <input type="text">
                     </div>
                     <div>
+                        <!-- second btn to be named greenButton - change id to class and rename to: payment-btn -->
                         <button id="greenButton">Gå til betaling</button>
                     </div>
                 </article>
