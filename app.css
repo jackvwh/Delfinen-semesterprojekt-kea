@@ -78,5 +78,41 @@ nav a.active {
 .view-content.active {
     display: block;
 }
-
+/* input form and dialog styling */
+dialog {
+    border-color: red;
+    background-color: rgb(141, 10, 158);
+    width: 55vw;
+    padding: 2em 1em;
+}
+form {
+    background-color: rgb(141, 10, 158);
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 1fr 4fr;
+    gap: 2px;
+}
+button {
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 9px;
+    color: lightcoral;
+    background-color: rgb(12, 12, 95);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    width: 100%;
+    max-width: 380px;
+}
+input {
+    margin: 1em auto;
+    width: 100%;
+    max-width: 650px;
+    padding: 1em;
+    border: 2px solid rgb(25, 39, 4);
+    display: block;
+    background: white;
+}
 
