@@ -409,32 +409,32 @@
         </dialog>
 
         <!-- CREATE PRACTICE RESULTS DIALOG -->
-        <dialog id="create-practice-result-dialog" open>
+        <dialog id="create-practice-result-dialog">
+            <h2>Trænings resultat</h2>
             <form id="practice-result-form" >
+                <label for="member"><b>Svømmer:</b></label>
+                <select name="comp-member" id="comp-member">
+                    <option value="Simone">Simone</option>
+                    <option value="Anders">Anders</option>
+                    <option value="Karla">Karla</option>
+                    <option value="Svend">Svend</option>
+                </select required>
 
-                    <label for="member"><b>Svømmer:</b></label>
-                    <select name="comp-member" id="comp-member">
-                        <option value="Simone">Simone</option>
-                        <option value="Anders">Anders</option>
-                        <option value="Karla">Karla</option>
-                        <option value="Svend">Svend</option>
-                    </select required>
+                <label for="disciplin"><b>Disciplin</b></label>
+                <select name="comp-disciplin" id="comp-disciplin">
+                    <option value="crawl">Crawl</option>
+                    <option value="rygcrawl">Rygcrawl</option>
+                    <option value="butterfly">Butterfly</option>
+                    <option value="brystsvømning">Brystsvømning</option>
+                </select required>
 
-                    <label for="disciplin"><b>Disciplin</b></label>
-                    <select name="comp-member" id="comp-member">
-                        <option value="crawl">Crawl</option>
-                        <option value="rygcrawl">Rygcrawl</option>
-                        <option value="butterfly">Butterfly</option>
-                        <option value="brystsvømning">Brystsvømning</option>
-                    </select required>
+                <label for="practice-time"><b>Practice-time</b></label>
+                <input type="numbers" name="practice-time" id="practice-time" maxlength="10" placeholder="trænings resultat" required>
 
-                    <label for="practice-time"><b>Practice-time</b></label>
-                    <input type="numbers" name="practice-time" id="practice-time" maxlength="10" placeholder="practice-time" required>
+                <label for="practice-date"><b>Date</b></label>
+                <input type="numbers" name="practice-date" id="practice-date" maxlength="10" placeholder="Dato" required>
 
-                    <label for="practice-date"><b>Date</b></label>
-                    <input type="numbers" name="practice-date" id="practice-date" maxlength="10" placeholder="practice-date" required>
-
-                    <button type="submit">Insert result</button>
+                <button type="submit">Insert result</button>
                 <form method="dialog">
                     <button>Cancel</button>
                 </form>
@@ -442,12 +442,117 @@
         </dialog>
 
         <!-- UPDATE PRACTICE RESULTS DIALOG -->
+        <dialog id="update-practice-result-dialog">
+            <h2>Opdater trænings resultat</h2>
+            <form id="update-result-form" >
+                <label for="update-comp-member"><b>Svømmer:</b></label>
+                <select name="update-comp-member" id="update-comp-member">
+                    <option value="Simone">Simone</option>
+                    <option value="Anders">Anders</option>
+                    <option value="Karla">Karla</option>
+                    <option value="Svend">Svend</option>
+                </select required>
+
+                <label for="update-comp-disciplin"><b>Disciplin</b></label>
+                <select name="update-comp-disciplin" id="update-comp-disciplin">
+                    <option value="crawl">Crawl</option>
+                    <option value="rygcrawl">Rygcrawl</option>
+                    <option value="butterfly">Butterfly</option>
+                    <option value="brystsvømning">Brystsvømning</option>
+                </select required>
+
+                <label for="update-practice-time"><b>Practice-time</b></label>
+                <input type="numbers" name="update-practice-time" id="update-practice-time" maxlength="10" placeholder="Opdater træningstid " required>
+
+                <label for="update-practice-date"><b>Date</b></label>
+                <input type="numbers" name="update-practice-date" id="update-practice-date" maxlength="10" placeholder="Opdater dato" required>
+
+                <button type="submit">Update result</button>
+                <form method="dialog">
+                    <button>Cancel</button>
+                </form>
+            </form> 
+        </dialog>
+
         <!-- CREATE COMPETITION RESULTS -->
+        <dialog id="create-comp-result-dialog">
+            <h2>Konkurrence resultat</h2>
+            <form id="comp-result-form" >
+                <label for="member"><b>Svømmer:</b></label>
+                <select name="comp-member" id="comp-member">
+                    <option value="Simone">Simone</option>
+                    <option value="Anders">Anders</option>
+                    <option value="Karla">Karla</option>
+                    <option value="Svend">Svend</option>
+                </select required>
+
+                <label for="disciplin"><b>Disciplin</b></label>
+                <select name="comp-disciplin" id="comp-disciplin">
+                    <option value="crawl">Crawl</option>
+                    <option value="rygcrawl">Rygcrawl</option>
+                    <option value="butterfly">Butterfly</option>
+                    <option value="brystsvømning">Brystsvømning</option>
+                </select required>
+
+                <label for="comp-time"><b>Resultat</b></label>
+                <input type="numbers" name="comp-time" id="comp-time" maxlength="10" placeholder="Resultat" required>
+
+                <label for="comp-date"><b>Date</b></label>
+                <input type="numbers" name="comp-date" id="comp-date" maxlength="10" placeholder="dato" required>
+
+                <label for="comp-name">Stævne navn</label>
+                <input type="text" name="comp-name" id="comp-name" maxlength="1000" placeholder="Stævne navn" required>
+
+                <label for="comp-place">Sted</label>
+                <input type="text" name="comp-place" id="compe-place" maxlength="1000" placeholder="Sted" required>
+
+                <button type="submit">Insert result</button>
+                <form method="dialog">
+                    <button>Cancel</button>
+                </form>
+            </form> 
+        </dialog>
+
         <!-- UPDATE COMPETITION RESULTS -->
+        <dialog id="update-comp-result-dialog" open>
+            <h2>Opdater konkurrence resultat</h2>
+            <form id="update-comp-result-form" >
+                <label for="update-comp-member"><b>Svømmer:</b></label>
+                <select name="update-comp-member" id="update-comp-member">
+                    <option value="Simone">Simone</option>
+                    <option value="Anders">Anders</option>
+                    <option value="Karla">Karla</option>
+                    <option value="Svend">Svend</option>
+                </select required>
+
+                <label for="update-disciplin"><b>Disciplin</b></label>
+                <select name="update-comp-disciplin" id="update-comp-disciplin">
+                    <option value="crawl">Crawl</option>
+                    <option value="rygcrawl">Rygcrawl</option>
+                    <option value="butterfly">Butterfly</option>
+                    <option value="brystsvømning">Brystsvømning</option>
+                </select required>
+
+                <label for="update-comp-time"><b>Resultat</b></label>
+                <input type="numbers" name="update-comp-time" id="update-comp-time" maxlength="10" placeholder="Opdater resultat" required>
+
+                <label for="update-comp-date"><b>Date</b></label>
+                <input type="numbers" name="update-comp-date" id="update-comp-date" maxlength="10" placeholder="opdater dato" required>
+
+                <label for="update-comp-name">Stævne navn</label>
+                <input type="text" name="update-comp-name" id="update-comp-name" maxlength="1000" placeholder="Opdater stævne navn" required>
+
+                <label for="update-comp-place">Sted</label>
+                <input type="text" name="update-comp-place" id="update-comp-place" maxlength="1000" placeholder="Opdater stævne sted" required>
+
+                <button type="submit">Opdater trænings resultat</button>
+                <form method="dialog">
+                    <button>Cancel</button>
+                </form>
+            </form> 
+        </dialog>
 
     </main>    
-
-
     <script src="app.js"></script>
 </body>
 </html>
