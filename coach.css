@@ -1,0 +1,30 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+input[type="text"] {
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.attached-members {
+    width: 475px;
+    position: relative;
+    left: 475px;
+}
