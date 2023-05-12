@@ -25,7 +25,7 @@
     <main>
         <!-- Home View -->
         <!-- Route: #home -->
-        <main id="homePage" class="active">
+        <main id="homePage" class="hidden">
             <div id="front-page-picture-container">
                 <img src="https://freesvg.org/img/1502475717.png" alt="">
             </div>
@@ -123,7 +123,7 @@
             <h1>admin</h1>
         </main>
 
-        <main id="cashierPage" class="">
+        <main id="cashierPage" class="hidden">
 
             <section id="welcome-container">
                 <article id="velcome-user">
@@ -206,8 +206,8 @@
                     </tr>
                 </table>
             </section>
-
         </section>
+        </main>
 
         <main id="compMemberPage" class="hidden">
             <article id="comp-member-grid-container">
@@ -247,9 +247,9 @@
         </main>
 
         <!------- DELETE DIALOG------->
-        <dialog id="dialog-delete">
-            <h2>Do you want to delete this?</h2>
-            <p id="dialog-delete-title">Title of post</p>
+        <dialog id="delete-dialog">
+            <h2>Do you want to delete this member?</h2>
+            <p id="dialog-delete-member-title">Member name</p>
             <form method="dialog" id="form-delete">
                 <button>Yes</button>
             </form>
@@ -257,6 +257,193 @@
                 <button>Close</button>
             </form>
         </dialog>
+
+        <!-- MEMBER CREATE FORM -->
+        <dialog id="create-dialog">
+            <form id="create-form">
+                <label for="member-title">Title</label>
+                <input type="text" name="title" id="member-title" maxlength="1000" placeholder="Titel" required>
+
+                <label for="member-name">Name</label>
+                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+
+                <label for="member-address">Address</label>
+                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+
+                <label for="member-mail">Mail</label>
+                <input type="email" name="mail" id="member-mail" maxlength="1000" placeholder="Mail" required>
+
+                <label for="member-phone">Phone</label>
+                <input type="number" name="phone" id="member-phone" maxlength="8" placeholder="phone" required>
+
+                <label for="member-gender">Gender</label>
+                <input type="text" name="gender" id="member-gender" maxlength="8" placeholder="gender" required>
+
+                <label for="member-birthdate">Date of birth</label>
+                <input type="numbers" name="birtdate" id="member-birthdate" maxlength="10" placeholder="Date of birth" required>
+
+            <section id="member-checkboxes">
+                <fieldset>
+                    <legend>Activt medlemsskab:</legend>
+                    <div>
+                      <input type="checkbox" id="active" name="active" checked>
+                      <label for="active">Ja</label>
+                    </div>
+                
+                    <div>
+                      <input type="checkbox" id="passive" name="passive">
+                      <label for="passive">Nej</label>
+                    </div>
+                </fieldset>
+
+                <button id="competition">Konkurrence svømmer</button>
+
+                <fieldset>
+                    <legend>Disciplins</legend>
+                    <div>
+                      <input type="checkbox" id="crawl" name="crawl" checked>
+                      <label for="crawl">Crawl</label>
+                    </div>
+                
+                    <div>
+                      <input type="checkbox" id="rygcrawl" name="Rygcrawl">
+                      <label for="rygcrawl">Rygcrawl</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" id="butterfly" name="butterfly">
+                      <label for="rutterfly">Butterfly</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" id="brystsvømning" name="brystsvømning">
+                      <label for="brystsvømning">Brystsvømning</label>
+                    </div>
+                </fieldset>
+            </section>
+            </form>
+            <button id="create-form-btn">Create User</button>
+            <form method="dialog">
+                <button>Close</button>
+            </form>
+        </dialog>
+
+        <!--MEMBER UPDATE DIALOG  -->
+        <dialog id="update-dialog">
+            <form id="update-form">
+                <label for="member-title">Title</label>
+                <input type="text" name="title" id="member-title" maxlength="1000" placeholder="Titel" required>
+
+                <label for="member-name">Name</label>
+                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+
+                <label for="member-address">Address</label>
+                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+
+                <label for="member-mail">Mail</label>
+                <input type="email" name="mail" id="member-mail" maxlength="1000" placeholder="Mail" required>
+
+                <label for="member-phone">Phone</label>
+                <input type="number" name="phone" id="member-phone" maxlength="8" placeholder="phone" required>
+
+                <label for="member-gender">Gender</label>
+                <input type="text" name="gender" id="member-gender" maxlength="8" placeholder="gender" required>
+
+                <label for="member-birthdate">Date of birth</label>
+                <input type="numbers" name="birtdate" id="member-birthdate" maxlength="10" placeholder="Date of birth" required>
+
+                <section id="member-checkboxes">
+                    <fieldset>
+                        <legend>Active</legend>
+                        <div>
+                            <input type="checkbox" id="comp" name="comp" checked>
+                            <label for="comp">Ja</label>
+                        </div>
+                    
+                        <div>
+                            <input type="checkbox" id="regular" name="regular">
+                            <label for="regular">Nej</label>
+                        </div>
+                    </fieldset>
+
+                    <button id="competition">Competition</button>
+
+                    <fieldset>
+                        <legend>Disciplins</legend>
+                        <div>
+                            <input type="checkbox" id="crawl" name="crawl" checked>
+                            <label for="crawl">Crawl</label>
+                        </div>
+                    
+                        <div>
+                            <input type="checkbox" id="rygcrawl" name="Rygcrawl">
+                            <label for="rygcrawl">Rygcrawl</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="butterfly" name="butterfly">
+                            <label for="rutterfly">Butterfly</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="brystsvømning" name="brystsvømning">
+                            <label for="brystsvømning">Brystsvømning</label>
+                        </div>
+                    </fieldset>
+                </section>
+            </form>
+            <form method="dialog">
+                <button>Close</button>
+            </form>
+        </dialog>
+
+        <!-- LOGIN DIALOG -->
+        <dialog id="login-dialog">
+            <form id="login-form" >
+           
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <button type="submit">Login</button>
+                <form method="dialog">
+                    <button>Cancel</button>
+                </form>
+            </form> 
+        </dialog>
+
+        <!-- CREATE PRACTICE RESULTS DIALOG -->
+        <dialog id="create-practice-result-dialog" open>
+            <form id="practice-result-form" >
+
+                    <label for="member"><b>Svømmer:</b></label>
+                    <select name="comp-member" id="comp-member">
+                        <option value="Simone">Simone</option>
+                        <option value="Anders">Anders</option>
+                        <option value="Karla">Karla</option>
+                        <option value="Svend">Svend</option>
+                    </select required>
+
+                    <label for="disciplin"><b>Disciplin</b></label>
+                    <select name="comp-member" id="comp-member">
+                        <option value="crawl">Crawl</option>
+                        <option value="rygcrawl">Rygcrawl</option>
+                        <option value="butterfly">Butterfly</option>
+                        <option value="brystsvømning">Brystsvømning</option>
+                    </select required>
+
+                    <label for="practice-time"><b>Practice-time</b></label>
+                    <input type="numbers" name="practice-time" id="practice-time" maxlength="10" placeholder="practice-time" required>
+
+                    <label for="practice-date"><b>Date</b></label>
+                    <input type="numbers" name="practice-date" id="practice-date" maxlength="10" placeholder="practice-date" required>
+
+                    <button type="submit">Insert result</button>
+                <form method="dialog">
+                    <button>Cancel</button>
+                </form>
+            </form> 
+        </dialog>
+
+        <!-- UPDATE PRACTICE RESULTS DIALOG -->
+        <!-- CREATE COMPETITION RESULTS -->
+        <!-- UPDATE COMPETITION RESULTS -->
 
     </main>    
 
