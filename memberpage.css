@@ -81,7 +81,7 @@ nav a.active {
 
 #events-upcoming-container { grid-area: header; }
 #comp-member-coach-container { grid-area: coach; }
-#personal-info-container { grid-area: main; }
+#comp-member-info-container { grid-area: main; }
 #disciplin-container { grid-area: menu; }
 #event-container { grid-area: right; }
 
@@ -94,7 +94,7 @@ nav a.active {
 }
 
 #comp-member-grid-container > article {
-    border: 1px solid red;
+    border: 1px solid var(--green);
     padding: 20px;
 }
 
@@ -127,7 +127,7 @@ tr:nth-child(even) {
 
 /* competitive member page styling */
 
-button#greenButton {
+button#update-btn {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -142,18 +142,17 @@ button#greenButton {
     transition: transform 0.2s;
 }
 
-button#greenButton:hover {
+button#update-btn:hover {
     transform: scale(1.05);
 }
 
-button#greenButton:active {
+button#update-btn:active {
     transform: scale(1);
 }
 
 #welcomeCompUser {
     font-size: 16px;
     text-align: center;
-    color: var(--text-color-light);
     margin-top: 40px;
     margin-left: 20px;
 }
@@ -165,13 +164,12 @@ button#greenButton:active {
 /* regular member page grid */
 
 #regular-member-grid-container {
-    display: grid;
+    text-align: center;
 }
 
 /* regular member page styling */
 
 #welcomeRegularUser {
     font-size: 16px;
-    color: var(--text-color-light);
     margin-top: 60px;
 }

@@ -241,10 +241,8 @@
                 </article>
 
                 <article id="comp-member-coach-container">
-                    <div id="comp-member-coach-item">
-                        
-                        <h1 id="compMemberCoachName">Træner:</h1>
-                            <input type="text">
+                    <div>
+                        <h1 id="compMemberCoachName">Træner:</h1>    
                     </div>
                 </article>
                 <!-- 
@@ -252,45 +250,36 @@
                 2. remove input fields. 
                 3. id´s on h1´s and h5´s for DOM manipulation with js
                 4. green button should be named update-btn for easier readability  -->
-                <article id="personal-info-container">
+                <article id="comp-member-info-container">
                     <div id="welcomeCompUser">
-                    <h1>Velkommen *insert name here*!</h1>
+                    <h1 id="comp-member-welcome">Velkommen *insert name here*!</h1>
                     </div>                   
-                    <div id="personal-info-name-item">
-                        <h5>Navn:</h5> 
-                            <input type="text">
+                    <div>
+                        <h5 id="comp-member-info-name">Navn:</h5>      
                     </div>
-                    <div id="personal-info-age-item">
-                        <h5>Alder:</h5>
-                            <input type="text">
+                    <div>
+                        <h5 id="comp-member-info-age">Alder:</h5>  
                     </div>
-                    <div id="personal-info-gender-item">
-                        <h5>Køn:</h5>
-                            <input type="text">
+                    <div>
+                        <h5 id="comp-member-info-gender">Køn:</h5>   
                     </div>
-                    <div id="personal-info-address-item">
-                        <h5>Adresse:</h5>
-                            <input type="text">
+                    <div>
+                        <h5 id="comp-member-info-address">Adresse:</h5>    
                     </div>
-                    <div id="personal-info-email-item">
-                        <h5>E-mail:</h5>
-                            <input type="text">
+                    <div>
+                        <h5 id="comp-member-info-email">E-mail:</h5>  
                     </div>
                     <!-- change id to class and rename to: update-btn -->
-                        <button id="greenButton">Updater Personlig Information</button>
+                        <button id="update-btn">Updater Personlig Information</button>
                 </article>
                 
                 <article id="disciplin-container">
                 <h1>Discipliner:</h1>
-                    <div  id="disciplin-list">
-                        <ol id="crawl">Crawl</ol> 
-                            <input type="text">
-                        <ol id="rygcrawl">Rygcrawl</ol>
-                            <input type="text"> 
-                        <ol id="butterfly">Butterfly</ol>
-                            <input type="text">
-                        <ol id="brystsvømming">Brystsvømming</ol>
-                            <input type="text">
+                    <div id="disciplin-list">
+                        <ol id="crawl">Crawl</ol>  
+                        <ol id="rygcrawl">Rygcrawl</ol> 
+                        <ol id="butterfly">Butterfly</ol> 
+                        <ol id="brystsvømming">Brystsvømming</ol> 
                     </div>
                 </article>
 
@@ -328,8 +317,8 @@
                                 </tr>
                             </table>
                     </div>
-                    
                 </article>
+
             </section>
         </main>
 
@@ -341,50 +330,42 @@
         <main id="regularMemberPage" class="hidden">
             <section id="regular-member-grid-container">
                 
-                <article id="personal-info-container">
-                    <div id="welcomeRegularUser">
-                    <h1>Velkommen *insert name here*!</h1>
+                <article id="regular-member-info-container">
+                    <div>
+                    <h1 id="welcomeRegularUser">Velkommen *insert name here*!</h1>
                     </div>                   
-                    <div id="personal-info-name-item">
-                        <h5>Navn:</h5> 
-                            <input type="text">
+                    <div>
+                        <h5 id="regular-member-info-name">Navn:</h5> 
                     </div>
-                    <div id="personal-info-age-item">
-                        <h5>Alder:</h5>
-                            <input type="text">
+                    <div>
+                        <h5 id="regular-member-info-age">Alder:</h5>
                     </div>
-                    <div id="personal-info-gender-item">
-                        <h5>Køn:</h5>
-                            <input type="text">
+                    <div>
+                        <h5 id="regular-member-info-gender">Køn:</h5>
                     </div>
-                    <div id="personal-info-address-item">
-                        <h5>Adresse:</h5>
-                            <input type="text">
+                    <div>
+                        <h5 id="regular-member-info-address">Adresse:</h5>
                     </div>
-                    <div id="personal-info-email-item">
-                        <h5>E-mail:</h5>
-                            <input type="text">
+                    <div>
+                        <h5 id="regular-member-info-email">E-mail:</h5>
                     </div>
                     <!-- change id to class and rename greenButton to update-btn -->
-                        <button id="greenButton">Updater Personlig Information</button>
+                        <button id="update-btn">Updater Personlig Information</button>
                     <div>
-                        <h3>Næste kontigent betaling:</h3>
+                        <h3 id="regular-member-next-payment">Næste kontigent betaling:</h3>
                     </div>
                     <div>
-                        <h5>Pris for kontigent:</h5>
-                        <input type="text">
+                        <h5 id="regular-member-price">Pris for kontigent:</h5>   
                     </div>
                     <div>
-                        <h5>Eventuel rabat:</h5>
-                        <input type="text">
+                        <h5 id="regular-member-discount">Eventuel rabat:</h5>   
                     </div>
                     <div>
-                        <h5>Totalt til at betale:</h5>
-                        <input type="text">
+                        <h5 id="regular-member-total">Totalt til at betale:</h5>
                     </div>
                     <div>
                         <!-- second btn to be named greenButton - change id to class and rename to: payment-btn -->
-                        <button id="greenButton">Gå til betaling</button>
+                        <button id="update-btn">Gå til betaling</button>
                     </div>
                 </article>
 
