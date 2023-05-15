@@ -2,7 +2,7 @@
 
 export {}
 
-const endpoint = "somestring"
+const endpoint = "https://console.firebase.google.com/project/crud-app-kea/database/crud-app-kea-default-rtdb/data/~2F"
 const members = [];
 const practiceResults = [];
 const compResults = [];
