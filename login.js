@@ -19,21 +19,26 @@ function loginFunction(event){
 
     console.log("email is: ", loginEmail);
     console.log("psw is: ", loginPsw);
-
+        // make switch instead
         if (loginEmail === "admin" && loginPsw === "admin"){
             document.querySelector("#admin-page").classList.remove("hidden");
+            document.querySelector("#home-page").classList.add("hidden");
         }
         else if (loginEmail === "cash" && loginPsw === "cash"){
             document.querySelector("#cashier-page").classList.remove("hidden");
+            document.querySelector("#home-page").classList.add("hidden");
         }
         else if (loginEmail === "coach" && loginPsw === "coach"){
             document.querySelector("#coach-page").classList.remove("hidden");
+            document.querySelector("#home-page").classList.add("hidden");
         }
         else if (loginEmail === "comp" && loginPsw === "comp"){
             document.querySelector("#comp-member-page").classList.remove("hidden");
+            document.querySelector("#home-page").classList.add("hidden");
         }
         else if (loginEmail === "regular" && loginPsw === "regular"){
             document.querySelector("#regular-member-page").classList.remove("hidden");
+            document.querySelector("#home-page").classList.add("hidden");
         }
         else {
             document.querySelector("#home-page").classList.remove("hidden");
