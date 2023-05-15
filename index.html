@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="front-page.css">
+    <link rel="stylesheet" href="admin-page.css">
     <title>Delfinen svømmeklub</title>
 </head>
 <body>
@@ -25,7 +26,7 @@
     <main>
         <!-- Home View -->
         <!-- Route: #home -->
-        <main id="homePage" class="active">
+        <main id="homePage" class="hidden">
             <div id="front-page-picture-container">
                 <img src="https://freesvg.org/img/1502475717.png" alt="">
             </div>
@@ -118,12 +119,68 @@
         <br>
         <br>
 
+        <main id="adminPage" class="active">
+            <section id="admin-page-grid-container">
 
-        <main id="adminPage" class="hidden">
-            <h1>admin</h1>
+                <article class="create-member-btn-container">
+                    <button class="create-btn button-styling">Create new member</button
+                ></article>
+
+                <article class="welcome-user-container">
+                    <h2>Velkommen: Admin navn</h2>
+                    <h3>Status: Admin</h3>
+                </article>
+
+                <article class="income-container">
+                    <h2>Kontingent:</h2>
+                    <h3>30.000kr</h3>
+                </article>
+
+                <article class="member-table-container">
+                    <section class="member-table">
+                        <table>
+                            <!-- table header -->
+                                <thead class="tableFixedHeader">
+                                    <tr>
+                                        <th>Member</th>
+                                        <th>Date of birth</th>
+                                        <th>Gender</th>
+                                        <th>Mail</th>
+                                        <th style="width: 350px;">Address</th>
+                                        <th>Phone</th>
+                                        <th>Active member</th>
+                                        <th>Payment</th>
+                                        <th>Paid</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+        
+
+                            <tr>
+                                <td> Simone </td>
+                                <td> 22-09-2001 </td>
+                                <td>Female</a></td>
+                                <td>somemail@mail.com</td>
+                                <td>H. C. Andersens Boulevard 12 </td>
+                                <td>28 38 74 65</td>
+                                <td>true/false</td>
+                                <td>1600kr</td>
+                                <td><input type="radio"></td>
+
+                                <td style="width: 5px; padding: 0%; padding-right: 25px; padding-left: 25px;"><button class="button-styling update-btn">Update</button></td>
+                                <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
+                            </tr>
+
+
+                        </table>
+                    </section>
+                </article>
+
+            </section>
         </main>
 
-        <main id="cashierPage" class="">
+        <main id="cashierPage" class="hidden">
 
             <section id="welcome-container">
                 <article id="velcome-user">
@@ -165,8 +222,8 @@
                         <td> 22-09-2001 </td>
                         <td>Female</a></td>
                         <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
+                        <td>H. C. Andersens Boulevard 12 </td>
+                        <td>28 38 74 65</td>
                         <td>true/false</td>
                         <td>Beløb: 1600kr</td>
                         <td><input type="radio"></td>
@@ -176,8 +233,8 @@
                         <td> 22-09-2001 </td>
                         <td>Female</a></td>
                         <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
+                        <td>H. C. Andersens Boulevard 12 </td>
+                        <td>28 38 74 65</td>
                         <td>true/false</td>
                         <td>1600kr</td>
                         <td><input type="radio"></td>
@@ -187,8 +244,8 @@
                         <td> 22-09-2001 </td>
                         <td>Female</a></td>
                         <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
+                        <td>H. C. Andersens Boulevard 12 </td>
+                        <td>28 38 74 65</td>
                         <td>true/false</td>
                         <td>1600kr</td>
                         <td><input type="radio"></td>
@@ -198,8 +255,8 @@
                         <td> 22-09-2001 </td>
                         <td>Female</a></td>
                         <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
+                        <td>H. C. Andersens Boulevard 12 </td>
+                        <td>28 38 74 65</td>
                         <td>true/false</td>
                         <td>1600kr</td>
                         <td><input type="radio"></td>
