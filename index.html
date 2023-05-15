@@ -146,64 +146,21 @@
             <section id="member-table">
                 <table>
                     <!-- table header -->
-                    <thead>
+                    <thead class="tableFixedHeader">
                         <tr>
-                        <th>Member</th>
-                        <th>Date of birth</th>
-                        <th>Gender</th>
-                        <th>Mail</th>
-                        <th>Address</th>
-                        <th>Phone</th>
-                        <th>Active member</th>
-                        <th>Member Payment</th>
-                        <th>Paid</th>
+                            <th>Member</th>
+                            <th>Date of birth</th>
+                            <th>Gender</th>
+                            <th>Mail</th>
+                            <th style="width: 350px;">Address</th>
+                            <th>Phone</th>
+                            <th>Active member</th>
+                            <th>Payment</th>
+                            <th>Paid</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
-
-                    <tr>
-                        <td> Simone </td>
-                        <td> 22-09-2001 </td>
-                        <td>Female</a></td>
-                        <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
-                        <td>true/false</td>
-                        <td>Beløb: 1600kr</td>
-                        <td><input type="radio"></td>
-                    </tr>
-                    <tr>
-                        <td> Simone </td>
-                        <td> 22-09-2001 </td>
-                        <td>Female</a></td>
-                        <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
-                        <td>true/false</td>
-                        <td>1600kr</td>
-                        <td><input type="radio"></td>
-                    </tr>
-                    <tr>
-                        <td> Simone </td>
-                        <td> 22-09-2001 </td>
-                        <td>Female</a></td>
-                        <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
-                        <td>true/false</td>
-                        <td>1600kr</td>
-                        <td><input type="radio"></td>
-                    </tr>
-                    <tr>
-                        <td> Simone </td>
-                        <td> 22-09-2001 </td>
-                        <td>Female</a></td>
-                        <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
-                        <td>true/false</td>
-                        <td>1600kr</td>
-                        <td><input type="radio"></td>
-                    </tr>
                 </table>
             </section>
         </section>
@@ -260,6 +217,7 @@
 
         <!-- MEMBER CREATE FORM -->
         <dialog id="create-dialog">
+            <h2>Opret nyt medlem</h2>
             <form id="create-form">
                 <label for="member-title">Title</label>
                 <input type="text" name="title" id="member-title" maxlength="1000" placeholder="Titel" required>
@@ -320,7 +278,7 @@
                 </fieldset>
             </section>
             </form>
-            <button id="create-form-btn">Create User</button>
+            <button id="create-member-btn">opret</button>
             <form method="dialog">
                 <button>Close</button>
             </form>
@@ -328,6 +286,8 @@
 
         <!--MEMBER UPDATE DIALOG  -->
         <dialog id="update-dialog">
+            <h2>Opdater medlemsoplysninger</h2>
+
             <form id="update-form">
                 <label for="member-title">Title</label>
                 <input type="text" name="title" id="member-title" maxlength="1000" placeholder="Titel" required>
@@ -388,6 +348,7 @@
                     </fieldset>
                 </section>
             </form>
+            <button id="create-member-btn">Opdater</button>
             <form method="dialog">
                 <button>Close</button>
             </form>
