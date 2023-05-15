@@ -17,7 +17,7 @@
         <a href="#news" class="view-link">News</a>
         <a href="#about" class="view-link">About</a>
         <a href="#contact" class="view-link">Contact</a>
-        <a href="#contact" class="view-link">Log in</a>
+        <a href="#contact" class="view-link"><button id="login-btn">Log ind</button></a>
     </nav>
 
     <!-- Views -->
@@ -25,7 +25,7 @@
     <main>
         <!-- Home View -->
         <!-- Route: #home -->
-        <main id="homePage" class="hidden">
+        <main id="home-page" class="hidden">
             <div id="front-page-picture-container">
                 <img src="https://freesvg.org/img/1502475717.png" alt="">
             </div>
@@ -119,11 +119,11 @@
         <br>
 
 
-        <main id="adminPage" class="hidden">
+        <main id="admin-page" class="hidden">
             <h1>admin</h1>
         </main>
 
-        <main id="cashierPage" class="hidden">
+        <main id="cashier-page" class="hidden">
 
             <section id="welcome-container">
                 <article id="velcome-user">
@@ -166,7 +166,7 @@
         </section>
         </main>
 
-        <main id="compMemberPage" class="hidden">
+        <main id="comp-member-page" class="hidden">
             <article id="comp-member-grid-container">
 
                 <article id="personal-info-container">
@@ -194,12 +194,12 @@
             </article>
         </main>
 
-        <main id="regularMemberPage" class="hidden">
+        <main id="regular-member-page" class="hidden">
 
             <h1>regular member</h1>
         </main>
 
-        <main id="coachPage" class="hidden">
+        <main id="coach-page" class="hidden">
             <h1>coach </h1>
         </main>
 
@@ -357,14 +357,16 @@
         <!-- LOGIN DIALOG -->
         <dialog id="login-dialog">
             <form id="login-form" >
-           
                     <label for="email"><b>Email</b></label>
                     <input type="text" placeholder="Enter Email" name="email" required>
+                    
                     <label for="password"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="psw" required>
-                    <button type="submit">Login</button>
+                    
+                    <button type="submit">Log ind</button>
+
                 <form method="dialog">
-                    <button>Cancel</button>
+                    <button>Fortryd</button>
                 </form>
             </form> 
         </dialog>
@@ -507,6 +509,7 @@
                 <input type="text" name="update-comp-place" id="update-comp-place" maxlength="1000" placeholder="Opdater stævne sted" required>
 
                 <button type="submit">Opdater trænings resultat</button>
+
                 <form method="dialog">
                     <button>Cancel</button>
                 </form>
@@ -514,6 +517,7 @@
         </dialog>
 
     </main>    
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
+    <script src="login.js" type="module"></script>
 </body>
 </html>
