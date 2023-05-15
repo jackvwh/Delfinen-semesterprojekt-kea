@@ -245,14 +245,10 @@
                         <h1 id="compMemberCoachName">Træner:</h1>    
                     </div>
                 </article>
-                <!-- 
-                1. many identical id´s in personal containers for comp and members. maybe       change syntax to: comp-member-info-container - med children: comp-member-name, comp-member-age etc, drop personal and item syntax. 
-                2. remove input fields. 
-                3. id´s on h1´s and h5´s for DOM manipulation with js
-                4. green button should be named update-btn for easier readability  -->
+            
                 <article id="comp-member-info-container">
                     <div id="welcomeCompUser">
-                    <h1 id="comp-member-welcome">Velkommen *insert name here*!</h1>
+                        <h1 id="comp-member-welcome">Velkommen *insert name here*!</h1>
                     </div>                   
                     <div>
                         <h5 id="comp-member-info-name">Navn:</h5>      
@@ -270,7 +266,7 @@
                         <h5 id="comp-member-info-email">E-mail:</h5>  
                     </div>
                     <!-- change id to class and rename to: update-btn -->
-                        <button id="update-btn">Updater Personlig Information</button>
+                        <button class="update-btn">Updater Personlig Information</button>
                 </article>
                 
                 <article id="disciplin-container">
@@ -322,11 +318,6 @@
             </section>
         </main>
 
-         <!-- 
-                1. many identical id´s in personal containers for comp and members. maybe       change syntax to: regular-member-info-container - med children: regular-member-name, regular-member-age etc, drop personal and item syntax. 
-                2. remove input fields. 
-                3. id´s on h1´s and h5´s for DOM manipulation with js
-                4. green button should be named update-btn for easier readability  -->
         <main id="regularMemberPage" class="hidden">
             <section id="regular-member-grid-container">
                 
@@ -349,8 +340,7 @@
                     <div>
                         <h5 id="regular-member-info-email">E-mail:</h5>
                     </div>
-                    <!-- change id to class and rename greenButton to update-btn -->
-                        <button id="update-btn">Updater Personlig Information</button>
+                        <button class="update-btn">Updater Personlig Information</button>
                     <div>
                         <h3 id="regular-member-next-payment">Næste kontigent betaling:</h3>
                     </div>
@@ -364,8 +354,7 @@
                         <h5 id="regular-member-total">Totalt til at betale:</h5>
                     </div>
                     <div>
-                        <!-- second btn to be named greenButton - change id to class and rename to: payment-btn -->
-                        <button id="update-btn">Gå til betaling</button>
+                        <button class="payment-btn">Gå til betaling</button>
                     </div>
                 </article>
 
