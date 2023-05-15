@@ -1,7 +1,6 @@
 "user strict"
 
-// TO DO 
-
+import {calcMemberPayment } from "./payment";
 export {showMemberRow, makeMemberRow}
 
 function showMemberRow(memberObject){
@@ -25,7 +24,7 @@ function makeMemberRow(memberObject){
         <td> ${memberObject.address} </td>
         <td> ${memberObject.phone} </td>
         <td> ${memberObject.active} </td>
-        <td> Beløb: ${calcPayment(memberObject)} </td>
+        <td> Beløb: ${calcMemberPayment(memberObject)} </td>
         <td> Betalt: <input type="radio"></td>
         <td style="width: 5px; padding: 0%; padding-right: 25px; padding-left: 25px;"><button class="button-styling update-btn">Update</button></td>
         <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
