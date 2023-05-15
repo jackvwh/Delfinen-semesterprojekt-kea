@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="memberpage.css">
     <link rel="stylesheet" href="front-page.css">
+    <link rel="stylesheet" href="admin-page.css">
     <title>Delfinen svømmeklub</title>
 </head>
 <body>
@@ -118,14 +120,53 @@
         <br>
         <br>
 
+        <main id="adminPage" class="active">
+            <section id="admin-page-grid-container">
+
 
         <main id="admin-page" class="hidden">
             <h1>admin</h1>
-        </main>
+               <article class="create-member-btn-container">
+                    <button class="create-btn button-styling">Create new member</button
+                ></article>
+
+                <article class="welcome-user-container">
+                    <h2>Velkommen: Admin navn</h2>
+                    <h3>Status: Admin</h3>
+                </article>
+
+                <article class="income-container">
+                    <h2>Kontingent:</h2>
+                    <h3>30.000kr</h3>
+                </article>
+
+                <article class="member-table-container">
+                    <section class="member-table">
+                        <table>
+                            <!-- table header -->
+                                <thead class="tableFixedHeader">
+                                    <tr>
+                                        <th>Member</th>
+                                        <th>Date of birth</th>
+                                        <th>Gender</th>
+                                        <th>Mail</th>
+                                        <th style="width: 350px;">Address</th>
+                                        <th>Phone</th>
+                                        <th>Active member</th>
+                                        <th>Payment</th>
+                                        <th>Paid</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                        </table>
+                    </section>
+                </article>
+            </main>
 
         <main id="cashier-page" class="hidden">
 
-            <section id="welcome-container">
+           <section id="welcome-container">
                 <article id="velcome-user">
                     <div id="user-welcome"> Welcome (user name) </div>
                     <div id="user-status"> Status (user title) </div>
@@ -162,8 +203,9 @@
                         </tr>
                     </thead>
                 </table>
+
             </section>
-        </section>
+    
         </main>
 
         <main id="comp-member-page" class="hidden">
@@ -171,32 +213,156 @@
 
                 <article id="personal-info-container">
 
-                    <div id="personal-info-item-name"> 
-                        <input type="text">
+         </main>
+
+        <main id="compMemberPage" class="active">
+            <section id="comp-member-grid-container">
+
+                <article id="events-upcoming-container">
+                    <div id="events-upcoming-item">
+                        <h1>Kommende Stævner:</h1>
+                        <table>
+                                <thead>
+                                    <tr>
+                                    <th>Stævne</th>
+                                    <th>Dato</th>
+                                    <th>Disciplin</th>
+                                    <th>Træner</th>
+                                    <th>Start</th>
+                                    <th>Position</th>
+                                    </tr>
+                                </thead>
+
+                                <tr>
+                                <td>Amager</td>
+                                <td>22-06-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>16:00</td>
+                                <td>2</td>
+                                </tr>
+                        </table>
                     </div>
-                    <div id="personal-info-item-adress">
-                        <input type="text">
+                </article>
+
+                <article id="comp-member-coach-container">
+                    <div>
+                        <h1 id="compMemberCoachName">Træner:</h1>    
                     </div>
-                    <div id="personal-info-item-email">
-                        <input type="text">
+                </article>
+            
+                <article id="comp-member-info-container">
+                    <div id="welcomeCompUser">
+                        <h1 id="comp-member-welcome">Velkommen *insert name here*!</h1>
+                    </div>                   
+                    <div>
+                        <h5 id="comp-member-info-name">Navn:</h5>      
                     </div>
+                    <div>
+                        <h5 id="comp-member-info-age">Alder:</h5>  
+                    </div>
+                    <div>
+                        <h5 id="comp-member-info-gender">Køn:</h5>   
+                    </div>
+                    <div>
+                        <h5 id="comp-member-info-address">Adresse:</h5>    
+                    </div>
+                    <div>
+                        <h5 id="comp-member-info-email">E-mail:</h5>  
+                    </div>
+                    <!-- change id to class and rename to: update-btn -->
+                        <button class="update-btn">Updater Personlig Information</button>
                 </article>
                 
                 <article id="disciplin-container">
-                    <div  id="disciplin-list">
-                        <li id="crawl"></li>
-                        <li id="rygcrawl"></li>
-                        <li id="butterfly"></li>
-                        <li id="brystsvømming"></li>
+                <h1>Discipliner:</h1>
+                    <div id="disciplin-list">
+                        <ol id="crawl">Crawl</ol>  
+                        <ol id="rygcrawl">Rygcrawl</ol> 
+                        <ol id="butterfly">Butterfly</ol> 
+                        <ol id="brystsvømming">Brystsvømming</ol> 
                     </div>
                 </article>
 
-            </article>
+                <article id="events-container">
+                    <div id="events-old-item">
+                        <h1>Tidligere stævner:</h1>
+                            <table>
+                                <thead>
+                                    <tr>
+                                    <th>Stævne</th>
+                                    <th>Dato</th>
+                                    <th>Disciplin</th>
+                                    <th>Træner</th>
+                                    <th>Tid</th>
+                                    <th>Resultat</th>
+                                    </tr>
+                                </thead>
+                                
+                                <tr>
+                                <td>Næstved</td>
+                                <td>22-04-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>04:20</td>
+                                <td>1</td>
+                                </tr>
+
+                                <tr>
+                                <td>Roskilde</td>
+                                <td>14-03-2023</td>
+                                <td>Crawl</td>
+                                <td>Lars</td>
+                                <td>05:20</td>
+                                <td>3</td>
+                                </tr>
+                            </table>
+                    </div>
+                </article>
+
+            </section>
         </main>
 
-        <main id="regular-member-page" class="hidden">
 
-            <h1>regular member</h1>
+        <main id="regular-member-page" class="hidden">
+            <section id="regular-member-grid-container">
+                <article id="regular-member-info-container">
+                    <div>
+                        <h1 id="welcomeRegularUser">Velkommen *insert name here*!</h1>
+                    </div>                   
+                    <div>
+                        <h5 id="regular-member-info-name">Navn:</h5> 
+                    </div>
+                    <div>
+                        <h5 id="regular-member-info-age">Alder:</h5>
+                    </div>
+                    <div>
+                        <h5 id="regular-member-info-gender">Køn:</h5>
+                    </div>
+                    <div>
+                        <h5 id="regular-member-info-address">Adresse:</h5>
+                    </div>
+                    <div>
+                        <h5 id="regular-member-info-email">E-mail:</h5>
+                    </div>
+                        <button class="update-btn">Updater Personlig Information</button>
+                    <div>
+                        <h3 id="regular-member-next-payment">Næste kontigent betaling:</h3>
+                    </div>
+                    <div>
+                        <h5 id="regular-member-price">Pris for kontigent:</h5>   
+                    </div>
+                    <div>
+                        <h5 id="regular-member-discount">Eventuel rabat:</h5>   
+                    </div>
+                    <div>
+                        <h5 id="regular-member-total">Totalt til at betale:</h5>
+                    </div>
+                    <div>
+                        <button class="payment-btn">Gå til betaling</button>
+                    </div>
+                </article>
+            </section>
         </main>
 
         <main id="coach-page" class="hidden">
@@ -217,6 +383,7 @@
 
         <!-- MEMBER CREATE FORM -->
         <dialog id="create-dialog">
+            <h2>Opret nyt medlem</h2>
             <form id="create-form">
                 <label for="member-title">Title</label>
                 <input type="text" name="title" id="member-title" maxlength="1000" placeholder="Titel" required>
@@ -277,7 +444,7 @@
                 </fieldset>
             </section>
             </form>
-            <button id="create-form-btn">Create User</button>
+            <button id="create-member-btn">opret</button>
             <form method="dialog">
                 <button>Close</button>
             </form>
@@ -285,6 +452,8 @@
 
         <!--MEMBER UPDATE DIALOG  -->
         <dialog id="update-dialog">
+            <h2>Opdater medlemsoplysninger</h2>
+
             <form id="update-form">
                 <label for="member-title">Title</label>
                 <input type="text" name="title" id="member-title" maxlength="1000" placeholder="Titel" required>
@@ -345,6 +514,7 @@
                     </fieldset>
                 </section>
             </form>
+            <button id="create-member-btn">Opdater</button>
             <form method="dialog">
                 <button>Close</button>
             </form>
