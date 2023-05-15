@@ -1,5 +1,9 @@
 "user strict"
 
+// TO DO 
+
+export {showMemberRow, makeMemberRow}
+
 function showMemberRow(memberObject){
     // make html row with member values
     const memberRow = makeMemberRow(memberObject); 
@@ -11,10 +15,9 @@ function showMemberRow(memberObject){
      document.querySelector("#member-table tr:last-child .delete-btn").addEventListener("click", () => deleteMember(memberObject));
     
 }
-
 function makeMemberRow(memberObject){
     const htmlRow = /*HTML*/ `
-    <tr>
+    <tr data-id=${memberObject.id}>
         <td> ${memberObject.name} </td>
         <td> ${memberObject.birthDate} </td>
         <td> ${memberObject.gender} </td>
@@ -30,5 +33,3 @@ function makeMemberRow(memberObject){
     `;
     return htmlRow;
 }
-
-export {showMemberRow, makeMemberRow}
