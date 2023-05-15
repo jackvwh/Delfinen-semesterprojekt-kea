@@ -19,7 +19,7 @@
         <a href="#news" class="view-link">News</a>
         <a href="#about" class="view-link">About</a>
         <a href="#contact" class="view-link">Contact</a>
-        <!-- <a href="#contact" class="view-link">Log in</a> -->
+        <a href="#contact" class="view-link"><button id="login-btn">Log ind</button></a>
     </nav>
 
     <!-- Views -->
@@ -27,7 +27,7 @@
     <main>
         <!-- Home View -->
         <!-- Route: #home -->
-        <main id="homePage" class="hidden">
+        <main id="home-page" class="hidden">
             <div id="front-page-picture-container">
                 <img src="https://freesvg.org/img/1502475717.png" alt="">
             </div>
@@ -123,7 +123,10 @@
         <main id="adminPage" class="active">
             <section id="admin-page-grid-container">
 
-                <article class="create-member-btn-container">
+
+        <main id="admin-page" class="hidden">
+            <h1>admin</h1>
+               <article class="create-member-btn-container">
                     <button class="create-btn button-styling">Create new member</button
                 ></article>
 
@@ -156,32 +159,12 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-        
-
-                            <tr>
-                                <td> Simone </td>
-                                <td> 22-09-2001 </td>
-                                <td>Female</a></td>
-                                <td>somemail@mail.com</td>
-                                <td>H. C. Andersens Boulevard 12 </td>
-                                <td>28 38 74 65</td>
-                                <td>true/false</td>
-                                <td>1600kr</td>
-                                <td><input type="radio"></td>
-
-                                <td style="width: 5px; padding: 0%; padding-right: 25px; padding-left: 25px;"><button class="button-styling update-btn">Update</button></td>
-                                <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
-                            </tr>
-
-
                         </table>
                     </section>
                 </article>
+            </main>
 
-            </section>
-        </main>
-
-        <main id="cashierPage" class="hidden">
+        <main id="cashier-page" class="hidden">
 
            <section id="welcome-container">
                 <article id="velcome-user">
@@ -220,8 +203,17 @@
                         </tr>
                     </thead>
                 </table>
-          </section>
-  </main>
+
+            </section>
+    
+        </main>
+
+        <main id="comp-member-page" class="hidden">
+            <article id="comp-member-grid-container">
+
+                <article id="personal-info-container">
+
+         </main>
 
         <main id="compMemberPage" class="active">
             <section id="comp-member-grid-container">
@@ -331,12 +323,12 @@
             </section>
         </main>
 
-        <main id="regularMemberPage" class="hidden">
+
+        <main id="regular-member-page" class="hidden">
             <section id="regular-member-grid-container">
-                
                 <article id="regular-member-info-container">
                     <div>
-                    <h1 id="welcomeRegularUser">Velkommen *insert name here*!</h1>
+                        <h1 id="welcomeRegularUser">Velkommen *insert name here*!</h1>
                     </div>                   
                     <div>
                         <h5 id="regular-member-info-name">Navn:</h5> 
@@ -370,11 +362,10 @@
                         <button class="payment-btn">Gå til betaling</button>
                     </div>
                 </article>
-
             </section>
         </main>
 
-        <main id="coachPage" class="hidden">
+        <main id="coach-page" class="hidden">
             <h1>coach </h1>
         </main>
 
@@ -532,14 +523,16 @@
         <!-- LOGIN DIALOG -->
         <dialog id="login-dialog">
             <form id="login-form" >
-           
                     <label for="email"><b>Email</b></label>
                     <input type="text" placeholder="Enter Email" name="email" required>
+                    
                     <label for="password"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="psw" required>
-                    <button type="submit">Login</button>
+                    
+                    <button type="submit">Log ind</button>
+
                 <form method="dialog">
-                    <button>Cancel</button>
+                    <button>Fortryd</button>
                 </form>
             </form> 
         </dialog>
@@ -682,6 +675,7 @@
                 <input type="text" name="update-comp-place" id="update-comp-place" maxlength="1000" placeholder="Opdater stævne sted" required>
 
                 <button type="submit">Opdater trænings resultat</button>
+
                 <form method="dialog">
                     <button>Cancel</button>
                 </form>
@@ -689,6 +683,7 @@
         </dialog>
 
     </main>    
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
+    <script src="login.js" type="module"></script>
 </body>
 </html>
