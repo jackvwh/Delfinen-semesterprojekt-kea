@@ -1,26 +1,38 @@
 "use strict"
 
-export {}
+export {loadCompData, loadMemberData, loadPracticeData}
 
 const endpoint = "https://console.firebase.google.com/project/crud-app-kea/database/crud-app-kea-default-rtdb/data/~2F"
-const members = [];
-const practiceResults = [];
-const compResults = [];
 
-
-async function loadData(){
-    const response = await fetch(`${endpoint}/${type}.json`);    
-    const data = await response.json();
-    const dataArray = prepareDataArray(data);
-    return dataArray;
+async function loadMemberData(){
+    // load member data
+    const memberResponse = await fetch(`${endpoint}/members.json`);    
+    const memberData = await memberResponse.json();
+    const memberArray = prepareDataArray(memberData);
+    return memberArray;
 }
+async function loadCompData(){
+    // load comp results data
+    const compResponse = await fetch(`${endpoint}/compResults.json`);    
+    const compData = await compResponse.json();
+    const compResults = prepareDataArray(compData);
+    return compResults;
+}
+async function loadPracticeData(){
+    // load practice result data
+    const practiceResponse = await fetch(`${endpoint}/practiceResults.json`);    
+    const practiceData = await practiceResponse.json();
+    const practiceResults = prepareDataArray(practiceData);
+    return practiceResults;
+}
+
 // convert Json object to object array
 function prepareDataArray(dataObject){
     const dataArray = [];
     for (let key in dataObject){
-        const post = dataObject[key];
-        post.id = key;
-        dataArray.push(post)
+        const data = dataObject[key];
+        data.id = key;
+        dataArray.push(data)
     }
     return dataArray;
 }

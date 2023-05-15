@@ -2,6 +2,7 @@
 
 import {loginDialog} from "./login.js";
 import {calcMemberPayment, calcTotalIncome} from "./payment.js";
+import {loadCompData, loadMemberData, loadPracticeData} from "./rest-fnc.js";
 
 window.addEventListener("load", initApp);
 
@@ -9,6 +10,7 @@ function initApp(){
     console.log("JS starting");
 
     addEventListeners();
+    
 }
 
 function addEventListeners(){
