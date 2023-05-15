@@ -11,7 +11,7 @@ const passivePrice = 500;
 
 function calcMemberPayment(memberObject){
     const currentDate = date();
-    const age = Math.floor(currentDate - memberObject.birthDate);
+    const age = Math.floor(currentDate - memberObject.birthDate); // needs testing
 
         if (age <= youthAge){
             return youthPrice;

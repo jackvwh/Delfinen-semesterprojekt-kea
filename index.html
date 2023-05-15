@@ -29,7 +29,7 @@
     <main>
         <!-- Home View -->
         <!-- Route: #home -->
-        <main id="home-page">
+        <main id="home-page" class="hidden">
             <div id="front-page-picture-container">
                 <img src="https://freesvg.org/img/1502475717.png" alt="">
             </div>
@@ -485,12 +485,28 @@
         </dialog>
 
         <!-- MEMBER CREATE FORM -->
-        <dialog id="create-dialog">
+        <dialog id="create-dialog" open>
             <h2>Opret nyt medlem</h2>
             <form id="create-form">
-                <label for="member-title">Title</label>
-                <input type="text" name="title" id="member-title" maxlength="1000" placeholder="Titel" required>
-
+                <fieldset>
+                    <legend>Titel</legend>
+                    <div>
+                        <label for="crawl">Administrator</label>
+                        <input type="checkbox" id="admin" name="admin">  
+                    </div>
+                    <div>
+                        <label for="cashier">Kasserer</label>
+                        <input type="checkbox" id="cashier" name="cashier">
+                    </div>
+                    <div>
+                        <label for="medlem">Medlem</label>
+                        <input type="checkbox" id="medlem" name="medlem" checked>
+                    </div>
+                    <div>
+                        <label for="coach">Træner</label>
+                        <input type="checkbox" id="coach" name="coach">
+                    </div>
+                </fieldset>
                 <label for="member-name">Name</label>
                 <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
 
@@ -538,7 +554,7 @@
                     </div>
                     <div>
                       <input type="checkbox" id="butterfly" name="butterfly">
-                      <label for="rutterfly">Butterfly</label>
+                      <label for="butterfly">Butterfly</label>
                     </div>
                     <div>
                       <input type="checkbox" id="brystsvømning" name="brystsvømning">
@@ -558,9 +574,25 @@
             <h2>Opdater medlemsoplysninger</h2>
 
             <form id="update-form">
-                <label for="member-title">Title</label>
-                <input type="text" name="title" id="member-title" maxlength="1000" placeholder="Titel" required>
-
+                <fieldset>
+                    <legend>Titel</legend>
+                    <div>
+                        <label for="crawl">Administrator</label>
+                        <input type="checkbox" id="admin" name="admin">  
+                    </div>
+                    <div>
+                        <label for="cashier">Kasserer</label>
+                        <input type="checkbox" id="cashier" name="cashier">
+                    </div>
+                    <div>
+                        <label for="medlem">Medlem</label>
+                        <input type="checkbox" id="medlem" name="medlem" checked>
+                    </div>
+                    <div>
+                        <label for="coach">Træner</label>
+                        <input type="checkbox" id="coach" name="coach">
+                    </div>
+                </fieldset>
                 <label for="member-name">Name</label>
                 <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
 
