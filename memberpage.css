@@ -1,0 +1,175 @@
+/* ---------- root variables ---------- */
+:root {
+    --green: rgb(38, 76, 89);
+    --light-green: rgb(172, 198, 201);
+    --light-grey: #f1f1f4;
+    --text-color-light: #f1f1f1;
+    --text-color-dark: #333;
+    --text-color-danger: rgb(152, 58, 58);
+    --white: #f1f1f1;
+}
+
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body,
+html {
+    color: var(--text-color-dark);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--light-green);
+}
+
+/* ---------- nav styling ---------- */
+nav {
+    display: grid;
+    background-color: var(--green);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    nav {
+        padding: 1em 2em;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* Style the links inside the navigation bar */
+nav a {
+    display: inline-block;
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 2px solid rgb(38, 76, 89);
+}
+
+/* Change the color of links on hover */
+nav a:hover {
+    background-color: var(--light-green);
+    color: var(--text-color-dark);
+}
+
+/* Add a color to the active/current link */
+nav a.active {
+    background-color: var(--light-green);
+    color: var(--green);
+}
+
+.hidden {
+    display: none;
+    padding: 248px 2em;
+}
+
+@media (min-width: 600px) {
+    .view-content {
+        padding: 94px 2em;
+    }
+}
+
+.view-content.active {
+    display: block;
+}
+
+/* competitive member page grid */
+
+#events-upcoming-container { grid-area: header; }
+#comp-member-coach-container { grid-area: coach; }
+#comp-member-info-container { grid-area: main; }
+#disciplin-container { grid-area: menu; }
+#event-container { grid-area: right; }
+
+#comp-member-grid-container {
+    display: grid;
+    grid-template-areas:
+    'main main main coach coach coach'
+    'main main main header header header'
+    'menu menu menu right right right';
+}
+
+#comp-member-grid-container > article {
+    border: 1px solid var(--green);
+    padding: 20px;
+}
+
+/* competitive member pape tables */
+
+table {
+    border-collapse: collapse;
+    width: 75vw;
+    margin: auto;
+    background-color: var(--light-grey);
+    margin-top: 20px;
+}
+
+thead {
+    background-color: var(--green);
+    color: var(--text-color-light);
+    position: sticky;
+    top: 0;
+}
+
+td,
+th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--text-color-light);
+}
+
+/* competitive member page styling */
+
+button#update-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+button#update-btn:hover {
+    transform: scale(1.05);
+}
+
+button#update-btn:active {
+    transform: scale(1);
+}
+
+#welcomeCompUser {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+#compMemberCoachName {
+    margin-top: 40px;
+}
+
+/* regular member page grid */
+
+#regular-member-grid-container {
+    text-align: center;
+}
+
+/* regular member page styling */
+
+#welcomeRegularUser {
+    font-size: 16px;
+    margin-top: 60px;
+}
