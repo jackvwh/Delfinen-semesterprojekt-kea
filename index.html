@@ -17,7 +17,7 @@
         <a href="#news" class="view-link">News</a>
         <a href="#about" class="view-link">About</a>
         <a href="#contact" class="view-link">Contact</a>
-        <a href="#contact" class="view-link">Log in</a>
+        <a href="#contact" class="view-link"><button id="login-btn">Log ind</button></a>
     </nav>
 
     <!-- Views -->
@@ -146,64 +146,21 @@
             <section id="member-table">
                 <table>
                     <!-- table header -->
-                    <thead>
+                    <thead class="tableFixedHeader">
                         <tr>
-                        <th>Member</th>
-                        <th>Date of birth</th>
-                        <th>Gender</th>
-                        <th>Mail</th>
-                        <th>Address</th>
-                        <th>Phone</th>
-                        <th>Active member</th>
-                        <th>Member Payment</th>
-                        <th>Paid</th>
+                            <th>Member</th>
+                            <th>Date of birth</th>
+                            <th>Gender</th>
+                            <th>Mail</th>
+                            <th style="width: 350px;">Address</th>
+                            <th>Phone</th>
+                            <th>Active member</th>
+                            <th>Payment</th>
+                            <th>Paid</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
-
-                    <tr>
-                        <td> Simone </td>
-                        <td> 22-09-2001 </td>
-                        <td>Female</a></td>
-                        <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
-                        <td>true/false</td>
-                        <td>Beløb: 1600kr</td>
-                        <td><input type="radio"></td>
-                    </tr>
-                    <tr>
-                        <td> Simone </td>
-                        <td> 22-09-2001 </td>
-                        <td>Female</a></td>
-                        <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
-                        <td>true/false</td>
-                        <td>1600kr</td>
-                        <td><input type="radio"></td>
-                    </tr>
-                    <tr>
-                        <td> Simone </td>
-                        <td> 22-09-2001 </td>
-                        <td>Female</a></td>
-                        <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
-                        <td>true/false</td>
-                        <td>1600kr</td>
-                        <td><input type="radio"></td>
-                    </tr>
-                    <tr>
-                        <td> Simone </td>
-                        <td> 22-09-2001 </td>
-                        <td>Female</a></td>
-                        <td>somemail@mail.com</td>
-                        <td>some address</td>
-                        <td>28387465</td>
-                        <td>true/false</td>
-                        <td>1600kr</td>
-                        <td><input type="radio"></td>
-                    </tr>
                 </table>
             </section>
         </section>
@@ -396,14 +353,16 @@
         <!-- LOGIN DIALOG -->
         <dialog id="login-dialog">
             <form id="login-form" >
-           
                     <label for="email"><b>Email</b></label>
                     <input type="text" placeholder="Enter Email" name="email" required>
+                    
                     <label for="password"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="psw" required>
-                    <button type="submit">Login</button>
+                    
+                    <button type="submit">Log ind</button>
+
                 <form method="dialog">
-                    <button>Cancel</button>
+                    <button>Fortryd</button>
                 </form>
             </form> 
         </dialog>
@@ -546,6 +505,7 @@
                 <input type="text" name="update-comp-place" id="update-comp-place" maxlength="1000" placeholder="Opdater stævne sted" required>
 
                 <button type="submit">Opdater trænings resultat</button>
+
                 <form method="dialog">
                     <button>Cancel</button>
                 </form>
@@ -553,6 +513,7 @@
         </dialog>
 
     </main>    
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
+    <script src="login.js" type="module"></script>
 </body>
 </html>
