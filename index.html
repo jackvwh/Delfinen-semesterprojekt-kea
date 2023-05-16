@@ -30,7 +30,7 @@
     <main>
         <!-- Home View -->
         <!-- Route: #home -->
-        <main id="home-page">
+        <main id="home-page" class="hidden">
             <div id="front-page-picture-container">
                 <img src="https://freesvg.org/img/1502475717.png" alt="">
             </div>
@@ -368,7 +368,7 @@
                 </article>
             </section>
         </main>
-        <main id="coach-page" class="hidden">
+        <main id="coach-page">
             <section id="welcome-coach-container">
                 <article class="velcome-user-container">
                     <div id="user-welcome"> Welcome (user name) </div>
@@ -381,9 +381,13 @@
                     <h3>Svend</h3>
                 </article>
             </section>
-            <section id="results-container">
+            <section id="coach-btns">
+                <button id="insert-practice-result">Indsæt træningsresultat</button>
+                <button id="insert-comp-result">Indsæt konkurrence resultat</button>
+            </section>
+        <section id="results-container">
+            <h1><u> Træningsresultater </u></h1>
             <section id="best-practice-results-container">
-                <h1>Bedste træningresultater</h1>
                 <article id="crawl-5-best-practice">
                     <table>
                         <!-- table header -->
@@ -394,9 +398,14 @@
                                 <th>Resultat tid:</th>
                                 <th>Dato</th>
                                 <th></th>
-                                <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
                 <article id="rygcrawl-5-best-practice">
@@ -409,9 +418,14 @@
                                 <th>Resultat tid:</th>
                                 <th>Dato</th>
                                 <th></th>
-                                <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
                 <article id="butterfly-5-best-practice">
@@ -424,9 +438,14 @@
                                 <th>Resultat tid:</th>
                                 <th>Dato</th>
                                 <th></th>
-                                <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
                 <article id="breaststroke-5-best-practice">
@@ -439,15 +458,20 @@
                                 <th>Resultat tid:</th>
                                 <th>Dato</th>
                                 <th></th>
-                                <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
             </section>
             <!-- COMP RESULTS -->
+            <h1><b><u> Konkurrence resultater</u></b></h1>
             <section id="best-comp-results-container">
-                <h1>Bedste Konkurrence resultater</h1>
                 <article id="crawl-5-best-comp">
                     <table>
                         <!-- table header -->
@@ -460,9 +484,16 @@
                                 <th>Resultat tid:</th>
                                 <th>Dato</th>
                                 <th></th>
-                                <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>Stort stævne</td>
+                            <td>stævnevej 5, 3333 by</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
                 <article id="rygcrawl-5-best-comp">
@@ -472,7 +503,6 @@
                             <tr>
                                 <h2>Ryg crawl</h2>
                                 <th>Medlem</th>
-                                <th>Køn</th>
                                 <th>Stævne navn</th>
                                 <th style="width: 350px;"> Stævne sted </th>
                                 <th>Resultat tid:</th>
@@ -481,6 +511,14 @@
                                 <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>Stort stævne</td>
+                            <td>stævnevej 5, 3333 by</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
                 <article id="butterfly-5-best-comp">
@@ -490,7 +528,6 @@
                             <tr>
                                 <h2>Butterfly</h2>
                                 <th>Medlem</th>
-                                <th>Køn</th>
                                 <th>Stævne navn</th>
                                 <th style="width: 350px;"> Stævne sted </th>
                                 <th>Resultat tid:</th>
@@ -499,6 +536,14 @@
                                 <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>Stort stævne</td>
+                            <td>stævnevej 5, 3333 by</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
                 <article id="breaststroke-5-best-comp">
@@ -508,7 +553,6 @@
                             <tr>
                                 <h2>Brystsvømning</h2>
                                 <th>Medlem</th>
-                                <th>Køn</th>
                                 <th>Stævne navn</th>
                                 <th style="width: 350px;"> Stævne sted </th>
                                 <th>Resultat tid:</th>
@@ -517,15 +561,19 @@
                                 <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>Stort stævne</td>
+                            <td>stævnevej 5, 3333 by</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
             </section>
         </section>
-            <section id="coach-btns">
-                <button id="insert-practice-result">Indsæt træningsresultat</button>
-                <button id="insert-comp-result">Indsæt konkurrence resultat</button>
-            </section>
-        </main>
+    </main>
         <!------- DELETE DIALOG------->
         <dialog id="delete-dialog">
             <h2>Do you want to delete this member?</h2>

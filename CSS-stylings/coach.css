@@ -1,9 +1,13 @@
-#results-container{
+/* #results-container{
     display: grid;
     grid-template-columns: auto auto;
     gap: 5px;
-}
+} */
 #welcome-coach-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#best-practice-results-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
