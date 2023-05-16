@@ -12,6 +12,16 @@ function initApp(){
 
     addEventListeners();
 
+    const memberArray = loadMemberData();
+    const practiceResults = loadPracticeData();
+    const compResults = loadCompData();
+
+    console.log("Members: ", memberArray)
+    console.log("Practice: ", practiceArray)
+    console.log("Comps: ", compArray)
+
+
+
 }
 
 function addEventListeners(){

@@ -1,5 +1,3 @@
-"use strict"
-
 export {loadCompData, loadMemberData, loadPracticeData}
 
 const endpoint = "https://console.firebase.google.com/project/crud-app-kea/database/crud-app-kea-default-rtdb/data/~2F"

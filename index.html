@@ -496,22 +496,22 @@
                     </div>
                 </fieldset>
                 <label for="member-name">Name</label>
-                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+                <input type="text" name="member-name" id="member-name" maxlength="1000" placeholder="Name" required>
 
                 <label for="member-address">Address</label>
-                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+                <input type="text" name="member-address" id="member-address" maxlength="1000" placeholder="Name" required>
 
                 <label for="member-mail">Mail</label>
-                <input type="email" name="mail" id="member-mail" maxlength="1000" placeholder="Mail" required>
+                <input type="email" name="member-mail" id="member-mail" maxlength="1000" placeholder="Mail" required>
 
                 <label for="member-phone">Phone</label>
-                <input type="number" name="phone" id="member-phone" maxlength="8" placeholder="phone" required>
+                <input type="number" name="member-phone" id="member-phone" maxlength="8" placeholder="phone" required>
 
                 <label for="member-gender">Gender</label>
-                <input type="text" name="gender" id="member-gender" maxlength="8" placeholder="gender" required>
+                <input type="text" name="member-gender" id="member-gender" maxlength="8" placeholder="gender" required>
 
                 <label for="member-birthdate">Date of birth</label>
-                <input type="numbers" name="birtdate" id="member-birthdate" maxlength="10" placeholder="Date of birth" required>
+                <input type="date" name="member-birthdate" id="member-birthdate" maxlength="10" placeholder="Date of birth" required>
 
             <section id="member-checkboxes">
                 <fieldset>
@@ -581,22 +581,22 @@
                     </div>
                 </fieldset>
                 <label for="member-name">Name</label>
-                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+                <input type="text" name="member-name" id="member-name" maxlength="1000" placeholder="Name" required>
 
                 <label for="member-address">Address</label>
-                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+                <input type="text" name="member-address" id="member-address" maxlength="1000" placeholder="Name" required>
 
                 <label for="member-mail">Mail</label>
-                <input type="email" name="mail" id="member-mail" maxlength="1000" placeholder="Mail" required>
+                <input type="email" name="member-mail" id="member-mail" maxlength="1000" placeholder="Mail" required>
 
                 <label for="member-phone">Phone</label>
-                <input type="number" name="phone" id="member-phone" maxlength="8" placeholder="phone" required>
+                <input type="number" name="member-phone" id="member-phone" maxlength="8" placeholder="phone" required>
 
                 <label for="member-gender">Gender</label>
-                <input type="text" name="gender" id="member-gender" maxlength="8" placeholder="gender" required>
+                <input type="text" name="member-gender" id="member-gender" maxlength="8" placeholder="gender" required>
 
                 <label for="member-birthdate">Date of birth</label>
-                <input type="numbers" name="birtdate" id="member-birthdate" maxlength="10" placeholder="Date of birth" required>
+                <input type="date" name="member-birthdate" id="member-birthdate" maxlength="10" placeholder="Date of birth" required>
 
                 <section id="member-checkboxes">
                     <fieldset>
@@ -645,10 +645,10 @@
         <dialog id="login-dialog">
             <form id="login-form" >
                     <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <input type="email" placeholder="Indsæt email" name="email" required>
                     
                     <label for="password"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <input type="password" placeholder="Indsæt kodeord" name="psw" required>
                     
                     <button type="submit">Log ind</button>
             </form> 
@@ -677,10 +677,10 @@
                 </select required>
 
                 <label for="practice-time"><b>Practice-time</b></label>
-                <input type="numbers" name="practice-time" id="practice-time" maxlength="10" placeholder="trænings resultat" required>
+                <input type="time" name="practice-time" id="practice-time" maxlength="10" placeholder="trænings resultat" required>
 
                 <label for="practice-date"><b>Date</b></label>
-                <input type="numbers" name="practice-date" id="practice-date" maxlength="10" placeholder="Dato" required>
+                <input type="date" name="practice-date" id="practice-date" maxlength="10" placeholder="Dato" required>
 
                 <button type="submit">Insert result</button>
                 <form method="dialog">
@@ -709,10 +709,10 @@
                 </select required>
 
                 <label for="update-practice-time"><b>Practice-time</b></label>
-                <input type="numbers" name="update-practice-time" id="update-practice-time" maxlength="10" placeholder="Opdater træningstid " required>
+                <input type="time" name="update-practice-time" id="update-practice-time" maxlength="10" placeholder="Opdater træningstid " required>
 
                 <label for="update-practice-date"><b>Date</b></label>
-                <input type="numbers" name="update-practice-date" id="update-practice-date" maxlength="10" placeholder="Opdater dato" required>
+                <input type="date" name="update-practice-date" id="update-practice-date" maxlength="10" placeholder="Opdater dato" required>
 
                 <button type="submit">Update result</button>
                 <form method="dialog">
@@ -741,10 +741,10 @@
                 </select required>
 
                 <label for="comp-time"><b>Resultat</b></label>
-                <input type="numbers" name="comp-time" id="comp-time" maxlength="10" placeholder="Resultat" required>
+                <input type="time" name="comp-time" id="comp-time" maxlength="10" placeholder="Resultat tid" required>
 
                 <label for="comp-date"><b>Date</b></label>
-                <input type="numbers" name="comp-date" id="comp-date" maxlength="10" placeholder="dato" required>
+                <input type="date" name="comp-date" id="comp-date" maxlength="10" placeholder="Dato" required>
 
                 <label for="comp-name">Stævne navn</label>
                 <input type="text" name="comp-name" id="comp-name" maxlength="1000" placeholder="Stævne navn" required>
@@ -779,10 +779,10 @@
                 </select required>
 
                 <label for="update-comp-time"><b>Resultat</b></label>
-                <input type="numbers" name="update-comp-time" id="update-comp-time" maxlength="10" placeholder="Opdater resultat" required>
+                <input type="time" name="update-comp-time" id="update-comp-time" maxlength="10" placeholder="Opdater resultat" required>
 
                 <label for="update-comp-date"><b>Date</b></label>
-                <input type="numbers" name="update-comp-date" id="update-comp-date" maxlength="10" placeholder="opdater dato" required>
+                <input type="date" name="update-comp-date" id="update-comp-date" maxlength="10" placeholder="opdater dato" required>
 
                 <label for="update-comp-name">Stævne navn</label>
                 <input type="text" name="update-comp-name" id="update-comp-name" maxlength="1000" placeholder="Opdater stævne navn" required>
@@ -800,9 +800,5 @@
     </main>    
    
     <script src="javascripts/main.js" type="module"></script>
-    <script src="javascripts/displayFnc.js" type="module"></script>
-    <script src="javascripts/login.js" type="module"></script>
-    <script src="javascripts/payment.js" type="module"></script>
-    <script src="javascripts/rest-fnc.js" type="module"></script>
 </body>
 </html>

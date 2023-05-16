@@ -1,5 +1,3 @@
-"user strict"
-
 import {calcMemberPayment } from "./payment";
 export {showMemberRow, showPracticeResultRow, showCompResultRow}
 
