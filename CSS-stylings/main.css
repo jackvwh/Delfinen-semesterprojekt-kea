@@ -93,89 +93,7 @@ nav a.active {
     padding-right: 50px;
     border-radius: 25px;
 }
-/*-----------MEMBER Table Styling--------------*/
-.member-table-container {
-    background-color: #eeee;
-    position: relative;
-    align-items: center;
-    justify-items: center;
-    margin-top: 50px;
-    min-height: 700px;
-    max-height: 700px;
-    overflow: scroll;
-    border-radius: 15px;
-    overscroll-behavior: none;
-}
-.member-table {
-    text-align: center;
-}
-.member-table > tr, td {
-    padding-top: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 30px;
-}
 
-.tableFixedHeader {
-    overflow-y: auto;
-    height: 200px;
-}
-
-.tableFixedHeader > tr, th {
-    background-color: bisque;
-    position: sticky;
-    top: 0px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    z-index: 9999;
-}
-
-.tableFixedHeader tr:nth-child(even) {
-    background-color: white;
-}
-
-/*-----------RESULTAT Table Styling--------------*/
-.resultat-table-container {
-    background-color: #eeee;
-    position: relative;
-    align-items: center;
-    justify-items: center;
-    margin-top: 50px;
-    min-height: 700px;
-    max-height: 700px;
-    overflow: scroll;
-    border-radius: 15px;
-    overscroll-behavior: none;
-}
-
-.resultat-table{
-    text-align: center;
-}
-
-.resultat-table > tr, td {
-    padding-top: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 30px;
-}
-
-.resultatTableFixedHeader {
-    overflow-y: auto;
-    height: 200px;
-}
-
-.resultatTableFixedHeader > tr, th {
-    background-color: bisque;
-    position: sticky;
-    top: 0px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    z-index: 9999;
-}
-
-.resultatTableFixedHeader tr:nth-child(even) {
-    background-color: white;
-}
 /* UPDATE BTN STYLING */
 .update-btn {
     background-color: #4CAF50;
@@ -191,20 +109,26 @@ nav a.active {
     font-weight: bold;
     transition: transform 0.2s;
 }
-
-.update-btn:hover {
-    transform: scale(1.05);
+.delete-btn {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: transform 0.2s;
 }
 
-.update-btn:active {
-    transform: scale(1);
-}
 
 /*------------Button CSS------------*/
 /*---coulde be in main--------------*/
 .button-styling {
     appearance: none;
-    background-color: #000000;
     border: 2px solid #1A1A1A;
     border-radius: 5px;
     box-sizing: border-box;
