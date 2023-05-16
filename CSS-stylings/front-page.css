@@ -1,136 +1,175 @@
 /*--------------Her starter min css----------------------*/
 #homePage {
-    font-size: 12px;
+font-size: 12px;
 }
 
 #homePage > header {
-    text-align: center;
-    font-size: 3em;
+text-align: center;
+font-size: 3em;
 }
 
 #front-page-picture-container {
-    position: relative;
-    text-align: center;
-    height: 500px;
-    overflow: hidden;
-    top: -50px;
+position: relative;
+text-align: center;
+height: 500px;
+overflow: hidden;
+top: -50px;
 }
 
 #front-page-news-grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 250px;
-    padding-top: 30px;
-    padding-bottom: 150px;
-    margin: 0%;
-    align-items: center;
-    justify-items: center;
-    background-color: var(--colour2);
-    max-width: 100%;
-    height: auto;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+padding: 250px;
+padding-top: 30px;
+padding-bottom: 150px;
+margin: 0%;
+align-items: center;
+justify-items: center;
+background-color: var(--colour2);
+max-width: 100%;
+height: auto;
 }
 
 .front-page-news-grid-item {
-    position: relative;
-    height: 340px;
-    width: 250px;
-    text-align: center;
+position: relative;
+height: 340px;
+width: 250px;
+text-align: center;
 }
 
 .front-page-news-picture > img {
-    width: 250px;
-    height: 250px;
+width: 250px;
+height: 250px;
 }
 
 .front-page-news-button {
-    position: absolute;
-    bottom: 10px;
-    left: 75px;
-    font-family: Arial, Helvetica, sans-serif;
+position: absolute;
+bottom: 10px;
+left: 75px;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 #home-page > header {
-    text-align: center;
-    font-size: 2em;
+text-align: center;
+font-size: 2em;
 }
 
 h1 {
-    margin: 0%;
+margin: 0%;
 }
 
 #news-title {
-    text-align: center;
-    font-size: 3em;
-    background-color: var(--colour2);
-    color: var(--white);
-    margin-bottom: 0%;
-    padding-top: 25px;
-    text-transform: uppercase;
+text-align: center;
+font-size: 3em;
+background-color: var(--colour2);
+color: var(--white);
+margin-bottom: 0%;
+padding-top: 25px;
+text-transform: uppercase;
 }
 
 .front-page-news-title {
-    color: var(--white);
+color: var(--white);
 }
 
 #footer-info-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
+display: grid;
+grid-template-columns: 1fr 1fr;
+align-items: center;
+justify-items: center;
 }
 
 .footer-info-item {
-    width: 250px;
-    position: relative;
-    text-align: center;
+width: 250px;
+position: relative;
+text-align: center;
 }
 
 /*-----Log in button styling-------*/
 /* CSS */
 #login-btn {
-    position: relative;
-    right: -15px;
-    top: 5px;
-    align-items: center;
-    appearance: none;
-    background-color:white;
-    border-radius: 25px;
-    border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: #36395A;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: "JetBrains Mono",monospace;
-    height: 48px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow,transform;
-    font-size: 18px;
+position: relative;
+right: -15px;
+top: 5px;
+align-items: center;
+appearance: none;
+background-color:white;
+border-radius: 25px;
+border-width: 0;
+box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+box-sizing: border-box;
+color: #36395A;
+cursor: pointer;
+display: inline-flex;
+font-family: "JetBrains Mono",monospace;
+height: 48px;
+justify-content: center;
+line-height: 1;
+list-style: none;
+overflow: hidden;
+padding-left: 16px;
+padding-right: 16px;
+position: relative;
+text-align: left;
+text-decoration: none;
+transition: box-shadow .15s,transform .15s;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+white-space: nowrap;
+will-change: box-shadow,transform;
+font-size: 18px;
 }
 
 #login-btn:focus {
-  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
 #login-btn:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  transform: translateY(-2px);
+box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+transform: translateY(-2px);
 }
 
 #login-btn:active {
-  box-shadow: #D6D6E7 0 3px 7px inset;
-  transform: translateY(2px);
+box-shadow: #D6D6E7 0 3px 7px inset;
+transform: translateY(2px);
+}
+
+#login-dialog {
+border-color: black;
+background-color: var(--colour1);
+width: 500px;
+height: 400px;
+padding: 50px ; 
+}
+#login-form {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}
+
+#login-form > label {
+    font-size: 2em;
+    padding-bottom: 20px;
+    color: var(--colour3);
+}
+
+#login-form > input {
+    width: 500px;
+    height: 50px;
+    font-size: 1.2em;
+}
+
+#login-form > button {
+    font-size: 2em;
+    margin-top: 25px;
+}
+
+.close-login-dialog {
+position: relative;
+bottom: -30px;
+left: 190px;
+font-size: 2em;
 }

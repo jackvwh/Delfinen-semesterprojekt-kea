@@ -78,29 +78,7 @@ nav a.active {
         padding: 94px 2em;
     }
 }
-/* input form and dialog styling */
-dialog {
-    border-color: red;
-    background-color: rgb(141, 10, 158);
-    width: 55vw;
-    padding: 2em 1em;
-}
-form {
-    background-color: rgb(141, 10, 158);
-    display: grid;
-    max-width: 100%;
-    grid-template-columns: 1fr 4fr;
-    gap: 2px;
-}
-input {
-    margin: 1em auto;
-    width: 100%;
-    max-width: 650px;
-    padding: 1em;
-    border: 2px solid rgb(25, 39, 4);
-    display: block;
-    background: white;
-}
+
 /*-----------welcome user styling----------*/
 .welcome-user-container {
     background-color:thistle;
