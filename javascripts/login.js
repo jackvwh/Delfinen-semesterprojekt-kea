@@ -11,37 +11,44 @@ function loginDialog(event){
 
 function loginFunction(event){
     event.preventDefault();
-    console.log("event is: ", event);
-    const loginEmail = event.target.email.value;
-    const loginPsw = event.target.psw.value;
-
-    console.log("email is: ", loginEmail);
-    console.log("psw is: ", loginPsw);
-        // make switch instead
-        if (loginEmail === "admin" && loginPsw === "admin"){
-            document.querySelector("#admin-page").classList.remove("hidden");
-            document.querySelector("#home-page").classList.add("hidden");
+    const user = event.target.email.value;
+    console.log(user);
+    const psw = event.target.psw.value;
+        switch (user){
+            case "admin":
+                if (psw === "admin"){
+                    document.querySelector("#admin-page").classList.remove("hidden");
+                    document.querySelector("#home-page").classList.add("hidden");
+                }
+                break;
+            case "cash":
+                if (psw === "cash"){
+                    document.querySelector("#cashier-page").classList.remove("hidden");
+                    document.querySelector("#home-page").classList.add("hidden");
+                };
+                break;
+            case "coach":
+                if (psw === "coach"){
+                    document.querySelector("#coach-page").classList.remove("hidden");
+                    document.querySelector("#home-page").classList.add("hidden");
+                };
+                break;
+            case "comp":
+                if (psw === "comp"){
+                    document.querySelector("#comp-page").classList.remove("hidden");
+                    document.querySelector("#home-page").classList.add("hidden");
+                };
+                break;
+            case "regular":
+                if (psw === "regular"){
+                    document.querySelector("#regular-page").classList.remove("hidden");
+                    document.querySelector("#home-page").classList.add("hidden");
+                };
+                break;
+            default:
+                window.location.reload();
+                
         }
-        else if (loginEmail === "cash" && loginPsw === "cash"){
-            document.querySelector("#cashier-page").classList.remove("hidden");
-            document.querySelector("#home-page").classList.add("hidden");
-        }
-        else if (loginEmail === "coach" && loginPsw === "coach"){
-            document.querySelector("#coach-page").classList.remove("hidden");
-            document.querySelector("#home-page").classList.add("hidden");
-        }
-        else if (loginEmail === "comp" && loginPsw === "comp"){
-            document.querySelector("#comp-member-page").classList.remove("hidden");
-            document.querySelector("#home-page").classList.add("hidden");
-        }
-        else if (loginEmail === "regular" && loginPsw === "regular"){
-            document.querySelector("#regular-member-page").classList.remove("hidden");
-            document.querySelector("#home-page").classList.add("hidden");
-        }
-        else {
-            document.querySelector("#home-page").classList.remove("hidden");
-        }
-
     // close login dialog
     document.querySelector("#login-dialog").close();
 
