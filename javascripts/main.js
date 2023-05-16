@@ -1,14 +1,25 @@
 "use strict"
 
 import {loginDialog} from "./login.js";
+import {loadCompData, loadMemberData, loadPracticeData} from "./rest-fnc.js";
+import {showMemberRow} from "./displayFnc.js";
 import {calcMemberPayment, calcTotalIncome} from "./payment.js";
+
 
 window.addEventListener("load", initApp);
 
-function initApp(){
+async function initApp(){
     console.log("JS starting");
 
     addEventListeners();
+
+    const memberArray = await loadMemberData();
+    const practiceResults = await loadPracticeData();
+    const compResults = await loadCompData();
+
+    console.log("Members: ", memberArray)
+    console.log("Practice: ", practiceResults)
+    console.log("Comps: ", compResults)
 }
 
 function addEventListeners(){

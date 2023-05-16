@@ -1,5 +1,3 @@
-"use strict"
-
 export {loginDialog}
 
 function loginDialog(event){

@@ -1,5 +1,3 @@
-"use strict"
-
 export {calcMemberPayment, calcTotalIncome}
 
 const youthAge = 17;
