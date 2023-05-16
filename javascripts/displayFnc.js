@@ -1,4 +1,3 @@
-import {calcMemberPayment } from "./payment";
 export {showMemberRow, showPracticeResultRow, showCompResultRow}
 
 function showMemberRow(memberObject){
