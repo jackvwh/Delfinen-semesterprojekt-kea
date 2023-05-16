@@ -1,6 +1,7 @@
 "use strict"
 
-import { loginDialog } from "./login.js";
+import {loginDialog} from "./login.js";
+import {calcMemberPayment, calcTotalIncome} from "./payment.js";
 
 window.addEventListener("load", initApp);
 

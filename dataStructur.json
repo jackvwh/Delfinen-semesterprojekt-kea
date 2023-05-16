@@ -1,8 +1,8 @@
-{   "members": {
-
-        "uid = Admin - defined in firebase db": {
+{   
+    "members": {
+        "AlOr0n80qPLrqA0vJl48": {
             "title": "admin",
-            "name": "Svend",
+            "name": "Anders And",
             "address": "oldmanroad 12",
             "email": "somethingold@gmail.com",
             "phone": 23343454,
@@ -11,9 +11,9 @@
             "active": true,
             "comp": false
         },
-        "uid = gitte - defined in firebase db": {
+        "GFCogUyrdizw6dD221Qp": {
             "title": "cashier",
-            "name": "Svend",
+            "name": "Thorkild for faen",
             "address": "oldmanroad 12",
             "email": "somethingold@gmailcom",
             "phone": 23343454,
@@ -22,9 +22,9 @@
             "active": true,
             "comp": false
         },
-        "uid = Sigurd - defined in firebase db": {
+        "HlvRHr58C05guOLl64k5": {
             "title": "coach",
-            "name": "Svend",
+            "name": "Svend Sved",
             "address": "oldmanroad 12",
             "email": "somethingold@gmailcom",
             "phone": 23343454,
@@ -34,9 +34,9 @@
             "comp": false
         },
 
-        "uid = karla - defined in firebase db": {
+        "LWPSKpRvx7Htyjlb8JqV": {
             "title": "member",
-            "name": "karla",
+            "name": "Karla Farla",
             "address": "dembevej 34",
             "email": "karla@gmail.com",
             "phone": 23343454,
@@ -51,9 +51,9 @@
                 "brystsvømning": false
                 }
         },
-        "uid = simone - defined in firebase db": {
+        "SaW39AGOfU8DMUUG0FhJ": {
             "title": "member",
-            "name": "simone",
+            "name": "Simone Langer",
             "address": "ostevej 12",
             "email": "simonsays@gmailcom",
             "phone": 23343454,
@@ -68,9 +68,9 @@
                 "brystsvømning": false
                 }
         },
-        "uid = Svend - defined in firebase db": {
+        "WKjy6B8IfDJxIsBbyxEe": {
             "title": "member",
-            "name": "Svend",
+            "name": "Egon Olsen",
             "address": "oldmanroad 12",
             "email": "somethingold@gmailcom",
             "phone": 23343454,
@@ -82,39 +82,86 @@
            
 },
     "practiceResults": {
-
-        "practice UID - 1 - defined in firebase db": {
-            "memberUid": "karla", 
+        "1mNVXMNbZWjKsiaTFsDw": {
+            "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
             "disciplin": "crawl",
-            "resultTime": 23,
+            "resultTime": "09:57" ,
             "date": "12-07-1990"
         },
-
-        "practice UID - 2 - defined in firebase db":  {
-            "memberUid": "simone", 
+        "5tl4jHHSRaKEB0UW9nQd":  {
+            "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
             "disciplin": "crawl",
-            "resultTime": 23,
+            "resultTime": "09:57" ,
+            "date": "12-07-1990"
+        },
+        "6RtyNxxTYIBDRODr3dwv": {
+            "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
+            "disciplin": "crawl",
+            "resultTime": "09:57" ,
+            "date": "12-07-1990"
+        },
+        "8H0oH1WlDNfqyZAehXe1":  {
+            "memberUid": "LWPSKpRvx7Htyjlb8JqV", 
+            "disciplin": "crawl",
+            "resultTime": "09:57" ,
+            "date": "12-07-1990"
+        },
+        "9yHtqIcc25e4kzMInds6":  {
+            "memberUid": "LWPSKpRvx7Htyjlb8JqV", 
+            "disciplin": "crawl",
+            "resultTime": "09:57" ,
             "date": "12-07-1990"
         }
     },
     "compResults": {
-
-        "comp UID - 1 - defined in firebase db": {
-            "memberUid": "simone", 
-            "competition": "stævne navn",
+        "B3xo03oPgyOfpr3i3x9D": {
+            "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
+            "competition": "Damhus stævnet",
             "place": "somewhere",
             "date": "12-07-1990",
             "disciplin": "crawl",
-            "resultTime": 23  
+            "resultTime": "09:57"   
+        },
+        "GQOTmUwCWGxN9jp4hQfI": {
+            "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
+            "competition": "oste stævnet",
+            "place": "somewhere",
+            "date": "12-07-1990",
+            "disciplin": "crawl",
+            "resultTime": "09:57"   
+        },
+        "HYP5qsP3pYjrKppw5B7f": {
+            "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
+            "competition": "VM",
+            "place": "somewhere",
+            "date": "12-07-1990",
+            "disciplin": "crawl",
+            "resultTime": "09:57"   
         },
 
-        "comp UID - 2 - defined in firebase db":  {
-            "memberUid": "karla", 
-            "competition": "stævne navn",
+        "Ia8figwkPjmziJ0Ru9Mh":  {
+            "memberUid": "LWPSKpRvx7Htyjlb8JqV", 
+            "competition": "European Championship",
             "place": "somewhere else",
             "date": "12-07-1990",
             "disciplin": "crawl",
-            "resultTime": 23   
+            "resultTime": "09:57"    
+        },
+        "J9pPDTc9lethG2vpjLmc":  {
+            "memberUid": "LWPSKpRvx7Htyjlb8JqV", 
+            "competition": "Stort stævne!",
+            "place": "somewhere else",
+            "date": "12-07-1990",
+            "disciplin": "crawl",
+            "resultTime": "09:57"    
+        },
+        "KrHDeIVyMTSaY5VFOOiz":  {
+            "memberUid": "LWPSKpRvx7Htyjlb8JqV", 
+            "competition": "OMG",
+            "place": "somewhere else",
+            "date": "12-07-1990",
+            "disciplin": "crawl",
+            "resultTime": "09:57"   
         }
     }
 }

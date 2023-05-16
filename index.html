@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="memberpage.css">
-    <link rel="stylesheet" href="front-page.css">
+    <link rel="stylesheet" href="CSS-stylings/admin-page.css">
+    <link rel="stylesheet" href="CSS-stylings/app.css">
+    <link rel="stylesheet" href="CSS-stylings/cashier.css">
+    <link rel="stylesheet" href="CSS-stylings/front-page.css">
     <link rel="stylesheet" href="admin-page.css">
+    <link rel="stylesheet" href="CSS-stylings/member-page.css">
+    <link rel="stylesheet" href="CSS-stylings/coach.css">
     <title>Delfinen svømmeklub</title>
 </head>
 <body>
@@ -27,7 +30,7 @@
     <main>
         <!-- Home View -->
         <!-- Route: #home -->
-        <main id="home-page" class="hidden">
+        <main id="home-page">
             <div id="front-page-picture-container">
                 <img src="https://freesvg.org/img/1502475717.png" alt="">
             </div>
@@ -93,14 +96,12 @@
                 </div>
             </footer>
         </main>
-
         <!-- News View -->
         <!-- Route: #news -->
         <main id="newsPage" class="hidden">
             <h2>News</h2>
             <p>Some news this fine day 🎉</p>
         </main>
-
         <!-- About View -->
         <!-- Route: #about -->
         <main id="aboutPage" class="hidden">
@@ -119,14 +120,23 @@
         <br>
         <br>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
         <main id="adminPage" class="active">
             <section id="admin-page-grid-container">
 
 
         <main id="admin-page" class="hidden">
-            <h1>admin</h1>
-               <article class="create-member-btn-container">
+            <section id="admin-page-grid-container">
+
+                <article class="create-member-btn-container">
                     <button class="create-btn button-styling">Create new member</button
                 ></article>
 
@@ -159,14 +169,26 @@
                                         <th></th>
                                     </tr>
                                 </thead>
+                                <tr>
+                                <td> Simone </td>
+                                    <td> 22-09-2001 </td>
+                                    <td>Female</a></td>
+                                    <td>somemail@mail.com</td>
+                                    <td>H. C. Andersens Boulevard 12 </td>
+                                    <td>28 38 74 65</td>
+                                    <td>true/false</td>
+                                    <td>1600kr</td>
+                                    <td><input type="radio"></td>
+                                    <td style="width: 5px; padding: 0%; padding-right: 25px; padding-left: 25px;"><button class="button-styling update-btn">Update</button></td>
+                                    <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
+                                </tr>
                         </table>
                     </section>
                 </article>
-            </main>
+            </main>        
 
         <main id="cashier-page" class="hidden">
-
-           <section id="welcome-container">
+            <section id="welcome-container">
                 <article id="velcome-user">
                     <div id="user-welcome"> Welcome (user name) </div>
                     <div id="user-status"> Status (user title) </div>
@@ -205,19 +227,9 @@
                 </table>
 
             </section>
-    
-        </main>
-
-        <main id="comp-member-page" class="hidden">
-            <article id="comp-member-grid-container">
-
-                <article id="personal-info-container">
-
-         </main>
-
-        <main id="compMemberPage" class="active">
+      </main>
+      <main id="comp-member-page" class="hidden">
             <section id="comp-member-grid-container">
-
                 <article id="events-upcoming-container">
                     <div id="events-upcoming-item">
                         <h1>Kommende Stævner:</h1>
@@ -270,7 +282,6 @@
                     <div>
                         <h5 id="comp-member-info-email">E-mail:</h5>  
                     </div>
-                    <!-- change id to class and rename to: update-btn -->
                         <button class="update-btn">Updater Personlig Information</button>
                 </article>
                 
@@ -319,11 +330,9 @@
                             </table>
                     </div>
                 </article>
-
             </section>
         </main>
-
-
+  
         <main id="regular-member-page" class="hidden">
             <section id="regular-member-grid-container">
                 <article id="regular-member-info-container">
@@ -366,7 +375,98 @@
         </main>
 
         <main id="coach-page" class="hidden">
-            <h1>coach </h1>
+            <section id="welcome-coach-container">
+                <article id="velcome-user">
+                    <div id="user-welcome"> Welcome (user name) </div>
+                    <div id="user-status"> Status (user title) </div>
+                </article>
+                <article id="attached-swimmers">
+                    <h2>Dine svømmere:</h2>
+                    <h3>Simone</h3>
+                    <h3>Karla</h3>
+                    <h3>Svend</h3>
+                </article>
+            </section>
+
+            <section id="best-results-container">
+                <article id="crawl-5-best-results-table">
+                    <table>
+                        <!-- table header -->
+                        <thead class="tableFixedHeader">
+                            <tr>
+                                <h2>Crawl</h2>
+                                <th>Medlem</th>
+                                <th>Køn</th>
+                                <th>Stævne navn</th>
+                                <th style="width: 350px;"> Stævne sted </th>
+                                <th>Resultat tid:</th>
+                                <th>Dato</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </article>
+                <article id="rygcrawl-5-best-results-table">
+                    <table>
+                        <!-- table header -->
+                        <thead class="tableFixedHeader">
+                            <tr>
+                                <h2>Ryg crawl</h2>
+                                <th>Medlem</th>
+                                <th>Køn</th>
+                                <th>Stævne navn</th>
+                                <th style="width: 350px;"> Stævne sted </th>
+                                <th>Resultat tid:</th>
+                                <th>Dato</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </article>
+                <article id="butterfly-5-best-results-table">
+                    <table>
+                        <!-- table header -->
+                        <thead class="tableFixedHeader">
+                            <tr>
+                                <h2>Butterfly</h2>
+                                <th>Medlem</th>
+                                <th>Køn</th>
+                                <th>Stævne navn</th>
+                                <th style="width: 350px;"> Stævne sted </th>
+                                <th>Resultat tid:</th>
+                                <th>Dato</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </article>
+                <article id="breaststroke-5-best-results-table">
+                    <table>
+                        <!-- table header -->
+                        <thead class="tableFixedHeader">
+                            <tr>
+                                <h2>Brystsvømning</h2>
+                                <th>Medlem</th>
+                                <th>Køn</th>
+                                <th>Stævne navn</th>
+                                <th style="width: 350px;"> Stævne sted </th>
+                                <th>Resultat tid:</th>
+                                <th>Dato</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </article>
+            </section>
+
+            <section id="coach-btns">
+                <button id="insert-practice-result">Indsæt træningsresultat</button>
+                <button id="insert-comp-result">Indsæt konkurrence resultat</button>
+            </section>
         </main>
 
         <!------- DELETE DIALOG------->
@@ -385,9 +485,25 @@
         <dialog id="create-dialog">
             <h2>Opret nyt medlem</h2>
             <form id="create-form">
-                <label for="member-title">Title</label>
-                <input type="text" name="title" id="member-title" maxlength="1000" placeholder="Titel" required>
-
+                <fieldset>
+                    <legend>Titel</legend>
+                    <div>
+                        <label for="crawl">Administrator</label>
+                        <input type="checkbox" id="admin" name="admin">  
+                    </div>
+                    <div>
+                        <label for="cashier">Kasserer</label>
+                        <input type="checkbox" id="cashier" name="cashier">
+                    </div>
+                    <div>
+                        <label for="medlem">Medlem</label>
+                        <input type="checkbox" id="medlem" name="medlem" checked>
+                    </div>
+                    <div>
+                        <label for="coach">Træner</label>
+                        <input type="checkbox" id="coach" name="coach">
+                    </div>
+                </fieldset>
                 <label for="member-name">Name</label>
                 <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
 
@@ -435,7 +551,7 @@
                     </div>
                     <div>
                       <input type="checkbox" id="butterfly" name="butterfly">
-                      <label for="rutterfly">Butterfly</label>
+                      <label for="butterfly">Butterfly</label>
                     </div>
                     <div>
                       <input type="checkbox" id="brystsvømning" name="brystsvømning">
@@ -455,9 +571,25 @@
             <h2>Opdater medlemsoplysninger</h2>
 
             <form id="update-form">
-                <label for="member-title">Title</label>
-                <input type="text" name="title" id="member-title" maxlength="1000" placeholder="Titel" required>
-
+                <fieldset>
+                    <legend>Titel</legend>
+                    <div>
+                        <label for="crawl">Administrator</label>
+                        <input type="checkbox" id="admin" name="admin">  
+                    </div>
+                    <div>
+                        <label for="cashier">Kasserer</label>
+                        <input type="checkbox" id="cashier" name="cashier">
+                    </div>
+                    <div>
+                        <label for="medlem">Medlem</label>
+                        <input type="checkbox" id="medlem" name="medlem" checked>
+                    </div>
+                    <div>
+                        <label for="coach">Træner</label>
+                        <input type="checkbox" id="coach" name="coach">
+                    </div>
+                </fieldset>
                 <label for="member-name">Name</label>
                 <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
 
@@ -530,11 +662,10 @@
                     <input type="password" placeholder="Enter Password" name="psw" required>
                     
                     <button type="submit">Log ind</button>
-
-                <form method="dialog">
-                    <button>Fortryd</button>
-                </form>
             </form> 
+            <form method="dialog">
+                <button>Fortryd</button>
+            </form>
         </dialog>
 
         <!-- CREATE PRACTICE RESULTS DIALOG -->
@@ -683,7 +814,10 @@
         </dialog>
 
     </main>    
-    <script src="app.js" type="module"></script>
-    <script src="login.js" type="module"></script>
+   
+    <script src="javascripts/app.js" type="module"></script>
+    <script src="javascripts/displayFnc.js" type="module"></script>
+    <script src="javascripts/login.js" type="module"></script>
+    <script src="javascripts/payment.js" type="module"></script>
 </body>
 </html>
