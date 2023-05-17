@@ -11,32 +11,49 @@
     'main main main coach coach coach'
     'main main main header header header'
     'menu menu menu right right right';
+    padding: 50px;
+    margin-top: -200px;
+    gap: 50px;
 }
 
 #comp-member-grid-container > article {
-    border: 1px solid var(--green);
+    border: solid var(--colour2);
     padding: 20px;
 }
-#welcomeCompUser {
-    font-size: 16px;
-    text-align: center;
-    margin-top: 40px;
-    margin-left: 20px;
+
+/*------Kommende stævner-------------*/
+#events-upcoming-container {
+    height: 250px;
+    width: 1200px;
 }
 
-#compMemberCoachName {
-    margin-top: 40px;
+#events-upcoming-table {
+    height: 250px;
+    width: auto;
+    overflow: scroll;
+    overscroll-behavior:none ;
 }
 
-/* regular member page grid */
-
-#regular-member-grid-container {
-    text-align: center;
+#events-upcoming-table > tr, td {
+    padding-left: 75px;
+    padding-right: 75px;
 }
 
-/* regular member page styling */
+#events-upcoming-title {
+    font-size: 1.2em;
+}
 
-#welcomeRegularUser {
-    font-size: 16px;
-    margin-top: 60px;
+/*----Tidligere stævner------*/
+#event-container {
+    height: 250px;
+    width: 1200px;
+}
+#event-table {
+    height: 250px;
+    overflow: scroll;
+    overscroll-behavior: none;
+}
+
+#event-title {
+    font-size: 1.2em;
 }
