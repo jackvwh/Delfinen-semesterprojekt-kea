@@ -83,7 +83,6 @@ function showCompResultRow(compObject){
 function makeCompResultRow(compObject){
     const htmlRow = /*HTML*/ `
     <tr data-id=${compObject.id}>
-        <td> ${compObject.disciplin} </td>
         <td> ${compObject.memberUid } </td>
         <td> ${compObject.competition} </td>
         <td> ${compObject.place} </td>
