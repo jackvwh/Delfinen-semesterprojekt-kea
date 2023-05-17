@@ -17,9 +17,11 @@ async function initApp(){
     const practiceResults = await loadPracticeData();
     const compResults = await loadCompData();
 
+    // for testing
     console.log("Members: ", memberArray)
     console.log("Practice: ", practiceResults)
     console.log("Comps: ", compResults)
+
 }
 
 function addEventListeners(){
