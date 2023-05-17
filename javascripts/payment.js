@@ -25,23 +25,15 @@ function calcMemberPayment(memberObject){
 }
 function calcTotalIncome(memberArray){
     let totalIncome = null;
-    for (member of memberArray){
+    for (let member of memberArray){
         totalIncome += calcMemberPayment(member);
     }
     return totalIncome;
 }
 function calcAge(dob){
-    console.log("dob string: ", dob);
     const dobDate = new Date(dob);
-    console.log("new dobDate ", dobDate);
-    const nowMS = Date.now();
-    console.log("now MS: ", nowMS);
-    const dobMS = dobDate.getTime();
-    console.log("dob MS: ", dobMS);
-    const diffMS = nowMS - dobMS;
-    console.log("diff MS: ", diffMS)
+    const diffMS = Date.now() - dobDate.getTime();
     const ageDate = new Date(diffMS);
-    console.log("age Date:", ageDate);
 
     return Math.floor(ageDate.getUTCFullYear() - 1970)
 }

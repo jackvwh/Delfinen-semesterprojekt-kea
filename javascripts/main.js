@@ -23,6 +23,8 @@ async function initApp(){
 
     const payment = calcMemberPayment(memberArray[0]);
     console.log("payment:", payment);
+    // const totalIncome = calcTotalIncome(memberArray);
+    // console.log("total income:", totalIncome);
 }
 
 function addEventListeners(){
