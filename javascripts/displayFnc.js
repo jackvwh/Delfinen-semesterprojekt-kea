@@ -29,8 +29,8 @@ function showMemberRow(memberObject, caller){
     // insert row in DOM
     document.querySelector(`${table}`).insertAdjacentHTML("beforeend", memberRow);
      // add eventListener to update btn and delete-btn
-     document.querySelector(`${table} tr:last-child .update-btn`).addEventListener("click", () => updateMember(memberObject));
-     document.querySelector(`${table} tr:last-child .delete-btn`).addEventListener("click", () => deleteData(memberObject));
+     document.querySelector(`${table} tr:last-child .update-btn`).addEventListener("click", () => updateDialog(memberObject));
+     document.querySelector(`${table} tr:last-child .delete-btn`).addEventListener("click", () => deleteDialog(memberObject));
     
 }
 function makeMemberHTMLRow(memberObject){
@@ -57,7 +57,7 @@ function showPracticeResultRow(practiceObject){
     // insert row in DOM
     document.querySelector(`#${practiceObject.disciplin}-5-best-practice`).insertAdjacentHTML("beforeend", practiceRow);
      // add eventListener to delete-btn
-     document.querySelector(`#${practiceObject.disciplin}-5-best-practice tr:last-child .delete-btn`).addEventListener("click", () => deleteData(practiceObject));
+     document.querySelector(`#${practiceObject.disciplin}-5-best-practice tr:last-child .delete-btn`).addEventListener("click", () => deleteDialog(practiceObject));
     
 }
 function makePracticeResultRow(practiceObject){
@@ -77,7 +77,7 @@ function showCompResultRow(compObject){
     // insert row in DOM
     document.querySelector(`#${compObject.disciplin}-5-best-comp`).insertAdjacentHTML("beforeend", compRow);
      // add eventListener to delete-btn
-     document.querySelector(`#${compObject.disciplin}-5-best-comp tr:last-child .delete-btn`).addEventListener("click", () => deleteData(compObject));
+     document.querySelector(`#${compObject.disciplin}-5-best-comp tr:last-child .delete-btn`).addEventListener("click", () => deleteDialog(compObject));
     
 }
 function makeCompResultRow(compObject){
@@ -92,4 +92,17 @@ function makeCompResultRow(compObject){
     </tr>
     `;
     return htmlRow;
+}
+
+function updateDialog(event, object){
+
+    document.querySelector("#update-dialog").showModal();
+
+    // document.querySelector("#update-form").addEventListener("submit", updateData);
+}
+function deleteDialog(event, object){
+
+    document.querySelector("#delete-dialog").showModal();
+
+    // document.querySelector("#update-form").addEventListener("submit", updateData);
 }
