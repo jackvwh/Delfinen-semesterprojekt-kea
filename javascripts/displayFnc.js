@@ -30,12 +30,12 @@ function showMemberRow(memberObject, caller){
     document.querySelector(`${table}`).insertAdjacentHTML("beforeend", memberRow);
      // add eventListener to update btn and delete-btn
      document.querySelector(`${table} tr:last-child .update-btn`).addEventListener("click", () => updateMember(memberObject));
-     document.querySelector(`${table} tr:last-child .delete-btn`).addEventListener("click", () => deleteMember(memberObject));
+     document.querySelector(`${table} tr:last-child .delete-btn`).addEventListener("click", () => deleteData(memberObject));
     
 }
 function makeMemberHTMLRow(memberObject){
     const htmlRow = /*HTML*/ `
-    <tr data-id=${memberObject.id}>
+    <tr data-id=${memberObject.id} data-type="members">
         <td> ${memberObject.name} </td>
         <td> ${memberObject.birthdate} </td>
         <td> ${memberObject.gender} </td>
@@ -57,12 +57,12 @@ function showPracticeResultRow(practiceObject){
     // insert row in DOM
     document.querySelector(`#${practiceObject.disciplin}-5-best-practice`).insertAdjacentHTML("beforeend", practiceRow);
      // add eventListener to delete-btn
-     document.querySelector(`#${practiceObject.disciplin}-5-best-practice tr:last-child .delete-btn`).addEventListener("click", () => deletePractice(practiceObject));
+     document.querySelector(`#${practiceObject.disciplin}-5-best-practice tr:last-child .delete-btn`).addEventListener("click", () => deleteData(practiceObject));
     
 }
 function makePracticeResultRow(practiceObject){
     const htmlRow = /*HTML*/ `
-    <tr data-id=${practiceObject.id}>
+    <tr data-id=${practiceObject.id} data-type="practiceResults">
         <td> ${practiceObject.memberUid} </td>
         <td> ${practiceObject.resultTime} </td>
         <td> ${practiceObject.date} </td>
@@ -77,12 +77,12 @@ function showCompResultRow(compObject){
     // insert row in DOM
     document.querySelector(`#${compObject.disciplin}-5-best-comp`).insertAdjacentHTML("beforeend", compRow);
      // add eventListener to delete-btn
-     document.querySelector(`#${compObject.disciplin}-5-best-comp tr:last-child .delete-btn`).addEventListener("click", () => deleteComp(compObject.id));
+     document.querySelector(`#${compObject.disciplin}-5-best-comp tr:last-child .delete-btn`).addEventListener("click", () => deleteData(compObject));
     
 }
 function makeCompResultRow(compObject){
     const htmlRow = /*HTML*/ `
-    <tr data-id=${compObject.id}>
+    <tr data-id=${compObject.id} data-type="compResults">
         <td> ${compObject.memberUid } </td>
         <td> ${compObject.competition} </td>
         <td> ${compObject.place} </td>
