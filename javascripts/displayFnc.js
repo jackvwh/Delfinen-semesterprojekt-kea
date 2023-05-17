@@ -1,13 +1,23 @@
-export {iterateMembers, showPracticeResultRow, showCompResultRow}
+export {iterateMembers, iteratePractice, iterateComps}
 
 function iterateMembers(memberArray, caller){
     for (let member of memberArray){
         showMemberRow(member, caller);
     }
 }
+function iteratePractice(practiceResults){
+    for (let practiceObj of practiceResults){
+        showPracticeResultRow(practiceObj);
+    }
+}
+function iterateComps(compResults){
+    for (let compObj of compResults){
+        showCompResultRow(compObj);
+    }
+}
 function showMemberRow(memberObject, caller){
     // make html row with member values
-    const memberRow = makeMemberRow(memberObject); 
+    const memberRow = makeMemberHTMLRow(memberObject); 
     let table = null;
     //check for caller
     if(caller === "admin"){
@@ -23,7 +33,7 @@ function showMemberRow(memberObject, caller){
      document.querySelector(`${table} tr:last-child .delete-btn`).addEventListener("click", () => deleteMember(memberObject));
     
 }
-function makeMemberRow(memberObject){
+function makeMemberHTMLRow(memberObject){
     const htmlRow = /*HTML*/ `
     <tr data-id=${memberObject.id}>
         <td> ${memberObject.name} </td>
@@ -45,18 +55,17 @@ function showPracticeResultRow(practiceObject){
     // make html row with practice values
     const practiceRow = makePracticeResultRow(practiceObject); 
     // insert row in DOM
-    document.querySelector("#member-table").insertAdjacentHTML("beforeend", practiceRow);
+    document.querySelector(`#${practiceObject.disciplin}-5-best-practice`).insertAdjacentHTML("beforeend", practiceRow);
      // add eventListener to delete-btn
-     document.querySelector("#member-table tr:last-child .delete-btn").addEventListener("click", () => deletePractice(practiceObject));
+     document.querySelector(`#${practiceObject.disciplin}-5-best-practice tr:last-child .delete-btn`).addEventListener("click", () => deletePractice(practiceObject));
     
 }
 function makePracticeResultRow(practiceObject){
     const htmlRow = /*HTML*/ `
     <tr data-id=${practiceObject.id}>
-        <td> ${memberObject.disciplin} </td>
-        <td> ${memberObject.name} </td>
-        <td> ${memberObject.resultTime} </td>
-        <td> ${memberObject.date} </td>
+        <td> ${practiceObject.memberUid} </td>
+        <td> ${practiceObject.resultTime} </td>
+        <td> ${practiceObject.date} </td>
         <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
     </tr>
     `;
@@ -66,20 +75,20 @@ function showCompResultRow(compObject){
     // make html row with member values
     const compRow = makeCompResultRow(compObject); 
     // insert row in DOM
-    document.querySelector("#member-table").insertAdjacentHTML("beforeend", compRow);
+    document.querySelector(`#${compObject.disciplin}-5-best-comp`).insertAdjacentHTML("beforeend", compRow);
      // add eventListener to delete-btn
-     document.querySelector("#member-table tr:last-child .delete-btn").addEventListener("click", () => deleteComp(compObject));
+     document.querySelector(`#${compObject.disciplin}-5-best-comp tr:last-child .delete-btn`).addEventListener("click", () => deleteComp(compObject.id));
     
 }
 function makeCompResultRow(compObject){
     const htmlRow = /*HTML*/ `
     <tr data-id=${compObject.id}>
-        <td> ${memberObject.disciplin} </td>
-        <td> ${memberObject.name} </td>
-        <td> ${memberObject.competition} </td>
-        <td> ${memberObject.place} </td>
-        <td> ${memberObject.resultTime} </td>
-        <td> ${memberObject.date} </td>
+        <td> ${compObject.disciplin} </td>
+        <td> ${compObject.memberUid } </td>
+        <td> ${compObject.competition} </td>
+        <td> ${compObject.place} </td>
+        <td> ${compObject.resultTime} </td>
+        <td> ${compObject.date} </td>
         <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
     </tr>
     `;
