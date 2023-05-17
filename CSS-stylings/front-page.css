@@ -87,7 +87,7 @@ text-align: center;
 
 /*-----Log in button styling-------*/
 /* CSS */
-#login-btn {
+.login-out-btn {
 position: relative;
 right: -15px;
 top: 5px;
@@ -100,7 +100,6 @@ box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3p
 box-sizing: border-box;
 color: #36395A;
 cursor: pointer;
-display: inline-flex;
 font-family: "JetBrains Mono",monospace;
 height: 48px;
 justify-content: center;
@@ -110,7 +109,7 @@ overflow: hidden;
 padding-left: 16px;
 padding-right: 16px;
 position: relative;
-text-align: left;
+text-align: center;
 text-decoration: none;
 transition: box-shadow .15s,transform .15s;
 user-select: none;
