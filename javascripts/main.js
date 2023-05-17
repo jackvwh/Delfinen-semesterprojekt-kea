@@ -20,6 +20,9 @@ async function initApp(){
     console.log("Members: ", memberArray)
     console.log("Practice: ", practiceResults)
     console.log("Comps: ", compResults)
+
+    const payment = calcMemberPayment(memberArray[0]);
+    console.log("payment:", payment);
 }
 
 function addEventListeners(){

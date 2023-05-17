@@ -8,8 +8,9 @@ const seniorPrize = 1600;
 const passivePrice = 500;
 
 function calcMemberPayment(memberObject){
-    const currentDate = date();
-    const age = Math.floor(currentDate - memberObject.birthDate); // needs testing
+   
+    const age = calcAge(memberObject.birthdate);
+    console.log("age: ", age);
 
         if (age <= youthAge){
             return youthPrice;
@@ -28,4 +29,19 @@ function calcTotalIncome(memberArray){
         totalIncome += calcMemberPayment(member);
     }
     return totalIncome;
+}
+function calcAge(dob){
+    console.log("dob string: ", dob);
+    const dobDate = new Date(dob);
+    console.log("new dobDate ", dobDate);
+    const nowMS = Date.now();
+    console.log("now MS: ", nowMS);
+    const dobMS = dobDate.getTime();
+    console.log("dob MS: ", dobMS);
+    const diffMS = nowMS - dobMS;
+    console.log("diff MS: ", diffMS)
+    const ageDate = new Date(diffMS);
+    console.log("age Date:", ageDate);
+
+    return Math.floor(ageDate.getUTCFullYear() - 1970)
 }
