@@ -12,8 +12,8 @@ function loginDialog(event){
 function loginFunction(event){
     event.preventDefault();
     const user = event.target.email.value;
-    console.log(user);
     const psw = event.target.psw.value;
+    
         switch (user){
             case "admin":
                 if (psw === "admin"){
@@ -21,7 +21,7 @@ function loginFunction(event){
                     document.querySelector("#home-page").classList.add("hidden");
                     //change log btn 
                     document.querySelector("#logOut-btn").classList.remove("hidden");
-                    document.querySelector("#login-btn").classList.add("hidden");                
+                    document.querySelector("#login-btn").classList.add("hidden"); 
                 }
                 break;
             case "cash":
@@ -61,8 +61,7 @@ function loginFunction(event){
                 };
                 break;
             default:
-                window.location.reload();
-                
+                window.location.reload();         
         }
     // close login dialog
     document.querySelector("#login-dialog").close();

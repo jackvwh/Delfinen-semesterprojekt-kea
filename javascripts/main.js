@@ -2,7 +2,7 @@
 
 import {loginDialog} from "./login.js";
 import {loadCompData, loadMemberData, loadPracticeData} from "./rest-fnc.js";
-import {showMemberRow} from "./displayFnc.js";
+import {iterateMembers} from "./displayFnc.js";
 import {calcMemberPayment, calcTotalIncome} from "./payment.js";
 
 
@@ -21,6 +21,9 @@ async function initApp(){
     console.log("Members: ", memberArray)
     console.log("Practice: ", practiceResults)
     console.log("Comps: ", compResults)
+
+    iterateMembers(memberArray, "admin");
+    iterateMembers(memberArray, "cashier");
 }
 
 function addEventListeners(){
