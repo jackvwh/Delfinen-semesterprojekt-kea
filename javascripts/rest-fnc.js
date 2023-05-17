@@ -1,6 +1,6 @@
 export {loadCompData, loadMemberData, loadPracticeData}
 
-const endpoint = "https://project-dolphin-690a5-default-rtdb.firebaseio.com/"
+const endpoint = "https://delfin-kea-default-rtdb.firebaseio.com/"
 
 async function loadMemberData(){
     // load member data
