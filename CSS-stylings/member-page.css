@@ -8,35 +8,81 @@
 #comp-member-grid-container {
     display: grid;
     grid-template-areas:
-    'main main main coach coach coach'
+    'main main main right right right'
     'main main main header header header'
-    'menu menu menu right right right';
+    'menu menu menu coach coach .';
+    padding: 50px;
+    margin-top: -225px;
+    gap: 50px;
 }
 
 #comp-member-grid-container > article {
-    border: 1px solid var(--green);
+    border: solid var(--colour2);
     padding: 20px;
 }
+
+/*------Kommende stævner-------------*/
+#events-upcoming-container {
+    height: 250px;
+    width: 1200px;
+}
+
+#events-upcoming-table {
+    height: 250px;
+    width: auto;
+    overflow: scroll;
+    overscroll-behavior:none ;
+}
+
+#events-upcoming-table > tr, td {
+    padding-left: 75px;
+    padding-right: 75px;
+}
+
+#events-upcoming-title {
+    font-size: 1.2em;
+}
+
+/*----Tidligere stævner------*/
+#event-container {
+    height: 250px;
+    width: 1200px;
+}
+#event-table {
+    height: 250px;
+    overflow: scroll;
+    overscroll-behavior: none;
+}
+
+#event-title {
+    font-size: 1.2em;
+}
+
+#comp-member-coach-container {
+    font-size: 1.2em;
+}
+
+/*----------comp member info container-----------*/
 #welcomeCompUser {
-    font-size: 16px;
-    text-align: center;
-    margin-top: 40px;
-    margin-left: 20px;
+    font-size: 1.5em;
 }
 
-#compMemberCoachName {
-    margin-top: 40px;
+#comp-member-info-container {
+    height: 500px;
 }
 
-/* regular member page grid */
-
-#regular-member-grid-container {
-    text-align: center;
+#comp-member-info-name,
+#comp-member-info-gender,
+#comp-member-info-age,
+#comp-member-info-address,
+#comp-member-info-email {
+    font-size: 1.5em;
 }
 
-/* regular member page styling */
+.comp-member-update-btn-container {
+text-align: center;
+}
 
-#welcomeRegularUser {
-    font-size: 16px;
-    margin-top: 60px;
+#comp-member-update-btn {
+    font-size: 2em;
 }

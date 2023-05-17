@@ -30,7 +30,7 @@
     <main>
         <!-- Home View -->
         <!-- Route: #home -->
-        <main id="home-page">
+        <main id="home-page" class="hidden">
             <div id="front-page-picture-container">
                 <img src="https://freesvg.org/img/1502475717.png" alt="">
             </div>
@@ -45,7 +45,7 @@
                         <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
                     </div>
                     <h3 class="front-page-news-title">News overskrift</h3>
-                    <button class="button front-page-news-button">Læs mere...</button>
+                    <button class="button-styling front-page-news-button but">Læs mere...</button>
                 </article>
 
                 <article class="front-page-news-grid-item">
@@ -53,7 +53,7 @@
                         <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
                     </div>
                     <h3 class="front-page-news-title">News overskrift</h3>
-                    <button class="button front-page-news-button">Læs mere...</button>
+                    <button class="button-styling front-page-news-button">Læs mere...</button>
                 </article>
 
                 <article class="front-page-news-grid-item">
@@ -61,7 +61,7 @@
                         <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
                     </div>
                     <h3 class="front-page-news-title">News overskrift</h3>
-                    <button class="button front-page-news-button">Læs mere...</button>
+                    <button class="button-styling front-page-news-button">Læs mere...</button>
                 </article>
 
                 <article class="front-page-news-grid-item">
@@ -69,48 +69,40 @@
                         <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
                     </div>
                     <h3 class="front-page-news-title">News overskrift</h3>
-                    <button class="button front-page-news-button">Læs mere...</button>
+                    <button class="button-styling front-page-news-button">Læs mere...</button>
                 </article>
             </section>
             <footer>
                 <div id="footer-info-container">
-                    <div id="footer-info-item">
+                    <div class="footer-info-item">
                         <h2>Svømmeklub Delfinen</h2>
                         <h3>Delfinvej 26</h3>
                         <h3>København S, 2300</h3>
                         <h3>Danmark</h3>
-                        <br>
-                        <br>
+                    </div>
+                    <div class="footer-info-item">
                         <h3>CVR: 12345678</h3>
                         <h3>Tel: 11 11 11 11</h3>
-                        <h3>E-mail: info@dsk.dk</h3>
-                    </div>
-                    <div id="footer-info-item">
-                        <p>
-                            Instagram
-                            Facebook
-                            Twiiter
-                            LinkedIn
-                        </p>
+                        <h3>E-mail: info@dsk.dk</h3> 
                     </div>
                 </div>
             </footer>
         </main>
         <!-- News View -->
         <!-- Route: #news -->
-        <main id="newsPage" class="hidden">
+        <main id="news-page" class="hidden">
             <h2>News</h2>
             <p>Some news this fine day 🎉</p>
         </main>
         <!-- About View -->
         <!-- Route: #about -->
-        <main id="aboutPage" class="hidden">
+        <main id="about-page" class="hidden">
             <h2>About</h2>
             <p>Who we are and what we do 🤷🏼‍♂️</p>
         </main>
         <!-- Contact View -->
         <!-- Route: #contact -->
-        <main id="contactPage" class="hidden">
+        <main id="contact-page" class="hidden">
             <h2>Contact</h2>
             <p>Get in touch, or swing by for a cup of coffee ☕️</p>
             <p>I'm just one arm away 🤷🏼‍♂️</p>
@@ -168,17 +160,16 @@
             </section>
         </main>
         <main id="cashier-page" class="hidden">
-            <section id="welcome-container">
-                <article id="velcome-user">
-                    <div id="user-welcome"> Welcome (user name) </div>
-                    <div id="user-status"> Status (user title) </div>
+             <section id="cashier-page-grid-container">
+                <article class="welcome-user-container">
+                    <h2>Velkommen: Cashier navn</h2>
+                    <h3>Status: Cashier</h3>
                 </article>
-                <article id="total-income">
-                    <p>Kontingent</p>
-                    <p>Forventet beløb ialt: ?????</p>
-                </article>
-            </section>
 
+                <article class="income-container">
+                    <h2>Kontingent:</h2>
+                    <h3>30.000kr</h3>
+               </article>
             <div id="sort-container">
                 <select name="sort-payments" id="sort-payments">
                     <option value="Paid">Paid</option>
@@ -231,14 +222,39 @@
                                     <td>16:00</td>
                                     <td>2</td>
                                 </tr>
-                        </table>
-                    </div>
+                            </thead>
+                            <tr>
+                            <td> Simone </td>
+                                <td> 22-09-2001 </td>
+                                <td>Female</a></td>
+                                <td>somemail@mail.com</td>
+                                <td>H. C. Andersens Boulevard 12 </td>
+                                <td>28 38 74 65</td>
+                                <td>true/false</td>
+                                <td>1600kr</td>
+                                <td><input class="checkbox-styling" type="checkbox"></td>
+                            </tr>
+                            <tr>
+                            <td> Simone </td>
+                                <td> 22-09-2001 </td>
+                                <td>Female</a></td>
+                                <td>somemail@mail.com</td>
+                                <td>H. C. Andersens Boulevard 12 </td>
+                                <td>28 38 74 65</td>
+                                <td>true/false</td>
+                                <td>1600kr</td>
+                                <td><input class="checkbox-styling" type="checkbox"></td>
+                            </tr>
+                    </table>
+                    </section>
                 </article>
-
+        </main>
+        <main id="comp-member-page" class="">
+            <section id="comp-member-grid-container">
+ 
                 <article id="comp-member-coach-container">
-                    <div>
-                        <h1 id="compMemberCoachName">Træner:</h1>    
-                    </div>
+                    <h1>Træner:</h1> 
+                    <h2>Anders Anderson</h2>   
                 </article>
             
                 <article id="comp-member-info-container">
@@ -260,52 +276,140 @@
                     <div>
                         <h5 id="comp-member-info-email">E-mail:</h5>  
                     </div>
-                        <button class="update-btn">Updater Personlig Information</button>
+                    <div class = "comp-member-update-btn-container">
+                        <button class="update-btn" id = "comp-member-update-btn">Opdater</button>
+                    </div>
                 </article>
                 
                 <article id="disciplin-container">
                 <h1>Discipliner:</h1>
-                    <div id="disciplin-list">
-                        <ol id="crawl">Crawl</ol>  
-                        <ol id="rygcrawl">Rygcrawl</ol> 
-                        <ol id="butterfly">Butterfly</ol> 
-                        <ol id="brystsvømming">Brystsvømming</ol> 
+                    <div id="disciplin-container">
+                        <input name="brystsvømning" type="checkbox" class="checkbox-styling">
+                        <label for="brystsvømning">Brystsvømning</label>
+                        <br>
+                        <input name="crawl" type="checkbox" class="checkbox-styling">
+                        <label for="crawl">Crawl</label>
+                        <br>
+                        <input name="butterfly" type="checkbox" class="checkbox-styling">
+                        <label for="butterfly">Butterfly</label>
+                        <br>
+                        <input name="rygcrawl" type="checkbox" class="checkbox-styling">
+                        <label for="rygcrawl">Rygcrawl</label>
+
                     </div>
                 </article>
 
-                <article id="events-container">
-                    <div id="events-old-item">
-                        <h1>Tidligere stævner:</h1>
-                            <table>
+                <article id="events-upcoming-container">
+                    <div id="events-upcoming-item">
+
+                        <div id="events-upcoming-title">
+                            <h1>Trænings resultater:</h1>
+                        </div>
+
+                        <div id="events-upcoming-table">
+                            <table cellspacing = 0>
                                 <thead>
                                     <tr>
                                     <th>Stævne</th>
                                     <th>Dato</th>
                                     <th>Disciplin</th>
                                     <th>Træner</th>
-                                    <th>Tid</th>
-                                    <th>Resultat</th>
+                                    <th>Start</th>
+                                    <th>Position</th>
                                     </tr>
                                 </thead>
-                                
-                                <tr>
-                                <td>Næstved</td>
-                                <td>22-04-2023</td>
-                                <td>Butterfly</td>
-                                <td>John</td>
-                                <td>04:20</td>
-                                <td>1</td>
-                                </tr>
 
                                 <tr>
-                                <td>Roskilde</td>
-                                <td>14-03-2023</td>
-                                <td>Crawl</td>
-                                <td>Lars</td>
-                                <td>05:20</td>
-                                <td>3</td>
+                                <td>Amager</td>
+                                <td>22-06-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>16:00</td>
+                                <td>2</td>
                                 </tr>
-                            </table>
+                                <tr>
+                                <td>Amager</td>
+                                <td>22-06-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>16:00</td>
+                                <td>2</td>
+                                </tr>
+                                <tr>
+                                <td>Amager</td>
+                                <td>22-06-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>16:00</td>
+                                <td>2</td>
+                                </tr>
+                                <tr>
+                                <td>Amager</td>
+                                <td>22-06-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>16:00</td>
+                                <td>2</td>
+                                </tr>
+                        </table>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="event-container">
+                    <div id="event-item">
+
+                        <div id="event-title">
+                            <h1>Konkurrence resultater:</h1>
+                        </div>
+
+                        <div id="event-table">
+                            <table cellspacing = 0>
+                                <thead>
+                                    <tr>
+                                    <th>Stævne</th>
+                                    <th>Dato</th>
+                                    <th>Disciplin</th>
+                                    <th>Træner</th>
+                                    <th>Start</th>
+                                    <th>Position</th>
+                                    </tr>
+                                </thead>
+
+                                <tr>
+                                <td>Amager</td>
+                                <td>22-06-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>16:00</td>
+                                <td>2</td>
+                                </tr>
+                                <tr>
+                                <td>Amager</td>
+                                <td>22-06-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>16:00</td>
+                                <td>2</td>
+                                </tr>
+                                <tr>
+                                <td>Amager</td>
+                                <td>22-06-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>16:00</td>
+                                <td>2</td>
+                                </tr>
+                                <tr>
+                                <td>Amager</td>
+                                <td>22-06-2023</td>
+                                <td>Butterfly</td>
+                                <td>John</td>
+                                <td>16:00</td>
+                                <td>2</td>
+                                </tr>
+                        </table>
+                        </div>
                     </div>
                 </article>
             </section>
@@ -743,12 +847,11 @@
                     <!-- SHOULD BE TYPE: EMAIL - for testing type:text -->
                     <input type="text" placeholder="Indsæt email" name="email" required> 
                     <label for="password"><b>Kodeord</b></label>
-                    <input type="password" placeholder="Indsæt kodeord" name="psw" required>
-                    
+                    <input type="password" placeholder="Indsæt kodeord" name="psw" required>         
                     <button type="submit">Log ind</button>
             </form> 
             <form method="dialog">
-                <button>Fortryd</button>
+                <button class="button-styling close-login-dialog">Fortryd</button>
             </form>
         </dialog>
         <!-- CREATE PRACTICE RESULTS DIALOG -->

@@ -1,67 +1,71 @@
 /* ---------- root variables ---------- */
 :root {
-    --green: rgb(38, 76, 89);
-    --light-green: rgb(172, 198, 201);
-    --light-grey: #f1f1f4;
-    --text-color-light: #f1f1f1;
-    --text-color-dark: #333;
-    --text-color-danger: rgb(152, 58, 58);
-    --white: #f1f1f1;
+    --colour1:#8294C4;
+    --colour2: #ACB1D6;
+    --colour3:#DBDFEA;
+    --white: white;
+}
+
+main {
+    height: 1200px;
 }
 
 /* Set height of body and the document to 100% to enable "full page tabs" */
 body,
 html {
-    color: var(--text-color-dark);
+    color: var(--colour1);
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--light-green);
+    background-color: var(--colour3);
     padding-top: 45px;
 }
 
 /* ---------- nav styling ---------- */
 nav {
     display: grid;
-    background-color: var(--green);
+    background-color: var(--colour1);
+    color: var(--white);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     text-align: center;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     z-index: 9999;
 }
 
 @media (min-width: 600px) {
     nav {
         padding: 1em 2em;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 150px;
     }
 }
 
 /* Style the links inside the navigation bar */
 nav a {
     display: inline-block;
-    color: var(--text-color-light);
+    color: var(--white);
     text-align: center;
     padding: 20px 16px;
     text-decoration: none;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    border: 2px solid rgb(38, 76, 89);
 }
 
 /* Change the color of links on hover */
 nav a:hover {
-    background-color: var(--light-green);
-    color: var(--text-color-dark);
+    background-color: var(--colour2);
+    color: var(--navy);
+    border-radius: 25px;
 }
 
 /* Add a color to the active/current link */
 nav a.active {
-    background-color: var(--light-green);
-    color: var(--green);
+    background-color: var(--colour2);
+    color: var(--white);
 }
 
 .hidden {
@@ -74,29 +78,7 @@ nav a.active {
         padding: 94px 2em;
     }
 }
-/* input form and dialog styling */
-dialog {
-    border-color: red;
-    background-color: rgb(141, 10, 158);
-    width: 55vw;
-    padding: 2em 1em;
-}
-form {
-    background-color: rgb(141, 10, 158);
-    display: grid;
-    max-width: 100%;
-    grid-template-columns: 1fr 4fr;
-    gap: 2px;
-}
-input {
-    margin: 1em auto;
-    width: 100%;
-    max-width: 650px;
-    padding: 1em;
-    border: 2px solid rgb(25, 39, 4);
-    display: block;
-    background: white;
-}
+
 /*-----------welcome user styling----------*/
 .welcome-user-container {
     background-color:thistle;
@@ -111,89 +93,7 @@ input {
     padding-right: 50px;
     border-radius: 25px;
 }
-/*-----------MEMBER Table Styling--------------*/
-.member-table-container {
-    background-color: #eeee;
-    position: relative;
-    align-items: center;
-    justify-items: center;
-    margin-top: 50px;
-    min-height: 700px;
-    max-height: 700px;
-    overflow: scroll;
-    border-radius: 15px;
-    overscroll-behavior: none;
-}
-.member-table {
-    text-align: center;
-}
-.member-table > tr, td {
-    padding-top: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 30px;
-}
 
-.tableFixedHeader {
-    overflow-y: auto;
-    height: 200px;
-}
-
-.tableFixedHeader > tr, th {
-    background-color: bisque;
-    position: sticky;
-    top: 0px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    z-index: 9999;
-}
-
-.tableFixedHeader tr:nth-child(even) {
-    background-color: white;
-}
-
-/*-----------RESULTAT Table Styling--------------*/
-.resultat-table-container {
-    background-color: #eeee;
-    position: relative;
-    align-items: center;
-    justify-items: center;
-    margin-top: 50px;
-    min-height: 700px;
-    max-height: 700px;
-    overflow: scroll;
-    border-radius: 15px;
-    overscroll-behavior: none;
-}
-
-.resultat-table{
-    text-align: center;
-}
-
-.resultat-table > tr, td {
-    padding-top: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 30px;
-}
-
-.resultatTableFixedHeader {
-    overflow-y: auto;
-    height: 200px;
-}
-
-.resultatTableFixedHeader > tr, th {
-    background-color: bisque;
-    position: sticky;
-    top: 0px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    z-index: 9999;
-}
-
-.resultatTableFixedHeader tr:nth-child(even) {
-    background-color: white;
-}
 /* UPDATE BTN STYLING */
 .update-btn {
     background-color: #4CAF50;
@@ -209,20 +109,26 @@ input {
     font-weight: bold;
     transition: transform 0.2s;
 }
-
-.update-btn:hover {
-    transform: scale(1.05);
+.delete-btn {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: transform 0.2s;
 }
 
-.update-btn:active {
-    transform: scale(1);
-}
 
 /*------------Button CSS------------*/
 /*---coulde be in main--------------*/
 .button-styling {
     appearance: none;
-    background-color: #000000;
     border: 2px solid #1A1A1A;
     border-radius: 5px;
     box-sizing: border-box;
