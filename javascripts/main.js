@@ -17,14 +17,11 @@ async function initApp(){
     const practiceResults = await loadPracticeData();
     const compResults = await loadCompData();
 
+    // for testing
     console.log("Members: ", memberArray)
     console.log("Practice: ", practiceResults)
     console.log("Comps: ", compResults)
 
-    const payment = calcMemberPayment(memberArray[0]);
-    console.log("payment:", payment);
-    // const totalIncome = calcTotalIncome(memberArray);
-    // console.log("total income:", totalIncome);
 }
 
 function addEventListeners(){
