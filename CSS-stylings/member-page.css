@@ -8,11 +8,11 @@
 #comp-member-grid-container {
     display: grid;
     grid-template-areas:
-    'main main main coach coach coach'
+    'main main main right right right'
     'main main main header header header'
-    'menu menu menu right right right';
+    'menu menu menu coach coach .';
     padding: 50px;
-    margin-top: -200px;
+    margin-top: -225px;
     gap: 50px;
 }
 
@@ -56,4 +56,33 @@
 
 #event-title {
     font-size: 1.2em;
+}
+
+#comp-member-coach-container {
+    font-size: 1.2em;
+}
+
+/*----------comp member info container-----------*/
+#welcomeCompUser {
+    font-size: 1.5em;
+}
+
+#comp-member-info-container {
+    height: 500px;
+}
+
+#comp-member-info-name,
+#comp-member-info-gender,
+#comp-member-info-age,
+#comp-member-info-address,
+#comp-member-info-email {
+    font-size: 1.5em;
+}
+
+.comp-member-update-btn-container {
+text-align: center;
+}
+
+#comp-member-update-btn {
+    font-size: 2em;
 }

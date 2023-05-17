@@ -250,10 +250,8 @@
             <section id="comp-member-grid-container">
  
                 <article id="comp-member-coach-container">
-                    <div>
-                        <h1 id="compMemberCoachName">Træner:</h1> 
-                        <h2>Anders Anderson</h2>   
-                    </div>
+                    <h1>Træner:</h1> 
+                    <h2>Anders Anderson</h2>   
                 </article>
             
                 <article id="comp-member-info-container">
@@ -275,16 +273,26 @@
                     <div>
                         <h5 id="comp-member-info-email">E-mail:</h5>  
                     </div>
-                        <button class="update-btn">Updater Personlig Information</button>
+                    <div class = "comp-member-update-btn-container">
+                        <button class="update-btn" id = "comp-member-update-btn">Opdater</button>
+                    </div>
                 </article>
                 
                 <article id="disciplin-container">
                 <h1>Discipliner:</h1>
-                    <div id="disciplin-list">
-                        <ol id="crawl">Crawl</ol>  
-                        <ol id="rygcrawl">Rygcrawl</ol> 
-                        <ol id="butterfly">Butterfly</ol> 
-                        <ol id="brystsvømming">Brystsvømming</ol> 
+                    <div id="disciplin-container">
+                        <input name="brystsvømning" type="checkbox" class="checkbox-styling">
+                        <label for="brystsvømning">Brystsvømning</label>
+                        <br>
+                        <input name="crawl" type="checkbox" class="checkbox-styling">
+                        <label for="crawl">Crawl</label>
+                        <br>
+                        <input name="butterfly" type="checkbox" class="checkbox-styling">
+                        <label for="butterfly">Butterfly</label>
+                        <br>
+                        <input name="rygcrawl" type="checkbox" class="checkbox-styling">
+                        <label for="rygcrawl">Rygcrawl</label>
+
                     </div>
                 </article>
 
@@ -292,7 +300,7 @@
                     <div id="events-upcoming-item">
 
                         <div id="events-upcoming-title">
-                            <h1>Kommende Stævner:</h1>
+                            <h1>Trænings resultater:</h1>
                         </div>
 
                         <div id="events-upcoming-table">
@@ -349,7 +357,7 @@
                     <div id="event-item">
 
                         <div id="event-title">
-                            <h1>Tidligere Stævner:</h1>
+                            <h1>Konkurrence resultater:</h1>
                         </div>
 
                         <div id="event-table">
@@ -401,8 +409,6 @@
                         </div>
                     </div>
                 </article>
-
-
             </section>
         </main>
   
