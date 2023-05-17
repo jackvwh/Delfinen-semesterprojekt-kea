@@ -21,7 +21,6 @@ async function initApp(){
     console.log("Members: ", memberArray)
     console.log("Practice: ", practiceResults)
     console.log("Comps: ", compResults)
-
 }
 
 function addEventListeners(){

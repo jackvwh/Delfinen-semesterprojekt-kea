@@ -7,21 +7,23 @@ const youthPrice = 1000;
 const seniorPrize = 1600;
 const passivePrice = 500;
 
-function calcMemberPayment(memberObject){
-   
-    const age = calcAge(memberObject.birthdate);
-    console.log("age: ", age);
+function calcMemberPayment(memberObject){ 
 
+    const age = calcAge(memberObject.birthdate);
+
+    while(memberObject.title !== "admin"){
         if (age <= youthAge){
             return youthPrice;
         }
         else if(age >= discountAge){
-            return seniorPrize * (100 - discount);
+            return seniorPrize - (seniorPrize / 100 * discount);
         }
         else if (memberObject.active != true){
             return passivePrice;
         }
-        return seniorPrize;
+        return seniorPrize; 
+    }
+    return null;
 }
 function calcTotalIncome(memberArray){
     let totalIncome = null;
