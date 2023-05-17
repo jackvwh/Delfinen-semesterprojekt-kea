@@ -30,9 +30,7 @@ async function initApp(){
 }
 
 function addEventListeners(){
-    // coach result dialogs
-    document.querySelector("#insert-practice-result-btn").addEventListener("click", createPracticeDialog);
-    document.querySelector("#insert-comp-result-btn").addEventListener("click", createCompsDialog);
+    //disciplin checkbox hide listners
     document.querySelector("#create-competition-btn").addEventListener("click", ()=>document.querySelector("#create-disciplin-checkbox").classList.toggle("hidden"));
     document.querySelector("#update-competition-btn").addEventListener("click", ()=>document.querySelector("#update-disciplin-checkbox").classList.toggle("hidden"));
 
@@ -41,20 +39,26 @@ function addEventListeners(){
     // log out btn
     document.querySelector("#logOut-btn").addEventListener("click", ()=>window.location.reload());
 
-    // create member dialog
-    // document.querySelector("#create-member-btn").addEventListener("click", createMemberDialog);
-}
-function createPracticeDialog(event){
-    event.preventDefault();
+    // coach result dialogs
+    document.querySelector("#insert-practice-result-btn").addEventListener("click", createPracticeDialog);
+    document.querySelector("#insert-comp-result-btn").addEventListener("click", createCompsDialog);
 
+    // create member dialog
+    document.querySelector("#admin-create-member-btn").addEventListener("click", createMemberDialog);
+}
+function createPracticeDialog(){
     document.querySelector("#create-practice-result-dialog").showModal();
 
-    document.querySelector("#practice-result-form").addEventListener("submit", createPracticeResult);
+    document.querySelector("#practice-result-form").addEventListener("submit", createData);
 }
-function createCompsDialog(event){
-    event.preventDefault();
-
+function createCompsDialog(){
     document.querySelector("#create-comp-result-dialog").showModal();
 
-    document.querySelector("#comp-result-form").addEventListener("submit", createCompResult);
+    document.querySelector("#comp-result-form").addEventListener("submit", createData);
+}
+
+function createMemberDialog(){
+    document.querySelector("#create-dialog").showModal();
+
+    document.querySelector("#create-form").addEventListener("submit", createData);
 }
