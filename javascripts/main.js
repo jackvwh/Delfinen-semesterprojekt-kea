@@ -1,7 +1,7 @@
 "use strict"
 
 import {loginDialog} from "./login.js";
-import {loadCompData, loadMemberData, loadPracticeData, deleteData} from "./rest-fnc.js";
+import {loadCompData, loadMemberData, loadPracticeData, deleteData, createData} from "./rest-fnc.js";
 import {iterateMembers, iterateComps, iteratePractice} from "./displayFnc.js";
 import {calcMemberPayment, calcTotalIncome} from "./payment.js";
 
@@ -33,6 +33,8 @@ function addEventListeners(){
     // coach result dialogs
     document.querySelector("#insert-practice-result-btn").addEventListener("click", createPracticeDialog);
     document.querySelector("#insert-comp-result-btn").addEventListener("click", createCompsDialog);
+    document.querySelector("#create-competition-btn").addEventListener("click", ()=>document.querySelector("#create-disciplin-checkbox").classList.toggle("hidden"));
+    document.querySelector("#update-competition-btn").addEventListener("click", ()=>document.querySelector("#update-disciplin-checkbox").classList.toggle("hidden"));
 
     // login dialog 
     document.querySelector("#login-btn").addEventListener("click", loginDialog);

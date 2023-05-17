@@ -605,9 +605,9 @@
                     </div>
                 </fieldset>
 
-                <button id="competition">Konkurrence svømmer</button>
+                <button id="create-competition-btn">Konkurrence svømmer</button>
 
-                <fieldset>
+                <fieldset id="create-disciplin-checkbox" class="hidden">
                     <legend>Disciplins</legend>
                     <div>
                       <input type="checkbox" id="crawl" name="crawl" checked>
@@ -637,7 +637,6 @@
         <!--MEMBER UPDATE DIALOG  -->
         <dialog id="update-dialog">
             <h2>Opdater medlemsoplysninger</h2>
-
             <form id="update-form">
                 <fieldset>
                     <legend>Titel</legend>
@@ -690,9 +689,9 @@
                         </div>
                     </fieldset>
 
-                    <button id="competition">Competition</button>
+                    <button id="update-competition-btn">Konkurrence svømmer</button>
 
-                    <fieldset>
+                    <fieldset id="update-disciplin-checkbox" class="hidden">
                         <legend>Disciplins</legend>
                         <div>
                             <input type="checkbox" id="crawl" name="crawl" checked>
@@ -714,7 +713,7 @@
                     </fieldset>
                 </section>
             </form>
-            <button id="create-member-btn">Opdater</button>
+            <button id="update-member-btn">Opdater</button>
             <form method="dialog">
                 <button>Close</button>
             </form>
