@@ -124,7 +124,7 @@
             <section id="admin-page-grid-container">
 
                 <article class="create-member-btn-container">
-                    <button class="create-btn button-styling">Create new member</button
+                    <button id="admin-create-member-btn" class="create-btn button-styling">Create new member</button
                 ></article>
 
                 <article class="welcome-user-container">
@@ -555,81 +555,67 @@
             <h2>Opret nyt medlem</h2>
             <form id="create-form">
                 <fieldset>
-                    <legend>Titel</legend>
-                    <div>
-                        <label for="crawl">Administrator</label>
-                        <input type="checkbox" id="admin" name="admin">  
-                    </div>
-                    <div>
-                        <label for="cashier">Kasserer</label>
-                        <input type="checkbox" id="cashier" name="cashier">
-                    </div>
-                    <div>
-                        <label for="medlem">Medlem</label>
-                        <input type="checkbox" id="medlem" name="medlem" checked>
-                    </div>
-                    <div>
-                        <label for="coach">Træner</label>
-                        <input type="checkbox" id="coach" name="coach">
-                    </div>
+                    <input type="radio" id="admin" name="title" value="admin">
+                    <label for="admin">Administrator</label><br>
+                    <input type="radio" id="cashier" name="title" value="cashier">
+                    <label for="cashier">Kasserer</label><br>
+                    <input type="radio" id="coach" name="title" value="coach">
+                    <label for="coach">Træner</label>
+                    <input type="radio" id="member" name="title" value="member" checked>
+                    <label for="member">Medlem</label>
                 </fieldset>
-                <label for="member-name">Name</label>
-                <input type="text" name="member-name" id="member-name" maxlength="1000" placeholder="Navn" required>
+                <label for="name">Navn</label>
+                <input type="text" name="name" id="name" maxlength="1000" placeholder="Navn" required>
 
-                <label for="member-address">Address</label>
-                <input type="text" name="member-address" id="member-address" maxlength="1000" placeholder="adresse" required>
+                <label for="address">Adresse</label>
+                <input type="text" name="address" id="address" maxlength="1000" placeholder="adresse" required>
 
-                <label for="member-mail">Mail</label>
-                <input type="email" name="member-mail" id="member-mail" maxlength="1000" placeholder="Email" required>
+                <label for="mail">Email</label>
+                <input type="email" name="mail" id="mail" maxlength="1000" placeholder="Email" required>
 
-                <label for="member-phone">Phone</label>
-                <input type="number" name="member-phone" id="member-phone" maxlength="8" placeholder="Telefon" required>
+                <label for="phone">Telefon</label>
+                <input type="number" name="phone" id="phone" maxlength="8" placeholder="Telefon" required>
 
-                <label for="member-gender">Gender</label>
-                <input type="text" name="member-gender" id="member-gender" maxlength="8" placeholder="Køn" required>
+                <label for="gender">Køn</label>
+                <input type="text" name="gender" id="gender" maxlength="8" placeholder="Køn" required>
 
-                <label for="member-birthdate">Date of birth</label>
-                <input type="date" name="member-birthdate" id="member-birthdate" maxlength="10" placeholder="Fødselsdato" required>
+                <label for="birthdate">Fødselsdato</label>
+                <input type="date" name="birthdate" id="birthdate" maxlength="10" placeholder="Fødselsdato" required>
 
             <section id="member-checkboxes">
                 <fieldset>
-                    <legend>Activt medlemsskab:</legend>
-                    <div>
-                      <input type="checkbox" id="active" name="active" checked>
-                      <label for="active">Ja</label>
-                    </div>
-                
-                    <div>
-                      <input type="checkbox" id="passive" name="passive">
-                      <label for="passive">Nej</label>
-                    </div>
+                    <legend>Aktivt medlemsskab:</legend>
+                    <label for="active"></label>
+                    <select name="active" id="active">
+                        <option value="true" selected>Ja</option>
+                        <option value="false">Nej</option>
+                    </select required>
+                    <button id="create-competition-btn">Konkurrence svømmer</button>
                 </fieldset>
 
-                <button id="create-competition-btn">Konkurrence svømmer</button>
-
                 <fieldset id="create-disciplin-checkbox" class="hidden">
-                    <legend>Disciplins</legend>
+                    <legend>Discipliner</legend>
                     <div>
-                      <input type="checkbox" id="crawl" name="crawl" checked>
+                      <input type="checkbox" id="crawl" name="disciplin" checked>
                       <label for="crawl">Crawl</label>
                     </div>
                 
                     <div>
-                      <input type="checkbox" id="rygcrawl" name="Rygcrawl">
+                      <input type="checkbox" id="rygcrawl" name="disciplin">
                       <label for="rygcrawl">Rygcrawl</label>
                     </div>
                     <div>
-                      <input type="checkbox" id="butterfly" name="butterfly">
+                      <input type="checkbox" id="butterfly" name="disciplin">
                       <label for="butterfly">Butterfly</label>
                     </div>
                     <div>
-                      <input type="checkbox" id="brystsvømning" name="brystsvømning">
+                      <input type="checkbox" id="breaststroke" name="disciplin">
                       <label for="brystsvømning">Brystsvømning</label>
                     </div>
                 </fieldset>
             </section>
-            </form>
             <button id="create-member-btn">opret</button>
+            </form>
             <form method="dialog">
                 <button>Close</button>
             </form>
@@ -639,60 +625,46 @@
             <h2>Opdater medlemsoplysninger</h2>
             <form id="update-form">
                 <fieldset>
-                    <legend>Titel</legend>
-                    <div>
-                        <label for="crawl">Administrator</label>
-                        <input type="checkbox" id="admin" name="admin">  
-                    </div>
-                    <div>
-                        <label for="cashier">Kasserer</label>
-                        <input type="checkbox" id="cashier" name="cashier">
-                    </div>
-                    <div>
-                        <label for="medlem">Medlem</label>
-                        <input type="checkbox" id="medlem" name="medlem" checked>
-                    </div>
-                    <div>
-                        <label for="coach">Træner</label>
-                        <input type="checkbox" id="coach" name="coach">
-                    </div>
+                    <input type="radio" id="admin" name="title" value="admin">
+                    <label for="admin">Administrator</label><br>
+                    <input type="radio" id="cashier" name="title" value="cashier">
+                    <label for="cashier">Kasserer</label><br>
+                    <input type="radio" id="coach" name="title" value="coach">
+                    <label for="coach">Træner</label>
+                    <input type="radio" id="member" name="title" value="member" checked>
+                    <label for="member">Medlem</label>
                 </fieldset>
-                <label for="member-name">Name</label>
-                <input type="text" name="member-name" id="member-name" maxlength="1000" placeholder="Navn" required>
+                <label for="name">Navn</label>
+                <input type="text" name="name" id="name" maxlength="1000" placeholder="Navn" required>
 
-                <label for="member-address">Address</label>
-                <input type="text" name="member-address" id="member-address" maxlength="1000" placeholder="adresse" required>
+                <label for="address">Adresse</label>
+                <input type="text" name="address" id="address" maxlength="1000" placeholder="adresse" required>
 
-                <label for="member-mail">Mail</label>
-                <input type="email" name="member-mail" id="member-mail" maxlength="1000" placeholder="Email" required>
+                <label for="mail">Email</label>
+                <input type="email" name="mail" id="mail" maxlength="1000" placeholder="Email" required>
 
-                <label for="member-phone">Phone</label>
-                <input type="number" name="member-phone" id="member-phone" maxlength="8" placeholder="Telefon" required>
+                <label for="phone">Telefon</label>
+                <input type="number" name="phone" id="phone" maxlength="8" placeholder="Telefon" required>
 
-                <label for="member-gender">Gender</label>
-                <input type="text" name="member-gender" id="member-gender" maxlength="8" placeholder="Køn" required>
+                <label for="gender">Køn</label>
+                <input type="text" name="gender" id="gender" maxlength="8" placeholder="Køn" required>
 
-                <label for="member-birthdate">Date of birth</label>
-                <input type="date" name="member-birthdate" id="member-birthdate" maxlength="10" placeholder="Fødselsdato" required>
+                <label for="birthdate">Fødselsdato</label>
+                <input type="date" name="birthdate" id="birthdate" maxlength="10" placeholder="Fødselsdato" required>
 
                 <section id="member-checkboxes">
                     <fieldset>
-                        <legend>Active</legend>
-                        <div>
-                            <input type="checkbox" id="comp" name="comp" checked>
-                            <label for="comp">Ja</label>
-                        </div>
-                    
-                        <div>
-                            <input type="checkbox" id="regular" name="regular">
-                            <label for="regular">Nej</label>
-                        </div>
+                        <legend>Aktivt medlemsskab:</legend>
+                        <label for="active"></label>
+                        <select name="active" id="active">
+                            <option value="true" selected>Ja</option>
+                            <option value="false">Nej</option>
+                        </select required>
+                        <button id="update-competition-btn">Konkurrence svømmer</button>
                     </fieldset>
 
-                    <button id="update-competition-btn">Konkurrence svømmer</button>
-
                     <fieldset id="update-disciplin-checkbox" class="hidden">
-                        <legend>Disciplins</legend>
+                        <legend>Discipliner</legend>
                         <div>
                             <input type="checkbox" id="crawl" name="crawl" checked>
                             <label for="crawl">Crawl</label>
@@ -712,8 +684,8 @@
                         </div>
                     </fieldset>
                 </section>
+                <button id="update-member-btn">Opdater</button>
             </form>
-            <button id="update-member-btn">Opdater</button>
             <form method="dialog">
                 <button>Close</button>
             </form>
@@ -736,8 +708,8 @@
         <dialog id="create-practice-result-dialog">
             <h2>Trænings resultat</h2>
             <form id="practice-result-form" >
-                <label for="member"><b>Svømmer:</b></label>
-                <select name="comp-member" id="comp-member">
+                <label for="swimmer"><b>Svømmer:</b></label>
+                <select name="swimmer" id="swimmer">
                     <option value="Simone">Simone</option>
                     <option value="Anders">Anders</option>
                     <option value="Karla">Karla</option>
@@ -745,18 +717,18 @@
                 </select required>
 
                 <label for="disciplin"><b>Disciplin</b></label>
-                <select name="comp-disciplin" id="comp-disciplin">
+                <select name="disciplin" id="disciplin">
                     <option value="crawl">Crawl</option>
                     <option value="rygcrawl">Rygcrawl</option>
                     <option value="butterfly">Butterfly</option>
                     <option value="brystsvømning">Brystsvømning</option>
                 </select required>
 
-                <label for="practice-time"><b>Practice-time</b></label>
-                <input type="time" name="practice-time" id="practice-time" maxlength="10" placeholder="trænings resultat" required>
+                <label for="time"><b>Practice-time</b></label>
+                <input type="time" name="time" id="time" maxlength="10" placeholder="trænings resultat" required>
 
-                <label for="practice-date"><b>Date</b></label>
-                <input type="date" name="practice-date" id="practice-date" maxlength="10" placeholder="Dato" required>
+                <label for="date"><b>Date</b></label>
+                <input type="date" name="date" id="date" maxlength="10" placeholder="Dato" required>
 
                 <button type="submit">Insert result</button>
             </form> 
@@ -768,8 +740,8 @@
         <dialog id="create-comp-result-dialog">
             <h2>Konkurrence resultat</h2>
             <form id="comp-result-form" >
-                <label for="member"><b>Svømmer:</b></label>
-                <select name="comp-member" id="comp-member">
+                <label for="swimmer"><b>Svømmer:</b></label>
+                <select name="swimmer" id="swimmer">
                     <option value="Simone">Simone</option>
                     <option value="Anders">Anders</option>
                     <option value="Karla">Karla</option>
@@ -777,24 +749,24 @@
                 </select required>
 
                 <label for="disciplin"><b>Disciplin</b></label>
-                <select name="comp-disciplin" id="comp-disciplin">
+                <select name="disciplin" id="disciplin">
                     <option value="crawl">Crawl</option>
                     <option value="rygcrawl">Rygcrawl</option>
                     <option value="butterfly">Butterfly</option>
                     <option value="brystsvømning">Brystsvømning</option>
                 </select required>
 
-                <label for="comp-time"><b>Resultat</b></label>
-                <input type="time" name="comp-time" id="comp-time" maxlength="10" placeholder="Resultat tid" required>
+                <label for="time"><b>Resultat</b></label>
+                <input type="time" name="time" id="time" maxlength="10" placeholder="Resultat tid" required>
 
-                <label for="comp-date"><b>Date</b></label>
-                <input type="date" name="comp-date" id="comp-date" maxlength="10" placeholder="Dato" required>
+                <label for="date"><b>Date</b></label>
+                <input type="date" name="date" id="date" maxlength="10" placeholder="Dato" required>
 
-                <label for="comp-name">Stævne navn</label>
-                <input type="text" name="comp-name" id="comp-name" maxlength="1000" placeholder="Stævne navn" required>
+                <label for="name">Stævne navn</label>
+                <input type="text" name="name" id="name" maxlength="1000" placeholder="Stævne navn" required>
 
-                <label for="comp-place">Sted</label>
-                <input type="text" name="comp-place" id="compe-place" maxlength="1000" placeholder="Sted" required>
+                <label for="place">Sted</label>
+                <input type="text" name="place" id="place" maxlength="1000" placeholder="Sted" required>
 
                 <button type="submit">Insert result</button>
             </form> 
