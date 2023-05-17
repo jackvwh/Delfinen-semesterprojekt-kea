@@ -1,4 +1,4 @@
-export {loadCompData, loadMemberData, loadPracticeData}
+export {loadCompData, loadMemberData, loadPracticeData, deleteData}
 
 const endpoint = "https://delfin-kea-default-rtdb.firebaseio.com/"
 
@@ -33,5 +33,23 @@ function prepareDataArray(dataObject){
         dataArray.push(data)
     }
     return dataArray;
+}
+
+async function deleteData(event, object){
+    const id = object.dataset.id;
+    const type = object.dataset.type;
+    // delete item globally
+    const url = `${endpoint}/${type}/${id}.json`;
+    const response = await fetch(url, { method: "DELETE" });
+        if (response.ok){
+            // delete item locally
+            event.target.remove();
+            alert("SUCCESFULLY DELETED")
+
+        }
+        else if(!response.ok){
+            alert("ERROR: error deleting ITEM")
+        }
+
 }
 

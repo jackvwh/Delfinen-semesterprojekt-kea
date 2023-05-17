@@ -1,7 +1,7 @@
 "use strict"
 
 import {loginDialog} from "./login.js";
-import {loadCompData, loadMemberData, loadPracticeData} from "./rest-fnc.js";
+import {loadCompData, loadMemberData, loadPracticeData, deleteData} from "./rest-fnc.js";
 import {iterateMembers, iterateComps, iteratePractice} from "./displayFnc.js";
 import {calcMemberPayment, calcTotalIncome} from "./payment.js";
 
@@ -31,10 +31,8 @@ async function initApp(){
 
 function addEventListeners(){
     // coach result dialogs
-    // document.querySelector("#create-practice-btn").addEventListener("click", createPracticeDialog);
-    // document.querySelector("#update-practice-btn").addEventListener("click", updatePracticeDialog);
-    // document.querySelector("#create-comp-btn").addEventListener("click", createCompDialog);
-    // document.querySelector("#update-comp-btn").addEventListener("click", updateCompDialog);
+    document.querySelector("#insert-practice-result-btn").addEventListener("click", createPracticeDialog);
+    document.querySelector("#insert-comp-result-btn").addEventListener("click", createCompsDialog);
 
     // login dialog 
     document.querySelector("#login-btn").addEventListener("click", loginDialog);
@@ -43,4 +41,18 @@ function addEventListeners(){
 
     // create member dialog
     // document.querySelector("#create-member-btn").addEventListener("click", createMemberDialog);
+}
+function createPracticeDialog(event){
+    event.preventDefault();
+
+    document.querySelector("#create-practice-result-dialog").showModal();
+
+    document.querySelector("#practice-result-form").addEventListener("submit", createPracticeResult);
+}
+function createCompsDialog(event){
+    event.preventDefault();
+
+    document.querySelector("#create-comp-result-dialog").showModal();
+
+    document.querySelector("#comp-result-form").addEventListener("submit", createCompResult);
 }
