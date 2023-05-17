@@ -32,6 +32,8 @@ function addEventListeners(){
 
     // login dialog 
     document.querySelector("#login-btn").addEventListener("click", loginDialog);
+    // log out btn
+    document.querySelector("#logOut-btn").addEventListener("click", ()=>window.location.reload());
 
     // create member dialog
     // document.querySelector("#create-member-btn").addEventListener("click", createMemberDialog);
