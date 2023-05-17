@@ -7,7 +7,7 @@
             "email": "somethingold@gmail.com",
             "phone": 23343454,
             "gender": "male",
-            "birthdate": "23-06-1964",
+            "birthdate": "1991-02-10",
             "active": true,
             "comp": false
         },
@@ -18,7 +18,7 @@
             "email": "somethingold@gmailcom",
             "phone": 23343454,
             "gender": "male",
-            "birthdate": "23-06-1964",
+            "birthdate": "1949-06-12",
             "active": true,
             "comp": false
         },
@@ -29,7 +29,7 @@
             "email": "somethingold@gmailcom",
             "phone": 23343454,
             "gender": "male",
-            "birthdate": "23-06-1964",
+            "birthdate": "1969-05-10",
             "active": true,
             "comp": false
         },
@@ -41,7 +41,7 @@
             "email": "karla@gmail.com",
             "phone": 23343454,
             "gender": "female",
-            "birthdate": "23-04-1990",
+            "birthdate": "1987-07-10",
             "active": true,
             "comp": true,
             "disciplins": {
@@ -58,7 +58,7 @@
             "email": "simonsays@gmailcom",
             "phone": 23343454,
             "gender": "female",
-            "birthdate": "23-06-1994",
+            "birthdate": "2005-05-10",
             "active": true,
             "comp": true,
             "disciplins": {
@@ -75,7 +75,7 @@
             "email": "somethingold@gmailcom",
             "phone": 23343454,
             "gender": "male",
-            "birthdate": "23-06-1964",
+            "birthdate": "1978-05-10",
             "active": true,
             "comp": false
         }
@@ -85,32 +85,32 @@
         "1mNVXMNbZWjKsiaTFsDw": {
             "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
             "disciplin": "crawl",
-            "resultTime": "09:57" ,
-            "date": "12-07-1990"
+            "resultTime": "01:57" ,
+            "date": "1999-05-10"
         },
         "5tl4jHHSRaKEB0UW9nQd":  {
             "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
             "disciplin": "crawl",
-            "resultTime": "09:57" ,
-            "date": "12-07-1990"
+            "resultTime": "02:57" ,
+            "date": "1999-05-10"
         },
         "6RtyNxxTYIBDRODr3dwv": {
             "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
             "disciplin": "crawl",
-            "resultTime": "09:57" ,
-            "date": "12-07-1990"
+            "resultTime": "03:57" ,
+            "date": "1999-05-10"
         },
         "8H0oH1WlDNfqyZAehXe1":  {
             "memberUid": "LWPSKpRvx7Htyjlb8JqV", 
             "disciplin": "crawl",
-            "resultTime": "09:57" ,
-            "date": "12-07-1990"
+            "resultTime": "04:57" ,
+            "date": "1999-05-10"
         },
         "9yHtqIcc25e4kzMInds6":  {
             "memberUid": "LWPSKpRvx7Htyjlb8JqV", 
             "disciplin": "crawl",
-            "resultTime": "09:57" ,
-            "date": "12-07-1990"
+            "resultTime": "05:57" ,
+            "date": "1999-05-10"
         }
     },
     "compResults": {
@@ -118,50 +118,50 @@
             "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
             "competition": "Damhus stævnet",
             "place": "somewhere",
-            "date": "12-07-1990",
+            "date": "1999-05-10",
             "disciplin": "crawl",
-            "resultTime": "09:57"   
+            "resultTime": "01:57"   
         },
         "GQOTmUwCWGxN9jp4hQfI": {
             "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
             "competition": "oste stævnet",
             "place": "somewhere",
-            "date": "12-07-1990",
+            "date": "1999-05-10",
             "disciplin": "crawl",
-            "resultTime": "09:57"   
+            "resultTime": "02:57"   
         },
         "HYP5qsP3pYjrKppw5B7f": {
             "memberUid": "SaW39AGOfU8DMUUG0FhJ", 
             "competition": "VM",
             "place": "somewhere",
-            "date": "12-07-1990",
+            "date": "1999-05-10",
             "disciplin": "crawl",
-            "resultTime": "09:57"   
+            "resultTime": "06:57"   
         },
 
         "Ia8figwkPjmziJ0Ru9Mh":  {
             "memberUid": "LWPSKpRvx7Htyjlb8JqV", 
             "competition": "European Championship",
             "place": "somewhere else",
-            "date": "12-07-1990",
+            "date": "1999-05-10",
             "disciplin": "crawl",
-            "resultTime": "09:57"    
+            "resultTime": "03:57"    
         },
         "J9pPDTc9lethG2vpjLmc":  {
             "memberUid": "LWPSKpRvx7Htyjlb8JqV", 
             "competition": "Stort stævne!",
             "place": "somewhere else",
-            "date": "12-07-1990",
+            "date": "1999-05-10",
             "disciplin": "crawl",
-            "resultTime": "09:57"    
+            "resultTime": "04:57"    
         },
         "KrHDeIVyMTSaY5VFOOiz":  {
             "memberUid": "LWPSKpRvx7Htyjlb8JqV", 
             "competition": "OMG",
             "place": "somewhere else",
-            "date": "12-07-1990",
+            "date": "1999-05-10",
             "disciplin": "crawl",
-            "resultTime": "09:57"   
+            "resultTime": "05:57"   
         }
     }
 }

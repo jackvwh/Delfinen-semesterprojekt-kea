@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="CSS-stylings/front-page.css">
     <link rel="stylesheet" href="CSS-stylings/member-page.css">
     <link rel="stylesheet" href="CSS-stylings/coach.css">
-    <title>Delfinen svømmeklub</title>
+    <title>Svømmeklub Delfinen</title>
 </head>
 <body>
     
@@ -22,6 +22,7 @@
         <a href="#about" class="view-link">About</a>
         <a href="#contact" class="view-link">Contact</a>
         <button id="login-btn">Log ind</button>
+        <button id="logOut-btn" class="hidden">Log ud</button>
     </nav>
 
     <!-- Views -->
@@ -99,14 +100,13 @@
             <h2>About</h2>
             <p>Who we are and what we do 🤷🏼‍♂️</p>
         </main>
-
         <!-- Contact View -->
         <!-- Route: #contact -->
         <main id="contact-page" class="hidden">
             <h2>Contact</h2>
             <p>Get in touch, or swing by for a cup of coffee ☕️</p>
             <p>I'm just one arm away 🤷🏼‍♂️</p>
-        </main>
+    </main>
 
         <br>
         <br>
@@ -138,57 +138,27 @@
                 </article>
 
                 <article class="member-table-container">
-                    <section class="member-table">
-                        <table cellspacing = 0>
-                            <!-- table header -->
-                                <thead class="tableFixedHeader">
-                                    <tr>
-                                        <th>Member</th>
-                                        <th>Date of birth</th>
-                                        <th>Gender</th>
-                                        <th>Mail</th>
-                                        <th style="width: 350px;">Address</th>
-                                        <th>Phone</th>
-                                        <th>Active member</th>
-                                        <th>Payment</th>
-                                        <th>Paid</th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tr>
-                                <td> Simone </td>
-                                    <td> 22-09-2001 </td>
-                                    <td>Female</a></td>
-                                    <td>somemail@mail.com</td>
-                                    <td>H. C. Andersens Boulevard 12 </td>
-                                    <td>28 38 74 65</td>
-                                    <td>true/false</td>
-                                    <td>1600kr</td>
-                                    <td><input class="checkbox-styling" type="checkbox"></td>
-                                    <td style="width: 5px; padding: 0%; padding-right: 25px; padding-left: 25px;"><button class="button-styling update-btn">Update</button></td>
-                                    <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
-                                </tr>
-                                <tr>
-                                <td> Simone </td>
-                                    <td> 22-09-2001 </td>
-                                    <td>Female</a></td>
-                                    <td>somemail@mail.com</td>
-                                    <td>H. C. Andersens Boulevard 12 </td>
-                                    <td>28 38 74 65</td>
-                                    <td>true/false</td>
-                                    <td>1600kr</td>
-                                    <td><input class="checkbox-styling" type="checkbox"></td>
-                                    <td style="width: 5px; padding: 0%; padding-right: 25px; padding-left: 25px;"><button class="button-styling update-btn">Update</button></td>
-                                    <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
-                                </tr>
- 
-                        </table>
-                    </section>
+                    <table id="admin-member-table">
+                        <!-- table header -->
+                        <thead class="tableFixedHeader">
+                            <tr>
+                                <th>Member</th>
+                                <th>Date of birth</th>
+                                <th>Gender</th>
+                                <th>Mail</th>
+                                <th style="width: 350px;">Address</th>
+                                <th>Phone</th>
+                                <th>Active member</th>
+                                <th>Payment</th>
+                                <th>Paid</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
                 </article>
             </section>
-        </main>        
-
+        </main>
         <main id="cashier-page" class="hidden">
              <section id="cashier-page-grid-container">
                 <article class="welcome-user-container">
@@ -199,25 +169,58 @@
                 <article class="income-container">
                     <h2>Kontingent:</h2>
                     <h3>30.000kr</h3>
-                </article>
+               </article>
+            <div id="sort-container">
+                <select name="sort-payments" id="sort-payments">
+                    <option value="Paid">Paid</option>
+                    <option value="Unpaid">Unpaid</option>
+                </select>
+            </div>
 
-                <article class="member-table-container">
-                    <section class="member-table">
-                    <table cellspacing = 0>
-                        <!-- table header -->
-                            <thead class="tableFixedHeader">
+            <section class="member-table-container">
+                <table id="cashier-member-table">
+                    <!-- table header -->
+                    <thead class="tableFixedHeader">
+                        <tr>
+                            <th>Member</th>
+                            <th>Date of birth</th>
+                            <th>Gender</th>
+                            <th>Mail</th>
+                            <th style="width: 350px;">Address</th>
+                            <th>Phone</th>
+                            <th>Active member</th>
+                            <th>Payment</th>
+                            <th>Paid</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </section>
+        </main>
+        <main id="comp-member-page" class="hidden">
+            <section id="comp-member-grid-container">
+                <article id="events-upcoming-container">
+                    <div id="events-upcoming-item">
+                        <h1>Kommende Stævner:</h1>
+                        <table>
+                                <thead>
+                                    <tr>
+                                    <th>Stævne</th>
+                                    <th>Dato</th>
+                                    <th>Disciplin</th>
+                                    <th>Træner</th>
+                                    <th>Start</th>
+                                    <th>Position</th>
+                                    </tr>
+                                </thead>
                                 <tr>
-                                    <th>Member</th>
-                                    <th>Date of birth</th>
-                                    <th>Gender</th>
-                                    <th>Mail</th>
-                                    <th style="width: 350px;">Address</th>
-                                    <th>Phone</th>
-                                    <th>Active member</th>
-                                    <th>Payment</th>
-                                    <th>Paid</th>
-                                    <th></th>
-                                    <th></th>
+                                    <td>Amager</td>
+                                    <td>22-06-2023</td>
+                                    <td>Butterfly</td>
+                                    <td>John</td>
+                                    <td>16:00</td>
+                                    <td>2</td>
                                 </tr>
                             </thead>
                             <tr>
@@ -411,7 +414,6 @@
                 </article>
             </section>
         </main>
-  
         <main id="regular-member-page" class="hidden">
             <section id="regular-member-grid-container">
                 <article id="regular-member-info-container">
@@ -452,7 +454,6 @@
                 </article>
             </section>
         </main>
-
         <main id="coach-page" class="hidden">
             <section id="welcome-coach-container">
                 <article class="velcome-user-container">
@@ -466,70 +467,128 @@
                     <h3>Svend</h3>
                 </article>
             </section>
-
-            <section id="best-results-container">
-                <article id="crawl-5-best-results-table">
-                    <table>
+            <section id="coach-btns">
+                <button id="insert-practice-result">Indsæt træningsresultat</button>
+                <button id="insert-comp-result">Indsæt konkurrence resultat</button>
+            </section>
+        <section id="results-container">
+            <h1><u> Træningsresultater </u></h1>
+            <section id="best-practice-results-container">
+                <article>
+                    <table id="crawl-5-best-practice">
                         <!-- table header -->
                         <thead class="tableFixedHeader">
                             <tr>
                                 <h2>Crawl</h2>
                                 <th>Medlem</th>
-                                <th>Køn</th>
-                                <th>Stævne navn</th>
-                                <th style="width: 350px;"> Stævne sted </th>
                                 <th>Resultat tid:</th>
                                 <th>Dato</th>
                                 <th></th>
-                                <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
-                <article id="rygcrawl-5-best-results-table">
-                    <table>
+                <article>
+                    <table id="rygcrawl-5-best-practice">
                         <!-- table header -->
                         <thead class="tableFixedHeader">
                             <tr>
                                 <h2>Ryg crawl</h2>
                                 <th>Medlem</th>
-                                <th>Køn</th>
-                                <th>Stævne navn</th>
-                                <th style="width: 350px;"> Stævne sted </th>
                                 <th>Resultat tid:</th>
                                 <th>Dato</th>
                                 <th></th>
-                                <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
-                <article id="butterfly-5-best-results-table">
-                    <table>
+                <article>
+                    <table id="butterfly-5-best-practice">
                         <!-- table header -->
                         <thead class="tableFixedHeader">
                             <tr>
                                 <h2>Butterfly</h2>
                                 <th>Medlem</th>
-                                <th>Køn</th>
-                                <th>Stævne navn</th>
-                                <th style="width: 350px;"> Stævne sted </th>
                                 <th>Resultat tid:</th>
                                 <th>Dato</th>
                                 <th></th>
-                                <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
-                <article id="breaststroke-5-best-results-table">
-                    <table>
+                <article>
+                    <table id="breaststroke-5-best-practice">
                         <!-- table header -->
                         <thead class="tableFixedHeader">
                             <tr>
                                 <h2>Brystsvømning</h2>
                                 <th>Medlem</th>
-                                <th>Køn</th>
+                                <th>Resultat tid:</th>
+                                <th>Dato</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
+                    </table>
+                </article>
+            </section>
+            <!-- COMP RESULTS -->
+            <h1><b><u> Konkurrence resultater</u></b></h1>
+            <section id="best-comp-results-container">
+                <article>
+                    <table id="crawl-5-best-comp">
+                        <!-- table header -->
+                        <thead class="tableFixedHeader">
+                            <tr>
+                                <h2>Crawl</h2>
+                                <th>Medlem</th>
+                                <th>Stævne navn</th>
+                                <th style="width: 350px;"> Stævne sted </th>
+                                <th>Resultat tid:</th>
+                                <th>Dato</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>Stort stævne</td>
+                            <td>stævnevej 5, 3333 by</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
+                    </table>
+                </article>
+                <article >
+                    <table id="rygcrawl-5-best-comp">
+                        <!-- table header -->
+                        <thead class="tableFixedHeader">
+                            <tr>
+                                <h2>Ryg crawl</h2>
+                                <th>Medlem</th>
                                 <th>Stævne navn</th>
                                 <th style="width: 350px;"> Stævne sted </th>
                                 <th>Resultat tid:</th>
@@ -538,16 +597,69 @@
                                 <th></th>
                             </tr>
                         </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>Stort stævne</td>
+                            <td>stævnevej 5, 3333 by</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
+                    </table>
+                </article>
+                <article>
+                    <table id="butterfly-5-best-comp">
+                        <!-- table header -->
+                        <thead class="tableFixedHeader">
+                            <tr>
+                                <h2>Butterfly</h2>
+                                <th>Medlem</th>
+                                <th>Stævne navn</th>
+                                <th style="width: 350px;"> Stævne sted </th>
+                                <th>Resultat tid:</th>
+                                <th>Dato</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>Stort stævne</td>
+                            <td>stævnevej 5, 3333 by</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
+                    </table>
+                </article>
+                <article>
+                    <table id="breaststroke-5-best-comp">
+                        <!-- table header -->
+                        <thead class="tableFixedHeader">
+                            <tr>
+                                <h2>Brystsvømning</h2>
+                                <th>Medlem</th>
+                                <th>Stævne navn</th>
+                                <th style="width: 350px;"> Stævne sted </th>
+                                <th>Resultat tid:</th>
+                                <th>Dato</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Simone test</td>
+                            <td>Stort stævne</td>
+                            <td>stævnevej 5, 3333 by</td>
+                            <td>09:45 test</td>
+                            <td>5. oktober test</td>
+                            <td><button>Delete</button></td>
+                        </tr>
                     </table>
                 </article>
             </section>
-
-            <section id="coach-btns">
-                <button id="insert-practice-result">Indsæt træningsresultat</button>
-                <button id="insert-comp-result">Indsæt konkurrence resultat</button>
-            </section>
-        </main>
-
+        </section>
+    </main>
         <!------- DELETE DIALOG------->
         <dialog id="delete-dialog">
             <h2>Do you want to delete this member?</h2>
@@ -559,7 +671,6 @@
                 <button>Close</button>
             </form>
         </dialog>
-
         <!-- MEMBER CREATE FORM -->
         <dialog id="create-dialog">
             <h2>Opret nyt medlem</h2>
@@ -584,22 +695,22 @@
                     </div>
                 </fieldset>
                 <label for="member-name">Name</label>
-                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+                <input type="text" name="member-name" id="member-name" maxlength="1000" placeholder="Navn" required>
 
                 <label for="member-address">Address</label>
-                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+                <input type="text" name="member-address" id="member-address" maxlength="1000" placeholder="adresse" required>
 
                 <label for="member-mail">Mail</label>
-                <input type="email" name="mail" id="member-mail" maxlength="1000" placeholder="Mail" required>
+                <input type="email" name="member-mail" id="member-mail" maxlength="1000" placeholder="Email" required>
 
                 <label for="member-phone">Phone</label>
-                <input type="number" name="phone" id="member-phone" maxlength="8" placeholder="phone" required>
+                <input type="number" name="member-phone" id="member-phone" maxlength="8" placeholder="Telefon" required>
 
                 <label for="member-gender">Gender</label>
-                <input type="text" name="gender" id="member-gender" maxlength="8" placeholder="gender" required>
+                <input type="text" name="member-gender" id="member-gender" maxlength="8" placeholder="Køn" required>
 
                 <label for="member-birthdate">Date of birth</label>
-                <input type="numbers" name="birtdate" id="member-birthdate" maxlength="10" placeholder="Date of birth" required>
+                <input type="date" name="member-birthdate" id="member-birthdate" maxlength="10" placeholder="Fødselsdato" required>
 
             <section id="member-checkboxes">
                 <fieldset>
@@ -644,7 +755,6 @@
                 <button>Close</button>
             </form>
         </dialog>
-
         <!--MEMBER UPDATE DIALOG  -->
         <dialog id="update-dialog">
             <h2>Opdater medlemsoplysninger</h2>
@@ -670,22 +780,22 @@
                     </div>
                 </fieldset>
                 <label for="member-name">Name</label>
-                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+                <input type="text" name="member-name" id="member-name" maxlength="1000" placeholder="Navn" required>
 
                 <label for="member-address">Address</label>
-                <input type="text" name="name" id="member-name" maxlength="1000" placeholder="Name" required>
+                <input type="text" name="member-address" id="member-address" maxlength="1000" placeholder="adresse" required>
 
                 <label for="member-mail">Mail</label>
-                <input type="email" name="mail" id="member-mail" maxlength="1000" placeholder="Mail" required>
+                <input type="email" name="member-mail" id="member-mail" maxlength="1000" placeholder="Email" required>
 
                 <label for="member-phone">Phone</label>
-                <input type="number" name="phone" id="member-phone" maxlength="8" placeholder="phone" required>
+                <input type="number" name="member-phone" id="member-phone" maxlength="8" placeholder="Telefon" required>
 
                 <label for="member-gender">Gender</label>
-                <input type="text" name="gender" id="member-gender" maxlength="8" placeholder="gender" required>
+                <input type="text" name="member-gender" id="member-gender" maxlength="8" placeholder="Køn" required>
 
                 <label for="member-birthdate">Date of birth</label>
-                <input type="numbers" name="birtdate" id="member-birthdate" maxlength="10" placeholder="Date of birth" required>
+                <input type="date" name="member-birthdate" id="member-birthdate" maxlength="10" placeholder="Fødselsdato" required>
 
                 <section id="member-checkboxes">
                     <fieldset>
@@ -730,23 +840,20 @@
                 <button>Close</button>
             </form>
         </dialog>
-
         <!-- LOGIN DIALOG -->
         <dialog id="login-dialog">
             <form id="login-form" >
                     <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" name="email" required>
-                    <br>
-                    <label for="password"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
-                    <br>
-                    <button type="submit" class="button-styling">Log ind</button>
+                    <!-- SHOULD BE TYPE: EMAIL - for testing type:text -->
+                    <input type="text" placeholder="Indsæt email" name="email" required> 
+                    <label for="password"><b>Kodeord</b></label>
+                    <input type="password" placeholder="Indsæt kodeord" name="psw" required>         
+                    <button type="submit">Log ind</button>
             </form> 
             <form method="dialog">
                 <button class="button-styling close-login-dialog">Fortryd</button>
             </form>
         </dialog>
-
         <!-- CREATE PRACTICE RESULTS DIALOG -->
         <dialog id="create-practice-result-dialog">
             <h2>Trænings resultat</h2>
@@ -768,10 +875,10 @@
                 </select required>
 
                 <label for="practice-time"><b>Practice-time</b></label>
-                <input type="numbers" name="practice-time" id="practice-time" maxlength="10" placeholder="trænings resultat" required>
+                <input type="time" name="practice-time" id="practice-time" maxlength="10" placeholder="trænings resultat" required>
 
                 <label for="practice-date"><b>Date</b></label>
-                <input type="numbers" name="practice-date" id="practice-date" maxlength="10" placeholder="Dato" required>
+                <input type="date" name="practice-date" id="practice-date" maxlength="10" placeholder="Dato" required>
 
                 <button type="submit">Insert result</button>
                 <form method="dialog">
@@ -779,7 +886,6 @@
                 </form>
             </form> 
         </dialog>
-
         <!-- UPDATE PRACTICE RESULTS DIALOG -->
         <dialog id="update-practice-result-dialog">
             <h2>Opdater trænings resultat</h2>
@@ -801,10 +907,10 @@
                 </select required>
 
                 <label for="update-practice-time"><b>Practice-time</b></label>
-                <input type="numbers" name="update-practice-time" id="update-practice-time" maxlength="10" placeholder="Opdater træningstid " required>
+                <input type="time" name="update-practice-time" id="update-practice-time" maxlength="10" placeholder="Opdater træningstid " required>
 
                 <label for="update-practice-date"><b>Date</b></label>
-                <input type="numbers" name="update-practice-date" id="update-practice-date" maxlength="10" placeholder="Opdater dato" required>
+                <input type="date" name="update-practice-date" id="update-practice-date" maxlength="10" placeholder="Opdater dato" required>
 
                 <button type="submit">Update result</button>
                 <form method="dialog">
@@ -812,7 +918,6 @@
                 </form>
             </form> 
         </dialog>
-
         <!-- CREATE COMPETITION RESULTS -->
         <dialog id="create-comp-result-dialog">
             <h2>Konkurrence resultat</h2>
@@ -834,10 +939,10 @@
                 </select required>
 
                 <label for="comp-time"><b>Resultat</b></label>
-                <input type="numbers" name="comp-time" id="comp-time" maxlength="10" placeholder="Resultat" required>
+                <input type="time" name="comp-time" id="comp-time" maxlength="10" placeholder="Resultat tid" required>
 
                 <label for="comp-date"><b>Date</b></label>
-                <input type="numbers" name="comp-date" id="comp-date" maxlength="10" placeholder="dato" required>
+                <input type="date" name="comp-date" id="comp-date" maxlength="10" placeholder="Dato" required>
 
                 <label for="comp-name">Stævne navn</label>
                 <input type="text" name="comp-name" id="comp-name" maxlength="1000" placeholder="Stævne navn" required>
@@ -851,7 +956,6 @@
                 </form>
             </form> 
         </dialog>
-
         <!-- UPDATE COMPETITION RESULTS -->
         <dialog id="update-comp-result-dialog">
             <h2>Opdater konkurrence resultat</h2>
@@ -873,10 +977,10 @@
                 </select required>
 
                 <label for="update-comp-time"><b>Resultat</b></label>
-                <input type="numbers" name="update-comp-time" id="update-comp-time" maxlength="10" placeholder="Opdater resultat" required>
+                <input type="time" name="update-comp-time" id="update-comp-time" maxlength="10" placeholder="Opdater resultat" required>
 
                 <label for="update-comp-date"><b>Date</b></label>
-                <input type="numbers" name="update-comp-date" id="update-comp-date" maxlength="10" placeholder="opdater dato" required>
+                <input type="date" name="update-comp-date" id="update-comp-date" maxlength="10" placeholder="opdater dato" required>
 
                 <label for="update-comp-name">Stævne navn</label>
                 <input type="text" name="update-comp-name" id="update-comp-name" maxlength="1000" placeholder="Opdater stævne navn" required>
@@ -893,9 +997,6 @@
         </dialog>
     </main>    
    
-    <script src="javascripts/app.js" type="module"></script>
-    <script src="javascripts/displayFnc.js" type="module"></script>
-    <script src="javascripts/login.js" type="module"></script>
-    <script src="javascripts/payment.js" type="module"></script>
+    <script src="javascripts/main.js" type="module"></script>
 </body>
 </html>

@@ -1,17 +1,13 @@
-
-#crawl-5-best-results-table{ grid-area: crawl}
-#rygcrawl-5-best-results-table { grid-area: rygcrawl}
-#butterfly-5-best-results-table { grid-area: butterfly}
-#breaststroke-5-best-results-table { grid-area: breaststroke}
-
-#best-results-container{
+/* #results-container{
     display: grid;
-    grid-template-areas: 
-    'crawl rygcrawl'
-    'butterfly breaststroke';
+    grid-template-columns: auto auto;
     gap: 5px;
-}
+} */
 #welcome-coach-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#best-practice-results-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
