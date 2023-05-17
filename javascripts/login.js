@@ -21,6 +21,7 @@ function loginFunction(event){
                     document.querySelector("#home-page").classList.add("hidden");
                     //change log btn 
                     document.querySelector("#logOut-btn").classList.remove("hidden");
+                    document.querySelector("#login-btn").classList = ""; 
                     document.querySelector("#login-btn").classList.add("hidden"); 
                 }
                 break;
@@ -30,6 +31,7 @@ function loginFunction(event){
                     document.querySelector("#home-page").classList.add("hidden");
                     //change log btn 
                     document.querySelector("#logOut-btn").classList.remove("hidden");
+                    document.querySelector("#login-btn").classList = ""; 
                     document.querySelector("#login-btn").classList.add("hidden");                
                 };
                 break;
@@ -39,6 +41,7 @@ function loginFunction(event){
                     document.querySelector("#home-page").classList.add("hidden");
                     //change log btn 
                     document.querySelector("#logOut-btn").classList.remove("hidden");
+                    document.querySelector("#login-btn").classList = ""; 
                     document.querySelector("#login-btn").classList.add("hidden");                
                 };
                 break;
@@ -48,6 +51,7 @@ function loginFunction(event){
                     document.querySelector("#home-page").classList.add("hidden");
                      //change log btn 
                      document.querySelector("#logOut-btn").classList.remove("hidden");
+                     document.querySelector("#login-btn").classList = ""; 
                      document.querySelector("#login-btn").classList.add("hidden");                
                 };
                 break;
@@ -57,6 +61,7 @@ function loginFunction(event){
                     document.querySelector("#home-page").classList.add("hidden");
                     //change log btn 
                     document.querySelector("#logOut-btn").classList.remove("hidden");
+                    document.querySelector("#login-btn").classList = ""; 
                     document.querySelector("#login-btn").classList.add("hidden");
                 };
                 break;
