@@ -3,7 +3,7 @@
 #comp-member-coach-container { grid-area: coach; }
 #comp-member-info-container { grid-area: main; }
 #disciplin-container { grid-area: menu; }
-#event-container { grid-area: right; }
+#comp-member-result-container { grid-area: right; }
 
 #comp-member-grid-container {
     display: grid;
@@ -19,47 +19,6 @@
 #comp-member-grid-container > article {
     border: solid var(--colour2);
     padding: 20px;
-}
-
-/*------Kommende stævner-------------*/
-#events-upcoming-container {
-    height: 250px;
-    width: 1200px;
-}
-
-#events-upcoming-table {
-    height: 250px;
-    width: auto;
-    overflow: scroll;
-    overscroll-behavior:none ;
-}
-
-#events-upcoming-table > tr, td {
-    padding-left: 75px;
-    padding-right: 75px;
-}
-
-#events-upcoming-title {
-    font-size: 1.2em;
-}
-
-/*----Tidligere stævner------*/
-#event-container {
-    height: 250px;
-    width: 1200px;
-}
-#event-table {
-    height: 250px;
-    overflow: scroll;
-    overscroll-behavior: none;
-}
-
-#event-title {
-    font-size: 1.2em;
-}
-
-#comp-member-coach-container {
-    font-size: 1.2em;
 }
 
 /*----------comp member info container-----------*/
