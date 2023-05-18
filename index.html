@@ -30,7 +30,7 @@
     <main>
         <!-- Home View -->
         <!-- Route: #home -->
-        <main id="home-page">
+        <main id="home-page" class="hidden">
             <div id="front-page-picture-container">
                 <img src="https://freesvg.org/img/1502475717.png" alt="">
             </div>
@@ -199,7 +199,7 @@
             </section>
         </main>
 
-        <main id="comp-member-page" class="hidden">
+        <main id="comp-member-page" class="">
             <section id="comp-member-grid-container">
  
                 <article id="comp-member-coach-container">
@@ -295,9 +295,9 @@
         </main>
         <main id="regular-member-page" class="hidden">
             <section id="regular-member-grid-container">
-                <article id="regular-member-info-container">
+                <article id="regular-member-info-container" class="center">
                     <div>
-                        <h1 id="welcomeRegularUser">Velkommen *insert name here*!</h1>
+                        <h1 id="welcomeRegularUser">Velkommen: xxxxxx!</h1>
                     </div>                   
                     <div>
                         <h5 id="regular-member-info-name">Navn:</h5> 
@@ -314,7 +314,7 @@
                     <div>
                         <h5 id="regular-member-info-email">E-mail:</h5>
                     </div>
-                        <button class="update-btn">Updater Personlig Information</button>
+                        <button id="regular-member-update-btn" class="update-btn">Updater Personlig Information</button>
                     <div>
                         <h3 id="regular-member-next-payment">Næste kontigent betaling:</h3>
                     </div>
@@ -327,9 +327,7 @@
                     <div>
                         <h5 id="regular-member-total">Totalt til at betale:</h5>
                     </div>
-                    <div>
-                        <button class="payment-btn">Gå til betaling</button>
-                    </div>
+                        <button id="regular-member-payment-btn" class="payment-btn"><b>Gå til betaling</b></button>
                 </article>
             </section>
         </main>
