@@ -33,20 +33,18 @@ function prepareDataArray(dataObject){
     }
     return dataArray;
 }
-async function deleteData(event){
-    const id = event.target.dataset.id;
-    const type = event.target.dataset.type;
+async function deleteData(id, type){
     // delete item globally
     const url = `${endpoint}/${type}/${id}.json`;
     const response = await fetch(url, { method: "DELETE" });
         if (response.ok){
             // delete item locally
             // event.target.remove();
-            alert("SUCCESFULLY DELETED")
+            alert("SLETTET")
 
         }
         else if(!response.ok){
-            alert("ERROR: error deleting ITEM")
+            alert("ERROR: IKKE SLETTET")
         }
 }
 function createData(event){
@@ -100,6 +98,7 @@ function createData(event){
         const resultTime = event.target.resultTime.value;
         const date = event.target.date.value;
 
+        // create json object and make POST request to db
         practiceResultToDB(athlete, disciplin, resultTime, date);
 
         // reset form
@@ -115,11 +114,8 @@ function createData(event){
         const date = event.target.date.value;
         const compName = event.target.compName.value;
         const address = event.target.address.value;
-        console.log("athlete: ", athlete);
-        console.log("Disciplin: ", disciplin);
-        console.log("resultTime: ", resultTime);
-        console.log("date: ", date);
 
+        // create json object and make POST request to db
         compResultToDB(athlete, disciplin, resultTime, date, compName, address);
 
         // reset form
