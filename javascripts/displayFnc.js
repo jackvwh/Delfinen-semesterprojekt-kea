@@ -41,7 +41,7 @@ function showMemberRow(memberObject, caller){
 function memberHTMLRow(memberObject){
     const payment = calcMemberPayment(memberObject);
     const htmlRow = /*HTML*/ `
-        <tr data-id=${memberObject.id} data-type="members">
+        <tr>
             <td> ${memberObject.name} </td>
             <td> ${memberObject.birthdate} </td>
             <td> ${memberObject.gender} </td>
@@ -68,7 +68,7 @@ function showPracticeResultRow(practiceObject){
 }
 function practiceResultRow(practiceObject){
     const htmlRow = /*HTML*/ `
-        <tr data-id=${practiceObject.id} data-type="practiceResults">
+        <tr>
             <td> ${practiceObject.athlete} </td>
             <td> ${practiceObject.resultTime} </td>
             <td> ${practiceObject.date} </td>
@@ -88,7 +88,7 @@ function showCompResultRow(compObject){
 }
 function compResultRow(compObject){
     const htmlRow = /*HTML*/ `
-    <tr data-id=${compObject.id} data-type="compResults">
+    <tr>
         <td> ${compObject.athlete } </td>
         <td> ${compObject.compName} </td>
         <td> ${compObject.address} </td>
