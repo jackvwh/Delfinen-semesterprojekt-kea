@@ -1,13 +1,122 @@
-/* #results-container{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 5px;
-} */
-#welcome-coach-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+#coach-page {
+    margin-top: -150px;
+    padding: 15px;
+    text-align: center;
 }
-#best-practice-results-container{
+#welcome-coach-container { grid-area: welcomeCoachBox;}
+#attached-swimmers-container {grid-area: attSwimmers;}
+#best-practice-results-container { grid-area: bestPracResult;}
+#best-comp-results-container { grid-area: bestCompResult;}
+
+#results-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "welcomeCoachBox main main attSwimmers"
+    "welcomeCoachBox main main attSwimmers"
+    "welcomeCoachBox main main attSwimmers"
+    "left bestPracResult bestCompResult right"
+    "left bestPracResult bestCompResult right"
+    "left bestPracResult bestCompResult right";
+    gap: 50px;
+}
+#results-container > section {
+    border: solid;
+    margin-bottom: 50px;
+}
+
+#attached-swimmers-container {
+    position: absolute;
+    right: 168px;
+    top: 100px;
+    border: solid;
+    width: 400px;
+    height: 175px;
+    text-align: center;
+}
+
+#attached-swimmers-box > p {
+    color: black;
+    font-size: 1.2em;
+}
+
+#welcome-coach-container {
+    position: absolute;
+    left: 165px;
+    top: 125px;
+}
+
+#coach-insert-practice-btns {
+    transform: translate(325px, 150px);
+    width: 500px;
+}
+
+#coach-insert-comp-btns {
+    transform: translate(1435px, 120px);
+    width: 500px;
+}
+
+
+#coach-insert-practice-btns > button {
+    color: black;
+    background-color: white;
+    font-size: 1.5em;
+}
+
+#coach-insert-comp-btns > button {
+    color: black;
+    background-color: white;
+    font-size: 1.5em;
+}
+
+/*----------------Regular member---------------------*/
+#crawl-5-best-practice-container,
+#rygcrawl-5-best-practice-container,
+#butterfly-5-best-practice-container,
+#breaststroke-5-best-practice-container {
+    position: relative;
+    left: 50px;
+}
+
+#crawl-5-best-practice,
+#rygcrawl-5-best-practice,
+#butterfly-5-best-practice,
+#breaststroke-5-best-practice {
+    background-color: white;
+    border: solid;
+    width: 694px;
+    margin-bottom: 25px;
+}
+
+#best-practice-results-container > h1 {
+    text-align: center;
+    font-size: 2em;
+    color: black;
+    padding-top: 15px;
+}
+
+/*-------------------Comp Member--------------------*/
+#best-comp-results-container > h1 {
+    text-align: center;
+    font-size: 2em;
+    color: black;
+    padding-top: 15px;
+}
+
+#crawl-5-best-comp-container,
+#rygcrawl-5-best-comp-container,
+#butterfly-5-best-comp-container,
+#breaststroke-5-best-comp-container {
+    position: relative;
+    left: 75px;
+}
+
+#crawl-5-best-comp,
+#rygcrawl-5-best-comp,
+#butterfly-5-best-com,
+#butterfly-5-best-comp,
+#breaststroke-5-best-comp {
+    background-color: white;
+    border: solid;
+    width: 1200px;
+    margin-bottom: 25px; 
 }

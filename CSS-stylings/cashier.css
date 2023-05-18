@@ -58,20 +58,6 @@
     background-color: black;
 }
 
-.tableFixedHeader {
-    overflow-y: auto;
-    height: 200px;
-}
-
-.tableFixedHeader > tr, th {
-    background-color: bisque;
-    position: sticky;
-    top: 1px;
-    padding-top: 15px;
-    padding-bottom: 20px;
-    z-index: 9998;
-}
-
 .member-table tr:nth-child(even) {
     background-color: var(--colour3);
     color: black;

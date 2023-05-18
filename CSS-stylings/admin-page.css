@@ -60,7 +60,7 @@
 
 .tableFixedHeader {
     overflow-y: auto;
-    height: 200px;
+    height: 10px;
 }
 
 .tableFixedHeader > tr, th {
