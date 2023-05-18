@@ -1,7 +1,7 @@
 "use strict"
 
 import {loginDialog} from "./login.js";
-import {loadCompData, loadMemberData, loadPracticeData} from "./rest-fnc.js";
+import {loadCompData, loadMemberData, loadPracticeData, deleteData, createData} from "./rest-fnc.js";
 import {iterateMembers, iterateComps, iteratePractice} from "./displayFnc.js";
 import {calcMemberPayment, calcTotalIncome} from "./payment.js";
 
@@ -30,17 +30,35 @@ async function initApp(){
 }
 
 function addEventListeners(){
-    // coach result dialogs
-    // document.querySelector("#create-practice-btn").addEventListener("click", createPracticeDialog);
-    // document.querySelector("#update-practice-btn").addEventListener("click", updatePracticeDialog);
-    // document.querySelector("#create-comp-btn").addEventListener("click", createCompDialog);
-    // document.querySelector("#update-comp-btn").addEventListener("click", updateCompDialog);
+    //disciplin checkbox hide listners
+    document.querySelector("#create-competition-btn").addEventListener("click", ()=>document.querySelector("#create-disciplin-checkbox").classList.toggle("hidden"));
+    document.querySelector("#update-competition-btn").addEventListener("click", ()=>document.querySelector("#update-disciplin-checkbox").classList.toggle("hidden"));
 
     // login dialog 
     document.querySelector("#login-btn").addEventListener("click", loginDialog);
     // log out btn
     document.querySelector("#logOut-btn").addEventListener("click", ()=>window.location.reload());
 
+    // coach result dialogs
+    document.querySelector("#insert-practice-result-btn").addEventListener("click", createPracticeDialog);
+    document.querySelector("#insert-comp-result-btn").addEventListener("click", createCompsDialog);
+
     // create member dialog
-    // document.querySelector("#create-member-btn").addEventListener("click", createMemberDialog);
+    document.querySelector("#admin-create-member-btn").addEventListener("click", createMemberDialog);
+}
+function createPracticeDialog(){
+    document.querySelector("#create-practice-result-dialog").showModal();
+
+    document.querySelector("#practice-result-form").addEventListener("submit", createData);
+}
+function createCompsDialog(){
+    document.querySelector("#create-comp-result-dialog").showModal();
+
+    document.querySelector("#comp-result-form").addEventListener("submit", createData);
+}
+
+function createMemberDialog(){
+    document.querySelector("#create-dialog").showModal();
+
+    document.querySelector("#create-form").addEventListener("submit", createData);
 }
