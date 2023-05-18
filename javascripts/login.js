@@ -1,7 +1,6 @@
 export {loginDialog}
 
 function loginDialog(event){
-    console.log("login dialog open")
     event.preventDefault();
 
     document.querySelector("#login-dialog").showModal();

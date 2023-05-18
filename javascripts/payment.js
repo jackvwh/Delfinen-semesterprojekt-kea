@@ -23,7 +23,7 @@ function calcMemberPayment(memberObject){
         }
         return seniorPrize; 
     }
-    return null;
+    return 0;
 }
 function calcTotalIncome(memberArray){
     let totalIncome = null;
