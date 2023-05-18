@@ -30,7 +30,7 @@
     <main>
         <!-- Home View -->
         <!-- Route: #home -->
-        <main id="home-page">
+        <main id="home-page" class="hidden">
             <div id="front-page-picture-container">
                 <img src="https://freesvg.org/img/1502475717.png" alt="">
             </div>
@@ -333,7 +333,7 @@
                 </article>
             </section>
         </main>
-        <main id="coach-page" class="hidden">
+        <main id="coach-page">
             <section id="welcome-coach-container">
                 <article class="velcome-user-container">
                     <div id="user-welcome"> Welcome (user name) </div>
@@ -365,12 +365,6 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>Simone test</td>
-                            <td>09:45 test</td>
-                            <td>5. oktober test</td>
-                            <td><button>Delete</button></td>
-                        </tr>
                     </table>
                 </article>
                 <article>
@@ -385,12 +379,6 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>Simone test</td>
-                            <td>09:45 test</td>
-                            <td>5. oktober test</td>
-                            <td><button>Delete</button></td>
-                        </tr>
                     </table>
                 </article>
                 <article>
@@ -405,12 +393,6 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>Simone test</td>
-                            <td>09:45 test</td>
-                            <td>5. oktober test</td>
-                            <td><button>Delete</button></td>
-                        </tr>
                     </table>
                 </article>
                 <article>
@@ -425,12 +407,6 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>Simone test</td>
-                            <td>09:45 test</td>
-                            <td>5. oktober test</td>
-                            <td><button>Delete</button></td>
-                        </tr>
                     </table>
                 </article>
             </section>
@@ -451,14 +427,6 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>Simone test</td>
-                            <td>Stort stævne</td>
-                            <td>stævnevej 5, 3333 by</td>
-                            <td>09:45 test</td>
-                            <td>5. oktober test</td>
-                            <td><button>Delete</button></td>
-                        </tr>
                     </table>
                 </article>
                 <article >
@@ -476,14 +444,6 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>Simone test</td>
-                            <td>Stort stævne</td>
-                            <td>stævnevej 5, 3333 by</td>
-                            <td>09:45 test</td>
-                            <td>5. oktober test</td>
-                            <td><button>Delete</button></td>
-                        </tr>
                     </table>
                 </article>
                 <article>
@@ -501,14 +461,6 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>Simone test</td>
-                            <td>Stort stævne</td>
-                            <td>stævnevej 5, 3333 by</td>
-                            <td>09:45 test</td>
-                            <td>5. oktober test</td>
-                            <td><button>Delete</button></td>
-                        </tr>
                     </table>
                 </article>
                 <article>
@@ -526,14 +478,6 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>Simone test</td>
-                            <td>Stort stævne</td>
-                            <td>stævnevej 5, 3333 by</td>
-                            <td>09:45 test</td>
-                            <td>5. oktober test</td>
-                            <td><button>Delete</button></td>
-                        </tr>
                     </table>
                 </article>
             </section>
@@ -543,7 +487,7 @@
         <dialog id="delete-dialog">
             <h2>Do you want to delete this member?</h2>
             <p id="dialog-delete-member-title">Member name</p>
-            <form method="dialog" id="form-delete">
+            <form method="dialog" id="delete-form">
                 <button>Yes</button>
             </form>
             <form method="dialog">
@@ -708,12 +652,15 @@
         <dialog id="create-practice-result-dialog">
             <h2>Trænings resultat</h2>
             <form id="practice-result-form" >
-                <label for="swimmer"><b>Svømmer:</b></label>
-                <select name="swimmer" id="swimmer">
-                    <option value="Simone">Simone</option>
-                    <option value="Anders">Anders</option>
-                    <option value="Karla">Karla</option>
-                    <option value="Svend">Svend</option>
+                <label for="athlete"><b>Svømmer:</b></label>
+                <select name="athlete" id="athlete">
+                    <option value="Oste Rejen">Oste Rejen</option> 
+                    <option value="Simone Ost">Simone Ost</option>
+                    <option value="Hjerne Anders">Hjerne Anders</option>
+                    <option value="Karla Elektriker">Karla Elektriker</option>
+                    <option value="Svend Sved">Svend Sved</option>
+                    <option value="Erik Karlsen">Erik Karlsen</option>
+                    <option value="Eigil">Eigil</option> 
                 </select required>
 
                 <label for="disciplin"><b>Disciplin</b></label>
@@ -725,7 +672,7 @@
                 </select required>
 
                 <label for="time"><b>Practice-time</b></label>
-                <input type="time" name="time" id="time" maxlength="10" placeholder="trænings resultat" required>
+                <input type="time" name="time" id="resultTime" maxlength="10" placeholder="trænings resultat" required>
 
                 <label for="date"><b>Date</b></label>
                 <input type="date" name="date" id="date" maxlength="10" placeholder="Dato" required>
@@ -740,12 +687,15 @@
         <dialog id="create-comp-result-dialog">
             <h2>Konkurrence resultat</h2>
             <form id="comp-result-form" >
-                <label for="swimmer"><b>Svømmer:</b></label>
-                <select name="swimmer" id="swimmer">
-                    <option value="Simone">Simone</option>
-                    <option value="Anders">Anders</option>
-                    <option value="Karla">Karla</option>
-                    <option value="Svend">Svend</option>
+                <label for="athlete"><b>Svømmer:</b></label>
+                <select name="athlete" id="athlete">
+                    <option value="Oste Rejen">Oste Rejen</option> 
+                    <option value="Simone Ost">Simone Ost</option>
+                    <option value="Hjerne Anders">Hjerne Anders</option>
+                    <option value="Karla Elektriker">Karla Elektriker</option>
+                    <option value="Svend Sved">Svend Sved</option>
+                    <option value="Erik Karlsen">Erik Karlsen</option>
+                    <option value="Eigil">Eigil</option>
                 </select required>
 
                 <label for="disciplin"><b>Disciplin</b></label>
@@ -756,17 +706,17 @@
                     <option value="brystsvømning">Brystsvømning</option>
                 </select required>
 
-                <label for="time"><b>Resultat</b></label>
-                <input type="time" name="time" id="time" maxlength="10" placeholder="Resultat tid" required>
+                <label for="resultTime"><b>Resultat</b></label>
+                <input type="time" name="resultTime" id="resultTime" maxlength="10" placeholder="Resultat tid" required>
 
                 <label for="date"><b>Date</b></label>
                 <input type="date" name="date" id="date" maxlength="10" placeholder="Dato" required>
 
-                <label for="name">Stævne navn</label>
-                <input type="text" name="name" id="name" maxlength="1000" placeholder="Stævne navn" required>
+                <label for="compName">Stævne navn</label>
+                <input type="text" name="compName" id="compName" maxlength="1000" placeholder="Stævne navn" required>
 
-                <label for="place">Sted</label>
-                <input type="text" name="place" id="place" maxlength="1000" placeholder="Sted" required>
+                <label for="address">Adresse</label>
+                <input type="text" name="address" id="address" maxlength="1000" placeholder="Sted" required>
 
                 <button type="submit">Insert result</button>
             </form> 

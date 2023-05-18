@@ -33,9 +33,9 @@ function prepareDataArray(dataObject){
     }
     return dataArray;
 }
-async function deleteData(event, object){
-    const id = object.dataset.id;
-    const type = object.dataset.type;
+async function deleteData(event){
+    const id = event.target.dataset.id;
+    const type = event.target.dataset.type;
     // delete item globally
     const url = `${endpoint}/${type}/${id}.json`;
     const response = await fetch(url, { method: "DELETE" });
@@ -61,7 +61,7 @@ function createData(event){
         document.querySelector("#create-dialog").close();
         // member input values
         const title = event.target.title.value;
-        const name = event.target.name.value;
+        const athlete = event.target.athlete.value;
         const address = event.target.address.value;
         const mail = event.target.mail.value;
         const phone = event.target.phone.value;
@@ -73,7 +73,7 @@ function createData(event){
         const butterfly = event.target.butterfly.value;
         const breaststroke = event.target.breaststroke.value;
         // console.log("title: ", title);
-        // console.log("name: ", name);
+        // console.log("athlete: ", athlete);
         // console.log("address: ", address);
         // console.log("mail: ", mail);
         // console.log("phone: ", phone);
@@ -85,7 +85,7 @@ function createData(event){
         // console.log("butterfly: ", butterfly);
         // console.log("breaststroke: ", breaststroke);
 
-        memberToDB(title, name, address, mail, phone, gender, birthdate, active, crawl, rygcrawl, butterfly, breaststroke);
+        memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, crawl, rygcrawl, butterfly, breaststroke);
 
         // reset form
         document.querySelector("#create-form").reset();
@@ -95,16 +95,12 @@ function createData(event){
         // close dialog
         document.querySelector("#create-practice-result-dialog").close();
         // practice values
-        const swimmer = event.target.swimmer.value;
+        const athlete = event.target.athlete.value;
         const disciplin = event.target.disciplin.value;
-        const time = event.target.time.value;
+        const resultTime = event.target.resultTime.value;
         const date = event.target.date.value;
-        console.log("Swimmer: ", swimmer);
-        console.log("Disciplin: ", disciplin);
-        console.log("Time: ", time);
-        console.log("date: ", date);
 
-        practiceResultToDB(swimmer, disciplin, time, date);
+        practiceResultToDB(athlete, disciplin, resultTime, date);
 
         // reset form
         document.querySelector("#practice-result-form").reset();
@@ -113,26 +109,30 @@ function createData(event){
         // close dialog
         document.querySelector("#create-comp-result-dialog").close();
         // comp values
-        const swimmer = event.target.swimmer.value;
+        const athlete = event.target.athlete.value;
         const disciplin = event.target.disciplin.value;
-        const time = event.target.time.value;
+        const resultTime = event.target.resultTime.value;
         const date = event.target.date.value;
-        const name = event.target.name.value;
-        const place = event.target.place.value;
+        const compName = event.target.compName.value;
+        const address = event.target.address.value;
+        console.log("athlete: ", athlete);
+        console.log("Disciplin: ", disciplin);
+        console.log("resultTime: ", resultTime);
+        console.log("date: ", date);
 
-        compResultToDB(swimmer, disciplin, time, date, name, place);
+        compResultToDB(athlete, disciplin, resultTime, date, compName, address);
 
         // reset form
         document.querySelector("#comp-result-form").reset();
     } 
 }
-async function practiceResultToDB(swimmer, disciplin, time, date){
+async function practiceResultToDB(athlete, disciplin, resultTime, date){
 
     //create new object
     const practiceResult = { 
-        swimmer: `${swimmer}`, 
+        athlete: `${athlete}`, 
         disciplin: `${disciplin}`,
-        time: `${time}`,
+        resultTime: `${resultTime}`,
         date: `${date}`,
     };
      // make javaScript object to Json object
@@ -144,26 +144,26 @@ async function practiceResultToDB(swimmer, disciplin, time, date){
                  body: dataAsJson 
          });
          if (response.ok){
-             alert("PRACTICE RESULT SUCCESSFULLY CREATED");
+             alert("TRÆNINGS RESULTAT OPRETTET");
          }
          else if(!response.ok){
              // show error message and reload page
-             alert("ERROR: PRACTICE RESULTS NOT CREATED");
+             alert("ERROR: TRÆNINGS RESULTAT IKKE OPRETTET");
          }
-    // response with new object id/name
+    // response with new object id/athlete
     const data = await response.json();
     // make get request to input specific element into DOM from response id
-    // insertNewItem(data.name, "users");
+    // insertNewItem(data.athlete, "users");
 }
-async function compResultToDB(swimmer, disciplin, time, date, name, place){
+async function compResultToDB(athlete, disciplin, resultTime, date, compName, address){
     //create new object
     const compResult = { 
-        swimmer: `${swimmer}`, 
+        athlete: `${athlete}`, 
         disciplin: `${disciplin}`,
-        time: `${time}`,
+        resultTime: `${resultTime}`,
         date: `${date}`,
-        name: `${name}`,
-        place: `${place}`,
+        compName: `${compName}`,
+        address: `${address}`,
     };
      // make javaScript object to Json object
      const dataAsJson = JSON.stringify(compResult);
@@ -174,22 +174,22 @@ async function compResultToDB(swimmer, disciplin, time, date, name, place){
                  body: dataAsJson 
          });
          if (response.ok){
-             alert("COMPETITION RESULT SUCCESSFULLY CREATED");
+             alert("KONKURRENCE RESULTAT OPRETTET");
          }
          else if(!response.ok){
              // show error message and reload page
-             alert("ERROR: COMPETITION RESULT NOT CREATED");
+             alert("ERROR: KONKURRENCE RESULTAT IKKE OPRETTET");
          }
-    // response with new object id/name
+    // response with new object id/athlete
     const data = await response.json();
     // make get request to input specific element into DOM from response id
-    // insertNewItem(data.name, "users");
+    // insertNewItem(data.athlete, "users");
 }
-async function memberToDB(title, name, address, mail, phone, gender, birthdate, active, crawl, rygcrawl, butterfly, breaststroke){
+async function memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, crawl, rygcrawl, butterfly, breaststroke){
     //create new object
     const member = { 
         title: `${title}`, 
-        name: `${name}`,
+        athlete: `${athlete}`,
         address: `${address}`,
         mail: `${mail}`,
         phone: `${phone}`,
@@ -219,8 +219,8 @@ async function memberToDB(title, name, address, mail, phone, gender, birthdate, 
              // show error message and reload page
              alert("ERROR: MEMBER NOT CREATED");
          }
-    // response with new object id/name
+    // response with new object id/athlete
     const data = await response.json();
     // make get request to input specific element into DOM from response id
-    // insertNewItem(data.name, "users");
+    // insertNewItem(data.athlete, "users");
 }
