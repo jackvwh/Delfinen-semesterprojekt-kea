@@ -1,4 +1,8 @@
+
+import {calcMemberPayment} from "./payment.js";
 export {iterateMembers, iteratePractice, iterateComps}
+
+
 
 function iterateMembers(memberArray, caller){
     for (let member of memberArray){
@@ -34,6 +38,7 @@ function showMemberRow(memberObject, caller){
     
 }
 function makeMemberHTMLRow(memberObject){
+    const payment = calcMemberPayment(memberObject);
     const htmlRow = /*HTML*/ `
     <tr data-id=${memberObject.id} data-type="members">
         <td> ${memberObject.name} </td>
@@ -43,7 +48,7 @@ function makeMemberHTMLRow(memberObject){
         <td> ${memberObject.address} </td>
         <td> ${memberObject.phone} </td>
         <td> ${memberObject.active} </td>
-        <td> Beløb: unkown </td>
+        <td> Beløb: ${payment} </td>
         <td><input type="radio"></td>
         <td style="width: 5px; padding: 0%; padding-right: 25px; padding-left: 25px;"><button class="button-styling update-btn">Update</button></td>
         <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
@@ -100,9 +105,9 @@ function updateDialog(event, object){
 
     // document.querySelector("#update-form").addEventListener("submit", updateData);
 }
-function deleteDialog(event, object){
+function deleteDialog(event){
 
     document.querySelector("#delete-dialog").showModal();
 
-    // document.querySelector("#update-form").addEventListener("submit", updateData);
+    document.querySelector("#delete-form").addEventListener("submit", ()=>deleteData(event));
 }
