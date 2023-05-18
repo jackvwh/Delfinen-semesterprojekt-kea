@@ -46,12 +46,12 @@
 }
 
 #coach-insert-practice-btns {
-    transform: translate(325px, 150px);
+    transform: translate(100px, 150px);
     width: 500px;
 }
 
 #coach-insert-comp-btns {
-    transform: translate(1435px, 120px);
+    transform: translate(1030px, 120px);
     width: 500px;
 }
 
@@ -74,7 +74,7 @@
 #butterfly-5-best-practice-container,
 #breaststroke-5-best-practice-container {
     position: relative;
-    left: 50px;
+    left: 15px;
 }
 
 #crawl-5-best-practice,
@@ -83,7 +83,7 @@
 #breaststroke-5-best-practice {
     background-color: white;
     border: solid;
-    width: 694px;
+    width: 500px;
     margin-bottom: 25px;
 }
 
@@ -107,7 +107,7 @@
 #butterfly-5-best-comp-container,
 #breaststroke-5-best-comp-container {
     position: relative;
-    left: 75px;
+    left: 15px;
 }
 
 #crawl-5-best-comp,
