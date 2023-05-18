@@ -47,6 +47,8 @@ position: absolute;
 bottom: 10px;
 left: 75px;
 font-family: Arial, Helvetica, sans-serif;
+color: black;
+background-color: white;
 }
 
 #home-page > header {
