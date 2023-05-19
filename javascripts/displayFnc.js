@@ -1,6 +1,7 @@
 
 import {calcMemberPayment} from "./payment.js";
 import {deleteData} from "./rest-fnc.js";
+import {sortResults } from "./sortingFnc.js";
 export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow}
 
 function iterateMembers(memberArray, caller){
@@ -9,12 +10,14 @@ function iterateMembers(memberArray, caller){
     }
 }
 function iteratePractice(practiceResults){
-    for (let practiceObj of practiceResults){
+    const sortedResults = sortResults(practiceResults);
+    for (let practiceObj of sortedResults){
         showPracticeResultRow(practiceObj);
     }
 }
 function iterateComps(compResults){
-    for (let compObj of compResults){
+    const sortedResults = sortResults(compResults);
+    for (let compObj of sortedResults){
         showCompResultRow(compObj);
     }
 }
