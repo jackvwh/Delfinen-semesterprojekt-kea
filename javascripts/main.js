@@ -1,7 +1,7 @@
 "use strict"
 
 import {loginDialog} from "./login.js";
-import {loadCompData, loadMemberData, loadPracticeData, deleteData, createData} from "./rest-fnc.js";
+import {loadCompData, loadMemberData, loadPracticeData, createData} from "./rest-fnc.js";
 import {iterateMembers, iterateComps, iteratePractice} from "./displayFnc.js";
 import {calcMemberPayment, calcTotalIncome} from "./payment.js";
 
