@@ -1,0 +1,17 @@
+#response-message {
+    /* (A) POSITION */
+    position: fixed; z-index: 99999;
+    top: 5px; right: 5px;
+   
+    /* (B) DIMENSION */
+    width: 200px;
+    padding: 10px;
+   
+    /* (C) COLORS */
+    color: #000 !important;
+    border: 1px solid #c52828;
+    background: rgb(167, 235, 140);
+    border: 1px solid #000;
+
+    cursor: pointer;
+  }
