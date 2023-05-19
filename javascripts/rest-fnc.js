@@ -1,6 +1,6 @@
 
 import { showPracticeResultRow, showCompResultRow, showMemberRow} from "./displayFnc.js";
-
+import { response_message } from "./message.js";
 
 export {loadCompData, loadMemberData, loadPracticeData, deleteData, createData}
 
@@ -44,11 +44,11 @@ async function deleteData(id, type){
         if (response.ok){
             // delete item locally
             // event.target.remove();
-            alert("SLETTET")
+            response_message("SUCCESS! DATA SLETTET")
 
         }
         else if(!response.ok){
-            alert("ERROR: IKKE SLETTET")
+            response_message("ERROR: DATA IKKE SLETTET")
         }
 }
 function createData(event){
@@ -144,11 +144,11 @@ async function practiceResultToDB(athlete, disciplin, resultTime, date){
                  body: dataAsJson 
          });
          if (response.ok){
-             alert("TRÆNINGS RESULTAT OPRETTET");
+            response_message("SUCCESS! TRÆNINGS RESULTAT OPRETTET");
          }
          else if(!response.ok){
-             // show error message and reload page
-             alert("ERROR: TRÆNINGS RESULTAT IKKE OPRETTET");
+             // show error message
+             response_message("ERROR: TRÆNINGS RESULTAT IKKE OPRETTET");
          }
     // response with new object id/athlete
     const data = await response.json();
@@ -177,11 +177,11 @@ async function compResultToDB(athlete, disciplin, resultTime, date, compName, ad
                  body: dataAsJson 
          });
          if (response.ok){
-             alert("KONKURRENCE RESULTAT OPRETTET");
+            response_message("SUCCESS! KONKURRENCE RESULTAT OPRETTET");
          }
          else if(!response.ok){
-             // show error message and reload page
-             alert("ERROR: KONKURRENCE RESULTAT IKKE OPRETTET");
+             // show error message
+             response_message("ERROR: KONKURRENCE RESULTAT IKKE OPRETTET");
          }
     // response with new object id/athlete
     const data = await response.json();
