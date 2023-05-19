@@ -8,13 +8,18 @@ function sortResults(resultArray){
         const filterBreaststroke= resultArray.filter(breaststroke);
         
         const sortedCrawl = filterCrawl.sort(timeCompare);
-        console.log("sorted crawl: ", sortedCrawl)
         const sortedRygCrawl = filterRygCrawl.sort(timeCompare);
         const sortedButterfly = filterButterfly.sort(timeCompare);
         const sortedBreaststroke = filterBreaststroke.sort(timeCompare);
+
+        // 5 best swimmers
+        const bestCrawl = sortedCrawl.slice(0, 5) 
+        const bestRygCrawl = sortedRygCrawl.slice(0, 5) 
+        const bestButterfly = sortedButterfly.slice(0, 5) 
+        const bestBreaststroke = sortedBreaststroke.slice(0, 5) 
         
-        const sortedResults = sortedCrawl.concat(sortedRygCrawl, sortedButterfly, sortedBreaststroke);
-        return sortedResults;
+        const sortedBestResults = bestCrawl.concat(bestRygCrawl, bestButterfly, bestBreaststroke);
+        return sortedBestResults;
 }
 function crawl(result){
     console.log(result);
