@@ -1,5 +1,7 @@
 
+import { showPracticeResultRow, showCompResultRow, showMemberRow} from "./displayFnc.js";
 import { response_message } from "./message.js";
+
 export {loadCompData, loadMemberData, loadPracticeData, deleteData, createData}
 
 const endpoint = "https://delfin-kea-default-rtdb.firebaseio.com/"
@@ -150,8 +152,11 @@ async function practiceResultToDB(athlete, disciplin, resultTime, date){
          }
     // response with new object id/athlete
     const data = await response.json();
+    console.log("new data id: ", data)
+    console.log("new data object: ", practiceResult)
+
     // make get request to input specific element into DOM from response id
-    // insertNewItem(data.athlete, "users");
+    insertNewItem(data.name, "practiceResults");
 }
 async function compResultToDB(athlete, disciplin, resultTime, date, compName, address){
     //create new object
@@ -180,8 +185,11 @@ async function compResultToDB(athlete, disciplin, resultTime, date, compName, ad
          }
     // response with new object id/athlete
     const data = await response.json();
-    // make get request to input specific element into DOM from response id
-    // insertNewItem(data.athlete, "users");
+    console.log("new data id: ", data)
+    console.log("new data object: ", compResult)
+
+    // show new comp result
+    insertNewItem(data.name, "compResults");
 }
 async function memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, crawl, rygcrawl, butterfly, breaststroke){
     //create new object
@@ -221,4 +229,27 @@ async function memberToDB(title, athlete, address, mail, phone, gender, birthdat
     const data = await response.json();
     // make get request to input specific element into DOM from response id
     // insertNewItem(data.athlete, "users");
+}
+
+// ----------- FETCH ITEM AND INSERT RESULTS/MEMBES-------------------
+// fetch single item from database
+async function fetchItem(id, type){
+    //get updated or new item from database
+    const response =  await fetch(`${endpoint}/${type}/${id}.json`);
+    const updatedData = await response.json();
+    return updatedData;
+}
+//fetch and insert new item
+async function insertNewItem(id, type){
+    const newItem = await fetchItem(id, type);
+
+    if (type === "practiceResults"){
+        showPracticeResultRow(newItem);
+    }
+    else if (type === "compResults"){
+        showCompResultRow(newItem);
+    }
+    else if (type === "members"){
+        showMemberRow(newItem);
+    }
 }

@@ -1,7 +1,7 @@
 
 import {calcMemberPayment} from "./payment.js";
 import {deleteData} from "./rest-fnc.js";
-export {iterateMembers, iteratePractice, iterateComps}
+export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow}
 
 
 
@@ -22,7 +22,7 @@ function iterateComps(compResults){
 }
 function showMemberRow(memberObject, caller){
     // make html row with member values
-    const memberRow = memberHTMLRow(memberObject); 
+    const memberRow = makeMemberHTMLRow(memberObject); 
     let table = null;
     //check for caller
         if(caller === "admin"){
@@ -38,10 +38,10 @@ function showMemberRow(memberObject, caller){
      document.querySelector(`${table} tr:first-child .delete-btn`).addEventListener("click", () => deleteDialog(memberObject.id, "members"));
     
 }
-function memberHTMLRow(memberObject){
+function makeMemberHTMLRow(memberObject){
     const payment = calcMemberPayment(memberObject);
     const htmlRow = /*HTML*/ `
-        <tr>
+        <tr data-id=${memberObject.id}>
             <td> ${memberObject.name} </td>
             <td> ${memberObject.birthdate} </td>
             <td> ${memberObject.gender} </td>
@@ -68,7 +68,7 @@ function showPracticeResultRow(practiceObject){
 }
 function practiceResultRow(practiceObject){
     const htmlRow = /*HTML*/ `
-        <tr>
+        <tr data-id=${practiceObject.id}>
             <td> ${practiceObject.athlete} </td>
             <td> ${practiceObject.resultTime} </td>
             <td> ${practiceObject.date} </td>
@@ -79,16 +79,16 @@ function practiceResultRow(practiceObject){
 }
 function showCompResultRow(compObject){
     // make html row with member values
-    const compRow = compResultRow(compObject); 
+    const compRow = makeCompResultRow(compObject); 
     // insert row in DOM
     document.querySelector(`#${compObject.disciplin}-5-best-comp`).insertAdjacentHTML("afterbegin", compRow);
      // add eventListener to delete-btn
      document.querySelector(`#${compObject.disciplin}-5-best-comp tr:first-child .delete-btn`).addEventListener("click", () => deleteDialog(compObject.id, "compResults"));
     
 }
-function compResultRow(compObject){
+function makeCompResultRow(compObject){
     const htmlRow = /*HTML*/ `
-    <tr>
+    <tr data-id=${compObject.id}>
         <td> ${compObject.athlete } </td>
         <td> ${compObject.compName} </td>
         <td> ${compObject.address} </td>
