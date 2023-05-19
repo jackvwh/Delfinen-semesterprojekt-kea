@@ -42,8 +42,9 @@ async function deleteData(id, type){
     const url = `${endpoint}/${type}/${id}.json`;
     const response = await fetch(url, { method: "DELETE" });
         if (response.ok){
-            // delete item locally
-            // event.target.remove();
+            //delete locally
+            document.querySelector(`#${id}`).remove();
+            //show user message
             response_message("SUCCESS! DATA SLETTET")
 
         }

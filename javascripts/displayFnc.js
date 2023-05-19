@@ -3,8 +3,6 @@ import {calcMemberPayment} from "./payment.js";
 import {deleteData} from "./rest-fnc.js";
 export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow}
 
-
-
 function iterateMembers(memberArray, caller){
     for (let member of memberArray){
         showMemberRow(member, caller);
@@ -41,7 +39,7 @@ function showMemberRow(memberObject, caller){
 function makeMemberHTMLRow(memberObject){
     const payment = calcMemberPayment(memberObject);
     const htmlRow = /*HTML*/ `
-        <tr data-id=${memberObject.id}>
+        <tr id=${memberObject.id}>
             <td> ${memberObject.name} </td>
             <td> ${memberObject.birthdate} </td>
             <td> ${memberObject.gender} </td>
@@ -68,7 +66,7 @@ function showPracticeResultRow(practiceObject){
 }
 function practiceResultRow(practiceObject){
     const htmlRow = /*HTML*/ `
-        <tr data-id=${practiceObject.id}>
+        <tr id=${practiceObject.id}>
             <td> ${practiceObject.athlete} </td>
             <td> ${practiceObject.resultTime} </td>
             <td> ${practiceObject.date} </td>
@@ -88,7 +86,7 @@ function showCompResultRow(compObject){
 }
 function makeCompResultRow(compObject){
     const htmlRow = /*HTML*/ `
-    <tr data-id=${compObject.id}>
+    <tr id=${compObject.id}>
         <td> ${compObject.athlete } </td>
         <td> ${compObject.compName} </td>
         <td> ${compObject.address} </td>
@@ -100,14 +98,13 @@ function makeCompResultRow(compObject){
     return htmlRow;
 }
 
-function updateDialog(event, object){
+function updateDialog(id, type){
 
     document.querySelector("#update-dialog").showModal();
 
     // document.querySelector("#update-form").addEventListener("submit", updateData);
 }
-function deleteDialog(id, type){
+function deleteDialog(id, type, ){
     document.querySelector("#delete-dialog").showModal();
-
     document.querySelector("#delete-form").addEventListener("submit", ()=>deleteData(id, type));
 }
