@@ -62,3 +62,53 @@ function createMemberDialog(){
 
     document.querySelector("#create-form").addEventListener("submit", createData);
 }
+
+const endpoint = "https://delfin-kea-default-rtdb.firebaseio.com/";
+
+// Accessing the HTML elements using their IDs
+const welcomeRegularUser = document.getElementById("welcomeRegularUser");
+const regularMemberInfoName = document.getElementById("regular-member-info-name");
+const regularMemberInfoAge = document.getElementById("regular-member-info-age");
+const regularMemberInfoGender = document.getElementById("regular-member-info-gender");
+const regularMemberInfoAddress = document.getElementById("regular-member-info-address");
+const regularMemberInfoEmail = document.getElementById("regular-member-info-email");
+const regularMemberPrice = document.getElementById("regular-member-price");
+
+// Fetching the JSON data from the endpoint
+fetch(endpoint + "members.json")
+  .then((response) => response.json())
+  .then((data) => {
+    // Retrieving each member's data and populating the HTML elements
+    for (const memberId in data) {
+      const member = data[memberId];
+      welcomeRegularUser.textContent = "Velkommen: " + member["name"] + "!";
+      regularMemberInfoName.textContent = "Navn: " + member["name"];
+      regularMemberInfoAge.textContent = "Alder: " + calculateAge(member["birthdate"]);
+      regularMemberInfoGender.textContent = "Køn: " + member["gender"];
+      regularMemberInfoAddress.textContent = "Adresse: " + member["address"];
+      regularMemberInfoEmail.textContent = "E-mail: " + member["email"];
+      regularMemberPrice.textContent =
+        "Pris for kontigent: " + calcMemberPayment(member["active"]);
+
+      // Break the loop after the first member to prevent overwriting the HTML elements
+      break;
+    }
+  })
+  .catch((error) => console.error(error));
+
+// Function to calculate age based on birthdate
+function calculateAge(birthdate) {
+  const today = new Date();
+  const birthdateObj = new Date(birthdate);
+  let age = today.getFullYear() - birthdateObj.getFullYear();
+  const monthDiff = today.getMonth() - birthdateObj.getMonth();
+
+  if (
+    monthDiff < 0 ||
+    (monthDiff === 0 && today.getDate() < birthdateObj.getDate())
+  ) {
+    age--;
+  }
+
+  return age;
+}
