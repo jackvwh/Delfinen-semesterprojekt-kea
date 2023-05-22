@@ -1,3 +1,8 @@
+
+import {loadCompData, loadMemberData, loadPracticeData, createData} from "./rest-fnc.js";
+import {iterateMembers, iterateComps, iteratePractice, insertCompMembers} from "./displayFnc.js";
+import { compMembers } from "./sortingFnc.js";
+
 export {loginDialog}
 
 function loginDialog(event){
@@ -8,7 +13,7 @@ function loginDialog(event){
     document.querySelector("#login-form").addEventListener("submit", loginFunction);
 }
 
-function loginFunction(event){
+async function loginFunction(event){
     event.preventDefault();
     const user = event.target.email.value;
     const psw = event.target.psw.value;
@@ -22,6 +27,9 @@ function loginFunction(event){
                     document.querySelector("#logOut-btn").classList.remove("hidden");
                     document.querySelector("#login-btn").classList = ""; 
                     document.querySelector("#login-btn").classList.add("hidden"); 
+                    const memberArray = await loadMemberData();
+                    iterateMembers(memberArray, "admin");
+
                 }
                 break;
             case "cash":
@@ -31,7 +39,10 @@ function loginFunction(event){
                     //change log btn 
                     document.querySelector("#logOut-btn").classList.remove("hidden");
                     document.querySelector("#login-btn").classList = ""; 
-                    document.querySelector("#login-btn").classList.add("hidden");                
+                    document.querySelector("#login-btn").classList.add("hidden");  
+                    const memberArray = await loadMemberData();
+                    iterateMembers(memberArray, "cashier");
+
                 };
                 break;
             case "coach":
@@ -41,7 +52,16 @@ function loginFunction(event){
                     //change log btn 
                     document.querySelector("#logOut-btn").classList.remove("hidden");
                     document.querySelector("#login-btn").classList = ""; 
-                    document.querySelector("#login-btn").classList.add("hidden");                
+                    document.querySelector("#login-btn").classList.add("hidden");  
+                    const compResults = await loadCompData();
+                    const practiceResults = await loadPracticeData();
+                    iterateComps(compResults);
+                    iteratePractice(practiceResults);
+
+                    const memberArray = await loadMemberData();
+                    const compArray = compMembers(memberArray);
+                    console.log("compmember: ", compArray);
+                    insertCompMembers(compArray);
                 };
                 break;
             case "comp":

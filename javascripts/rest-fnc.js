@@ -1,7 +1,6 @@
 
 import { showPracticeResultRow, showCompResultRow, showMemberRow} from "./displayFnc.js";
 import { response_message } from "./message.js";
-
 export {loadCompData, loadMemberData, loadPracticeData, deleteData, createData}
 
 const endpoint = "https://delfin-kea-default-rtdb.firebaseio.com/"

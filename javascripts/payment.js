@@ -1,4 +1,4 @@
-export {calcMemberPayment, calcTotalIncome}
+export {calcMemberPayment, calcTotalIncome, calcAge}
 
 const youthAge = 17;
 const discountAge = 60;

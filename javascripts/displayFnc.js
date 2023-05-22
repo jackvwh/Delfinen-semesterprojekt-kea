@@ -2,8 +2,17 @@
 import {calcMemberPayment} from "./payment.js";
 import {deleteData} from "./rest-fnc.js";
 import {sortResults } from "./sortingFnc.js";
-export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow}
+export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow, insertCompMembers}
+function insertCompMembers(compArray){
+    document.querySelector("#athlete").innerHTML = "";
 
+    for (let memberObject of compArray){
+        const htmlOption = /*HTML*/ `
+        <option value=${memberObject.id}>${memberObject.name}</option> 
+        `;
+        document.querySelector("#athlete").insertAdjacentHTML("beforeend", htmlOption);
+    }
+}
 function iterateMembers(memberArray, caller){
     for (let member of memberArray){
         showMemberRow(member, caller);
@@ -102,9 +111,7 @@ function makeCompResultRow(compObject){
 }
 
 function updateDialog(id, type){
-
     document.querySelector("#update-dialog").showModal();
-
     // document.querySelector("#update-form").addEventListener("submit", updateData);
 }
 function deleteDialog(id, type, ){
