@@ -536,6 +536,8 @@
                     <input type="radio" id="member" name="title" value="member" checked>
                     <label for="member">Medlem</label>
                 </fieldset>
+            <fieldset>
+                <legend>Personlige oplysninger</legend>
                 <label for="name">Navn</label>
                 <input type="text" name="name" id="name" maxlength="1000" placeholder="Navn" required>
 
@@ -549,26 +551,40 @@
                 <input type="number" name="phone" id="phone" maxlength="8" placeholder="Telefon" required>
 
                 <label for="gender">Køn</label>
-                <input type="text" name="gender" id="gender" maxlength="8" placeholder="Køn" required>
+                <select id="gender" name="gender" placeholder="Køn" required>
+                    <option value="male">Male</option>
+                    <option value="firefox">Firefox</option>
+                    <option value="female">Female</option>
+                    <option value="opera">Opera</option>
+                    <option value="safari">Safari</option>
+                </select>
 
                 <label for="birthdate">Fødselsdato</label>
                 <input type="date" name="birthdate" id="birthdate" maxlength="10" placeholder="Fødselsdato" required>
-
+            </fieldset>
             <section id="member-checkboxes">
                 <fieldset>
                     <legend>Aktivt medlemsskab:</legend>
                     <label for="active"></label>
                     <select name="active" id="active">
-                        <option value="true" selected>Ja</option>
-                        <option value="false">Nej</option>
+                        <option value=true selected>Ja</option>
+                        <option value=false>Nej</option>
                     </select required>
-                    <button id="create-competition-btn">Konkurrence svømmer</button>
+                </fieldset>
+                <fieldset>
+                    <legend>Konkurrence svømmer</legend>
+                    <label for="competition"></label>
+                    <select name="competition" id="competition">
+                        <option value=true>Ja</option>
+                        <option value=false selected>Nej</option>
+                    </select required>
+                    <button id="create-competition-btn">Discipliner</button>
                 </fieldset>
 
                 <fieldset id="create-disciplin-checkbox" class="hidden">
                     <legend>Discipliner</legend>
                     <div>
-                      <input type="checkbox" id="crawl" name="disciplin" checked>
+                      <input type="checkbox" id="crawl" name="disciplin">
                       <label for="crawl">Crawl</label>
                     </div>
                 
@@ -619,7 +635,13 @@
                 <input type="number" name="phone" id="phone" maxlength="8" placeholder="Telefon" required>
 
                 <label for="gender">Køn</label>
-                <input type="text" name="gender" id="gender" maxlength="8" placeholder="Køn" required>
+                <select id="gender" name="gender" placeholder="Køn" required>
+                    <option value="male">Male</option>
+                    <option value="firefox">Firefox</option>
+                    <option value="female">Female</option>
+                    <option value="opera">Opera</option>
+                    <option value="safari">Safari</option>
+                </select>
 
                 <label for="birthdate">Fødselsdato</label>
                 <input type="date" name="birthdate" id="birthdate" maxlength="10" placeholder="Fødselsdato" required>
@@ -629,30 +651,38 @@
                         <legend>Aktivt medlemsskab:</legend>
                         <label for="active"></label>
                         <select name="active" id="active">
-                            <option value="true" selected>Ja</option>
-                            <option value="false">Nej</option>
+                            <option value=true selected>Ja</option>
+                            <option value=false>Nej</option>
                         </select required>
-                        <button id="update-competition-btn">Konkurrence svømmer</button>
                     </fieldset>
-
+                    <fieldset>
+                        <legend>Konkurrence svømmer</legend>
+                        <label for="competition"></label>
+                        <select name="competition" id="competition">
+                            <option value=true>Ja</option>
+                            <option value=false selected>Nej</option>
+                        </select required>
+                        <button id="update-competition-btn">Discipliner</button>
+                    </fieldset>
+    
                     <fieldset id="update-disciplin-checkbox" class="hidden">
                         <legend>Discipliner</legend>
                         <div>
-                            <input type="checkbox" id="crawl" name="crawl" checked>
-                            <label for="crawl">Crawl</label>
+                          <input type="checkbox" id="crawl" name="disciplin">
+                          <label for="crawl">Crawl</label>
                         </div>
                     
                         <div>
-                            <input type="checkbox" id="rygcrawl" name="Rygcrawl">
-                            <label for="rygcrawl">Rygcrawl</label>
+                          <input type="checkbox" id="rygcrawl" name="disciplin">
+                          <label for="rygcrawl">Rygcrawl</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="butterfly" name="butterfly">
-                            <label for="rutterfly">Butterfly</label>
+                          <input type="checkbox" id="butterfly" name="disciplin">
+                          <label for="butterfly">Butterfly</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="brystsvømning" name="brystsvømning">
-                            <label for="brystsvømning">Brystsvømning</label>
+                          <input type="checkbox" id="breaststroke" name="disciplin">
+                          <label for="brystsvømning">Brystsvømning</label>
                         </div>
                     </fieldset>
                 </section>
