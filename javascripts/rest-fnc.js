@@ -1,6 +1,7 @@
 
 import { showPracticeResultRow, showCompResultRow, showMemberRow} from "./displayFnc.js";
 import { response_message } from "./message.js";
+import { calcAge } from "./payment.js";
 export {loadCompData, loadMemberData, loadPracticeData, deleteData, createData}
 
 const endpoint = "https://delfin-kea-default-rtdb.firebaseio.com/"
@@ -51,11 +52,9 @@ async function deleteData(id, type){
             response_message("ERROR: DATA IKKE SLETTET")
         }
 }
-function createData(event){
+async function createData(event){
     event.preventDefault();
-    const type = event.target.id
-    console.log("form type ", type);
-    
+    const type = event.target.id    
     // decide what values to get and send and reset form
     // creates member
     if(type === "create-form"){ 
@@ -97,13 +96,16 @@ function createData(event){
         // close dialog
         document.querySelector("#create-practice-result-dialog").close();
         // practice values
-        const athlete = event.target.athlete.value;
+        const uid = event.target.athlete.value;
+        const athlete = await getAthlete(uid);
+        const athleteName = `${athlete.name}`;
         const disciplin = event.target.disciplin.value;
         const resultTime = event.target.resultTime.value;
         const date = event.target.date.value;
+        const youth = calcAge(athlete.birthdate) < 18 ? true : false;
 
         // create json object and make POST request to db
-        practiceResultToDB(athlete, disciplin, resultTime, date);
+        practiceResultToDB(uid, athleteName, disciplin, resultTime, date, youth);
 
         // reset form
         document.querySelector("#practice-result-form").reset();
@@ -112,28 +114,38 @@ function createData(event){
         // close dialog
         document.querySelector("#create-comp-result-dialog").close();
         // comp values
-        const athlete = event.target.athlete.value;
+        const uid = event.target.athlete.value;
+        const athlete = await getAthlete(uid);
+        const athleteName = athlete.name;
         const disciplin = event.target.disciplin.value;
         const resultTime = event.target.resultTime.value;
         const date = event.target.date.value;
         const compName = event.target.compName.value;
         const address = event.target.address.value;
+        const youth = calcAge(athlete.birthdate) < 18 ? true : false;
 
         // create json object and make POST request to db
-        compResultToDB(athlete, disciplin, resultTime, date, compName, address);
+        compResultToDB(uid, athleteName, disciplin, resultTime, date, compName, address, youth);
 
         // reset form
         document.querySelector("#comp-result-form").reset();
     } 
 }
-async function practiceResultToDB(athlete, disciplin, resultTime, date){
+async function getAthlete(uid){
+    const athleteResponse = await fetch(`${endpoint}/members/${uid}.json`)
+    const athlete = await athleteResponse.json();
+    return athlete;
+}
+async function practiceResultToDB(uid, athleteName, disciplin, resultTime, date, youth){
 
     //create new object
     const practiceResult = { 
-        athlete: `${athlete}`, 
+        uid: `${uid}`, 
+        athlete: `${athleteName}`, 
         disciplin: `${disciplin}`,
         resultTime: `${resultTime}`,
         date: `${date}`,
+        youth: `${youth}`,
     };
      // make javaScript object to Json object
      const dataAsJson = JSON.stringify(practiceResult);
@@ -152,21 +164,20 @@ async function practiceResultToDB(athlete, disciplin, resultTime, date){
          }
     // response with new object id/athlete
     const data = await response.json();
-    console.log("new data id: ", data)
-    console.log("new data object: ", practiceResult)
-
     // make get request to input specific element into DOM from response id
     insertNewItem(data.name, "practiceResults");
 }
-async function compResultToDB(athlete, disciplin, resultTime, date, compName, address){
+async function compResultToDB(uid, athleteName, disciplin, resultTime, date, compName, address, youth){
     //create new object
     const compResult = { 
-        athlete: `${athlete}`, 
+        uid: `${uid}`,
+        athlete: `${athleteName}`, 
         disciplin: `${disciplin}`,
         resultTime: `${resultTime}`,
         date: `${date}`,
         compName: `${compName}`,
         address: `${address}`,
+        youth: `${youth}`
     };
      // make javaScript object to Json object
      const dataAsJson = JSON.stringify(compResult);
@@ -185,9 +196,6 @@ async function compResultToDB(athlete, disciplin, resultTime, date, compName, ad
          }
     // response with new object id/athlete
     const data = await response.json();
-    console.log("new data id: ", data)
-    console.log("new data object: ", compResult)
-
     // show new comp result
     insertNewItem(data.name, "compResults");
 }
