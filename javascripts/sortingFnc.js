@@ -1,24 +1,30 @@
 
-export {sortResults,compMembers};
+export {sortFiveBest, sortCompMembers, sortForYouth, sortForSenior};
 
 // make comp members array to select dropdown in create results
-function compMembers(memberArray){
+function sortCompMembers(memberArray){
     const compMemberArr = memberArray.filter(compMember)
-    console.log("compMembers: ", compMemberArr);
     return compMemberArr;
 }
 function compMember(member){
     return member.comp === true;
 }
-function sortResults(resultArray, userInput){
+function sortForYouth(resultArray){
+    console.log("sorting for youth")
+    const youthResults = resultArray.filter(youth)
+    return youthResults;
+}
+function sortForSenior(resultArray){
+    console.log("sorting for senior")
 
-    if (userInput === "youth"){
-        const youthArray = resultArray.filter(filterForYouth)
-
-        const filterCrawl = youthArray.filter(crawl);
-        const filterRygCrawl = youthArray.filter(rygcrawl);
-        const filterButterfly = youthArray.filter(butterfly);
-        const filterBreaststroke= youthArray.filter(breaststroke);
+    const seniorResults = resultArray.filter(senior)
+    return seniorResults;
+}
+function sortFiveBest(resultArray){
+        const filterCrawl = resultArray.filter(crawl);
+        const filterRygCrawl = resultArray.filter(rygcrawl);
+        const filterButterfly = resultArray.filter(butterfly);
+        const filterBreaststroke= resultArray.filter(breaststroke);
         
         const sortedCrawl = filterCrawl.sort(timeCompare);
         const sortedRygCrawl = filterRygCrawl.sort(timeCompare);
@@ -33,29 +39,6 @@ function sortResults(resultArray, userInput){
         
         const sortedBestResults = bestCrawl.concat(bestRygCrawl, bestButterfly, bestBreaststroke);
         return sortedBestResults;
-    }
-    else {
-        const seniorArray = resultArray.filter(filterForSenior)
-
-        const filterCrawl = seniorArray.filter(crawl);
-        const filterRygCrawl = seniorArray.filter(rygcrawl);
-        const filterButterfly = seniorArray.filter(butterfly);
-        const filterBreaststroke= seniorArray.filter(breaststroke);
-        
-        const sortedCrawl = filterCrawl.sort(timeCompare);
-        const sortedRygCrawl = filterRygCrawl.sort(timeCompare);
-        const sortedButterfly = filterButterfly.sort(timeCompare);
-        const sortedBreaststroke = filterBreaststroke.sort(timeCompare);
-
-        // 5 best swimmers
-        const bestCrawl = sortedCrawl.slice(0, 5) 
-        const bestRygCrawl = sortedRygCrawl.slice(0, 5) 
-        const bestButterfly = sortedButterfly.slice(0, 5) 
-        const bestBreaststroke = sortedBreaststroke.slice(0, 5) 
-        
-        const sortedBestResults = bestCrawl.concat(bestRygCrawl, bestButterfly, bestBreaststroke);
-        return sortedBestResults;
-    }
 }
 function crawl(result){
     return result.disciplin === "crawl";
@@ -74,6 +57,9 @@ function timeCompare(result1, result2){
          : result1.resultTime < result2.resultTime ? 1
          : 0;
 }
-function filterForSenior(result){
-    return result
+function youth(result){
+    return result.youth === "true"
+}
+function senior(result){
+    return result.youth != "true";
 }

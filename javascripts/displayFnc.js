@@ -1,7 +1,7 @@
 
 import {calcMemberPayment} from "./payment.js";
 import {deleteData} from "./rest-fnc.js";
-import {sortResults } from "./sortingFnc.js";
+import {sortFiveBest } from "./sortingFnc.js";
 export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow, insertCompMembers}
 function insertCompMembers(compArray){
     document.querySelector("#athlete").innerHTML = "";
@@ -19,13 +19,13 @@ function iterateMembers(memberArray, caller){
     }
 }
 function iteratePractice(practiceResults){
-    const sortedResults = sortResults(practiceResults);
+    const sortedResults = sortFiveBest(practiceResults);
     for (let practiceObj of sortedResults){
         showPracticeResultRow(practiceObj);
     }
 }
 function iterateComps(compResults){
-    const sortedResults = sortResults(compResults);
+    const sortedResults = sortFiveBest(compResults);
     for (let compObj of sortedResults){
         showCompResultRow(compObj);
     }
