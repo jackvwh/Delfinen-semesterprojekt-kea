@@ -4,13 +4,15 @@ import {deleteData} from "./rest-fnc.js";
 import {sortFiveBest } from "./sortingFnc.js";
 export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow, insertCompMembers}
 function insertCompMembers(compArray){
-    document.querySelector("#athlete").innerHTML = "";
+    document.querySelector("#athletePractice").innerHTML = "";
+    document.querySelector("#athleteComp").innerHTML = "";
 
     for (let memberObject of compArray){
         const htmlOption = /*HTML*/ `
         <option value=${memberObject.id}>${memberObject.name}</option> 
         `;
-        document.querySelector("#athlete").insertAdjacentHTML("beforeend", htmlOption);
+        document.querySelector("#athletePractice").insertAdjacentHTML("beforeend", htmlOption);
+        document.querySelector("#athleteComp").insertAdjacentHTML("beforeend", htmlOption);
     }
 }
 function iterateMembers(memberArray, caller){

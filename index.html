@@ -722,15 +722,7 @@
             <h2>Trænings resultat</h2>
             <form id="practice-result-form" >
                 <label for="athlete"><b>Svømmer:</b></label>
-                <select name="athlete" id="athlete">
-                    <option value="Oste Rejen">Oste Rejen</option> 
-                    <option value="Simone Ost">Simone Ost</option>
-                    <option value="Hjerne Anders">Hjerne Anders</option>
-                    <option value="Karla Elektriker">Karla Elektriker</option>
-                    <option value="Svend Sved">Svend Sved</option>
-                    <option value="Erik Karlsen">Erik Karlsen</option>
-                    <option value="Eigil">Eigil</option> 
-                </select required>
+                <select name="athlete" id="athletePractice"></select required>
 
                 <label for="disciplin"><b>Disciplin</b></label>
                 <select name="disciplin" id="disciplin">
@@ -740,13 +732,13 @@
                     <option value="breaststroke">Brystsvømning</option>
                 </select required>
 
-                <label for="time"><b>Practice-time</b></label>
+                <label for="time"><b>Træningsresultat</b></label>
                 <input type="time" name="time" id="resultTime" maxlength="10" placeholder="trænings resultat" required>
 
-                <label for="date"><b>Date</b></label>
+                <label for="date"><b>Dato</b></label>
                 <input type="date" name="date" id="date" maxlength="10" placeholder="Dato" required>
 
-                <button type="submit">Insert result</button>
+                <button type="submit">Opret resultat</button>
             </form> 
             <form method="dialog">
                 <button>Cancel</button>
@@ -757,15 +749,7 @@
             <h2>Konkurrence resultat</h2>
             <form id="comp-result-form" >
                 <label for="athlete"><b>Svømmer:</b></label>
-                <select name="athlete" id="athlete">
-                    <option value="Oste Rejen">Oste Rejen</option> 
-                    <option value="Simone Ost">Simone Ost</option>
-                    <option value="Hjerne Anders">Hjerne Anders</option>
-                    <option value="Karla Elektriker">Karla Elektriker</option>
-                    <option value="Svend Sved">Svend Sved</option>
-                    <option value="Erik Karlsen">Erik Karlsen</option>
-                    <option value="Eigil">Eigil</option>
-                </select required>
+                <select name="athlete" id="athleteComp"></select required>
 
                 <label for="disciplin"><b>Disciplin</b></label>
                 <select name="disciplin" id="disciplin">
@@ -778,7 +762,7 @@
                 <label for="resultTime"><b>Resultat</b></label>
                 <input type="time" name="resultTime" id="resultTime" maxlength="10" placeholder="Resultat tid" required>
 
-                <label for="date"><b>Date</b></label>
+                <label for="date"><b>Dato</b></label>
                 <input type="date" name="date" id="date" maxlength="10" placeholder="Dato" required>
 
                 <label for="compName">Stævne navn</label>
@@ -787,7 +771,7 @@
                 <label for="address">Adresse</label>
                 <input type="text" name="address" id="address" maxlength="1000" placeholder="Sted" required>
 
-                <button type="submit">Insert result</button>
+                <button type="submit">Opret resultat</button>
             </form> 
             <form method="dialog">
                 <button>Cancel</button>
