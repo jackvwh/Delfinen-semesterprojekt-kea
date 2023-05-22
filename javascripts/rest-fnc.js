@@ -254,3 +254,26 @@ async function insertNewItem(id, type){
         showMemberRow(newItem);
     }
 }
+
+function createMember(title, athlete, address, mail, phone, gender, birthdate, active, crawl, rygcrawl, butterfly, breaststroke) {
+    const member = {
+        title: title,
+        athlete: athlete,
+        address: address,
+        mail: mail,
+        phone: phone,
+        gender: gender,
+        birthdate: birthdate,
+        active: active,
+        disciplins: {
+            crawl: crawl,
+            rygcrawl: rygcrawl,
+            butterfly: butterfly,
+            breaststroke: breaststroke
+        }
+    }
+    memberToDB(member);
+}
+
+
+
