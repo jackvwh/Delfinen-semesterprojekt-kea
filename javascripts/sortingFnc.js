@@ -1,7 +1,26 @@
 
-export {sortResults};
+export {sortFiveBest, sortCompMembers, sortForYouth, sortForSenior};
 
-function sortResults(resultArray){
+// make comp members array to select dropdown in create results
+function sortCompMembers(memberArray){
+    const compMemberArr = memberArray.filter(compMember)
+    return compMemberArr;
+}
+function compMember(member){
+    return member.comp === true;
+}
+function sortForYouth(resultArray){
+    console.log("sorting for youth")
+    const youthResults = resultArray.filter(youth)
+    return youthResults;
+}
+function sortForSenior(resultArray){
+    console.log("sorting for senior")
+
+    const seniorResults = resultArray.filter(senior)
+    return seniorResults;
+}
+function sortFiveBest(resultArray){
         const filterCrawl = resultArray.filter(crawl);
         const filterRygCrawl = resultArray.filter(rygcrawl);
         const filterButterfly = resultArray.filter(butterfly);
@@ -22,7 +41,6 @@ function sortResults(resultArray){
         return sortedBestResults;
 }
 function crawl(result){
-    console.log(result);
     return result.disciplin === "crawl";
 }
 function rygcrawl(result){
@@ -38,4 +56,10 @@ function timeCompare(result1, result2){
     return result1.resultTime > result2.resultTime ? -1
          : result1.resultTime < result2.resultTime ? 1
          : 0;
+}
+function youth(result){
+    return result.youth === "true"
+}
+function senior(result){
+    return result.youth != "true";
 }

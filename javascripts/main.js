@@ -1,34 +1,15 @@
 "use strict"
 
 import {loginDialog} from "./login.js";
-import {loadCompData, loadMemberData, loadPracticeData, createData} from "./rest-fnc.js";
-import {iterateMembers, iterateComps, iteratePractice} from "./displayFnc.js";
-import {calcMemberPayment, calcTotalIncome} from "./payment.js";
-
+import { createData } from "./rest-fnc.js";
 
 window.addEventListener("load", initApp);
 
-async function initApp(){
+function initApp(){
     console.log("JS starting");
 
     addEventListeners();
-
-    const memberArray = await loadMemberData();
-    const practiceResults = await loadPracticeData();
-    const compResults = await loadCompData();
-
-    // for testing
-    console.log("Members: ", memberArray)
-    console.log("Practice: ", practiceResults)
-    console.log("Comps: ", compResults)
-
-    iterateMembers(memberArray, "admin");
-    iterateMembers(memberArray, "cashier");
-
-    iterateComps(compResults);
-    iteratePractice(practiceResults);
 }
-
 function addEventListeners(){
     //disciplin checkbox hide listners
     document.querySelector("#create-competition-btn").addEventListener("click", ()=>document.querySelector("#create-disciplin-checkbox").classList.toggle("hidden"));
