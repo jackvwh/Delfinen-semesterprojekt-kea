@@ -275,5 +275,23 @@ function createMember(title, athlete, address, mail, phone, gender, birthdate, a
     memberToDB(member);
 }
 
+async function memberToDB(member) {
+    const dataAsJson = JSON.stringify(member);
+}
 
+try {
+    const response = await fetch(`${endpoint}/members.json`, {
+        method: "POST",
+        body: dataAsJson
+    }); 
+
+    if (response.ok) {
+        alert("Member created");
+    } else {
+        throw new Error("member not created. Error!");
+    }
+} catch (error) {
+    console.log(error);
+    alert("Error when creating member");
+}
 
