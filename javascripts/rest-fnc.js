@@ -291,7 +291,7 @@ try {
         throw new Error("member not created. Error!");
     }
 } catch (error) {
-    console.log(error);
+    console.error(error);
     alert("Error when creating member");
 }
 
