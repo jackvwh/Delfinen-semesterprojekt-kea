@@ -22,7 +22,6 @@ function sortResults(resultArray){
         return sortedBestResults;
 }
 function crawl(result){
-    console.log(result);
     return result.disciplin === "crawl";
 }
 function rygcrawl(result){

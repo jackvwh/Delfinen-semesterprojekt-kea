@@ -5,8 +5,8 @@ import {loadCompData, loadMemberData, loadPracticeData, createData} from "./rest
 import {iterateMembers, iterateComps, iteratePractice} from "./displayFnc.js";
 import {calcMemberPayment, calcTotalIncome} from "./payment.js";
 
-
 window.addEventListener("load", initApp);
+
 
 async function initApp(){
     console.log("JS starting");
@@ -18,15 +18,31 @@ async function initApp(){
     const compResults = await loadCompData();
 
     // for testing
-    console.log("Members: ", memberArray)
-    console.log("Practice: ", practiceResults)
-    console.log("Comps: ", compResults)
+    // console.log("Members: ", memberArray)
+    // console.log("Practice: ", practiceResults)
+    // console.log("Comps: ", compResults)
 
     iterateMembers(memberArray, "admin");
     iterateMembers(memberArray, "cashier");
 
     iterateComps(compResults);
     iteratePractice(practiceResults);
+
+    sortByInput
+    document.querySelector("#sort-payments").addEventListener("change", sortByInput)
+
+    function sortByInput(event) {
+        const selectedValue = event.target.value
+        const members = memberArray
+        if (selectedValue === "Paid") {
+           const paidFirst = members.sort((a, b) => b.paymentStatus - a.paymentStatus)
+            console.log("Paid First", paidFirst);
+        } else if (selectedValue === "Unpaid") {
+            const unpaidFirst = members.sort((a, b) => a.paymentStatus - b.paymentStatus)
+            console.log("Unpaid First", unpaidFirst);
+        }
+    }
+
 }
 
 function addEventListeners(){
@@ -45,6 +61,9 @@ function addEventListeners(){
 
     // create member dialog
     document.querySelector("#admin-create-member-btn").addEventListener("click", createMemberDialog);
+
+    // sort paid & unpaid
+    // document.querySelector("#sort-payments").addEventListener("change", sortByInput)
 }
 function createPracticeDialog(){
     document.querySelector("#create-practice-result-dialog").showModal();
@@ -62,3 +81,5 @@ function createMemberDialog(){
 
     document.querySelector("#create-form").addEventListener("submit", createData);
 }
+
+

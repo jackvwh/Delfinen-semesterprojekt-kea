@@ -4,7 +4,7 @@ import { response_message } from "./message.js";
 
 export {loadCompData, loadMemberData, loadPracticeData, deleteData, createData}
 
-const endpoint = "https://delfin-kea-default-rtdb.firebaseio.com/"
+const endpoint = "https://test-firebase-60351-default-rtdb.europe-west1.firebasedatabase.app/"
 
 async function loadMemberData(){
     // load member data
