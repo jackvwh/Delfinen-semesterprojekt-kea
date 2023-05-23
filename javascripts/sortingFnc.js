@@ -74,7 +74,7 @@ function timeCompare(result1, result2){
          : 0;
 }
 function youth(result){
-    return result.youth === true
+    return result.youth === true;
 }
 function senior(result){
     return result.youth != true;

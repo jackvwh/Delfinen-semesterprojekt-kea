@@ -5,15 +5,15 @@ import {sortFiveBest} from "./sortingFnc.js";
 export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow, insertCompMembers, insertTotalIncome}
 
 function insertCompMembers(compArray){
-    document.querySelector("#athletePractice").innerHTML = "";
-    document.querySelector("#athleteComp").innerHTML = "";
+    document.querySelector("#selectAthletePractice").innerHTML = "";
+    document.querySelector("#selectAthleteComp").innerHTML = "";
 
     for (let memberObject of compArray){
         const htmlOption = /*HTML*/ `
         <option value=${memberObject.id}>${memberObject.name}</option> 
         `;
-        document.querySelector("#athletePractice").insertAdjacentHTML("beforeend", htmlOption);
-        document.querySelector("#athleteComp").insertAdjacentHTML("beforeend", htmlOption);
+        document.querySelector("#selectAthletePractice").insertAdjacentHTML("beforeend", htmlOption);
+        document.querySelector("#selectAthleteComp").insertAdjacentHTML("beforeend", htmlOption);
     }
 }
 function insertTotalIncome(memberArray){
