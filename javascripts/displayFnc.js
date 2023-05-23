@@ -1,8 +1,8 @@
 
-import {calcMemberPayment} from "./payment.js";
+import {calcMemberPayment, calcTotalIncome} from "./payment.js";
 import {deleteData} from "./rest-fnc.js";
 import {sortFiveBest} from "./sortingFnc.js";
-export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow, insertCompMembers}
+export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow, insertCompMembers, insertTotalIncome}
 
 function insertCompMembers(compArray){
     document.querySelector("#athletePractice").innerHTML = "";
@@ -15,6 +15,10 @@ function insertCompMembers(compArray){
         document.querySelector("#athletePractice").insertAdjacentHTML("beforeend", htmlOption);
         document.querySelector("#athleteComp").insertAdjacentHTML("beforeend", htmlOption);
     }
+}
+function insertTotalIncome(memberArray){
+    const totalIncome = calcTotalIncome(memberArray);
+    document.querySelector("#total-income").textContent = "Ialt: " + totalIncome + " kr";
 }
 function iterateMembers(memberArray, caller){
     clearMembers(caller);

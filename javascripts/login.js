@@ -1,7 +1,7 @@
 
-import {loadCompData, loadMemberData, loadPracticeData, createData} from "./rest-fnc.js";
-import {iterateMembers, iterateComps, iteratePractice, insertCompMembers} from "./displayFnc.js";
-import { sortCompMembers, sortForSenior, sortForYouth, sortByPaid } from "./sortingFnc.js";
+import {loadCompData, loadMemberData, loadPracticeData} from "./rest-fnc.js";
+import {iterateMembers, iterateComps, iteratePractice, insertCompMembers, insertTotalIncome} from "./displayFnc.js";
+import {sortCompMembers, sortForSenior, sortForYouth, sortByPaid } from "./sortingFnc.js";
 
 export {loginDialog}
 
@@ -42,6 +42,9 @@ async function loginFunction(event){
                     const memberArray = await loadMemberData();
                     iterateMembers(memberArray, "cashier");
 
+                    // insert expected total income 
+                    insertTotalIncome(memberArray);
+
                     document.querySelector("#cashier-page").classList.remove("hidden");
                     document.querySelector("#home-page").classList.add("hidden");
                     //change log btn 
@@ -68,6 +71,7 @@ async function loginFunction(event){
                     const memberArray = await loadMemberData();
                     const compArray = sortCompMembers(memberArray);
                     insertCompMembers(compArray);
+                    
                     //show coach page
                     document.querySelector("#coach-page").classList.remove("hidden");
                     document.querySelector("#home-page").classList.add("hidden");
