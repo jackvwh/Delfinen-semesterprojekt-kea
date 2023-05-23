@@ -137,7 +137,7 @@ function makeMemberHTMLRow(memberObject){
             <td> ${memberObject.athlete} </td>
             <td> ${memberObject.birthdate} </td>
             <td> ${memberObject.gender} </td>
-            <td> ${memberObject.email} </td>
+            <td> ${memberObject.mail} </td>
             <td> ${memberObject.address} </td>
             <td> ${memberObject.phone} </td>
             <td> ${memberObject.active} </td>
