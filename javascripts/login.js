@@ -1,7 +1,7 @@
 
 import {loadCompData, loadMemberData, loadPracticeData, createData} from "./rest-fnc.js";
 import {iterateMembers, iterateComps, iteratePractice, insertCompMembers} from "./displayFnc.js";
-import { sortCompMembers, sortForSenior, sortForYouth } from "./sortingFnc.js";
+import { sortCompMembers, sortForSenior, sortForYouth, sortByPaid } from "./sortingFnc.js";
 
 export {loginDialog}
 
@@ -29,7 +29,6 @@ async function loginFunction(event){
                     document.querySelector("#login-btn").classList.add("hidden"); 
                     const memberArray = await loadMemberData();
                     iterateMembers(memberArray, "admin");
-
                 }
                 break;
             case "cash":
@@ -43,6 +42,7 @@ async function loginFunction(event){
                     const memberArray = await loadMemberData();
                     iterateMembers(memberArray, "cashier");
 
+                    document.querySelector("#sort-payments").addEventListener("change", ()=>iterateMembers(sortByPaid(memberArray), "cashier"))
                 };
                 break;
             case "coach":

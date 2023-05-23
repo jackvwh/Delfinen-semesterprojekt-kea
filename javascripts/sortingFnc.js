@@ -1,6 +1,25 @@
+export {sortFiveBest, sortCompMembers, sortForYouth, sortForSenior, sortByPaid};
 
-export {sortFiveBest, sortCompMembers, sortForYouth, sortForSenior};
+function sortByPaid(memberArray) {
+    console.log("sorting for paid")
+    const selectedValue = document.querySelector("#sort-payments").value;
 
+        if (selectedValue === "paid") {
+        const paidFirst = memberArray.filter(paid);
+
+            console.log("paid sorting")
+            console.log("paid member:", paidFirst)
+            return paidFirst;
+        } else if (selectedValue === "unpaid") {
+            const unpaidFirst = memberArray.filter(unpaid);
+            console.log("UNpaid member:", unpaidFirst)
+            return unpaidFirst;  
+        }
+        else if (selectedValue === "all") {
+            console.log("All:", memberArray)
+            return memberArray;
+        }
+}
 // make comp members array to select dropdown in create results
 function sortCompMembers(memberArray){
     const compMemberArr = memberArray.filter(compMember)
@@ -10,13 +29,10 @@ function compMember(member){
     return member.comp === true;
 }
 function sortForYouth(resultArray){
-    console.log("sorting for youth")
     const youthResults = resultArray.filter(youth)
     return youthResults;
 }
 function sortForSenior(resultArray){
-    console.log("sorting for senior")
-
     const seniorResults = resultArray.filter(senior)
     return seniorResults;
 }
@@ -62,4 +78,10 @@ function youth(result){
 }
 function senior(result){
     return result.youth != true;
+}
+function unpaid(memberObject){
+    return memberObject.paid === false;
+}
+function paid(memberObject){
+    return memberObject.paid === true;
 }
