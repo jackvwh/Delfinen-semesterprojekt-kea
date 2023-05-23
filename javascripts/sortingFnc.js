@@ -26,15 +26,7 @@ function sortCompMembers(memberArray){
     return compMemberArr;
 }
 function compMember(member){
-    return member.comp === true;
-}
-function sortForYouth(resultArray){
-    const youthResults = resultArray.filter(youth)
-    return youthResults;
-}
-function sortForSenior(resultArray){
-    const seniorResults = resultArray.filter(senior)
-    return seniorResults;
+    return member.comp === "true";
 }
 function sortFiveBest(resultArray){
         const filterCrawl = resultArray.filter(crawl);
@@ -73,15 +65,23 @@ function timeCompare(result1, result2){
          : result1.resultTime < result2.resultTime ? 1
          : 0;
 }
+function sortForYouth(resultArray){
+    const youthResults = resultArray.filter(youth)
+    return youthResults;
+}
+function sortForSenior(resultArray){
+    const seniorResults = resultArray.filter(senior)
+    return seniorResults;
+}
 function youth(result){
-    return result.youth === true;
+    return result.youth === "true";
 }
 function senior(result){
-    return result.youth != true;
+    return result.youth != "true";
 }
 function unpaid(memberObject){
-    return memberObject.paid === false;
+    return memberObject.paid === "false";
 }
 function paid(memberObject){
-    return memberObject.paid === true;
+    return memberObject.paid === "true";
 }
