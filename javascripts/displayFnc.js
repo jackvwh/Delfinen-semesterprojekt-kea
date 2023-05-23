@@ -90,7 +90,7 @@ function makeMemberHTMLRow(memberObject){
     const payment = calcMemberPayment(memberObject);
     const htmlRow = /*HTML*/ `
         <tr id=${memberObject.id}>
-            <td> ${memberObject.name} </td>
+            <td> ${memberObject.athlete} </td>
             <td> ${memberObject.birthdate} </td>
             <td> ${memberObject.gender} </td>
             <td> ${memberObject.email} </td>
