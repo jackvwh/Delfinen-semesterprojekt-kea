@@ -1,5 +1,5 @@
 "use strict"
-import { addEventListeners } from "./listeners";
+import { addEventListeners } from "./listeners.js";
 
 window.addEventListener("load", initApp);
 
