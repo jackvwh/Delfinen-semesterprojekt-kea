@@ -166,7 +166,7 @@ async function practiceResultToDB(uid, athleteName, disciplin, resultTime, date,
      // fetch reguest to POST item
      const response = await fetch(`${endpoint}/practiceResults.json`, 
          { 
-                 method: `"${request}"`, 
+                 method: "POST", 
                  body: dataAsJson 
          });
          if (response.ok){
@@ -213,7 +213,7 @@ async function compResultToDB(uid, athleteName, disciplin, resultTime, date, com
     // show new comp result
     insertNewItem(data.name, "compResults");
 }
-async function memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, crawl, rygcrawl, butterfly, breaststroke){
+async function memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, crawl, rygcrawl, butterfly, breaststroke, request){
     //create new object
     const member = { 
         title: `${title}`, 
@@ -239,7 +239,7 @@ async function memberToDB(title, athlete, address, mail, phone, gender, birthdat
      // fetch reguest to POST item
      const response = await fetch(`${endpoint}/members.json`, 
          { 
-                 method: "POST", 
+                 method: `${request}`, 
                  body: dataAsJson 
          });
          if (response.ok){
