@@ -6,17 +6,12 @@ function sortByPaid(memberArray) {
 
         if (selectedValue === "paid") {
         const paidFirst = memberArray.filter(paid);
-
-            console.log("paid sorting")
-            console.log("paid member:", paidFirst)
             return paidFirst;
         } else if (selectedValue === "unpaid") {
             const unpaidFirst = memberArray.filter(unpaid);
-            console.log("UNpaid member:", unpaidFirst)
             return unpaidFirst;  
         }
         else if (selectedValue === "all") {
-            console.log("All:", memberArray)
             return memberArray;
         }
 }
