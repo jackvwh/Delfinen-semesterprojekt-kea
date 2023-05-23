@@ -128,6 +128,11 @@ function showMemberRow(memberObject, caller){
      // add eventListener to update btn and delete-btn
      document.querySelector(`${table} tr:first-child .update-btn`).addEventListener("click", () => updateDialog(memberObject.id));
      document.querySelector(`${table} tr:first-child .delete-btn`).addEventListener("click", () => deleteDialog(memberObject.id, "members"));
+
+     //"tick" off checkbox of if paid or NOT paid
+     if(memberObject.paid === "true"){
+        document.querySelector(`#${memberObject.id} input`).setAttribute("checked", "");
+     }
     
 }
 function makeMemberHTMLRow(memberObject){
@@ -142,7 +147,7 @@ function makeMemberHTMLRow(memberObject){
             <td> ${memberObject.phone} </td>
             <td> ${memberObject.active} </td>
             <td> Beløb: ${payment} </td>
-            <td><input type="radio"></td>
+            <td><input type="checkbox"></td>
             <td style="width: 5px; padding: 0%; padding-right: 25px; padding-left: 25px;"><button class="button-styling update-btn">Update</button></td>
             <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
         </tr>
