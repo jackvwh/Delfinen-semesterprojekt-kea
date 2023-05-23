@@ -1,7 +1,7 @@
 
 import {loginDialog} from "./login.js";
-import {createData } from "./rest-fnc.js";
-export{ addEventListeners}
+import {createCompsDialog, createPracticeDialog, createMemberDialog } from "./dialogs.js";
+export {addEventListeners}
 
 function addEventListeners(){
     //disciplin checkbox hide listners
@@ -19,20 +19,4 @@ function addEventListeners(){
 
     // create member dialog
     document.querySelector("#admin-create-member-btn").addEventListener("click", createMemberDialog);
-}
-function createPracticeDialog(){
-    document.querySelector("#create-practice-result-dialog").showModal();
-
-    document.querySelector("#practice-result-form").addEventListener("submit", createData);
-}
-function createCompsDialog(){
-    document.querySelector("#create-comp-result-dialog").showModal();
-
-    document.querySelector("#comp-result-form").addEventListener("submit", createData);
-}
-
-function createMemberDialog(){
-    document.querySelector("#create-dialog").showModal();
-
-    document.querySelector("#create-form").addEventListener("submit", createData);
 }

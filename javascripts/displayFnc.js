@@ -1,6 +1,6 @@
 
 import {calcMemberPayment, calcTotalIncome} from "./payment.js";
-import {deleteData} from "./rest-fnc.js";
+import {deleteDialog, updateDialog } from "./dialogs.js";
 import {sortFiveBest} from "./sortingFnc.js";
 export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow, insertCompMembers, insertTotalIncome}
 
@@ -190,12 +190,4 @@ function makeCompResultRow(compObject){
     </tr>
     `;
     return htmlRow;
-}
-function updateDialog(id, type){
-    document.querySelector("#update-dialog").showModal();
-    document.querySelector("#update-form").addEventListener("submit", updateData);
-}
-function deleteDialog(id, type, ){
-    document.querySelector("#delete-dialog").showModal();
-    document.querySelector("#delete-form").addEventListener("submit", ()=>deleteData(id, type));
 }
