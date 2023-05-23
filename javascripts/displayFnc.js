@@ -10,7 +10,7 @@ function insertCompMembers(compArray){
 
     for (let memberObject of compArray){
         const htmlOption = /*HTML*/ `
-        <option value=${memberObject.id}>${memberObject.name}</option> 
+        <option value=${memberObject.id}>${memberObject.athlete}</option> 
         `;
         document.querySelector("#selectAthletePractice").insertAdjacentHTML("beforeend", htmlOption);
         document.querySelector("#selectAthleteComp").insertAdjacentHTML("beforeend", htmlOption);
