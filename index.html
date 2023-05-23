@@ -176,29 +176,14 @@
 
                 <div id="sort-container">
                 <select name="sort-payments" id="sort-payments">
-                    <option value="Paid">Paid</option>
-                    <option value="Unpaid">Unpaid</option>
+                    <option value="all">Alle medlemmer</option>
+                    <option value="paid">Betalt</option>
+                    <option value="unpaid">Restance</option>
                 </select>
                 </div>
 
                 <section class="member-table-container">
                 <table id="cashier-member-table" cellspacing = 0>
-                    <!-- table header -->
-                    <thead class="tableFixedHeader">
-                        <tr>
-                            <th>Member</th>
-                            <th>Date of birth</th>
-                            <th>Gender</th>
-                            <th>Mail</th>
-                            <th style="width: 350px;">Address</th>
-                            <th>Phone</th>
-                            <th>Active member</th>
-                            <th>Payment</th>
-                            <th>Paid</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
                 </table>
                 </section>
 
@@ -593,26 +578,27 @@
 
                 <fieldset id="create-disciplin-checkbox" class="hidden">
                     <legend>Discipliner</legend>
-                    <div>
-                      <input type="checkbox" id="crawl" name="disciplin">
-                      <label for="crawl">Crawl</label>
-                    </div>
-                
-                    <div>
-                      <input type="checkbox" id="rygcrawl" name="disciplin">
-                      <label for="rygcrawl">Rygcrawl</label>
-                    </div>
-                    <div>
-                      <input type="checkbox" id="butterfly" name="disciplin">
-                      <label for="butterfly">Butterfly</label>
-                    </div>
-                    <div>
-                      <input type="checkbox" id="breaststroke" name="disciplin">
-                      <label for="brystsvømning">Brystsvømning</label>
-                    </div>
+                    <label for="crawl">Crawl</label>
+                    <select name="crawl" id="crawl">
+                        <option value=true>Ja</option>
+                        <option value=false selected>Nej</option>
+                    </select> 
+                    <br>
+                    <select name="rygcrawl" id="rygcrawl">
+                        <option value=true>Ja</option>
+                        <option value=false selected>Nej</option>
+                    </select> 
+                    <select name="butterfly" id="butterfly">
+                        <option value=true>Ja</option>
+                        <option value=false selected>Nej</option>
+                    </select> 
+                    <select name="breaststroke" id="breaststroke">
+                        <option value=true>Ja</option>
+                        <option value=false selected>Nej</option>
+                    </select>
                 </fieldset>
             </section>
-            <button id="create-member-btn">opret</button>
+            <button type="submit" id="create-member-btn">opret</button>
             </form>
             <form method="dialog">
                 <button>Close</button>
@@ -677,23 +663,22 @@
     
                     <fieldset id="update-disciplin-checkbox" class="hidden">
                         <legend>Discipliner</legend>
-                        <div>
-                          <input type="checkbox" id="crawl" name="disciplin">
-                          <label for="crawl">Crawl</label>
-                        </div>
-                    
-                        <div>
-                          <input type="checkbox" id="rygcrawl" name="disciplin">
-                          <label for="rygcrawl">Rygcrawl</label>
-                        </div>
-                        <div>
-                          <input type="checkbox" id="butterfly" name="disciplin">
-                          <label for="butterfly">Butterfly</label>
-                        </div>
-                        <div>
-                          <input type="checkbox" id="breaststroke" name="disciplin">
-                          <label for="brystsvømning">Brystsvømning</label>
-                        </div>
+                        <select name="crawl" id="crawl">
+                            <option value=true>Ja</option>
+                            <option value=false selected>Nej</option>
+                        </select> 
+                        <select name="rygcrawl" id="rygcrawl">
+                            <option value=true>Ja</option>
+                            <option value=false selected>Nej</option>
+                        </select> 
+                        <select name="butterfly" id="butterfly">
+                            <option value=true>Ja</option>
+                            <option value=false selected>Nej</option>
+                        </select> 
+                        <select name="breaststroke" id="breaststroke">
+                            <option value=true>Ja</option>
+                            <option value=false selected>Nej</option>
+                        </select>
                     </fieldset>
                 </section>
                 <button id="update-member-btn">Opdater</button>
