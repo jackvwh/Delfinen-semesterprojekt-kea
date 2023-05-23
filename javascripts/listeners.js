@@ -1,8 +1,9 @@
 
 import {loginDialog} from "./login.js";
 import {createData } from "./rest-fnc.js";
+export{ addEventListeners}
 
-export function addEventListeners(){
+function addEventListeners(){
     //disciplin checkbox hide listners
     document.querySelector("#create-competition-btn").addEventListener("click", ()=>document.querySelector("#create-disciplin-checkbox").classList.toggle("hidden"));
     document.querySelector("#update-competition-btn").addEventListener("click", ()=>document.querySelector("#update-disciplin-checkbox").classList.toggle("hidden"));
