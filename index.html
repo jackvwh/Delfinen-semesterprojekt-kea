@@ -535,16 +535,16 @@
                 <legend>Personlige oplysninger</legend>
                 <label for="name">Navn</label>
                 <input type="text" name="name" id="name" maxlength="1000" placeholder="Navn" required>
-
+                <br>
                 <label for="address">Adresse</label>
                 <input type="text" name="address" id="address" maxlength="1000" placeholder="adresse" required>
-
+                <br>
                 <label for="mail">Email</label>
                 <input type="email" name="mail" id="mail" maxlength="1000" placeholder="Email" required>
-
+                <br>
                 <label for="phone">Telefon</label>
                 <input type="number" name="phone" id="phone" maxlength="8" placeholder="Telefon" required>
-
+                <br>
                 <label for="gender">Køn</label>
                 <select id="gender" name="gender" placeholder="Køn" required>
                     <option value="male">Male</option>
@@ -553,7 +553,7 @@
                     <option value="opera">Opera</option>
                     <option value="safari">Safari</option>
                 </select>
-
+                <br>
                 <label for="birthdate">Fødselsdato</label>
                 <input type="date" name="birthdate" id="birthdate" maxlength="10" placeholder="Fødselsdato" required>
             </fieldset>
@@ -566,6 +566,7 @@
                         <option value=false>Nej</option>
                     </select required>
                 </fieldset>
+                
                 <fieldset>
                     <legend>Konkurrence svømmer</legend>
                     <label for="competition"></label>
@@ -573,7 +574,7 @@
                         <option value=true>Ja</option>
                         <option value=false selected>Nej</option>
                     </select required>
-                    <button id="create-competition-btn">Discipliner</button>
+                    <button type="button" id="create-competition-btn">Discipliner</button>
                 </fieldset>
 
                 <fieldset id="create-disciplin-checkbox" class="hidden">
@@ -584,24 +585,30 @@
                         <option value=false selected>Nej</option>
                     </select> 
                     <br>
+                    <label for="rygcrawl">Rygcrawl</label>
                     <select name="rygcrawl" id="rygcrawl">
                         <option value=true>Ja</option>
                         <option value=false selected>Nej</option>
                     </select> 
+                    <br>
+                    <label for="butterfly">Butterfly</label>
                     <select name="butterfly" id="butterfly">
                         <option value=true>Ja</option>
                         <option value=false selected>Nej</option>
                     </select> 
+                    <br>
+                    <label for="breaststroke">Brystsvømning</label>
                     <select name="breaststroke" id="breaststroke">
                         <option value=true>Ja</option>
                         <option value=false selected>Nej</option>
                     </select>
                 </fieldset>
             </section>
-            <button type="submit" id="create-member-btn">opret</button>
+            <br>
+            <button type="submit" id="create-member-btn" class="button-styling">opret</button>
             </form>
             <form method="dialog">
-                <button>Close</button>
+                <button class="button-styling">Close</button>
             </form>
         </dialog>
         <!--MEMBER UPDATE DIALOG  -->
@@ -658,7 +665,7 @@
                             <option value=true>Ja</option>
                             <option value=false selected>Nej</option>
                         </select required>
-                        <button id="update-competition-btn">Discipliner</button>
+                        <button type="button" id="update-competition-btn">Discipliner</button>
                     </fieldset>
     
                     <fieldset id="update-disciplin-checkbox" class="hidden">
