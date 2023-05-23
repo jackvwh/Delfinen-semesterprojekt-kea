@@ -1,8 +1,9 @@
 
 import {calcMemberPayment} from "./payment.js";
 import {deleteData} from "./rest-fnc.js";
-import {sortFiveBest } from "./sortingFnc.js";
+import {sortFiveBest} from "./sortingFnc.js";
 export {iterateMembers, iteratePractice, iterateComps, showCompResultRow, showPracticeResultRow, showMemberRow, insertCompMembers}
+
 function insertCompMembers(compArray){
     document.querySelector("#athletePractice").innerHTML = "";
     document.querySelector("#athleteComp").innerHTML = "";
@@ -16,6 +17,8 @@ function insertCompMembers(compArray){
     }
 }
 function iterateMembers(memberArray, caller){
+    clearMembers(caller);
+    displayMemberTableHeader();
     for (let member of memberArray){
         showMemberRow(member, caller);
     }
@@ -39,6 +42,31 @@ function clearResults(type){
     document.querySelector(`#rygcrawl-5-best-${type}`).innerHTML = "";
     document.querySelector(`#butterfly-5-best-${type}`).innerHTML = "";
     document.querySelector(`#breaststroke-5-best-${type}`).innerHTML = "";
+}
+function clearMembers(caller){
+    document.querySelector(`#${caller}-member-table`).innerHTML = "";
+}
+function displayMemberTableHeader(){
+    const memberRowHeader = /*HTML*/ `
+        <thead class="tableFixedHeader">
+            <tr>
+                <th>Member</th>
+                <th>Date of birth</th>
+                <th>Gender</th>
+                <th>Mail</th>
+                <th style="width: 350px;">Address</th>
+                <th>Phone</th>
+                <th>Active member</th>
+                <th>Payment</th>
+                <th>Paid</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        `;
+     // insert row in DOM
+     document.querySelector("#admin-member-table").insertAdjacentHTML("afterbegin", memberRowHeader);
+     document.querySelector("#cashier-member-table").insertAdjacentHTML("afterbegin", memberRowHeader);
 }
 function showMemberRow(memberObject, caller){
     // make html row with member values
