@@ -119,10 +119,9 @@ function makeCompResultRow(compObject){
     `;
     return htmlRow;
 }
-
 function updateDialog(id, type){
     document.querySelector("#update-dialog").showModal();
-    // document.querySelector("#update-form").addEventListener("submit", updateData);
+    document.querySelector("#update-form").addEventListener("submit", updateData);
 }
 function deleteDialog(id, type, ){
     document.querySelector("#delete-dialog").showModal();
