@@ -29,6 +29,7 @@ function iterateMembers(memberArray, caller){
 }
 function iteratePractice(practiceResults){
     clearResults("practice");
+    displayTableHeaderPractice();
     const sortedResults = sortFiveBest(practiceResults);
     for (let practiceObj of sortedResults){
         showPracticeResultRow(practiceObj);
@@ -36,6 +37,7 @@ function iteratePractice(practiceResults){
 }
 function iterateComps(compResults){
     clearResults("comp");
+    displayTableHeaderComp();
     const sortedResults = sortFiveBest(compResults);
     for (let compObj of sortedResults){
         showCompResultRow(compObj);
@@ -71,6 +73,44 @@ function displayMemberTableHeader(){
      // insert row in DOM
      document.querySelector("#admin-member-table").insertAdjacentHTML("afterbegin", memberRowHeader);
      document.querySelector("#cashier-member-table").insertAdjacentHTML("afterbegin", memberRowHeader);
+}
+function displayTableHeaderComp(){
+    const disciplins = ["crawl", "rygcrawl", "butterfly", "breaststroke"]
+        for (let disciplin of disciplins){
+            const compRowHeader = /*HTML*/ `
+                <thead class="tableFixedHeader">
+                    <tr>
+                        <th><h2>${disciplin.toUpperCase()}</h2></th>
+                        <th>Medlem</th>
+                        <th>Stævne navn</th>
+                        <th style="width: 350px;"> Stævne sted </th>
+                        <th>Resultat tid:</th>
+                        <th>Dato</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            `;
+            // insert table header in DOM
+            document.querySelector(`#${disciplin}-5-best-comp`).insertAdjacentHTML("beforeend", compRowHeader);
+    }
+}
+function displayTableHeaderPractice(){
+    const disciplins = ["crawl", "rygcrawl", "butterfly", "breaststroke"]
+        for (let disciplin of disciplins){
+            const practiceRowHeader = /*HTML*/ `
+                <thead class="tableFixedHeader">
+                    <tr>
+                        <th><h2>${disciplin.toUpperCase()}</h2></th>
+                        <th>Medlem</th>
+                        <th>Resultat tid:</th>
+                        <th>Dato</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            `;
+            // insert table header in DOM
+            document.querySelector(`#${disciplin}-5-best-practice`).insertAdjacentHTML("beforeend", practiceRowHeader);
+    }
 }
 function showMemberRow(memberObject, caller){
     // make html row with member values
