@@ -21,36 +21,52 @@ async function loginFunction(event){
         switch (user){
             case "admin":
                 if (psw === "admin"){
+                    // get and show members for admin
+                    const memberArray = await loadMemberData();
+                    iterateMembers(memberArray, "admin");
                     document.querySelector("#admin-page").classList.remove("hidden");
                     document.querySelector("#home-page").classList.add("hidden");
                     //change log btn 
                     document.querySelector("#logOut-btn").classList.remove("hidden");
                     document.querySelector("#login-btn").classList = ""; 
                     document.querySelector("#login-btn").classList.add("hidden"); 
-                    const memberArray = await loadMemberData();
-                    iterateMembers(memberArray, "admin");
+
+                     // close login dialog
+                    document.querySelector("#login-dialog").close();
+
                 }
                 break;
             case "cash":
                 if (psw === "cash"){
+                    // get and show members for cashier
+                    const memberArray = await loadMemberData();
+                    iterateMembers(memberArray, "cashier");
+
                     document.querySelector("#cashier-page").classList.remove("hidden");
                     document.querySelector("#home-page").classList.add("hidden");
                     //change log btn 
                     document.querySelector("#logOut-btn").classList.remove("hidden");
                     document.querySelector("#login-btn").classList = ""; 
                     document.querySelector("#login-btn").classList.add("hidden");  
-                    const memberArray = await loadMemberData();
-                    iterateMembers(memberArray, "cashier");
+                   
 
                     document.querySelector("#sort-payments").addEventListener("change", ()=>iterateMembers(sortByPaid(memberArray), "cashier"))
+                     
+                    // close login dialog
+                    document.querySelector("#login-dialog").close();
+
                 };
                 break;
             case "coach":
                 if (psw === "coach"){
+                    // get and show results
+                    const compResults = await loadCompData();
+                    const practiceResults = await loadPracticeData();
+                    iterateComps(compResults);
+                    iteratePractice(practiceResults);
                     //insert com member in drop-down list
                     const memberArray = await loadMemberData();
                     const compArray = sortCompMembers(memberArray);
-                    console.log("compmember: ", compArray);
                     insertCompMembers(compArray);
                     //show coach page
                     document.querySelector("#coach-page").classList.remove("hidden");
@@ -59,19 +75,20 @@ async function loginFunction(event){
                     document.querySelector("#logOut-btn").classList.remove("hidden");
                     document.querySelector("#login-btn").classList = ""; 
                     document.querySelector("#login-btn").classList.add("hidden");  
-                    const compResults = await loadCompData();
-                    const practiceResults = await loadPracticeData();
-                    iterateComps(compResults);
-                    iteratePractice(practiceResults);
-                    //eventListners for la coúch butóns
+                    
+                    //eventListners for la coách butóns
                     document.querySelector("#all").addEventListener("click", ()=>iterateComps(compResults));
                     document.querySelector("#all").addEventListener("click", ()=>iteratePractice(practiceResults));
-                    document.querySelector("#refresh").addEventListener("click", ()=>iterateComps(compResults));
-                    document.querySelector("#refresh").addEventListener("click", ()=>iteratePractice(practiceResults));
-                    document.querySelector("#youth").addEventListener("click", ()=>iterateComps(sortForYouth(compResults)))
-                    document.querySelector("#youth").addEventListener("click", ()=>iteratePractice(sortForYouth(practiceResults)))
-                    document.querySelector("#senior").addEventListener("click", ()=>iterateComps(sortForSenior(compResults)))
-                    document.querySelector("#senior").addEventListener("click", ()=>iteratePractice(sortForSenior(practiceResults)))
+                    document.querySelector("#refresh").addEventListener("click", ()=>iterateComps(async ()=> await loadCompData()));
+                    document.querySelector("#refresh").addEventListener("click",()=>iteratePractice(async ()=> await loadPracticeData()));
+                    document.querySelector("#youth").addEventListener("click", ()=>iterateComps(sortForYouth(compResults)));
+                    document.querySelector("#youth").addEventListener("click", ()=>iteratePractice(sortForYouth(practiceResults)));
+                    document.querySelector("#senior").addEventListener("click", ()=>iterateComps(sortForSenior(compResults)));
+                    document.querySelector("#senior").addEventListener("click", ()=>iteratePractice(sortForSenior(practiceResults)));
+
+                     // close login dialog
+                        document.querySelector("#login-dialog").close();
+
                 };
                 break;
             case "comp":
@@ -81,7 +98,10 @@ async function loginFunction(event){
                      //change log btn 
                      document.querySelector("#logOut-btn").classList.remove("hidden");
                      document.querySelector("#login-btn").classList = ""; 
-                     document.querySelector("#login-btn").classList.add("hidden");                
+                     document.querySelector("#login-btn").classList.add("hidden");   
+                    // close login dialog
+                    document.querySelector("#login-dialog").close();
+             
                 };
                 break;
             case "regular":
@@ -92,12 +112,12 @@ async function loginFunction(event){
                     document.querySelector("#logOut-btn").classList.remove("hidden");
                     document.querySelector("#login-btn").classList = ""; 
                     document.querySelector("#login-btn").classList.add("hidden");
+                     // close login dialog
+                    document.querySelector("#login-dialog").close();
+
                 };
                 break;
             default:
                 window.location.reload();         
         }
-    // close login dialog
-    document.querySelector("#login-dialog").close();
-
 }
