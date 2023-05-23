@@ -22,7 +22,7 @@ function insertTotalIncome(memberArray){
 }
 function iterateMembers(memberArray, caller){
     clearMembers(caller);
-    displayMemberTableHeader();
+    displayMemberTableHeader(caller);
     for (let member of memberArray){
         showMemberRow(member, caller);
     }
@@ -52,19 +52,19 @@ function clearResults(type){
 function clearMembers(caller){
     document.querySelector(`#${caller}-member-table`).innerHTML = "";
 }
-function displayMemberTableHeader(){
-    const memberRowHeader = /*HTML*/ `
+function displayMemberTableHeader(caller){
+    if (caller === "admin"){
+        const memberRowHeader = /*HTML*/ `
         <thead class="tableFixedHeader">
             <tr>
-                <th>Member</th>
-                <th>Date of birth</th>
-                <th>Gender</th>
-                <th>Mail</th>
-                <th style="width: 350px;">Address</th>
-                <th>Phone</th>
-                <th>Active member</th>
-                <th>Payment</th>
-                <th>Paid</th>
+                <th>Medlem</th>
+                <th>Dødselsdato</th>
+                <th>Køn</th>
+                <th>Email</th>
+                <th style="width: 350px;">Adresse</th>
+                <th>Teleon</th>
+                <th>Aktivt medlem</th>
+                <th>Beløb</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -72,7 +72,27 @@ function displayMemberTableHeader(){
         `;
      // insert row in DOM
      document.querySelector("#admin-member-table").insertAdjacentHTML("afterbegin", memberRowHeader);
+    }
+    else if (caller === "cashier"){
+        const memberRowHeader = /*HTML*/ `
+        <thead class="tableFixedHeader">
+            <tr>
+                <th>Medlem</th>
+                <th>Dødselsdato</th>
+                <th>Køn</th>
+                <th>Email</th>
+                <th style="width: 350px;">Adresse</th>
+                <th>Teleon</th>
+                <th>Aktivt medlem</th>
+                <th>Beløb</th>
+                <th>Betalt</th>
+            </tr>
+        </thead>
+        `;
+     // insert row in DOM
      document.querySelector("#cashier-member-table").insertAdjacentHTML("afterbegin", memberRowHeader);
+    }
+    
 }
 function displayTableHeaderComp(){
     const disciplins = ["crawl", "rygcrawl", "butterfly", "breaststroke"]
@@ -113,29 +133,45 @@ function displayTableHeaderPractice(){
     }
 }
 function showMemberRow(memberObject, caller){
-    // make html row with member values
-    const memberRow = makeMemberHTMLRow(memberObject); 
-    let table = null;
     //check for caller
-        if(caller === "admin"){
-            table = "#admin-member-table";
-        }
-        else if(caller === "cashier"){
-            table = "#cashier-member-table"
-        }
-    // insert row in DOM
-    document.querySelector(`${table}`).insertAdjacentHTML("afterbegin", memberRow);
-     // add eventListener to update btn and delete-btn
-     document.querySelector(`${table} tr:first-child .update-btn`).addEventListener("click", () => updateDialog(memberObject.id));
-     document.querySelector(`${table} tr:first-child .delete-btn`).addEventListener("click", () => deleteDialog(memberObject.id, "members"));
+    if(caller === "admin"){
+        const memberRow = makeMemberHTMLRowAdmin(memberObject); 
+        // insert row in DOM
+        document.querySelector("#admin-member-table").insertAdjacentHTML("afterbegin", memberRow);
+        // add eventListener to update btn and delete-btn
+        document.querySelector(`#admin-member-table tr:first-child .update-btn`).addEventListener("click", () => updateDialog(memberObject.id));
+        document.querySelector(`#admin-member-table tr:first-child .delete-btn`).addEventListener("click", () => deleteDialog(memberObject.id, "members"));
+    }
+    else if(caller === "cashier"){
+        const memberRow = makeMemberHTMLRowCashier(memberObject); 
+        // insert row in DOM
+        document.querySelector(`#cashier-member-table`).insertAdjacentHTML("afterbegin", memberRow);
 
-     //"tick" off checkbox of if paid or NOT paid
-     if(memberObject.paid === "true"){
-        document.querySelector(`#${memberObject.id} input`).setAttribute("checked", "");
-     }
-    
+        //"tick" off checkbox of if paid or NOT paid
+        if(memberObject.paid === "true"){
+            document.querySelector(`#${memberObject.id} input`).setAttribute("checked", "");
+        }
+    }  
 }
-function makeMemberHTMLRow(memberObject){
+function makeMemberHTMLRowAdmin(memberObject){
+    const payment = calcMemberPayment(memberObject);
+    const htmlRow = /*HTML*/ `
+        <tr id=${memberObject.id}>
+            <td> ${memberObject.athlete} </td>
+            <td> ${memberObject.birthdate} </td>
+            <td> ${memberObject.gender} </td>
+            <td> ${memberObject.mail} </td>
+            <td> ${memberObject.address} </td>
+            <td> ${memberObject.phone} </td>
+            <td> ${memberObject.active} </td>
+            <td> Beløb: ${payment} </td>
+            <td style="width: 5px; padding: 0%; padding-right: 25px; padding-left: 25px;"><button class="button-styling update-btn">Update</button></td>
+            <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
+        </tr>
+        `;
+    return htmlRow;
+}
+function makeMemberHTMLRowCashier(memberObject){
     const payment = calcMemberPayment(memberObject);
     const htmlRow = /*HTML*/ `
         <tr id=${memberObject.id}>
@@ -148,8 +184,6 @@ function makeMemberHTMLRow(memberObject){
             <td> ${memberObject.active} </td>
             <td> Beløb: ${payment} </td>
             <td><input type="checkbox"></td>
-            <td style="width: 5px; padding: 0%; padding-right: 25px; padding-left: 25px;"><button class="button-styling update-btn">Update</button></td>
-            <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
         </tr>
         `;
     return htmlRow;
