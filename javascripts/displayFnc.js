@@ -21,16 +21,24 @@ function iterateMembers(memberArray, caller){
     }
 }
 function iteratePractice(practiceResults){
+    clearResults("practice");
     const sortedResults = sortFiveBest(practiceResults);
     for (let practiceObj of sortedResults){
         showPracticeResultRow(practiceObj);
     }
 }
 function iterateComps(compResults){
+    clearResults("comp");
     const sortedResults = sortFiveBest(compResults);
     for (let compObj of sortedResults){
         showCompResultRow(compObj);
     }
+}
+function clearResults(type){
+    document.querySelector(`#crawl-5-best-${type}`).innerHTML = "";
+    document.querySelector(`#rygcrawl-5-best-${type}`).innerHTML = "";
+    document.querySelector(`#butterfly-5-best-${type}`).innerHTML = "";
+    document.querySelector(`#breaststroke-5-best-${type}`).innerHTML = "";
 }
 function showMemberRow(memberObject, caller){
     // make html row with member values
