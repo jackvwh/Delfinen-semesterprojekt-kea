@@ -153,25 +153,46 @@ const compMemberInfoGender = document.getElementById("comp-member-info-gender");
 const compMemberInfoAddress = document.getElementById("comp-member-info-address");
 const compMemberInfoEmail = document.getElementById("comp-member-info-email");
 const compMemberInfoPhone = document.getElementById("comp-member-info-phone");
+const compMemberCoach = document.getElementById("comp-member-coach-name");
 
 fetch(endpoint + "members.json")
   .then((response) => response.json())
   .then((data) => {
-    // Retrieve and filter members with "comp" value set to "true"
+    // retrieve and filter members with "comp" value set to "true"
     const compMembers = Object.values(data).filter(
       (member) => member.comp === "true"
     );
 
-    // Retrieve the first comp member's data and populate the HTML element
+    // retrieve the first comp member's data and populate the HTML elements
     if (compMembers.length > 0) {
       const compMember = compMembers[0];
-      welcomeCompMember.textContent = "Velkommen: " + compMember["athlete"] + "!";
+      welcomeCompMember.textContent =
+        "Velkommen: " + compMember["athlete"] + "!";
       compMemberInfoName.textContent = "Navn: " + compMember["athlete"];
-      compMemberInfoAge.textContent = "Alder: " + calculateAge(compMember["birthdate"]);
+      compMemberInfoAge.textContent =
+        "Alder: " + calculateAge(compMember["birthdate"]);
       compMemberInfoGender.textContent = "Køn: " + compMember["gender"];
       compMemberInfoAddress.textContent = "Adresse: " + compMember["address"];
       compMemberInfoEmail.textContent = "E-mail: " + compMember["mail"];
       compMemberInfoPhone.textContent = "Telefon: " + compMember["phone"];
+      compMemberCoach.textContent = "Træner: " + compMember["coach"]; // coach value missing?
+
+      // Disable all checkboxes
+      const checkboxes = document.querySelectorAll(".checkbox-styling");
+      checkboxes.forEach((checkbox) => {
+        checkbox.disabled = true;
+      });
+
+      // Check the checkboxes based on the member's disciplines
+      const disciplines = compMember.disciplins;
+      for (const disciplineName in disciplines) {
+        const checkbox = document.querySelector(
+          `input[name="${disciplineName}"]`
+        );
+        if (checkbox && disciplines[disciplineName] === "true") {
+          checkbox.checked = true;
+        }
+      }
     }
   })
   .catch((error) => console.error(error));
