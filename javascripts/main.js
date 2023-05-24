@@ -109,7 +109,7 @@ fetch(endpoint + "members.json")
       const totalPayment = memberPayment;
       regularMemberTotal.textContent = "Total beløb at betale: " + totalPayment + "kr";
 
-      // Break the loop after the first member to prevent overwriting the HTML elements
+      // break the loop after the first member to prevent overwriting the HTML elements
       break;
     }
   })
@@ -166,29 +166,25 @@ fetch(endpoint + "members.json")
     // retrieve the first comp member's data and populate the HTML elements
     if (compMembers.length > 0) {
       const compMember = compMembers[0];
-      welcomeCompMember.textContent =
-        "Velkommen: " + compMember["athlete"] + "!";
+      welcomeCompMember.textContent = "Velkommen: " + compMember["athlete"] + "!";
       compMemberInfoName.textContent = "Navn: " + compMember["athlete"];
-      compMemberInfoAge.textContent =
-        "Alder: " + calculateAge(compMember["birthdate"]);
+      compMemberInfoAge.textContent = "Alder: " + calculateAge(compMember["birthdate"]);
       compMemberInfoGender.textContent = "Køn: " + compMember["gender"];
       compMemberInfoAddress.textContent = "Adresse: " + compMember["address"];
       compMemberInfoEmail.textContent = "E-mail: " + compMember["mail"];
       compMemberInfoPhone.textContent = "Telefon: " + compMember["phone"];
       compMemberCoach.textContent = "Træner: " + compMember["coach"]; // coach value missing?
 
-      // Disable all checkboxes
+      // disable all checkboxes
       const checkboxes = document.querySelectorAll(".checkbox-styling");
       checkboxes.forEach((checkbox) => {
         checkbox.disabled = true;
       });
 
-      // Check the checkboxes based on the member's disciplines
+      // check the checkboxes based on the member's disciplines
       const disciplines = compMember.disciplins;
       for (const disciplineName in disciplines) {
-        const checkbox = document.querySelector(
-          `input[name="${disciplineName}"]`
-        );
+        const checkbox = document.querySelector(`input[name="${disciplineName}"]`);
         if (checkbox && disciplines[disciplineName] === "true") {
           checkbox.checked = true;
         }
