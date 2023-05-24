@@ -123,7 +123,7 @@
 
         <main id="admin-page" class="hidden">
             <section id="admin-page-grid-container">
-
+                
                 <article class="create-member-btn-container">
                     <button id="admin-create-member-btn" class="create-btn button-styling">Create new member</button
                 ></article>
@@ -133,12 +133,20 @@
                     <h3>Status: Administrator</h3>
                 </article>
 
+
                 <article class="income-container">
                     <h2>Forventet samlede kontingent:</h2>
                     <h3>Spørg kasseren</h3>
                 </article>
 
                 <article class="member-table-container">
+                    <div id="sort-container-admin">
+                        <select name="sort-active" id="sort-active">
+                            <option value="all">Alle medlemmer</option>
+                            <option value="active">Aktiv</option>
+                            <option value="passive">Passiv</option>
+                        </select>
+                    </div>
                     <table id="admin-member-table" cellspacing = 0></table>
                 </article>
             </section>

@@ -147,7 +147,7 @@ function showMemberRow(memberObject, caller){
         // insert row in DOM
         document.querySelector(`#cashier-member-table`).insertAdjacentHTML("afterbegin", memberRow);
 
-        //"tick" off checkbox of if paid or NOT paid
+        //"tick" off checkbox if paid or NOT paid
         if(memberObject.paid === "true"){
             document.querySelector(`#${memberObject.id} input`).setAttribute("checked", "");
         }
