@@ -200,7 +200,7 @@ function showPracticeResultRow(practiceObject){
 function practiceResultRow(practiceObject){
     const htmlRow = /*HTML*/ `
         <tr id=${practiceObject.id}>
-            <td>1. </td>
+            <td>1.</td>
             <td> ${practiceObject.athlete} </td>
             <td> ${practiceObject.resultTime} </td>
             <td> ${practiceObject.date} </td>
@@ -221,7 +221,7 @@ function showCompResultRow(compObject){
 function makeCompResultRow(compObject){
     const htmlRow = /*HTML*/ `
     <tr id=${compObject.id}>
-        <td>1. </td>
+        <td>1.</td>
         <td> ${compObject.athlete } </td>
         <td> ${compObject.compName} </td>
         <td> ${compObject.address} </td>
