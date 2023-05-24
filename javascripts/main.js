@@ -72,7 +72,14 @@ const regularMemberInfoAge = document.getElementById("regular-member-info-age");
 const regularMemberInfoGender = document.getElementById("regular-member-info-gender");
 const regularMemberInfoAddress = document.getElementById("regular-member-info-address");
 const regularMemberInfoEmail = document.getElementById("regular-member-info-email");
+const regularMemberInfoPhone = document.getElementById("regular-member-info-phone");
 const regularMemberPrice = document.getElementById("regular-member-price");
+const regularMemberDiscount = document.getElementById("regular-member-discount");
+
+// Discount configuration
+const youthAge = 17;
+const discountAge = 60;
+const discount = 25; // percent
 
 // Fetching the JSON data from the endpoint
 fetch(endpoint + "members.json")
@@ -81,14 +88,19 @@ fetch(endpoint + "members.json")
     // Retrieving each member's data and populating the HTML elements
     for (const memberId in data) {
       const member = data[memberId];
-      welcomeRegularUser.textContent = "Velkommen: " + member["name"] + "!";
-      regularMemberInfoName.textContent = "Navn: " + member["name"];
+      welcomeRegularUser.textContent = "Velkommen: " + member["athlete"] + "!";
+      regularMemberInfoName.textContent = "Navn: " + member["athlete"];
       regularMemberInfoAge.textContent = "Alder: " + calculateAge(member["birthdate"]);
       regularMemberInfoGender.textContent = "Køn: " + member["gender"];
       regularMemberInfoAddress.textContent = "Adresse: " + member["address"];
-      regularMemberInfoEmail.textContent = "E-mail: " + member["email"];
-      regularMemberPrice.textContent =
-        "Pris for kontigent: " + calcMemberPayment(member["active"]);
+      regularMemberInfoEmail.textContent = "E-mail: " + member["mail"];
+      regularMemberInfoPhone.textContent = "Telefon: " + member["phone"];
+
+      const memberPayment = calcMemberPayment(member);
+      regularMemberPrice.textContent = "Pris for kontigent: " + memberPayment;
+
+      const memberDiscount = calcMemberDiscount(member);
+      regularMemberDiscount.textContent = "Eventuel rabat: " + memberDiscount;
 
       // Break the loop after the first member to prevent overwriting the HTML elements
       break;
@@ -111,4 +123,16 @@ function calculateAge(birthdate) {
   }
 
   return age;
+}
+
+function calcMemberDiscount(memberObject) {
+  const age = calculateAge(memberObject.birthdate);
+
+  if (age <= youthAge) {
+    return "Ung svømmer rabat";
+  } else if (age >= discountAge) {
+    return `Senior svømmer ${discount}% rabat`;
+  } else {
+    return "Ingen aldersrabat";
+  }
 }
