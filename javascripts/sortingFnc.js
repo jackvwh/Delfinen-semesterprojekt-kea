@@ -1,7 +1,6 @@
 export {sortFiveBest, sortCompMembers, sortForYouth, sortForSenior, sortByPaid};
 
 function sortByPaid(memberArray) {
-    console.log("sorting for paid")
     const selectedValue = document.querySelector("#sort-payments").value;
 
         if (selectedValue === "paid") {

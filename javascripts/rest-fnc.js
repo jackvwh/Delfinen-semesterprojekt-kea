@@ -2,7 +2,7 @@
 import { showPracticeResultRow, showCompResultRow, showMemberRow} from "./displayFnc.js";
 import { response_message } from "./message.js";
 import { calcAge } from "./payment.js";
-export {loadCompData, loadMemberData, loadPracticeData, deleteData, createData}
+export { loadCompData, loadMemberData, loadPracticeData, deleteData, saveData}
 
 const endpoint = "https://delfin-kea-default-rtdb.firebaseio.com/"
 
@@ -46,22 +46,18 @@ async function deleteData(id, type){
             document.querySelector(`#${id}`).remove();
             //show user message
             response_message("SUCCESS! DATA SLETTET")
-
         }
         else if(!response.ok){
             response_message("ERROR: DATA IKKE SLETTET")
         }
 }
-async function createData(event){
+async function saveData(event){
     event.preventDefault();
-    const type = event.target.id    
+    const type = event.target.id 
+    let request;   
     // decide what values to get and send and reset form
-    // creates member
-    if(type === "create-form"){ 
-        const request = "POST"
-        // close dialog
-        document.querySelector("#create-dialog").close();
-        // member input values
+    if(type === "create-form" || type === "update-form"){ 
+        // get member input values
         const title = event.target.title.value;
         const athlete = event.target.name.value;
         const address = event.target.address.value;
@@ -75,37 +71,23 @@ async function createData(event){
         const rygcrawl = event.target.rygcrawl.value;
         const butterfly = event.target.butterfly.value;
         const breaststroke = event.target.breaststroke.value;
-
-        memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, comp, crawl, rygcrawl, butterfly, breaststroke, request);
-
-        // reset form
-        document.querySelector("#create-form").reset();
-    } else
-    if(type === "update-form"){ 
-        const request = "PUT"
-        // close dialog
-        document.querySelector("#update-dialog").close();
-        // member input values
-        const title = event.target.title.value;
-        const athlete = event.target.name.value;
-        const address = event.target.address.value;
-        const mail = event.target.mail.value;
-        const phone = event.target.phone.value;
-        const gender = event.target.gender.value;
-        const birthdate = event.target.birthdate.value;
-        const active = event.target.active.value;
-        const comp = event.target.competition.value
-        const crawl = event.target.crawl.value;
-        const rygcrawl = event.target.rygcrawl.value;
-        const butterfly = event.target.butterfly.value;
-        const breaststroke = event.target.breaststroke.value;
-
-        memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, comp, crawl, rygcrawl, butterfly, breaststroke, request);
-
-        // reset form
-        document.querySelector("#update-form").reset();
-    }
-
+        //check for html request
+            if (type === "update-form"){
+                request = "PUT"
+                // close dialog
+                document.querySelector("#update-dialog").close();
+                // reset form
+                document.querySelector("#update-form").reset();
+            }
+            else if (type === "create-form"){
+                request = "POST";
+                // close dialog
+                document.querySelector("#create-dialog").close();
+                // reset form
+                document.querySelector("#create-form").reset();
+            }
+        memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, comp, crawl, rygcrawl, butterfly, breaststroke, request);   
+    } 
     else if (type === "practice-result-form"){
         // close dialog
         document.querySelector("#create-practice-result-dialog").close();
@@ -170,16 +152,17 @@ async function practiceResultToDB(uid, athleteName, disciplin, resultTime, date,
                  body: dataAsJson 
          });
          if (response.ok){
+            // response with new object id/athlete
+            const data = await response.json();
+            // make get request to input specific element into DOM from response id
+            insertNewItem(data.name, "practiceResults");
+            // show response message to user
             response_message("SUCCESS! TRÆNINGS RESULTAT OPRETTET");
          }
          else if(!response.ok){
              // show error message
              response_message("ERROR: TRÆNINGS RESULTAT IKKE OPRETTET");
          }
-    // response with new object id/athlete
-    const data = await response.json();
-    // make get request to input specific element into DOM from response id
-    insertNewItem(data.name, "practiceResults");
 }
 async function compResultToDB(uid, athleteName, disciplin, resultTime, date, compName, address, youth){
     //create new object
@@ -203,15 +186,16 @@ async function compResultToDB(uid, athleteName, disciplin, resultTime, date, com
          });
          if (response.ok){
             response_message("SUCCESS! KONKURRENCE RESULTAT OPRETTET");
+
+             // response with new object id/athlete
+            const data = await response.json();
+            // show new comp result
+            insertNewItem(data.name, "compResults");
          }
          else if(!response.ok){
              // show error message
              response_message("ERROR: KONKURRENCE RESULTAT IKKE OPRETTET");
          }
-    // response with new object id/athlete
-    const data = await response.json();
-    // show new comp result
-    insertNewItem(data.name, "compResults");
 }
 async function memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, comp, crawl, rygcrawl, butterfly, breaststroke, request){
     //create new object
@@ -242,16 +226,18 @@ async function memberToDB(title, athlete, address, mail, phone, gender, birthdat
                  body: dataAsJson 
          });
          if (response.ok){
-             alert("MEMBER SUCCESSFULLY CREATED");
+            // response with new object id/athlete
+            const data = await response.json();
+            console.log("response data:", data)
+            // make get request to input specific element into DOM from response id
+            insertNewItem(data.name, "members");
+            //show response message to user
+            response_message("MEMBER SUCCESSFULLY CREATED");
          }
          else if(!response.ok){
              // show error message and reload page
-             alert("ERROR: MEMBER NOT CREATED");
+             response_message("ERROR: MEMBER NOT CREATED");
          }
-    // response with new object id/athlete
-    const data = await response.json();
-    // make get request to input specific element into DOM from response id
-    // insertNewItem(data.athlete, "users");
 }
 
 // ----------- FETCH ITEM AND INSERT RESULTS/MEMBES-------------------
@@ -273,6 +259,6 @@ async function insertNewItem(id, type){
         showCompResultRow(newItem);
     }
     else if (type === "members"){
-        showMemberRow(newItem);
+        showMemberRow(newItem, "admin");
     }
 }

@@ -62,7 +62,7 @@ function displayMemberTableHeader(caller){
                 <th>Køn</th>
                 <th>Email</th>
                 <th style="width: 350px;">Adresse</th>
-                <th>Teleon</th>
+                <th>Telefon</th>
                 <th>Aktivt medlem</th>
                 <th>Beløb</th>
                 <th></th>
@@ -82,7 +82,7 @@ function displayMemberTableHeader(caller){
                 <th>Køn</th>
                 <th>Email</th>
                 <th style="width: 350px;">Adresse</th>
-                <th>Teleon</th>
+                <th>Telefon</th>
                 <th>Aktivt medlem</th>
                 <th>Beløb</th>
                 <th>Betalt</th>
@@ -139,7 +139,7 @@ function showMemberRow(memberObject, caller){
         // insert row in DOM
         document.querySelector("#admin-member-table").insertAdjacentHTML("afterbegin", memberRow);
         // add eventListener to update btn and delete-btn
-        document.querySelector(`#admin-member-table tr:first-child .update-btn`).addEventListener("click", () => updateDialog(memberObject.id));
+        document.querySelector(`#admin-member-table tr:first-child .update-btn`).addEventListener("click", updateDialog)
         document.querySelector(`#admin-member-table tr:first-child .delete-btn`).addEventListener("click", () => deleteDialog(memberObject.id, "members"));
     }
     else if(caller === "cashier"){

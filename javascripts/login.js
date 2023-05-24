@@ -1,7 +1,7 @@
 
-import {loadCompData, loadMemberData, loadPracticeData} from "./rest-fnc.js";
-import {iterateMembers, iterateComps, iteratePractice, insertCompMembers, insertTotalIncome} from "./displayFnc.js";
-import {sortCompMembers, sortForSenior, sortForYouth, sortByPaid } from "./sortingFnc.js";
+import { loadCompData, loadMemberData, loadPracticeData} from "./rest-fnc.js";
+import { iterateMembers, iterateComps, iteratePractice, insertCompMembers, insertTotalIncome} from "./displayFnc.js";
+import { sortCompMembers, sortForSenior, sortForYouth, sortByPaid } from "./sortingFnc.js";
 
 export {loginDialog}
 
@@ -33,7 +33,6 @@ async function loginFunction(event){
 
                      // close login dialog
                     document.querySelector("#login-dialog").close();
-
                 }
                 break;
             case "cash":
