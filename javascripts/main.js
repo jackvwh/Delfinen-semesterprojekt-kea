@@ -63,9 +63,10 @@ function createMemberDialog(){
     document.querySelector("#create-form").addEventListener("submit", createData);
 }
 
+// regular member page
 const endpoint = "https://delfin-kea-default-rtdb.firebaseio.com/";
 
-// Accessing the HTML elements using their IDs
+// accessing the HTML elements using their IDs
 const welcomeRegularUser = document.getElementById("welcomeRegularUser");
 const regularMemberInfoName = document.getElementById("regular-member-info-name");
 const regularMemberInfoAge = document.getElementById("regular-member-info-age");
@@ -77,12 +78,12 @@ const regularMemberPrice = document.getElementById("regular-member-price");
 const regularMemberDiscount = document.getElementById("regular-member-discount");
 const regularMemberTotal = document.getElementById("regular-member-total");
 
-// Discount configuration
+// discount configuration
 const youthAge = 17;
 const discountAge = 60;
 const discount = 25; // percent
 
-// Fetching the JSON data from the endpoint
+// Fetching the JSON data from the endpoint for regular members
 fetch(endpoint + "members.json")
   .then((response) => response.json())
   .then((data) => {
@@ -103,7 +104,8 @@ fetch(endpoint + "members.json")
 
       const memberDiscount = calcMemberDiscount(member);
       regularMemberDiscount.textContent = "Aldersrabat: " + memberDiscount;
-
+      
+      // I don't think actually works
       const totalPayment = memberPayment;
       regularMemberTotal.textContent = "Total beløb at betale: " + totalPayment + "kr";
 
@@ -113,7 +115,7 @@ fetch(endpoint + "members.json")
   })
   .catch((error) => console.error(error));
 
-// Function to calculate age based on birthdate
+// function to calculate age based on birthdate
 function calculateAge(birthdate) {
   const today = new Date();
   const birthdateObj = new Date(birthdate);
@@ -130,6 +132,7 @@ function calculateAge(birthdate) {
   return age;
 }
 
+// function to calculate regular member discount
 function calcMemberDiscount(memberObject) {
   const age = calculateAge(memberObject.birthdate);
 
@@ -141,3 +144,34 @@ function calcMemberDiscount(memberObject) {
     return "Ingen rabat";
   }
 }
+
+// comp member page
+const welcomeCompMember = document.getElementById("comp-member-welcome");
+const compMemberInfoName = document.getElementById("comp-member-info-name");
+const compMemberInfoAge = document.getElementById("comp-member-info-age");
+const compMemberInfoGender = document.getElementById("comp-member-info-gender");
+const compMemberInfoAddress = document.getElementById("comp-member-info-address");
+const compMemberInfoEmail = document.getElementById("comp-member-info-email");
+const compMemberInfoPhone = document.getElementById("comp-member-info-phone");
+
+fetch(endpoint + "members.json")
+  .then((response) => response.json())
+  .then((data) => {
+    // Retrieve and filter members with "comp" value set to "true"
+    const compMembers = Object.values(data).filter(
+      (member) => member.comp === "true"
+    );
+
+    // Retrieve the first comp member's data and populate the HTML element
+    if (compMembers.length > 0) {
+      const compMember = compMembers[0];
+      welcomeCompMember.textContent = "Velkommen: " + compMember["athlete"] + "!";
+      compMemberInfoName.textContent = "Navn: " + compMember["athlete"];
+      compMemberInfoAge.textContent = "Alder: " + calculateAge(compMember["birthdate"]);
+      compMemberInfoGender.textContent = "Køn: " + compMember["gender"];
+      compMemberInfoAddress.textContent = "Adresse: " + compMember["address"];
+      compMemberInfoEmail.textContent = "E-mail: " + compMember["mail"];
+      compMemberInfoPhone.textContent = "Telefon: " + compMember["phone"];
+    }
+  })
+  .catch((error) => console.error(error));
