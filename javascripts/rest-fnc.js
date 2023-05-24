@@ -98,7 +98,7 @@ async function createData(event){
         // practice values
         const uid = event.target.athlete.value;
         const athlete = await getAthlete(uid);
-        const athleteName = `${athlete.name}`;
+        const athleteName = `${athlete.athlete}`;
         const disciplin = event.target.disciplin.value;
         const resultTime = event.target.resultTime.value;
         const date = event.target.date.value;
@@ -116,7 +116,7 @@ async function createData(event){
         // comp values
         const uid = event.target.athlete.value;
         const athlete = await getAthlete(uid);
-        const athleteName = athlete.name;
+        const athleteName = athlete.athlete;
         const disciplin = event.target.disciplin.value;
         const resultTime = event.target.resultTime.value;
         const date = event.target.date.value;
