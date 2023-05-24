@@ -215,7 +215,7 @@ function showCompResultRow(compObject){
     // insert row in DOM
     document.querySelector(`#${compObject.disciplin}-5-best-comp`).insertAdjacentHTML("afterbegin", compRow);
      // add eventListener to delete-btn
-     document.querySelector(`#${compObject.disciplin}-5-best-comp tr:first-child .delete-btn`).addEventListener("click", () => deleteDialog(compObject.id, "compResults"));
+     document.querySelector(`#${compObject.disciplin}-5-best-comp tr:first-child .delete-btn`).addEventListener("click", ()=>deleteDialog(compObject.id, "compResults"));
     
 }
 function makeCompResultRow(compObject){

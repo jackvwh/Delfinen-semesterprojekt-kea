@@ -21,6 +21,8 @@ function updateDialog(){
     document.querySelector("#update-form").addEventListener("submit", saveData);
 }
 function deleteDialog(id, type){
+    document.querySelector("#delete-form").setAttribute("data-type", type)
+    document.querySelector("#delete-form").setAttribute("data-id", id)
+    document.querySelector("#delete-form").addEventListener("submit", deleteData);  
     document.querySelector("#delete-dialog").showModal();
-    document.querySelector("#delete-form").addEventListener("submit", ()=>deleteData(id, type));
 }

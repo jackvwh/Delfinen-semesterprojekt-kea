@@ -37,7 +37,9 @@ function prepareDataArray(dataObject){
     }
     return dataArray;
 }
-async function deleteData(id, type){
+async function deleteData(event){
+    const id = event.target.dataset.id 
+    const type = event.target.dataset.type
     // delete item globally
     const url = `${endpoint}/${type}/${id}.json`;
     const response = await fetch(url, { method: "DELETE" });
