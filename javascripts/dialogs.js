@@ -1,4 +1,4 @@
-import {createData} from "./rest-fnc.js";
+import {createData, deleteData} from "./rest-fnc.js";
 export{createCompsDialog, createMemberDialog,createPracticeDialog, updateDialog, deleteDialog}
 
 function createPracticeDialog(){
