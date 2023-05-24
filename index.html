@@ -123,7 +123,7 @@
 
         <main id="admin-page" class="hidden">
             <section id="admin-page-grid-container">
-
+                
                 <article class="create-member-btn-container">
                     <button id="admin-create-member-btn" class="create-btn button-styling">Create new member</button
                 ></article>
@@ -133,12 +133,20 @@
                     <h3>Status: Administrator</h3>
                 </article>
 
+
                 <article class="income-container">
                     <h2>Forventet samlede kontingent:</h2>
                     <h3>Spørg kasseren</h3>
                 </article>
 
                 <article class="member-table-container">
+                    <div id="sort-container-admin">
+                        <select name="sort-active" id="sort-active">
+                            <option value="all">Alle medlemmer</option>
+                            <option value="active">Aktiv</option>
+                            <option value="passive">Passiv</option>
+                        </select>
+                    </div>
                     <table id="admin-member-table" cellspacing = 0></table>
                 </article>
             </section>
@@ -157,15 +165,14 @@
                     <h3 id="total-income"></h3>
                </article>
 
-                <div id="sort-container">
-                <select name="sort-payments" id="sort-payments">
-                    <option value="all">Alle medlemmer</option>
-                    <option value="paid">Betalt</option>
-                    <option value="unpaid">Restance</option>
-                </select>
-                </div>
-
-                <section class="member-table-container">
+                <section class="member-table-container">   
+                    <div id="sort-container">
+                        <select name="sort-payments" id="sort-payments">
+                            <option value="all">Alle medlemmer</option>
+                            <option value="paid">Betalt</option>
+                            <option value="unpaid">Restance</option>
+                        </select>
+                    </div>
                     <table id="cashier-member-table" cellspacing = 0></table>
                 </section>
             </section>
@@ -596,7 +603,7 @@
             <form id="practice-result-form" >
                 <label for="athlete"><b>Svømmer:</b></label>
                 <select name="athlete" id="selectAthletePractice"></select required>
-
+                <br>
                 <label for="disciplin"><b>Disciplin</b></label>
                 <select name="disciplin" id="disciplin">
                     <option value="crawl">Crawl</option>
@@ -604,14 +611,14 @@
                     <option value="butterfly">Butterfly</option>
                     <option value="breaststroke">Brystsvømning</option>
                 </select required>
-
+                <br>
                 <label for="time"><b>Træningsresultat</b></label>
                 <input type="tel" name="time" id="resultTime" placeholder="00-00-00" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}" required>
-
+                <br>
                 <label for="date"><b>Dato</b></label>
                 <input type="date" name="date" id="date" maxlength="10" placeholder="Dato" required>
-
-                <button type="submit">Opret resultat</button>
+                <br>
+                <button id="create-practice-result-btn" type="submit">Opret resultat</button>
             </form> 
             <form method="dialog">
                 <button>Cancel</button>
@@ -623,7 +630,7 @@
             <form id="comp-result-form" >
                 <label for="athlete"><b>Svømmer:</b></label>
                 <select name="athlete" id="selectAthleteComp"></select required>
-
+                    <br>
                 <label for="disciplin"><b>Disciplin</b></label>
                 <select name="disciplin" id="disciplin">
                     <option value="crawl">Crawl</option>
@@ -631,20 +638,20 @@
                     <option value="butterfly">Butterfly</option>
                     <option value="breaststroke">Brystsvømning</option>
                 </select required>
-
+                <br>
                 <label for="resultTime"><b>Resultat</b></label>
                 <input type="tel" name="time" id="resultTime" placeholder="00-00-00" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}" required>
-
+                <br>
                 <label for="date"><b>Dato</b></label>
                 <input type="date" name="date" id="date" maxlength="10" placeholder="Dato" required>
-
+                <br>
                 <label for="compName">Stævne navn</label>
                 <input type="text" name="compName" id="compName" maxlength="1000" placeholder="Stævne navn" required>
-
+                <br>
                 <label for="address">Adresse</label>
                 <input type="text" name="address" id="address" maxlength="1000" placeholder="Sted" required>
-
-                <button type="submit">Opret resultat</button>
+                <br>
+                <button id="create-comp-result-btn" type="submit">Opret resultat</button>
             </form> 
             <form method="dialog">
                 <button>Cancel</button>

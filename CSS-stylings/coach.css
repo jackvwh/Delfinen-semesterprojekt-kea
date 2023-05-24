@@ -120,3 +120,39 @@
     width: 1200px;
     margin-bottom: 25px; 
 }
+#create-practice-result-dialog {
+    width: 350px;
+    height: 650px;
+    position: relative;
+    top: 0px;
+}
+
+#practice-result-form {
+    width: 400px;
+    height: 550px;
+    font-size: 1.5em;
+
+}
+#create-practice-result-btn {
+    position: relative;
+    /* align-items: center;
+    justify-items: center; */
+}
+#create-comp-result-dialog {
+    width: 400px;
+    height: 650px;
+    position: relative;
+    top: 0px;
+}
+
+#practice-comp-form {
+    width: 200px;
+    height: 350px;
+    font-size: 1.5em;
+
+}
+#create-comp-result-btn {
+    position: relative;
+    /* align-items: center; */
+    /* justify-items: center; */
+}

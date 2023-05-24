@@ -1,7 +1,7 @@
 
 import { loadCompData, loadMemberData, loadPracticeData} from "./rest-fnc.js";
 import { iterateMembers, iterateComps, iteratePractice, insertCompMembers, insertTotalIncome} from "./displayFnc.js";
-import { sortCompMembers, sortForSenior, sortForYouth, sortByPaid } from "./sortingFnc.js";
+import { sortCompMembers, sortForSenior, sortForYouth, sortByPaid, sortForActive } from "./sortingFnc.js";
 
 export {loginDialog}
 
@@ -30,6 +30,8 @@ async function loginFunction(event){
                     document.querySelector("#logOut-btn").classList.remove("hidden");
                     document.querySelector("#login-btn").classList = ""; 
                     document.querySelector("#login-btn").classList.add("hidden"); 
+
+                    document.querySelector("#sort-active").addEventListener("change", ()=>iterateMembers(sortForActive(memberArray), "admin"))
 
                      // close login dialog
                     document.querySelector("#login-dialog").close();
@@ -82,8 +84,8 @@ async function loginFunction(event){
                     //eventListners for la coách butóns
                     document.querySelector("#all").addEventListener("click", ()=>iterateComps(compResults));
                     document.querySelector("#all").addEventListener("click", ()=>iteratePractice(practiceResults));
-                    document.querySelector("#refresh").addEventListener("click", ()=>iterateComps(async ()=> await loadCompData()));
-                    document.querySelector("#refresh").addEventListener("click",()=>iteratePractice(async ()=> await loadPracticeData()));
+                    document.querySelector("#refresh").addEventListener("click", async ()=>{ const array =  await loadCompData(); iterateComps(array)});
+                    document.querySelector("#refresh").addEventListener("click", async ()=>{ const array =  await loadPracticeData(); iteratePractice(array)});
                     document.querySelector("#youth").addEventListener("click", ()=>iterateComps(sortForYouth(compResults)));
                     document.querySelector("#youth").addEventListener("click", ()=>iteratePractice(sortForYouth(practiceResults)));
                     document.querySelector("#senior").addEventListener("click", ()=>iterateComps(sortForSenior(compResults)));

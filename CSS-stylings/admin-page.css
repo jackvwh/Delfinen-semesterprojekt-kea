@@ -103,4 +103,23 @@ scale: 200%;
     align-items: center;
     justify-items: center;
 }
+#update-dialog {
+    width: 500px;
+    height: 850px;
+    text-align: center;
+    position: relative;
+    top: 0px;
+}
+
+#update-form {
+    width: 500px;
+    height: 750px;
+    font-size: 1.5em;
+
+}
+#update-member-btn {
+    position: relative;
+    align-items: center;
+    justify-items: center;
+}
 

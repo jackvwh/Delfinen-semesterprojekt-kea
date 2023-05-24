@@ -1,4 +1,4 @@
-import {saveData, deleteData} from "./rest-fnc.js";
+import {saveMemberData, deleteData} from "./rest-fnc.js";
 export{createCompsDialog, createMemberDialog,createPracticeDialog, updateDialog, deleteDialog}
 
 function createPracticeDialog(){
@@ -14,11 +14,12 @@ function createCompsDialog(){
 function createMemberDialog(){
     document.querySelector("#create-dialog").showModal();
 
-    document.querySelector("#create-form").addEventListener("submit", saveData);
+    document.querySelector("#create-form").addEventListener("submit", saveMemberData);
 }
-function updateDialog(){
+function updateDialog(id){
+    document.querySelector("#update-form").setAttribute("data-id", id)
+    document.querySelector("#update-form").addEventListener("submit", saveMemberData);
     document.querySelector("#update-dialog").showModal();
-    document.querySelector("#update-form").addEventListener("submit", saveData);
 }
 function deleteDialog(id, type){
     document.querySelector("#delete-form").setAttribute("data-type", type)
