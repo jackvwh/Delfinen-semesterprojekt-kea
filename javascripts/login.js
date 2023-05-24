@@ -123,6 +123,6 @@ async function loginFunction(event){
                 };
                 break;
             default:
-                window.location.reload();         
+                alert("WHY U TRY HAK ME! BAD KITTEN!")         
         }
 }

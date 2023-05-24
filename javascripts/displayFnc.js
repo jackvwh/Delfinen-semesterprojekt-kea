@@ -104,7 +104,7 @@ function displayTableHeaderComp(){
                         <th>Medlem</th>
                         <th>Stævne navn</th>
                         <th style="width: 350px;"> Stævne sted </th>
-                        <th>Resultat tid:</th>
+                        <th>Resultat tid: <br> mm:ss:ms </th>
                         <th>Dato</th>
                         <th></th>
                     </tr>
@@ -122,7 +122,7 @@ function displayTableHeaderPractice(){
                     <tr>
                         <th><h2>${disciplin.toUpperCase()}</h2></th>
                         <th>Medlem</th>
-                        <th>Resultat tid:</th>
+                        <th>Resultat tid: <br> mm:ss:ms</th>
                         <th>Dato</th>
                         <th></th>
                     </tr>
