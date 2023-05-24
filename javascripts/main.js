@@ -75,6 +75,7 @@ const regularMemberInfoEmail = document.getElementById("regular-member-info-emai
 const regularMemberInfoPhone = document.getElementById("regular-member-info-phone");
 const regularMemberPrice = document.getElementById("regular-member-price");
 const regularMemberDiscount = document.getElementById("regular-member-discount");
+const regularMemberTotal = document.getElementById("regular-member-total");
 
 // Discount configuration
 const youthAge = 17;
@@ -95,12 +96,16 @@ fetch(endpoint + "members.json")
       regularMemberInfoAddress.textContent = "Adresse: " + member["address"];
       regularMemberInfoEmail.textContent = "E-mail: " + member["mail"];
       regularMemberInfoPhone.textContent = "Telefon: " + member["phone"];
+      
 
       const memberPayment = calcMemberPayment(member);
-      regularMemberPrice.textContent = "Pris for kontigent: " + memberPayment;
+      regularMemberPrice.textContent = "Pris for kontigent: " + memberPayment + "kr";
 
       const memberDiscount = calcMemberDiscount(member);
-      regularMemberDiscount.textContent = "Eventuel rabat: " + memberDiscount;
+      regularMemberDiscount.textContent = "Aldersrabat: " + memberDiscount;
+
+      const totalPayment = memberPayment;
+      regularMemberTotal.textContent = "Total beløb at betale: " + totalPayment + "kr";
 
       // Break the loop after the first member to prevent overwriting the HTML elements
       break;
@@ -129,10 +134,10 @@ function calcMemberDiscount(memberObject) {
   const age = calculateAge(memberObject.birthdate);
 
   if (age <= youthAge) {
-    return "Ung svømmer rabat";
+    return "Ungsvømmer rabat";
   } else if (age >= discountAge) {
-    return `Senior svømmer ${discount}% rabat`;
+    return `Seniorsvømmer ${discount}% rabat`;
   } else {
-    return "Ingen aldersrabat";
+    return "Ingen rabat";
   }
 }
