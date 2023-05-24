@@ -2,7 +2,7 @@
 import { showPracticeResultRow, showCompResultRow, showMemberRow} from "./displayFnc.js";
 import { response_message } from "./message.js";
 import { calcAge } from "./payment.js";
-export { loadCompData, loadMemberData, loadPracticeData, deleteData, saveMemberData}
+export { loadCompData, loadMemberData, loadPracticeData, deleteData, saveMemberData, createCompResults, createPracticeResults}
 
 const endpoint = "https://delfin-kea-default-rtdb.firebaseio.com/"
 
@@ -88,6 +88,44 @@ async function saveMemberData(event){
             document.querySelector("#create-form").reset();
             createMemberToDB(title, athlete, address, mail, phone, gender, birthdate, active, comp, crawl, rygcrawl, butterfly, breaststroke);   
         }
+}
+async function createPracticeResults(event) {
+    //close dialog
+    document.querySelector("#create-practice-result-dialog").close()
+    // practice values
+    const uid = event.target.athlete.value;
+    const athlete = await getAthlete(uid);
+    const athleteName = `${athlete.athlete}`;
+    const disciplin = event.target.disciplin.value;
+    const resultTime = event.target.resultTime.value;
+    const date = event.target.date.value;
+    const youth = calcAge(athlete.birthdate) < 18 ? true : false;
+
+    // create json object and makes a POST request to Database
+    practiceResultToDB(uid, athleteName, disciplin, resultTime, date, youth)
+
+    // reset form
+    document.querySelector("#practice-result-form").reset()
+}
+async function createCompResults(event) {
+        //close dialog
+        document.querySelector("#create-comp-result-dialog").close()
+        // practice values
+        const uid = event.target.athlete.value;
+        const athlete = await getAthlete(uid);
+        const athleteName = athlete.athlete;
+        const disciplin = event.target.disciplin.value;
+        const resultTime = event.target.resultTime.value;
+        const date = event.target.date.value;
+        const compName = event.target.compName.value;
+        const address = event.target.address.value;
+        const youth = calcAge(athlete.birthdate) < 18 ? true : false;
+    
+        // create json object and makes a POST request to Database
+        compResultToDB(uid, athleteName, disciplin, resultTime, date, compName, address, youth)
+    
+        // reset form
+        document.querySelector("#comp-result-form").reset()
 }
 async function getAthlete(uid){
     const athleteResponse = await fetch(`${endpoint}/members/${uid}.json`)
