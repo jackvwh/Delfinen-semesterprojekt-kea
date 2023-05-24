@@ -58,38 +58,52 @@ async function createData(event){
     // decide what values to get and send and reset form
     // creates member
     if(type === "create-form"){ 
+        const request = "POST"
         // close dialog
         document.querySelector("#create-dialog").close();
         // member input values
         const title = event.target.title.value;
-        const athlete = event.target.athlete.value;
+        const athlete = event.target.name.value;
         const address = event.target.address.value;
         const mail = event.target.mail.value;
         const phone = event.target.phone.value;
         const gender = event.target.gender.value;
         const birthdate = event.target.birthdate.value;
         const active = event.target.active.value;
+        const comp = event.target.competition.value
         const crawl = event.target.crawl.value;
         const rygcrawl = event.target.rygcrawl.value;
         const butterfly = event.target.butterfly.value;
         const breaststroke = event.target.breaststroke.value;
-        // console.log("title: ", title);
-        // console.log("athlete: ", athlete);
-        // console.log("address: ", address);
-        // console.log("mail: ", mail);
-        // console.log("phone: ", phone);
-        // console.log("gender: ", gender);
-        // console.log("birthdate: ", birthdate);
-        // console.log("active: ", active);
-        // console.log("crawl: ", crawl);
-        // console.log("rygcrawl: ", rygcrawl);
-        // console.log("butterfly: ", butterfly);
-        // console.log("breaststroke: ", breaststroke);
 
-        memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, crawl, rygcrawl, butterfly, breaststroke);
+        memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, comp, crawl, rygcrawl, butterfly, breaststroke, request);
 
         // reset form
         document.querySelector("#create-form").reset();
+    } else
+    if(type === "update-form"){ 
+        const request = "PUT"
+        // close dialog
+        document.querySelector("#update-dialog").close();
+        // member input values
+        const title = event.target.title.value;
+        const athlete = event.target.name.value;
+        const address = event.target.address.value;
+        const mail = event.target.mail.value;
+        const phone = event.target.phone.value;
+        const gender = event.target.gender.value;
+        const birthdate = event.target.birthdate.value;
+        const active = event.target.active.value;
+        const comp = event.target.competition.value
+        const crawl = event.target.crawl.value;
+        const rygcrawl = event.target.rygcrawl.value;
+        const butterfly = event.target.butterfly.value;
+        const breaststroke = event.target.breaststroke.value;
+
+        memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, comp, crawl, rygcrawl, butterfly, breaststroke, request);
+
+        // reset form
+        document.querySelector("#update-form").reset();
     }
 
     else if (type === "practice-result-form"){
@@ -199,7 +213,7 @@ async function compResultToDB(uid, athleteName, disciplin, resultTime, date, com
     // show new comp result
     insertNewItem(data.name, "compResults");
 }
-async function memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, crawl, rygcrawl, butterfly, breaststroke){
+async function memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, comp, crawl, rygcrawl, butterfly, breaststroke, request){
     //create new object
     const member = { 
         title: `${title}`, 
@@ -210,6 +224,7 @@ async function memberToDB(title, athlete, address, mail, phone, gender, birthdat
         gender: `${gender}`,
         birthdate: `${birthdate}`,
         active: `${active}`,
+        competition: `${comp}`,
         disciplins: {
             crawl:`${crawl}`,
             rygcrawl:`${rygcrawl}`,
@@ -223,7 +238,7 @@ async function memberToDB(title, athlete, address, mail, phone, gender, birthdat
      // fetch reguest to POST item
      const response = await fetch(`${endpoint}/members.json`, 
          { 
-                 method: "POST", 
+                 method: `${request}`, 
                  body: dataAsJson 
          });
          if (response.ok){
