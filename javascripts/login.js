@@ -82,8 +82,8 @@ async function loginFunction(event){
                     //eventListners for la coách butóns
                     document.querySelector("#all").addEventListener("click", ()=>iterateComps(compResults));
                     document.querySelector("#all").addEventListener("click", ()=>iteratePractice(practiceResults));
-                    document.querySelector("#refresh").addEventListener("click", ()=>iterateComps(async ()=> await loadCompData()));
-                    document.querySelector("#refresh").addEventListener("click",()=>iteratePractice(async ()=> await loadPracticeData()));
+                    document.querySelector("#refresh").addEventListener("click", async ()=>{ const array =  await loadCompData(); iterateComps(array)});
+                    document.querySelector("#refresh").addEventListener("click", async ()=>{ const array =  await loadPracticeData(); iteratePractice(array)});
                     document.querySelector("#youth").addEventListener("click", ()=>iterateComps(sortForYouth(compResults)));
                     document.querySelector("#youth").addEventListener("click", ()=>iteratePractice(sortForYouth(practiceResults)));
                     document.querySelector("#senior").addEventListener("click", ()=>iterateComps(sortForSenior(compResults)));
