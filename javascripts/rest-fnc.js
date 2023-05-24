@@ -213,7 +213,7 @@ async function compResultToDB(uid, athleteName, disciplin, resultTime, date, com
     // show new comp result
     insertNewItem(data.name, "compResults");
 }
-async function memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, crawl, rygcrawl, butterfly, breaststroke, request){
+async function memberToDB(title, athlete, address, mail, phone, gender, birthdate, active, comp, crawl, rygcrawl, butterfly, breaststroke, request){
     //create new object
     const member = { 
         title: `${title}`, 
@@ -224,7 +224,7 @@ async function memberToDB(title, athlete, address, mail, phone, gender, birthdat
         gender: `${gender}`,
         birthdate: `${birthdate}`,
         active: `${active}`,
-        competition: `${competition}`,
+        competition: `${comp}`,
         disciplins: {
             crawl:`${crawl}`,
             rygcrawl:`${rygcrawl}`,
@@ -233,7 +233,6 @@ async function memberToDB(title, athlete, address, mail, phone, gender, birthdat
         },
 
     };
-    console.log(member);
      // make javaScript object to Json object
      const dataAsJson = JSON.stringify(member);
      // fetch reguest to POST item
