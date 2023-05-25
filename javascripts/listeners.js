@@ -1,6 +1,6 @@
 
 import {loginDialog} from "./login.js";
-import {createCompsDialog, createPracticeDialog, createMemberDialog } from "./dialogs.js";
+import {createCompsDialog, createPracticeDialog, createMemberDialog, updateDialog } from "./dialogs.js";
 export {addEventListeners}
 
 function addEventListeners(){
@@ -19,4 +19,10 @@ function addEventListeners(){
 
     // create member dialog
     document.querySelector("#admin-create-member-btn").addEventListener("click", createMemberDialog);
+
+    // update member personal info dialog
+  document.querySelector("#regular-member-update-btn").addEventListener("click", ()=>updateDialog("-NW2R8JVFfH1dMD0qRLe"));
+  document
+    .querySelector("#comp-member-update-btn")
+    .addEventListener("click", () => updateDialog("-NW3R8JVFfH1dMD0qRLe"));
 }
