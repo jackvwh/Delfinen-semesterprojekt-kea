@@ -1,3 +1,7 @@
+#admin-page {
+    animation: fadeIn 1s;
+}
+
 .welcome-user-container { grid-area: welcome; }
 .income-container { grid-area: income; }
 .member-table-container { grid-area: table; }
@@ -8,23 +12,43 @@
     justify-items: center;
     grid-template-areas: 
     "welcome main income"
-    "table table table"
-    "footer footer footer";
+    "table table table";
     margin: 0%;
     padding: 0%;
     position: relative;
     top: -150px;
+    margin-top: 100px;
 }
+
+/*-----------Weclome container position--------*/
+.welcome-user-container {
+    position: absolute;
+    left: 85px;
+    top: -150px;
+    margin-bottom: 100px;
+    color: var(--colour1);
+    border: solid black;
+}
+
+/*------------Income container position----------*/
+.income-container {
+    position: absolute;
+    right: 85px;
+    top: -150px;
+    margin-bottom: 100px;
+    color: var(--colour1);
+    border: solid black;
+}
+
 /*-----------Create button styling-----------*/
 .create-member-btn-container {
-    position: relative;
-    left: -60px;
-    bottom: -60px;
-    top: 10px;
+position: absolute;
+top: -70px;
 }
 .create-btn {
-    font-size: 2.5em;
+    font-size: 2em;
     padding: 15px;
+    background-color: green;
 }
 
 /*-----------MEMBER Table Styling--------------*/
@@ -53,10 +77,7 @@
     padding-right: 30px;
     padding-bottom: 25px;
     color: black;
-}
-
-.create-btn {
-    background-color: black;
+    text-align: center;
 }
 
 .tableFixedHeader {
@@ -65,16 +86,17 @@
 }
 
 .tableFixedHeader > tr, th {
-    background-color: bisque;
+    background-color: var(--colour1);
+    color: var(--white);
     position: sticky;
-    top: 1px;
+    top: 0px;
     padding-top: 15px;
     padding-bottom: 20px;
     z-index: 9998;
 }
 
-.member-table tr:nth-child(even) {
-    background-color: var(--colour3);
+.admin-member-table tbody:nth-child(even) {
+    background-color: whitesmoke;
     color: black;
 }
 
@@ -82,8 +104,49 @@
 scale: 200%;
 }
 
+/*------------Sort styling*/
+
+.sort-container-admin {
+    position: absolute;
+    top: 20px;
+    right: 98px;
+}
+
 /*----------Create Dialog styling---------------*/
-#create-dialog {
+.create-dialog {
+    width: 500px;
+    height: 850px;
+    position: relative;
+    top: 0px;
+    overflow-y: hidden;
+    animation: fadeIn 0.3s;
+    border-radius: 15px;
+}
+
+.create-dialog > h2 {
+    font-size: 3em;
+    font-family: 'Lilita One', cursive;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.create-form {
+    width: 500px;
+    height: 750px;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.create-member-btn {
+    position: relative;
+    left: 200px;
+    background-color: green;
+    font-size: 1em;
+    padding: 10px;
+    margin-left: 50px;
+    width: 200px;
+}
+.update-dialog {
     width: 500px;
     height: 850px;
     text-align: center;
@@ -91,35 +154,27 @@ scale: 200%;
     top: 0px;
 }
 
-#create-form {
+.update-form {
     width: 500px;
     height: 750px;
     font-size: 1.5em;
 
 }
-
-#create-member-btn {
+.update-member-btn {
     position: relative;
     align-items: center;
     justify-items: center;
 }
-#update-dialog {
-    width: 500px;
-    height: 850px;
-    text-align: center;
-    position: relative;
-    top: 0px;
-}
 
-#update-form {
-    width: 500px;
-    height: 750px;
-    font-size: 1.5em;
-
+/*--------------Create member button styling--------------*/
+.close-create-member-dialog-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
-#update-member-btn {
-    position: relative;
-    align-items: center;
-    justify-items: center;
+.dialog-create-btn {
+    background-color: darkred;
+    font-size: 1.2em;
+    width: 35px;
 }
 

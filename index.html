@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="CSS-stylings/member-page.css">
     <link rel="stylesheet" href="CSS-stylings/coach.css">
     <link rel="stylesheet" href="CSS-stylings/responseMsg.css">
+
+    <!-------------------------Google fonts---------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Francois+One&family=Lilita+One&display=swap" rel="stylesheet">
+    <!----------------------------------------------------------------------->
+    
     <title>Svømmeklub Delfinen</title>
 </head>
 <body>
@@ -44,32 +51,32 @@
                 <article class="front-page-news-grid-item">
                     <div class="front-page-news-picture">
                         <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
+                        <h3 class="front-page-news-title">News overskrift</h3>
                     </div>
-                    <h3 class="front-page-news-title">News overskrift</h3>
                     <button class="button-styling front-page-news-button but">Læs mere...</button>
                 </article>
 
                 <article class="front-page-news-grid-item">
                     <div class="front-page-news-picture">
-                        <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
+                        <img src="https://images.pexels.com/photos/1415809/pexels-photo-1415809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                        <h3 class="front-page-news-title">News overskrift</h3>
                     </div>
-                    <h3 class="front-page-news-title">News overskrift</h3>
                     <button class="button-styling front-page-news-button">Læs mere...</button>
                 </article>
 
                 <article class="front-page-news-grid-item">
                     <div class="front-page-news-picture">
-                        <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
+                        <img src="https://images.pexels.com/photos/66258/staniel-cay-swimming-pig-seagull-fish-66258.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                        <h3 class="front-page-news-title">News overskrift</h3>
                     </div>
-                    <h3 class="front-page-news-title">News overskrift</h3>
                     <button class="button-styling front-page-news-button">Læs mere...</button>
                 </article>
 
                 <article class="front-page-news-grid-item">
                     <div class="front-page-news-picture">
-                        <img src="https://images.pexels.com/photos/711187/pexels-photo-711187.jpeg" alt="">
+                        <img src="https://images.pexels.com/photos/260598/pexels-photo-260598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+                        <h3 class="front-page-news-title">News overskrift</h3>
                     </div>
-                    <h3 class="front-page-news-title">News overskrift</h3>
                     <button class="button-styling front-page-news-button">Læs mere...</button>
                 </article>
             </section>
@@ -129,7 +136,7 @@
                 ></article>
 
                 <article class="welcome-user-container">
-                    <h2 id="admin-user-name"></h2>
+                    <h2 id="admin-user-name">Velkommen: Anders Anderson</h2>
                     <h3>Status: Administrator</h3>
                 </article>
 
@@ -139,15 +146,16 @@
                     <h3>Spørg kasseren</h3>
                 </article>
 
+                <div id="sort-container-admin" class="sort-container-admin">
+                    <label for="sort-active" class="sort-title">Sortér efter</label>
+                    <select name="sort-active" id="sort-active" class="sort-container">
+                        <option value="all">Alle medlemmer</option>
+                        <option value="active">Aktiv</option>
+                        <option value="passive">Passiv</option>
+                    </select>
+                </div>
                 <article class="member-table-container">
-                    <div id="sort-container-admin">
-                        <select name="sort-active" id="sort-active">
-                            <option value="all">Alle medlemmer</option>
-                            <option value="active">Aktiv</option>
-                            <option value="passive">Passiv</option>
-                        </select>
-                    </div>
-                    <table id="admin-member-table" cellspacing = 0></table>
+                    <table id="admin-member-table" class="admin-member-table" cellspacing = 0></table>
                 </article>
             </section>
         </main>
@@ -155,25 +163,26 @@
         <main id="cashier-page" class="hidden">
             <section id="cashier-page-grid-container">
 
-                <article class="welcome-user-container">
-                    <h2 id="cashier-user-name"></h2>
+                <article class="welcome-user-container cashier-welcome">
+                    <h2 id="cashier-user-name">Velkommen: Jane Doe</h2>
                     <h3>Status: Kasserer</h3>
                 </article>
 
-                <article class="income-container">
+                <article class="income-container cashier-income">
                     <h2>Forventet samlede kontingent:</h2>
                     <h3 id="total-income"></h3>
                </article>
 
+               <div id="sort-container" class="sort-container-cashier">
+                <label for="sort-payments" class="sort-title">Sortér efter:</label>
+                   <select name="sort-payments" id="sort-payments">
+                       <option value="all">Alle medlemmer</option>
+                       <option value="paid">Betalt</option>
+                       <option value="unpaid">Restance</option>
+                   </select>
+               </div>
                 <section class="member-table-container">   
-                    <div id="sort-container">
-                        <select name="sort-payments" id="sort-payments">
-                            <option value="all">Alle medlemmer</option>
-                            <option value="paid">Betalt</option>
-                            <option value="unpaid">Restance</option>
-                        </select>
-                    </div>
-                    <table id="cashier-member-table" cellspacing = 0></table>
+                    <table id="cashier-member-table" class="cashier-member-table" cellspacing = 0></table>
                 </section>
             </section>
         </main>
@@ -412,9 +421,9 @@
             </form>
         </dialog>
         <!-- MEMBER CREATE FORM -->
-        <dialog id="create-dialog">
-            <h2>Opret nyt medlem</h2>
-            <form id="create-form">
+        <dialog id="create-dialog" class="create-dialog">
+            <h2>Opret Nyt Medlem</h2>
+            <form id="create-form" class="create-form">
                 <fieldset>
                     <input type="radio" id="admin" name="title" value="admin">
                     <label for="admin">Administrator</label><br>
@@ -459,8 +468,8 @@
                         <option value=true selected>Ja</option>
                         <option value=false>Nej</option>
                     </select required>
-                </fieldset>
-                
+                </fieldset>  
+
                 <fieldset>
                     <legend>Konkurrence svømmer</legend>
                     <label for="competition"></label>
@@ -499,16 +508,16 @@
                 </fieldset>
             </section>
             <br>
-            <button type="submit" id="create-member-btn" class="button-styling">opret</button>
+            <button type="submit" id="create-member-btn" class="button-styling create-member-btn">Opret</button>
             </form>
-            <form method="dialog">
-                <button class="button-styling">Close</button>
+            <form method="dialog" class="close-create-member-dialog-btn">
+                <button class="button-styling dialog-create-btn">X</button>
             </form>
         </dialog>
         <!--MEMBER UPDATE DIALOG  -->
-        <dialog id="update-dialog">
+        <dialog id="update-dialog" class="update-dialog">
             <h2>Opdater medlemsoplysninger</h2>
-            <form id="update-form">
+            <form id="update-form" class="update-form">
                 <fieldset>
                     <input type="radio" id="admin" name="title" value="admin">
                     <label for="admin">Administrator</label><br>
@@ -582,7 +591,7 @@
                         </select>
                     </fieldset>
                 </section>
-                <button id="update-member-btn">Opdater</button>
+                <button id="update-member-btn" class="update-member-btn">Opdater</button>
             </form>
             <form method="dialog">
                 <button>Close</button>
@@ -594,9 +603,10 @@
                     <label for="email"><b>Email</b></label>
                     <!-- SHOULD BE TYPE: EMAIL - for testing type:text -->
                     <input type="text" placeholder="Indsæt email" name="email" required> 
+                    <br>
                     <label for="password"><b>Kodeord</b></label>
                     <input type="password" placeholder="Indsæt kodeord" name="psw" required>         
-                    <button type="submit">Log ind</button>
+                    <button type="submit" class="button-styling">Log ind</button>
             </form> 
             <form method="dialog">
                 <button class="button-styling close-login-dialog">Fortryd</button>

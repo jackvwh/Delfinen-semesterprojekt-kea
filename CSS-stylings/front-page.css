@@ -3,17 +3,21 @@
 font-size: 12px;
 }
 
-#homePage > header {
-text-align: center;
-font-size: 3em;
-}
-
 #front-page-picture-container {
 position: relative;
 text-align: center;
 height: 500px;
 overflow: hidden;
 top: -50px;
+}
+
+.front-page-news-picture {
+    background-color:var(--colour1);
+    height: 375px;
+    width: 350px;
+    text-align: center;
+    padding-top: 40px;
+    border-radius: 25px;
 }
 
 #front-page-news-grid-container {
@@ -23,8 +27,8 @@ padding: 250px;
 padding-top: 30px;
 padding-bottom: 150px;
 margin: 0%;
-align-items: center;
-justify-items: center;
+/* align-items: center;
+justify-items: center; */
 background-color: var(--colour2);
 max-width: 100%;
 height: auto;
@@ -40,20 +44,25 @@ text-align: center;
 .front-page-news-picture > img {
 width: 250px;
 height: 250px;
+border: solid white;
 }
 
 .front-page-news-button {
 position: absolute;
-bottom: 10px;
-left: 75px;
+bottom: -45px;
+align-items: center;
 font-family: Arial, Helvetica, sans-serif;
 color: black;
 background-color: white;
+font-size: 16px;
 }
 
 #home-page > header {
 text-align: center;
 font-size: 2em;
+font-family: 'Lilita One', cursive;
+color: var(--white);
+
 }
 
 h1 {
@@ -68,10 +77,17 @@ color: var(--white);
 margin-bottom: 0%;
 padding-top: 25px;
 text-transform: uppercase;
+font-family: 'Lilita One', cursive;
+
 }
 
 .front-page-news-title {
 color: var(--white);
+font-size: 2em;
+font-family: 'Francois One', sans-serif;
+letter-spacing: 3px;
+margin: 0%;
+margin-top: 5px;
 }
 
 #footer-info-container {
@@ -85,6 +101,7 @@ justify-items: center;
 width: 250px;
 position: relative;
 text-align: center;
+color: var(--white);
 }
 
 /*-----Log in button styling-------*/
@@ -142,7 +159,9 @@ background-color: var(--colour1);
 width: 500px;
 height: 400px;
 padding: 50px ; 
+animation: fadeIn 0.5s;
 }
+
 #login-form {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -154,7 +173,7 @@ padding: 50px ;
 #login-form > label {
     font-size: 2em;
     padding-bottom: 20px;
-    color: var(--colour3);
+    color: var(--white);
 }
 
 #login-form > input {
@@ -166,6 +185,8 @@ padding: 50px ;
 #login-form > button {
     font-size: 2em;
     margin-top: 25px;
+    padding: 10px;
+    background-color: green ;
 }
 
 .close-login-dialog {
@@ -173,4 +194,11 @@ position: relative;
 bottom: -30px;
 left: 190px;
 font-size: 2em;
+padding: 10px;
+background-color: darkred;
 }
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ } 
