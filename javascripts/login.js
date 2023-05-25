@@ -2,7 +2,7 @@
 import { loadCompData, loadMemberData, loadPracticeData} from "./rest-fnc.js";
 import { iterateMembers, iterateComps, iteratePractice, insertCompMembers, insertTotalIncome} from "./displayFnc.js";
 import { sortCompMembers, sortForSenior, sortForYouth, sortByPaid, sortForActive } from "./sortingFnc.js";
-
+import { insertCompMemberInfo, insertRegularMemberInfo } from "./memberPageFnc.js";
 export {loginDialog}
 
 function loginDialog(event){
@@ -88,24 +88,33 @@ async function loginFunction(event){
                     document.querySelector("#login-dialog").close();
                 break;
             case "comp" && "comp":
-                    document.querySelector("#comp-member-page").classList.remove("hidden");
-                    document.querySelector("#home-page").classList.add("hidden");
-                     //change log btn 
-                     document.querySelector("#logOut-btn").classList.remove("hidden");
-                     document.querySelector("#login-btn").classList = ""; 
-                     document.querySelector("#login-btn").classList.add("hidden");   
-                    // close login dialog
-                    document.querySelector("#login-dialog").close();
+                memberArray = await loadMemberData();
+                iterateMembers(memberArray, "admin");
+                
+                insertCompMemberInfo("-NW3R8JVFfH1dMD0qRLe");
+                    
+                document.querySelector("#comp-member-page").classList.remove("hidden");
+                document.querySelector("#home-page").classList.add("hidden");
+                //change log btn 
+                document.querySelector("#logOut-btn").classList.remove("hidden");
+                document.querySelector("#login-btn").classList = ""; 
+                document.querySelector("#login-btn").classList.add("hidden");   
+                // close login dialog
+                document.querySelector("#login-dialog").close();
                 break;
             case "regular" && "regular":
-                    document.querySelector("#regular-member-page").classList.remove("hidden");
-                    document.querySelector("#home-page").classList.add("hidden");
-                    //change log btn 
-                    document.querySelector("#logOut-btn").classList.remove("hidden");
-                    document.querySelector("#login-btn").classList = ""; 
-                    document.querySelector("#login-btn").classList.add("hidden");
-                     // close login dialog
-                    document.querySelector("#login-dialog").close();
+                memberArray = await loadMemberData();
+                iterateMembers(memberArray, "admin");
+                
+                insertRegularMemberInfo("-NW2R8JVFfH1dMD0qRLe");
+                document.querySelector("#regular-member-page").classList.remove("hidden");
+                document.querySelector("#home-page").classList.add("hidden");
+                //change log btn 
+                document.querySelector("#logOut-btn").classList.remove("hidden");
+                document.querySelector("#login-btn").classList = ""; 
+                document.querySelector("#login-btn").classList.add("hidden");
+                    // close login dialog
+                document.querySelector("#login-dialog").close();
                 break;
             default:
                 alert("WHY U TRY HAK ME! BAD KITTEN!")         
