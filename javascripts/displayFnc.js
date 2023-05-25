@@ -104,7 +104,7 @@ function displayTableHeaderComp(){
                         <th>Medlem</th>
                         <th>Stævne navn</th>
                         <th style="width: 350px;"> Stævne sted </th>
-                        <th>Resultat tid: <br> mm:ss:ms </th>
+                        <th>Resultat tid: <br> (tt:mm:ss:ms) </th>
                         <th>Dato</th>
                         <th></th>
                     </tr>
@@ -122,7 +122,7 @@ function displayTableHeaderPractice(){
                     <tr>
                         <th><h2>${disciplin.toUpperCase()}</h2></th>
                         <th>Medlem</th>
-                        <th>Resultat tid: <br> mm:ss:ms</th>
+                        <th>Resultat tid: <br> (tt:mm:ss:ms)</th>
                         <th>Dato</th>
                         <th></th>
                     </tr>
@@ -198,11 +198,15 @@ function showPracticeResultRow(practiceObject){
     
 }
 function practiceResultRow(practiceObject){
+    const tt = practiceObject.resultTime.hours
+    const mm = practiceObject.resultTime.minutes
+    const ss = practiceObject.resultTime.seconds
+    const ms = practiceObject.resultTime.millisec
     const htmlRow = /*HTML*/ `
         <tr id=${practiceObject.id}>
             <td>1.</td>
             <td> ${practiceObject.athlete} </td>
-            <td> ${practiceObject.resultTime} </td>
+            <td> ${tt}:${mm}:${ss}:${ms} </td>
             <td> ${practiceObject.date} </td>
             <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
         </tr>
@@ -219,13 +223,17 @@ function showCompResultRow(compObject){
     
 }
 function makeCompResultRow(compObject){
+    const tt = compObject.resultTime.hours
+    const mm = compObject.resultTime.minutes
+    const ss = compObject.resultTime.seconds
+    const ms = compObject.resultTime.millisec
     const htmlRow = /*HTML*/ `
     <tr id=${compObject.id}>
         <td>1.</td>
         <td> ${compObject.athlete } </td>
         <td> ${compObject.compName} </td>
         <td> ${compObject.address} </td>
-        <td> ${compObject.resultTime} </td>
+        <td> ${tt}:${mm}:${ss}:${ms} </td>
         <td> ${compObject.date} </td>
         <td style="width: 5px; padding: 0%; padding-left: 25px; padding-right: 25px;"><button class="button-styling delete-btn">Delete</button></td>
     </tr>
