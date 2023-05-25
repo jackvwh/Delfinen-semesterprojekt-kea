@@ -158,7 +158,9 @@ background-color: var(--colour1);
 width: 500px;
 height: 400px;
 padding: 50px ; 
+animation: fadeIn 0.5s;
 }
+
 #login-form {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -170,7 +172,7 @@ padding: 50px ;
 #login-form > label {
     font-size: 2em;
     padding-bottom: 20px;
-    color: var(--colour3);
+    color: var(--white);
 }
 
 #login-form > input {
@@ -182,6 +184,8 @@ padding: 50px ;
 #login-form > button {
     font-size: 2em;
     margin-top: 25px;
+    padding: 10px;
+    background-color: green ;
 }
 
 .close-login-dialog {
@@ -189,4 +193,11 @@ position: relative;
 bottom: -30px;
 left: 190px;
 font-size: 2em;
+padding: 10px;
+background-color: darkred;
 }
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ } 
