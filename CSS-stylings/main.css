@@ -71,13 +71,6 @@ nav a.active {
 .hidden {
     display: none;
 }
-
-@media (min-width: 600px) {
-    .view-content {
-        padding: 94px 2em;
-    }
-}
-
 /*-----------welcome user styling----------*/
 .welcome-user-container {
     background-color:thistle;

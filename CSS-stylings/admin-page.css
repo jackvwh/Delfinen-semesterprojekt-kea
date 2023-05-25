@@ -20,6 +20,7 @@
     position: relative;
     left: -60px;
     bottom: -60px;
+    top: 10px;
 }
 .create-btn {
     font-size: 2.5em;
@@ -79,5 +80,46 @@
 
 .checkbox-styling {
 scale: 200%;
+}
+
+/*----------Create Dialog styling---------------*/
+#create-dialog {
+    width: 500px;
+    height: 850px;
+    text-align: center;
+    position: relative;
+    top: 0px;
+}
+
+#create-form {
+    width: 500px;
+    height: 750px;
+    font-size: 1.5em;
+
+}
+
+#create-member-btn {
+    position: relative;
+    align-items: center;
+    justify-items: center;
+}
+#update-dialog {
+    width: 500px;
+    height: 850px;
+    text-align: center;
+    position: relative;
+    top: 0px;
+}
+
+#update-form {
+    width: 500px;
+    height: 750px;
+    font-size: 1.5em;
+
+}
+#update-member-btn {
+    position: relative;
+    align-items: center;
+    justify-items: center;
 }
 

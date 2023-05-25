@@ -1,7 +1,34 @@
+export {sortFiveBest, sortCompMembers, sortForYouth, sortForSenior, sortByPaid, sortForActive};
 
-export {sortResults};
+function sortByPaid(memberArray) {
+    const selectedValue = document.querySelector("#sort-payments").value;
 
-function sortResults(resultArray){
+        if (selectedValue === "paid") {
+        const paidFirst = memberArray.filter(paid);
+            return paidFirst;
+        } else if (selectedValue === "unpaid") {
+            const unpaidFirst = memberArray.filter(unpaid);
+            return unpaidFirst;  
+        }
+        else if (selectedValue === "all") {
+            return memberArray;
+        }
+}
+function unpaid(memberObject){
+    return memberObject.paid === "false";
+}
+function paid(memberObject){
+    return memberObject.paid === "true";
+}
+// make comp members array to select dropdown in create results
+function sortCompMembers(memberArray){
+    const compMemberArr = memberArray.filter(compMember)
+    return compMemberArr;
+}
+function compMember(member){
+    return member.comp === "true";
+}
+function sortFiveBest(resultArray){
         const filterCrawl = resultArray.filter(crawl);
         const filterRygCrawl = resultArray.filter(rygcrawl);
         const filterButterfly = resultArray.filter(butterfly);
@@ -22,7 +49,6 @@ function sortResults(resultArray){
         return sortedBestResults;
 }
 function crawl(result){
-    console.log(result);
     return result.disciplin === "crawl";
 }
 function rygcrawl(result){
@@ -38,4 +64,39 @@ function timeCompare(result1, result2){
     return result1.resultTime > result2.resultTime ? -1
          : result1.resultTime < result2.resultTime ? 1
          : 0;
+}
+function sortForYouth(resultArray){
+    const youthResults = resultArray.filter(youth)
+    return youthResults;
+}
+function sortForSenior(resultArray){
+    const seniorResults = resultArray.filter(senior)
+    return seniorResults;
+}
+function youth(result){
+    return result.youth === "true";
+}
+function senior(result){
+    return result.youth != "true";
+}
+function sortForActive(memberArray){
+    
+    const selectedValue = document.querySelector("#sort-active").value;
+
+        if (selectedValue === "active") {
+        const activeMembers = memberArray.filter(active);
+            return activeMembers;
+        } else if (selectedValue === "passive") {
+            const passiveMembers = memberArray.filter(passive);
+            return passiveMembers;  
+        }
+        else if (selectedValue === "all") {
+            return memberArray;
+        }
+}
+function active(result){
+    return result.active === "true";
+}
+function passive(result){
+    return result.active !== "true";
 }

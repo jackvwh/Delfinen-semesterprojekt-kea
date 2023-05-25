@@ -1,16 +1,10 @@
 "use strict"
-
-import {loginDialog} from "./login.js";
-import {loadCompData, loadMemberData, loadPracticeData, createData} from "./rest-fnc.js";
-import {iterateMembers, iterateComps, iteratePractice} from "./displayFnc.js";
-import {calcMemberPayment, calcTotalIncome} from "./payment.js";
-
+import { addEventListeners } from "./listeners.js";
 
 window.addEventListener("load", initApp);
-
-async function initApp(){
+// CLEAN :D
+function initApp(){
     console.log("JS starting");
-
     addEventListeners();
 
     const memberArray = await loadMemberData();

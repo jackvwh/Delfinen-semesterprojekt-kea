@@ -1,4 +1,4 @@
-export {calcMemberPayment, calcTotalIncome}
+export {calcMemberPayment, calcTotalIncome, calcAge}
 
 const youthAge = 17;
 const discountAge = 60;
@@ -18,7 +18,7 @@ function calcMemberPayment(memberObject){
         else if(age >= discountAge){
             return seniorPrize - (seniorPrize / 100 * discount);
         }
-        else if (memberObject.active != true){
+        else if (memberObject.active != "true"){
             return passivePrice;
         }
         return seniorPrize; 
