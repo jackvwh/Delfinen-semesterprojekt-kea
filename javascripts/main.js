@@ -45,6 +45,9 @@ function addEventListeners(){
 
     // create member dialog
     document.querySelector("#admin-create-member-btn").addEventListener("click", createMemberDialog);
+    
+    // update member personal info dialog
+  document.querySelector("#regular-member-update-btn").addEventListener("click", updateMemberPersonalDialog);
 }
 function createPracticeDialog(){
     document.querySelector("#create-practice-result-dialog").showModal();
@@ -61,6 +64,14 @@ function createMemberDialog(){
     document.querySelector("#create-dialog").showModal();
 
     document.querySelector("#create-form").addEventListener("submit", createData);
+}
+
+function updateMemberPersonalDialog() {
+  document.querySelector("#update-dialog").showModal();
+
+  document
+    .querySelector("#update-from")
+    .addEventListener("submit", createData);
 }
 
 // regular member page
