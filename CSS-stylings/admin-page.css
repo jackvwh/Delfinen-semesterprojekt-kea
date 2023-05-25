@@ -24,6 +24,7 @@
 .welcome-user-container {
     position: absolute;
     left: 85px;
+    top: -150px;
     margin-bottom: 100px;
     color: var(--colour1);
     border: solid black;
@@ -33,6 +34,7 @@
 .income-container {
     position: absolute;
     right: 85px;
+    top: -150px;
     margin-bottom: 100px;
     color: var(--colour1);
     border: solid black;
@@ -102,10 +104,11 @@ top: -70px;
 scale: 200%;
 }
 
+/*------------Sort styling*/
+
 .sort-container-admin {
     position: absolute;
-    z-index: 10000;
-    top: 16px;
+    top: 20px;
     right: 98px;
 }
 
@@ -136,7 +139,7 @@ scale: 200%;
 
 .create-member-btn {
     position: relative;
-    left: 155px;
+    left: 200px;
     background-color: green;
     font-size: 1em;
     padding: 10px;

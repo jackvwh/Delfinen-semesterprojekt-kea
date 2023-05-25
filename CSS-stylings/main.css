@@ -9,6 +9,7 @@
 
 main {
     height: 1200px;
+    margin-top: 50px;
 }
 
 /* Set height of body and the document to 100% to enable "full page tabs" */

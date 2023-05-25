@@ -163,25 +163,26 @@
         <main id="cashier-page" class="hidden">
             <section id="cashier-page-grid-container">
 
-                <article class="welcome-user-container">
-                    <h2 id="cashier-user-name"></h2>
+                <article class="welcome-user-container cashier-welcome">
+                    <h2 id="cashier-user-name">Velkommen: Jane Doe</h2>
                     <h3>Status: Kasserer</h3>
                 </article>
 
-                <article class="income-container">
+                <article class="income-container cashier-income">
                     <h2>Forventet samlede kontingent:</h2>
                     <h3 id="total-income"></h3>
                </article>
 
+               <div id="sort-container" class="sort-container-cashier">
+                <label for="sort-payments" class="sort-title">Sortér efter:</label>
+                   <select name="sort-payments" id="sort-payments">
+                       <option value="all">Alle medlemmer</option>
+                       <option value="paid">Betalt</option>
+                       <option value="unpaid">Restance</option>
+                   </select>
+               </div>
                 <section class="member-table-container">   
-                    <div id="sort-container">
-                        <select name="sort-payments" id="sort-payments">
-                            <option value="all">Alle medlemmer</option>
-                            <option value="paid">Betalt</option>
-                            <option value="unpaid">Restance</option>
-                        </select>
-                    </div>
-                    <table id="cashier-member-table" cellspacing = 0></table>
+                    <table id="cashier-member-table" class="cashier-member-table" cellspacing = 0></table>
                 </section>
             </section>
         </main>

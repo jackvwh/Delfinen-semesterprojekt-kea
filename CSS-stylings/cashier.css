@@ -1,3 +1,7 @@
+#cashier-page {
+    animation: fadeIn 1s;
+}
+
 .welcome-user-container { grid-area: welcome; }
 .income-container { grid-area: income; }
 .member-table-container { grid-area: table; }
@@ -7,9 +11,9 @@
     align-items: center;
     justify-items: center;
     grid-template-areas: 
-    "welcome main income"
-    "table table table"
-    "footer footer footer";
+    "welcome welcome main income"
+    "table table table table"
+    "footer footer footer footer";
     margin: 0%;
     padding: 0%;
     position: relative;
@@ -44,12 +48,34 @@
     color: black;
 }
 
-.member-table tr:nth-child(even) {
-    background-color: var(--colour3);
+.cashier-member-table tbody:nth-child(even) {
+    background-color: whitesmoke;
     color: black;
 }
 
 .checkbox-styling {
 scale: 200%;
+}
+
+/*----------Cashier welcome container-----------*/
+.cashier-welcome {
+    position: absolute;
+    left: 170px;
+    top: -125px;
+}
+
+/*--------------Cashier income contaienr---------*/
+.cashier-income {
+    position: absolute;
+    right: 175px;
+    top: -135px;
+}
+
+/*---------------Sort for cashier-----------*/
+.sort-container-cashier {
+    position: absolute;
+    right: 200px;
+    top: 15px;
+    z-index: 10000;
 }
 
