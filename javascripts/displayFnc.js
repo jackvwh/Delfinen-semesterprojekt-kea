@@ -110,8 +110,8 @@ function displayTableHeaderComp(){
                     </tr>
                 </thead>
             `;
-            // insert table header in DOM
-            document.querySelector(`#${disciplin}-5-best-comp`).insertAdjacentHTML("beforeend", compRowHeader);
+        // insert table header in DOM
+        document.querySelector(`#${disciplin}-5-best-comp`).insertAdjacentHTML("beforeend", compRowHeader);
     }
 }
 function displayTableHeaderPractice(){
