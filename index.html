@@ -476,13 +476,13 @@
                     <legend>Konkurrence svømmer</legend>
                     <label for="competition"></label>
                     <select name="competition" id="competition">
-                        <option value=true>Ja</option>
-                        <option value=false selected>Nej</option>
+                        <option class="comp-select-true" value=true>Ja</option>
+                        <option class="comp-select-false" value=false selected>Nej</option>
                     </select required>
-                    <button type="button" id="create-competition-btn">Discipliner</button>
+                    <button type="button" id="create-competition-btn" class="disciplin-btn">Discipliner</button>
                 </fieldset>
 
-                <fieldset id="create-disciplin-checkbox" class="hidden">
+                <fieldset id="create-disciplin-checkbox" class="hidden disciplin-checkbox">
                     <legend>Discipliner</legend>
                     <label for="crawl">Crawl</label>
                     <select name="crawl" id="crawl">
@@ -567,13 +567,13 @@
                         <legend>Konkurrence svømmer</legend>
                         <label for="competition"></label>
                         <select name="competition" id="competition">
-                            <option value=true>Ja</option>
-                            <option value=false selected>Nej</option>
+                            <option class="comp-select-true" value=true>Ja</option>
+                            <option class="comp-select-false" value=false selected>Nej</option>
                         </select required>
-                        <button type="button" id="update-competition-btn">Discipliner</button>
+                        <button type="button" id="update-competition-btn" class="disciplin-btn">Discipliner</button>
                     </fieldset>
     
-                    <fieldset id="update-disciplin-checkbox" class="hidden">
+                    <fieldset id="update-disciplin-checkbox" class="hidden disciplin-checkbox">
                         <legend>Discipliner</legend>
                         <select name="crawl" id="crawl">
                             <option value=true>Ja</option>

@@ -1,13 +1,12 @@
 
 import { loginDialog} from "./login.js";
-import { search_data } from "./searchFnc.js";
 import { createCompsDialog, createPracticeDialog, createMemberDialog, updateDialog } from "./dialogs.js";
 export { addEventListeners}
 
 function addEventListeners(){
     //disciplin checkbox hide listners
-    document.querySelector("#create-competition-btn").addEventListener("click", ()=>document.querySelector("#create-disciplin-checkbox").classList.toggle("hidden"));
-    document.querySelector("#update-competition-btn").addEventListener("click", ()=>document.querySelector("#update-disciplin-checkbox").classList.toggle("hidden"));
+    ;
+    ;
 
     // login dialog 
     document.querySelector("#login-btn").addEventListener("click", loginDialog);
@@ -26,4 +25,9 @@ function addEventListeners(){
     document
     .querySelector("#comp-member-update-btn")
     .addEventListener("click", () => updateDialog("-NW3R8JVFfH1dMD0qRLe"));
+
+    // add eventlisteners to member competition select to hide disciplins
+    document.querySelector(".comp-select-true").addEventListener("click", ()=>{document.querySelector(".disciplin-checkbox").classList.remove("hidden")})
+
+    document.querySelector(".comp-select-false").addEventListener("click", ()=>{document.querySelector(".disciplin-checkbox").classList.add("hidden")})
 }
