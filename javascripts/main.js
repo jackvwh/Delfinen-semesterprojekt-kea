@@ -70,7 +70,7 @@ function updateMemberPersonalDialog() {
   document.querySelector("#update-dialog").showModal();
 
   document
-    .querySelector("#update-from")
+    .querySelector("#update-form")
     .addEventListener("submit", createData);
 }
 
