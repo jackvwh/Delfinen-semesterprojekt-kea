@@ -38,6 +38,7 @@ function prepareDataArray(dataObject){
     return dataArray;
 }
 async function deleteData(event){
+    event.preventDefault();
     const id = event.target.dataset.id 
     const type = event.target.dataset.type
     // delete item globally
@@ -53,7 +54,7 @@ async function deleteData(event){
             response_message("ERROR: DATA IKKE SLETTET")
         }
 }
-async function saveMemberData(event){
+function saveMemberData(event){
     event.preventDefault();
     const type = event.target.id 
     // get member input values
@@ -90,40 +91,52 @@ async function saveMemberData(event){
         }
 }
 async function createPracticeResults(event) {
-    //close dialog
-    document.querySelector("#create-practice-result-dialog").close()
+    event.preventDefault();
     // practice values
     const uid = event.target.athlete.value;
     const athlete = await getAthlete(uid);
     const athleteName = `${athlete.athlete}`;
     const disciplin = event.target.disciplin.value;
-    const resultTime = event.target.resultTime.value;
     const date = event.target.date.value;
     const youth = calcAge(athlete.birthdate) < 18 ? true : false;
 
+    // time result
+    const hours = event.target.hours.value
+    const minutes = event.target.minutes.value
+    const seconds = event.target.seconds.value
+    const millisec = event.target.millisec.value
+    const resultTime = {hour:`${hours}`, minute:`${minutes}`, second: `${seconds}`, millisec: `${millisec}`};
+    console.log("result time:", resultTime);
     // create json object and makes a POST request to Database
     practiceResultToDB(uid, athleteName, disciplin, resultTime, date, youth)
-
+    //close dialog
+    document.querySelector("#create-practice-result-dialog").close()
     // reset form
     document.querySelector("#practice-result-form").reset()
 }
 async function createCompResults(event) {
-        //close dialog
-        document.querySelector("#create-comp-result-dialog").close()
+        event.preventDefault();
         // practice values
         const uid = event.target.athlete.value;
         const athlete = await getAthlete(uid);
         const athleteName = athlete.athlete;
         const disciplin = event.target.disciplin.value;
-        const resultTime = event.target.resultTime.value;
         const date = event.target.date.value;
         const compName = event.target.compName.value;
         const address = event.target.address.value;
         const youth = calcAge(athlete.birthdate) < 18 ? true : false;
+
+         // time result
+         const hours = event.target.hours.value
+         const minutes = event.target.minutes.value
+         const seconds = event.target.seconds.value
+         const millisec = event.target.millisec.value
+         const resultTime = {hour:`${hours}`, minute:`${minutes}`, second: `${seconds}`, millisec: `${millisec}`};
     
         // create json object and makes a POST request to Database
         compResultToDB(uid, athleteName, disciplin, resultTime, date, compName, address, youth)
-    
+        //close dialog
+        document.querySelector("#create-comp-result-dialog").close()
         // reset form
         document.querySelector("#comp-result-form").reset()
 }

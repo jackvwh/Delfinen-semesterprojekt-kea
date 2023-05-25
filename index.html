@@ -612,8 +612,11 @@
                     <option value="breaststroke">Brystsvømning</option>
                 </select required>
                 <br>
-                <label for="time"><b>Resultat tid:(mm:ss:ms)</b></label>
-                <input type="text" name="time" id="resultTime" placeholder="00:00:00" pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" required>
+                <label for="time"><b>Resultat tid:(tt:mm:ss:ms)</b></label>
+                    <input type="number" placeholder="TT" min="00" max="99" value="00" id="hours" class="result-input"/>
+                    <input type="number" placeholder="MM" min="00" max="60" value="00" id="minutes" class="result-input"/>
+                    <input type="number" placeholder="SS" min="00" max="60" value="00" id="seconds" class="result-input"/>
+                    <input type="number" placeholder="MS" min="00" max="60" value="00" id="millisec" class="result-input">                
                 <br>
                 <label for="date"><b>Dato</b></label>
                 <input type="date" name="date" id="date" maxlength="10" placeholder="Dato" required>
@@ -639,8 +642,11 @@
                     <option value="breaststroke">Brystsvømning</option>
                 </select required>
                 <br>
-                <label for="resultTime"><b>Resultat tid:(mm:ss:ms)</b></label>
-                <input type="text" name="time" id="resultTime" placeholder="00:00:00" pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}" required>
+                <label for="resultTime"><b>Resultat tid:(tt:mm:ss:ms)</b></label>
+                    <input type="number" placeholder="TT" min="0" max="99" value="00" id="hours" class="result-input"/>
+                    <input type="number" placeholder="MM" min="0" max="60" value="00" id="minutes" class="result-input"/>
+                    <input type="number" placeholder="SS" min="0" max="60" value="00" id="seconds" class="result-input"/>
+                    <input type="number" placeholder="MS" min="0" max="60" value="00" id="millisec" class="result-input"/>
                 <br>
                 <label for="date"><b>Dato</b></label>
                 <input type="date" name="date" id="date" maxlength="10" placeholder="Dato" required>

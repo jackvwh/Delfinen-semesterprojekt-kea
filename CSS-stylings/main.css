@@ -140,7 +140,6 @@ nav a.active {
     touch-action: manipulation;
     will-change: transform;
   }
-  
   .button-styling:disabled {
     pointer-events: none;
   }
@@ -154,4 +153,8 @@ nav a.active {
     box-shadow: none;
     transform: translateY(0);
   }
+  .result-input {
+    width: 3em;
+  }
+  
 
