@@ -87,7 +87,7 @@ async function insertCompMemberInfo(id) {
     const compMemberInfoEmail = document.getElementById("comp-member-info-email");
     const compMemberInfoPhone = document.getElementById("comp-member-info-phone");
     const compMemberCoach = document.getElementById("comp-member-coach-name");
-    
+
         welcomeCompMember.textContent =
         "Velkommen: " + compMember.athlete  + "!";
         compMemberInfoName.textContent = "Navn: " + compMember["athlete"];
@@ -98,7 +98,7 @@ async function insertCompMemberInfo(id) {
         "Adresse: " + compMember["address"];
         compMemberInfoEmail.textContent = "E-mail: " + compMember["mail"];
         compMemberInfoPhone.textContent = "Telefon: " + compMember["phone"];
-        compMemberCoach.textContent = "Træner: " + compMember["coach"]; // coach value missing?
+        compMemberCoach.textContent = "Træner: ??? "; // coach value could be used here
 
         // disable all checkboxes
         const checkboxes = document.querySelectorAll(".checkbox-styling");
