@@ -53,6 +53,8 @@ async function deleteData(event){
         else if(!response.ok){
             response_message("ERROR: DATA IKKE SLETTET")
         }
+    document.querySelector("#delete-dialog").close();
+
 }
 function saveMemberData(event){
     event.preventDefault();
