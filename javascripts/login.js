@@ -102,6 +102,21 @@ async function loginFunction(event){
                 // close login dialog
                 document.querySelector("#login-dialog").close();
                 break;
+            case "comp1" && "comp1":
+                memberArray = await loadMemberData();
+                iterateMembers(memberArray, "admin");
+                
+                insertCompMemberInfo("-NW5K7VCUO5hR0SXqdFP");
+                    
+                document.querySelector("#comp-member-page").classList.remove("hidden");
+                document.querySelector("#home-page").classList.add("hidden");
+                //change log btn 
+                document.querySelector("#logOut-btn").classList.remove("hidden");
+                document.querySelector("#login-btn").classList = ""; 
+                document.querySelector("#login-btn").classList.add("hidden");   
+                // close login dialog
+                document.querySelector("#login-dialog").close();
+                break;
             case "regular" && "regular":
                 memberArray = await loadMemberData();
                 iterateMembers(memberArray, "admin");
@@ -117,6 +132,6 @@ async function loginFunction(event){
                 document.querySelector("#login-dialog").close();
                 break;
             default:
-                alert("WHY U TRY HAK ME! BAD KITTEN!")         
+                alert("Y U TRY HAK ME! ------ BAD KITTEN!")         
         }
 }
