@@ -8,7 +8,7 @@
 }
 
 main {
-    height: 1200px;
+    height: auto;
 }
 
 /* Set height of body and the document to 100% to enable "full page tabs" */
@@ -59,7 +59,7 @@ nav a {
 /* Change the color of links on hover */
 nav a:hover {
     background-color: var(--colour2);
-    color: var(--navy);
+    color: var(--colour1);
     border-radius: 25px;
 }
 
@@ -74,14 +74,14 @@ nav a.active {
 }
 /*-----------welcome user styling----------*/
 .welcome-user-container {
-    background-color:thistle;
+    background-color: var(--white);
     padding-left: 50px;
     padding-right: 50px;
     border-radius: 25px;
 }
 /*------------Kontingent styling------------*/
 .income-container {
-    background-color: thistle;
+    background-color: var(--white);
     padding-left: 50px;
     padding-right: 50px;
     border-radius: 25px;
@@ -128,7 +128,6 @@ nav a.active {
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-size: 16px;
     font-weight: 600;
     line-height: normal;
     margin: 0;
@@ -156,3 +155,12 @@ nav a.active {
     transform: translateY(0);
   }
 
+  /*--------------------Sort styling--------------*/
+ .sort-title {
+    color: var(--white);
+    font-size: 1.25em;
+ }
+
+ .sort-container {
+    font-size: 1.1em;
+ }

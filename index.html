@@ -136,7 +136,7 @@
                 ></article>
 
                 <article class="welcome-user-container">
-                    <h2 id="admin-user-name"></h2>
+                    <h2 id="admin-user-name">Velkommen: Anders Anderson</h2>
                     <h3>Status: Administrator</h3>
                 </article>
 
@@ -146,15 +146,16 @@
                     <h3>Spørg kasseren</h3>
                 </article>
 
+                <div id="sort-container-admin" class="sort-container-admin">
+                    <label for="sort-active" class="sort-title">Sortér efter</label>
+                    <select name="sort-active" id="sort-active" class="sort-container">
+                        <option value="all">Alle medlemmer</option>
+                        <option value="active">Aktiv</option>
+                        <option value="passive">Passiv</option>
+                    </select>
+                </div>
                 <article class="member-table-container">
-                    <div id="sort-container-admin">
-                        <select name="sort-active" id="sort-active">
-                            <option value="all">Alle medlemmer</option>
-                            <option value="active">Aktiv</option>
-                            <option value="passive">Passiv</option>
-                        </select>
-                    </div>
-                    <table id="admin-member-table" cellspacing = 0></table>
+                    <table id="admin-member-table" class="admin-member-table" cellspacing = 0></table>
                 </article>
             </section>
         </main>
@@ -414,9 +415,9 @@
             </form>
         </dialog>
         <!-- MEMBER CREATE FORM -->
-        <dialog id="create-dialog">
-            <h2>Opret nyt medlem</h2>
-            <form id="create-form">
+        <dialog id="create-dialog" class="create-dialog">
+            <h2>Opret Nyt Medlem</h2>
+            <form id="create-form" class="create-form">
                 <fieldset>
                     <input type="radio" id="admin" name="title" value="admin">
                     <label for="admin">Administrator</label><br>
@@ -461,8 +462,8 @@
                         <option value=true selected>Ja</option>
                         <option value=false>Nej</option>
                     </select required>
-                </fieldset>
-                
+                </fieldset>  
+
                 <fieldset>
                     <legend>Konkurrence svømmer</legend>
                     <label for="competition"></label>
@@ -501,16 +502,16 @@
                 </fieldset>
             </section>
             <br>
-            <button type="submit" id="create-member-btn" class="button-styling">opret</button>
+            <button type="submit" id="create-member-btn" class="button-styling create-member-btn">Opret</button>
             </form>
-            <form method="dialog">
-                <button class="button-styling">Close</button>
+            <form method="dialog" class="close-create-member-dialog-btn">
+                <button class="button-styling dialog-create-btn">X</button>
             </form>
         </dialog>
         <!--MEMBER UPDATE DIALOG  -->
-        <dialog id="update-dialog">
+        <dialog id="update-dialog" class="update-dialog">
             <h2>Opdater medlemsoplysninger</h2>
-            <form id="update-form">
+            <form id="update-form" class="update-form">
                 <fieldset>
                     <input type="radio" id="admin" name="title" value="admin">
                     <label for="admin">Administrator</label><br>
@@ -584,7 +585,7 @@
                         </select>
                     </fieldset>
                 </section>
-                <button id="update-member-btn">Opdater</button>
+                <button id="update-member-btn" class="update-member-btn">Opdater</button>
             </form>
             <form method="dialog">
                 <button>Close</button>
