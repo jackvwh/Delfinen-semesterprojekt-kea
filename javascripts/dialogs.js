@@ -1,15 +1,15 @@
-import {saveMemberData, deleteData} from "./rest-fnc.js";
+import {saveMemberData, deleteData, createPracticeResults, createCompResults} from "./rest-fnc.js";
 export{createCompsDialog, createMemberDialog,createPracticeDialog, updateDialog, deleteDialog}
 
 function createPracticeDialog(){
     document.querySelector("#create-practice-result-dialog").showModal();
 
-    document.querySelector("#practice-result-form").addEventListener("submit", saveData);
+    document.querySelector("#practice-result-form").addEventListener("submit", createPracticeResults);
 }
 function createCompsDialog(){
     document.querySelector("#create-comp-result-dialog").showModal();
 
-    document.querySelector("#comp-result-form").addEventListener("submit", saveData);
+    document.querySelector("#comp-result-form").addEventListener("submit", createCompResults);
 }
 function createMemberDialog(){
     document.querySelector("#create-dialog").showModal();
