@@ -107,10 +107,8 @@ async function createPracticeResults(event) {
     const minutes = event.target.minutes.value
     const seconds = event.target.seconds.value
     const millisec = event.target.millisec.value
-    const resultTime = {hour:`${hours}`, minute:`${minutes}`, second: `${seconds}`, millisec: `${millisec}`};
-    console.log("result time:", resultTime);
     // create json object and makes a POST request to Database
-    practiceResultToDB(uid, athleteName, disciplin, resultTime, date, youth)
+    practiceResultToDB(uid, athleteName, disciplin, hours, minutes, seconds, millisec, date, youth)
     //close dialog
     document.querySelector("#create-practice-result-dialog").close()
     // reset form
@@ -133,10 +131,9 @@ async function createCompResults(event) {
          const minutes = event.target.minutes.value
          const seconds = event.target.seconds.value
          const millisec = event.target.millisec.value
-         const resultTime = {hour:`${hours}`, minute:`${minutes}`, second: `${seconds}`, millisec: `${millisec}`};
     
         // create json object and makes a POST request to Database
-        compResultToDB(uid, athleteName, disciplin, resultTime, date, compName, address, youth)
+        compResultToDB(uid, athleteName, disciplin, hours, minutes, seconds, millisec, date, compName, address, youth)
         //close dialog
         document.querySelector("#create-comp-result-dialog").close()
         // reset form
@@ -147,14 +144,18 @@ async function getAthlete(uid){
     const athlete = await athleteResponse.json();
     return athlete;
 }
-async function practiceResultToDB(uid, athleteName, disciplin, resultTime, date, youth){
+async function practiceResultToDB(uid, athleteName, disciplin, hours, minutes, seconds, millisec, date, youth){
 
     //create new object
     const practiceResult = { 
         uid: `${uid}`, 
         athlete: `${athleteName}`, 
         disciplin: `${disciplin}`,
-        resultTime: `${resultTime}`,
+        resultTime: {
+            hours:`${hours}`, 
+            minutes:`${minutes}`,
+            seconds:`${seconds}`, 
+            millisec:`${millisec}`},
         date: `${date}`,
         youth: `${youth}`,
     };
@@ -179,13 +180,17 @@ async function practiceResultToDB(uid, athleteName, disciplin, resultTime, date,
              response_message("ERROR: TRÆNINGS RESULTAT IKKE OPRETTET");
          }
 }
-async function compResultToDB(uid, athleteName, disciplin, resultTime, date, compName, address, youth){
+async function compResultToDB(uid, athleteName, disciplin, hours, minutes, seconds, millisec, date, compName, address, youth){
     //create new object
     const compResult = { 
         uid: `${uid}`,
         athlete: `${athleteName}`, 
         disciplin: `${disciplin}`,
-        resultTime: `${resultTime}`,
+        resultTime: {
+            hours:`${hours}`, 
+            minutes:`${minutes}`,
+            seconds:`${seconds}`, 
+            millisec:`${millisec}`},
         date: `${date}`,
         compName: `${compName}`,
         address: `${address}`,
