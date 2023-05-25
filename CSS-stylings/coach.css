@@ -1,6 +1,5 @@
 #coach-page {
     margin-top: -150px;
-    padding: 15px;
     text-align: center;
 }
 #welcome-coach-container { grid-area: welcomeCoachBox;}
@@ -20,7 +19,6 @@
     gap: 50px;
 }
 #results-container > section {
-    border: solid;
     margin-bottom: 50px;
 }
 
@@ -83,8 +81,8 @@
 #breaststroke-5-best-practice {
     background-color: white;
     border: solid;
-    width: 500px;
     margin-bottom: 25px;
+    width: 662px;
 }
 
 #best-practice-results-container > h1 {
