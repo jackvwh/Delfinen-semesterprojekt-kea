@@ -17,12 +17,11 @@ async function loginFunction(event){
     event.preventDefault();
     const user = event.target.email.value;
     const psw = event.target.psw.value;
-    
-        switch (user){
-            case "admin":
-                if (psw === "admin"){
+    let memberArray;
+        switch (user && psw){
+            case "admin" && "admin":
                     // get and show members for admin
-                    const memberArray = await loadMemberData();
+                    memberArray = await loadMemberData();
                     iterateMembers(memberArray, "admin");
                     document.querySelector("#admin-page").classList.remove("hidden");
                     document.querySelector("#home-page").classList.add("hidden");
@@ -35,12 +34,10 @@ async function loginFunction(event){
 
                      // close login dialog
                     document.querySelector("#login-dialog").close();
-                }
                 break;
-            case "cash":
-                if (psw === "cash"){
+            case "cash" && "cash":
                     // get and show members for cashier
-                    const memberArray = await loadMemberData();
+                    memberArray = await loadMemberData();
                     iterateMembers(memberArray, "cashier");
 
                     // insert expected total income 
@@ -52,24 +49,20 @@ async function loginFunction(event){
                     document.querySelector("#logOut-btn").classList.remove("hidden");
                     document.querySelector("#login-btn").classList = ""; 
                     document.querySelector("#login-btn").classList.add("hidden");  
-                   
 
                     document.querySelector("#sort-payments").addEventListener("change", ()=>iterateMembers(sortByPaid(memberArray), "cashier"))
                      
                     // close login dialog
                     document.querySelector("#login-dialog").close();
-
-                };
                 break;
-            case "coach":
-                if (psw === "coach"){
+            case "coach" && "coach":
                     // get and show results
                     const compResults = await loadCompData();
                     const practiceResults = await loadPracticeData();
                     iterateComps(compResults);
                     iteratePractice(practiceResults);
                     //insert com member in drop-down list
-                    const memberArray = await loadMemberData();
+                    memberArray = await loadMemberData();
                     const compArray = sortCompMembers(memberArray);
                     insertCompMembers(compArray);
                     
@@ -92,12 +85,9 @@ async function loginFunction(event){
                     document.querySelector("#senior").addEventListener("click", ()=>iteratePractice(sortForSenior(practiceResults)));
 
                      // close login dialog
-                        document.querySelector("#login-dialog").close();
-
-                };
+                    document.querySelector("#login-dialog").close();
                 break;
-            case "comp":
-                if (psw === "comp"){
+            case "comp" && "comp":
                     document.querySelector("#comp-member-page").classList.remove("hidden");
                     document.querySelector("#home-page").classList.add("hidden");
                      //change log btn 
@@ -106,11 +96,8 @@ async function loginFunction(event){
                      document.querySelector("#login-btn").classList.add("hidden");   
                     // close login dialog
                     document.querySelector("#login-dialog").close();
-             
-                };
                 break;
-            case "regular":
-                if (psw === "regular"){
+            case "regular" && "regular":
                     document.querySelector("#regular-member-page").classList.remove("hidden");
                     document.querySelector("#home-page").classList.add("hidden");
                     //change log btn 
@@ -119,8 +106,6 @@ async function loginFunction(event){
                     document.querySelector("#login-btn").classList.add("hidden");
                      // close login dialog
                     document.querySelector("#login-dialog").close();
-
-                };
                 break;
             default:
                 alert("WHY U TRY HAK ME! BAD KITTEN!")         
