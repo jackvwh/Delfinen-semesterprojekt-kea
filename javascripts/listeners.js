@@ -1,7 +1,8 @@
 
-import {loginDialog} from "./login.js";
-import {createCompsDialog, createPracticeDialog, createMemberDialog, updateDialog } from "./dialogs.js";
-export {addEventListeners}
+import { loginDialog} from "./login.js";
+import { search_data } from "./searchFnc.js";
+import { createCompsDialog, createPracticeDialog, createMemberDialog, updateDialog } from "./dialogs.js";
+export { addEventListeners}
 
 function addEventListeners(){
     //disciplin checkbox hide listners
@@ -21,8 +22,8 @@ function addEventListeners(){
     document.querySelector("#admin-create-member-btn").addEventListener("click", createMemberDialog);
 
     // update member personal info dialog
-  document.querySelector("#regular-member-update-btn").addEventListener("click", ()=>updateDialog("-NW2R8JVFfH1dMD0qRLe"));
-  document
+    document.querySelector("#regular-member-update-btn").addEventListener("click", ()=>updateDialog("-NW2R8JVFfH1dMD0qRLe"));
+    document
     .querySelector("#comp-member-update-btn")
     .addEventListener("click", () => updateDialog("-NW3R8JVFfH1dMD0qRLe"));
 }

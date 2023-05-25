@@ -3,7 +3,8 @@ import { loadCompData, loadMemberData, loadPracticeData} from "./rest-fnc.js";
 import { iterateMembers, iterateComps, iteratePractice, insertCompMembers, insertTotalIncome} from "./displayFnc.js";
 import { sortCompMembers, sortForSenior, sortForYouth, sortByPaid, sortForActive } from "./sortingFnc.js";
 import { insertCompMemberInfo, insertRegularMemberInfo } from "./memberPageFnc.js";
-export {loginDialog}
+import { search_data } from "./searchFnc.js";
+export { loginDialog}
 
 function loginDialog(event){
     event.preventDefault();
@@ -31,6 +32,8 @@ async function loginFunction(event){
                     document.querySelector("#login-btn").classList.add("hidden"); 
 
                     document.querySelector("#sort-active").addEventListener("change", ()=>iterateMembers(sortForActive(memberArray), "admin"))
+                    // add eventListener to search
+                    document.querySelector("#search-input").addEventListener("keyup", ()=> iterateMembers(search_data(memberArray), "admin"));
 
                      // close login dialog
                     document.querySelector("#login-dialog").close();

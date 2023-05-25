@@ -133,11 +133,11 @@
             <section id="admin-page-grid-container">
                 
                 <article class="create-member-btn-container">
-                    <button id="admin-create-member-btn" class="create-btn button-styling">Create new member</button
+                    <button id="admin-create-member-btn" class="create-btn button-styling">Opret Nyt Medlem</button
                 ></article>
 
                 <article class="welcome-user-container">
-                    <h2 id="admin-user-name">Velkommen: Anders Anderson</h2>
+                    <h2 id="admin-user-name">Velkommen: Anders H20</h2>
                     <h3>Status: Administrator</h3>
                 </article>
 
@@ -156,6 +156,10 @@
                     </select>
                 </div>
                 <article class="member-table-container">
+                    <section class="search">
+                        <label for="search-input">SØG DATABASE</label>
+                        <input type="search" id="search-input" placeholder="NAVN, ADRESSE, MAIL, TLF">
+                    </section>
                     <table id="admin-member-table" class="admin-member-table" cellspacing = 0></table>
                 </article>
             </section>
@@ -225,17 +229,17 @@
                 <article id="disciplin-container">
                     <h1>Discipliner:</h1>
                         <div id="disciplin-container">
-                            <input name="brystsvømning" type="checkbox" class="checkbox-styling">
-                            <label for="brystsvømning">Brystsvømning</label>
-                            <br>
                             <input name="crawl" type="checkbox" class="checkbox-styling">
                             <label for="crawl">Crawl</label>
+                            <br>
+                            <input name="rygcrawl" type="checkbox" class="checkbox-styling">
+                            <label for="rygcrawl">Rygcrawl</label>
                             <br>
                             <input name="butterfly" type="checkbox" class="checkbox-styling">
                             <label for="butterfly">Butterfly</label>
                             <br>
-                            <input name="rygcrawl" type="checkbox" class="checkbox-styling">
-                            <label for="rygcrawl">Rygcrawl</label>
+                            <input name="brystsvømning" type="checkbox" class="checkbox-styling">
+                            <label for="brystsvømning">Brystsvømning</label>
                         </div>
                 </article>
             <section id="comp-member-result-container">
@@ -309,7 +313,7 @@
                     <div>
                         <h5 id="regular-member-info-phone"></h5>
                     </div>
-                        <button id="regular-member-update-btn" class="update-btn">Updater Personlig Information</button>
+                        <button id="regular-member-update-btn" class="update-btn">Opdater personlig information</button>
                     <div>
                         <h3 id="regular-member-next-payment">Næste kontigent betaling:</h3>
                     </div>
@@ -409,7 +413,7 @@
 
         <!------- DELETE DIALOG------->
         <dialog id="delete-dialog">
-            <h2>Do you want to delete this member?</h2>
+            <h2>Vil du slette dette medlem?</h2>
             <p id="dialog-delete-member-title">Member name</p>
             <form method="dialog" id="delete-form">
                 <button>Yes</button>
@@ -449,10 +453,10 @@
                 <label for="gender">Køn</label>
                 <select id="gender" name="gender" placeholder="Køn" required>
                     <option value="male">Male</option>
-                    <option value="firefox">Firefox</option>
                     <option value="female">Female</option>
-                    <option value="opera">Opera</option>
-                    <option value="safari">Safari</option>
+                    <option value="binary">Binær</option>
+                    <option value="chair">Stol</option>
+                    <option value="bench">Bænk</option>
                 </select>
                 <br>
                 <label for="birthdate">Fødselsdato</label>
@@ -541,10 +545,10 @@
                 <label for="gender">Køn</label>
                 <select id="gender" name="gender" placeholder="Køn" required>
                     <option value="male">Male</option>
-                    <option value="firefox">Firefox</option>
                     <option value="female">Female</option>
-                    <option value="opera">Opera</option>
-                    <option value="safari">Safari</option>
+                    <option value="binary">Binær</option>
+                    <option value="chair">Stol</option>
+                    <option value="bench">Bænk</option>
                 </select>
 
                 <label for="birthdate">Fødselsdato</label>
@@ -589,7 +593,7 @@
                         </select>
                     </fieldset>
                 </section>
-                <button id="update-member-btn" class="update-member-btn">Opdater</button>
+                <button id="update-member-btn" class="update-member-btn">Opdater medlem</button>
             </form>
             <form method="dialog">
                 <button>Close</button>
