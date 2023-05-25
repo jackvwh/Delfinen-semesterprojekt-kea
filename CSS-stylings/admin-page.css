@@ -1,3 +1,7 @@
+#admin-page {
+    animation: fadeIn 1s;
+}
+
 .welcome-user-container { grid-area: welcome; }
 .income-container { grid-area: income; }
 .member-table-container { grid-area: table; }
@@ -8,8 +12,7 @@
     justify-items: center;
     grid-template-areas: 
     "welcome main income"
-    "table table table"
-    "footer footer footer";
+    "table table table";
     margin: 0%;
     padding: 0%;
     position: relative;
@@ -110,7 +113,6 @@ scale: 200%;
 .create-dialog {
     width: 500px;
     height: 850px;
-    text-align: center;
     position: relative;
     top: 0px;
     overflow-y: hidden;
@@ -122,6 +124,7 @@ scale: 200%;
     font-size: 3em;
     font-family: 'Lilita One', cursive;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .create-form {
@@ -133,9 +136,7 @@ scale: 200%;
 
 .create-member-btn {
     position: relative;
-    text-align: center;
-    align-items: center;
-    justify-items: center;
+    left: 155px;
     background-color: green;
     font-size: 1em;
     padding: 10px;
