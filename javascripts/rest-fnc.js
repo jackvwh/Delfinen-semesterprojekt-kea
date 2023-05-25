@@ -2,7 +2,7 @@
 import { showPracticeResultRow, showCompResultRow, showMemberRow} from "./displayFnc.js";
 import { response_message } from "./message.js";
 import { calcAge } from "./payment.js";
-export { loadCompData, loadMemberData, loadPracticeData, deleteData, saveMemberData, createCompResults, createPracticeResults}
+export { loadCompData, loadMemberData, loadPracticeData, deleteData, saveMemberData, createCompResults, createPracticeResults, fetchItem}
 
 const endpoint = "https://delfin-kea-default-rtdb.firebaseio.com/"
 
@@ -284,8 +284,8 @@ async function fetchItem(id, type){
     //get updated or new item from database
     const response =  await fetch(`${endpoint}/${type}/${id}.json`);
     console.log("new response:", response);
-    const updatedData = await response.json();
-    return updatedData;
+    const dataObject = await response.json();
+    return dataObject;
 }
 //fetch and insert new item
 async function insertNewItem(id, type){
