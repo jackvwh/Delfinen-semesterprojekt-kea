@@ -34,10 +34,10 @@ function sortFiveBest(resultArray){
         const filterButterfly = resultArray.filter(butterfly);
         const filterBreaststroke= resultArray.filter(breaststroke);
         
-        const sortedCrawl = filterCrawl.sort(timeCompare);
-        const sortedRygCrawl = filterRygCrawl.sort(timeCompare);
-        const sortedButterfly = filterButterfly.sort(timeCompare);
-        const sortedBreaststroke = filterBreaststroke.sort(timeCompare);
+        const sortedCrawl = filterCrawl.sort(timeCompareObj);
+        const sortedRygCrawl = filterRygCrawl.sort(timeCompareObj);
+        const sortedButterfly = filterButterfly.sort(timeCompareObj);
+        const sortedBreaststroke = filterBreaststroke.sort(timeCompareObj);
 
         // 5 best swimmers
         const bestCrawl = sortedCrawl.slice(0, 5) 
@@ -63,6 +63,18 @@ function breaststroke(result){
 function timeCompare(result1, result2){
     return result1.resultTime > result2.resultTime ? -1
          : result1.resultTime < result2.resultTime ? 1
+         : 0;
+}
+function timeCompareObj(result1, result2){
+    // idk y it doesnt work 
+    return +result1.resultTime.hours < +result2.resultTime.hours ? -1
+         : +result1.resultTime.hours > +result2.resultTime.hours ? 1
+         : +result1.resultTime.minutes < +result2.resultTime.minutes ? -1
+         : +result1.resultTime.minutes > +result2.resultTime.minutes ? 1
+         : +result1.resultTime.seconds < +result2.resultTime.seconds ? -1
+         : +result1.resultTime.seconds > +result2.resultTime.seconds ? 1
+         : +result1.resultTime.millisec < +result2.resultTime.millisec ? -1
+         : +result1.resultTime.millisec > +result2.resultTime.millisec ? 1
          : 0;
 }
 function sortForYouth(resultArray){
