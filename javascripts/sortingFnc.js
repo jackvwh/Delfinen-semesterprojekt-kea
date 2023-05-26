@@ -46,7 +46,7 @@ function sortFiveBest(resultArray){
         const bestBreaststroke = sortedBreaststroke.slice(0, 5) 
         
         const sortedBestResults = bestCrawl.concat(bestRygCrawl, bestButterfly, bestBreaststroke);
-        return sortedBestResults;
+        return sortedBestResults.reverse(); // REVERSE MTHFCKR!!!
 }
 function crawl(result){
     return result.disciplin === "crawl";
@@ -60,13 +60,7 @@ function butterfly(result){
 function breaststroke(result){
     return result.disciplin === "breaststroke";
 }
-function timeCompare(result1, result2){
-    return result1.resultTime > result2.resultTime ? -1
-         : result1.resultTime < result2.resultTime ? 1
-         : 0;
-}
 function timeCompareObj(result1, result2){
-    // idk y it doesnt work 
     return +result1.resultTime.hours < +result2.resultTime.hours ? -1
          : +result1.resultTime.hours > +result2.resultTime.hours ? 1
          : +result1.resultTime.minutes < +result2.resultTime.minutes ? -1
