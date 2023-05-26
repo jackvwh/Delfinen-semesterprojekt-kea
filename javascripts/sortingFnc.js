@@ -61,15 +61,13 @@ function breaststroke(result){
     return result.disciplin === "breaststroke";
 }
 function timeCompareObj(result1, result2){
-    return +result1.resultTime.hours < +result2.resultTime.hours ? -1
-         : +result1.resultTime.hours > +result2.resultTime.hours ? 1
-         : +result1.resultTime.minutes < +result2.resultTime.minutes ? -1
-         : +result1.resultTime.minutes > +result2.resultTime.minutes ? 1
-         : +result1.resultTime.seconds < +result2.resultTime.seconds ? -1
-         : +result1.resultTime.seconds > +result2.resultTime.seconds ? 1
-         : +result1.resultTime.millisec < +result2.resultTime.millisec ? -1
-         : +result1.resultTime.millisec > +result2.resultTime.millisec ? 1
-         : 0;
+    return +result1.resultTime.hours - +result2.resultTime.hours !== 0
+    ? +result1.resultTime.hours - +result2.resultTime.hours
+    : +result1.resultTime.minutes - +result2.resultTime.minutes !== 0
+    ? +result1.resultTime.minutes - +result2.resultTime.minutes
+    : +result1.resultTime.seconds - +result2.resultTime.seconds !== 0
+    ? +result1.resultTime.seconds - +result2.resultTime.seconds
+    : +result1.resultTime.millisec - +result2.resultTime.millisec;
 }
 function sortForYouth(resultArray){
     const youthResults = resultArray.filter(youth)
